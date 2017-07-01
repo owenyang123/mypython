@@ -15,11 +15,11 @@ def generater_learned(t):
 maxnum_learned=int(input("input max number you learned:"))
 numberofquery=int(input("input number you want:"))+1
 sum=generater_learned(maxnum_learned)
-for i in range(1,numberofquery):
-    k=random.randint(0, len(sum)-1)
-    a=sum[k][0]
-    b=sum[k][1]
-    c=sum[k][2]
+lensum=int(len(sum))
+for i in random.sample(range(1,lensum),numberofquery):
+    a=sum[i][0]
+    b=sum[i][1]
+    c=sum[i][2]
     print str(a)+ '+'+str(b)+'='
 
 
