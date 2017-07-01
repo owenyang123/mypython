@@ -13,7 +13,7 @@ def generater_learned(t):
                 sum1.append(sum2)
     return sum1
 maxnum_learned=int(input("input max number you learned:"))
-numberofquery=int(input("input number you want:"))+1
+numberofquery=int(input("input number you want:"))
 sum=generater_learned(maxnum_learned)
 lensum=int(len(sum))
 for i in random.sample(range(1,lensum),numberofquery):
