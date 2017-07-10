@@ -27,4 +27,7 @@ def findWord(DirPath):
 
 if __name__ == '__main__':
     path=raw_input('please input path: ')
-    findWord(path)
+    #findWord(path)
+    #D:\Tech\juniper\from lucas\Architecture\absolut
+    fileList = os.listdir(path)
+    print fileList
