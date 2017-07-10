@@ -34,7 +34,7 @@ sum1=today_learned(maxnum_learned)
 lensum1=int(len(sum1))
 rsum=[]
 if sum:
-    for i in random.sample(range(1,lensum),numberofquery):
+    for i in random.sample(range(1,lensum),numberofquery-1):
         a=sum[i][0]
         b=sum[i][1]
         c=sum[i][2]
@@ -50,3 +50,5 @@ if sum1:
 if rsum:
     for i in random.sample(range(1,len(rsum)),len(rsum)-1):
         print str(rsum[i][0])+'+'+str(rsum[i][1])+'='
+
+print rsum

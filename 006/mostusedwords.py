@@ -31,3 +31,4 @@ if __name__ == '__main__':
     #D:\Tech\juniper\from lucas\Architecture\absolut
     fileList = os.listdir(path)
     print fileList
+
