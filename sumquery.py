@@ -6,7 +6,7 @@ def generater_learned(t):
         print "nothing"
     else:
         for i in range(2,t+1):
-            for k in range(1,i):
+            for k in range(1,int(i/2)+1):
                 s1=k
                 s2=i-k
                 sum2=[s1,s2,i]
@@ -19,7 +19,7 @@ def today_learned(t):
     if t<=1:
         print "nothing"
     else:
-            for k in range(1,t):
+            for k in range(1,int(t/2)+1):
                 s1=k
                 s2=t-k
                 sum2=[s1,s2,t]
@@ -27,10 +27,13 @@ def today_learned(t):
     return sum1
 
 maxnum_learned=int(input("input max number you learned:"))
-numberofquery=int(input("input number you want:"))
 sum=generater_learned(maxnum_learned-1)
+k1=str(len(sum))
+print "max value is "+k1+" for next input"
+numberofquery=int(input("input number you want:"))
 lensum=int(len(sum))
 sum1=today_learned(maxnum_learned)
+print sum
 lensum1=int(len(sum1))
 rsum=[]
 if sum:
@@ -41,7 +44,7 @@ if sum:
         rsum.append([a,b,c])
 
 if sum1:
-    for i in random.sample(range(1,lensum1),int(int(maxnum_learned)/2)):
+    for i in random.sample(range(1,lensum1),int(lensum1-1)):
         a=sum1[i][0]
         b=sum1[i][1]
         c=sum1[i][2]
@@ -50,5 +53,3 @@ if sum1:
 if rsum:
     for i in random.sample(range(1,len(rsum)),len(rsum)-1):
         print str(rsum[i][0])+'+'+str(rsum[i][1])+'='
-
-print rsum
