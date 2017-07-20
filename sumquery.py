@@ -33,7 +33,6 @@ print "max value is "+k1+" for next input"
 numberofquery=int(input("input number you want:"))
 lensum=int(len(sum))
 sum1=today_learned(maxnum_learned)
-print sum
 lensum1=int(len(sum1))
 rsum=[]
 if sum:
