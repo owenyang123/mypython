@@ -40,6 +40,6 @@ def count_the_code(path):
 
 
 if __name__ == '__main__':
-    for f in walk_dir('D:\Python27\mypython'):
+    for f in walk_dir('C:\github\mypython'):
         print f
         count_the_code(f)
