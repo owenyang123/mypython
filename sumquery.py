@@ -42,12 +42,12 @@ if sum:
         c=sum[i][2]
         rsum.append([a,b,c])
 
-if sum1:
-    for i in random.sample(range(1,lensum1),int(lensum1-1)):
-        a=sum1[i][0]
-        b=sum1[i][1]
-        c=sum1[i][2]
-        rsum.append([a,b,c])
+#if sum1:
+ #   for i in random.sample(range(1,lensum1),int(lensum1-1)):
+  #      a=sum1[i][0]
+   #     b=sum1[i][1]
+    #    c=sum1[i][2]
+     #   rsum.append([a,b,c])
 
 if rsum:
     for i in random.sample(range(1,len(rsum)),len(rsum)-1):
