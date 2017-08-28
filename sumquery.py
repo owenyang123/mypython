@@ -51,5 +51,5 @@ if sum:
 
 if rsum:
     for i in random.sample(range(1,len(rsum)),len(rsum)-1):
-        print str(rsum[i][0])+'+'+str(rsum[i][1])+'='
-
+        #print str(rsum[i][0])+'+'+str(rsum[i][1])+'='
+        print str(rsum[i][2])+'-'+str(rsum[i][1])+'='
