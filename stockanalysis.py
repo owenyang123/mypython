@@ -5,6 +5,7 @@ import sqlfun
 import datetime
 from matplotlib.pyplot import plot
 from matplotlib.pyplot import show
+
 conn=MySQLdb.connect(host='localhost',user="root",passwd="222121wj",db="stock",charset="utf8")
 cursor = conn.cursor()
 x='*'

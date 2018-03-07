@@ -1,4 +1,5 @@
 import random
+import Tkinter
 def generater_learned(t):
     sum1=[]
     sum2=[]
@@ -51,5 +52,8 @@ if sum:
 
 if rsum:
     for i in random.sample(range(1,len(rsum)),len(rsum)-1):
-        #print str(rsum[i][0])+'+'+str(rsum[i][1])+'='
-        print str(rsum[i][2])+'-'+str(rsum[i][1])+'='
+        print str(rsum[i][0])+'+'+str(rsum[i][1])+'='+' '
+        #print '  '+'-'+str(rsum[i][0])+'='+str(rsum[i][1])
+if rsum:
+    for i in random.sample(range(1,len(rsum)),len(rsum)-1):
+        print str(rsum[i][2])+'-'+str(rsum[i][1])+'='+' '
