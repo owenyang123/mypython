@@ -1,12 +1,12 @@
 import random
-import Tkinter
-def generater_learned(t):
+
+def generater_learned(x,t):
     sum1=[]
     sum2=[]
     if t<=1:
         print "nothing"
     else:
-        for i in range(2,t+1):
+        for i in range(x,t+1):
             for k in range(1,int(i/2)+1):
                 s1=k
                 s2=i-k
@@ -28,11 +28,15 @@ def today_learned(t):
     return sum1
 
 maxnum_learned=int(input("input max number you learned:"))
-sum=generater_learned(maxnum_learned-1)
+numberofmin=int(input("input min number you leraned should be >= 2:"))
+sum=generater_learned(numberofmin,maxnum_learned-1)
 k1=str(len(sum))
 print "max value is "+k1+" for next input"
 numberofquery=int(input("input number you want:"))
+
+numberofquery=numberofquery+2
 lensum=int(len(sum))
+
 sum1=today_learned(maxnum_learned)
 lensum1=int(len(sum1))
 rsum=[]
