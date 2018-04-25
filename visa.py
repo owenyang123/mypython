@@ -25,11 +25,16 @@ def getimg(html):
     return imglist
 
 k=geturl("https://japan2.usembassy.gov/e/visa/tvisa-niv-admin.html")
+reg=r'.*Last updated on.*.'
+txtre=re.compile(reg)
+txtlist=re.findall(txtre,k)
+k1=txtlist
+
+k=geturl("https://japan2.usembassy.gov/e/visa/tvisa-niv-admin.html")
 reg=r'.*079/376.*.'
 txtre=re.compile(reg)
 txtlist=re.findall(txtre,k)
 k=txtlist
-
 
 
 def wechat_send(token,msg,url1):
@@ -70,7 +75,12 @@ if __name__ == '__main__':
     token=j['access_token']
     msg = "hello"
     t=0
+    for x in k1:
+        print x
+        t = t + 1
+        wechat_send(token, x, t)
+    t=0
     for x in k:
         print x
         t=t+1
-        wechat_send(token,x,x)
+        wechat_send(token,x,t)
