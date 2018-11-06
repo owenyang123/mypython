@@ -36,4 +36,3 @@ f=urllib2.urlopen(msm_post,data)
 content =f.read()
 print f.read
 f.close
-print owen
