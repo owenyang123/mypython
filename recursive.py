@@ -1,6 +1,5 @@
 import numpy as np
 import random
-
 def neighborlist(n):
     l=[]
     for x in range(n.shape[0]*n.shape[1]-1):
@@ -11,7 +10,6 @@ def neighborlist(n):
         else:
             l.append([x, x+5, x + 1])
     return l
-
 def graphmade(list1):
     graph={}
     for x in list1:
@@ -34,6 +32,7 @@ for i in range(Matrix.shape[0]*Matrix.shape[1]):
     n.append(i)
 tem1=Matrix.shape[0]-1
 tem2=Matrix.shape[1]-1
+Des=Matrix.shape[0]*Matrix.shape[1]-1
 n.append([tem1,tem2])
 nlist=neighborlist(Matrix)
 graph=graphmade(nlist)
@@ -46,7 +45,7 @@ def dfs_paths(graph,root,target,path=None):
     for vertex in [x for x in graph[root] if x not in path]:
         for each_path in dfs_paths(graph,vertex,target,path+[vertex]):
             yield each_path
-y= list(dfs_paths(graph,13,24))
+y= list(dfs_paths(graph,0,Des))
 i=0
 j=0
 sumall=[]
@@ -64,6 +63,4 @@ for i in y:
     if i[-1]==x[1]:
         print i
 print y
-
-print graph
 
