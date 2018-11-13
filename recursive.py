@@ -24,7 +24,7 @@ def graphmade(list1):
 Matrix= np.zeros((5, 5))
 for x in range(5):
     for y in range(5):
-        Matrix[x][y]=int(random.randrange(0, 10000))
+        Matrix[x][y]=int(random.randrange(0, 99999))
 print Matrix
 
 n=[]
@@ -59,8 +59,11 @@ for x in y:
     sumall.append(sum)
 np.array(sumall)
 x=np,max(sumall)
+k=[]
 for i in y:
     if i[-1]==x[1]:
-        print i
-print y
+        k.append([i,y.index(i)])
+print k
+for x in enumerate(k[0][0]):
+    print x
 
