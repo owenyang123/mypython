@@ -19,6 +19,18 @@ def graphmade(list1):
             graph.update({x[0]:[x[1],x[2]]})
     return graph
 
+def bfs( start, end, graph ):
+	todo = [(start, [start])]
+	while len( todo ):
+		node, path = todo.pop( 0 )
+		for next_node in graph[node]:
+			if next_node in path:
+				continue
+			elif next_node == end:
+				yield path + [next_node]
+			else:
+				todo.append( (next_node, path + [next_node]) )
+
 #main function#
 #generate matrix#
 Matrix= np.zeros((5, 5))
@@ -64,6 +76,8 @@ for i in y:
     if i[-1]==x[1]:
         k.append([i,y.index(i)])
 print k
-for x in enumerate(k[0][0]):
+
+print "kkk"
+for x in bfs( 0, 24, graph ):
     print x
 

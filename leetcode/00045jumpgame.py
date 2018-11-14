@@ -1,10 +1,10 @@
 import numpy as np
 import random
 #dfs to list all path from s to d#
-testcase=[3]
+testcase=[2,3,1,1,4,2,3,4,1,2,3,4,6,7,3,2,1]
 
-for i in range(15):
-    testcase.append(random.randrange(1, 6))
+#for i in range(20):
+ #   testcase.append(random.randrange(1, 6))
 print testcase
 def dfs_paths(graph,root,target,path=None):
     if path is None:
@@ -50,7 +50,7 @@ pathhop=[]
 index=0
 for i in np.array(y):
     pathhop.append(len(i))
-print min(pathhop)
+print min(pathhop)-1
 for i in np.array(y):
     if len(i)==min(pathhop):
         print i
