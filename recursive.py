@@ -80,4 +80,5 @@ print k
 print "kkk"
 for x in bfs( 0, 24, graph ):
     print x
+    print len(x)
 
