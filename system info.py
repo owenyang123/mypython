@@ -33,4 +33,7 @@ for key in profile:
     if hasattr(pl, key):
         print(key + bcolors.BOLD + ": " + str(getattr(pl, key)()) + bcolors.ENDC)
 
+nums=[1,2,-1,-2]
+for i in enumerate(nums):
+    print i
 

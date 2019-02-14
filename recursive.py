@@ -82,3 +82,4 @@ for x in bfs( 0, 24, graph ):
     print x
     print len(x)
 
+print -1%-2

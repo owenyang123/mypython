@@ -33,20 +33,17 @@ def numbercount(string):
     for i in l:
         str123=str123+str(i[0])+str(i[1])
     return str123
-
-print numbercount("1211")
-
 def countandsay(n):
     if n==0:
         return "1"
     if n==1:
         return "11"
     for i in range(2,n+1):
-        l=numbercount(countandsay(n-1))
+        l=numbercount(countandsay(i-1))
     return l
 
-for i in range(1,9):
-    print countandsay(i)
+for i in range(1,5):
+    print countandsay(i),i
 
 
 
