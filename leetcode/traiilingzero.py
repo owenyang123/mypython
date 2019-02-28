@@ -8,3 +8,5 @@ class Solution:
 
 test1=Solution()
 print test1.trailingZeros(35)
+
+list.sha

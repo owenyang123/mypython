@@ -27,3 +27,5 @@ class Solution:
 k=Solution()
 print k.binarySearch([4,5,9,9,12,13,14,15,15,18],10)
 
+print bool(1 and 2)
+
