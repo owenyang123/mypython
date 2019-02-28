@@ -29,3 +29,5 @@ def switch(l, a, b):
 
 steps=towerOfHanoi("self",11)
 print steps
+
+list1=[1,2,3]
