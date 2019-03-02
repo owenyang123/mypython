@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 def myfact(n):
     if n < 2:
         return 1
@@ -28,7 +28,7 @@ def getrank(m):
     return sum
 m=[8,9,7,4,5,1]
 print getrank(m)
-=======
+
 def numbercount(string):
     lsum=[]
     l=[]
@@ -79,12 +79,8 @@ def countandsay(n):
 for i in range(1,9):
     print countandsay(i)
 
-list1=[1,1,2,3,4,5]
-
-print sorted(list1)
-
->>>>>>> 6f2d6f719043f1b2c1909434a26e4f670d6a42f7
-
+dict1={0:2,1:3}
+print dict1.keys()
 
 
 
