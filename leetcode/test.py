@@ -79,8 +79,8 @@ def countandsay(n):
 for i in range(1,9):
     print countandsay(i)
 
-dict1={0:2,1:3}
-print dict1.keys()
+l=[2,3,4,5,6]
+print l.sort()
 
 
 
