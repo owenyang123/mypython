@@ -79,7 +79,9 @@ def countandsay(n):
 for i in range(1,9):
     print countandsay(i)
 
+list1=[1,1,2,3,4,5]
 
+print sorted(list1)
 
 >>>>>>> 6f2d6f719043f1b2c1909434a26e4f670d6a42f7
 
