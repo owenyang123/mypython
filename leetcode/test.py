@@ -48,7 +48,9 @@ def countandsay(n):
 for i in range(1,9):
     print countandsay(i)
 
+list1=[1,1,2,3,4,5]
 
+print sorted(list1)
 
 
 
