@@ -10,3 +10,5 @@ class Solution:
         return A
 k=Solution()
 print k.sortIntegers([3,2,1,4,5])
+
+print {0,1,2,3}.right
