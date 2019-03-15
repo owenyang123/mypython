@@ -16,3 +16,6 @@ Mar 12 18:15:03.284  mango snmpd[4576]: SNMPD_SOCKET_FAILURE: bind_snmptrap_sock
 Mar 12 18:15:03.284  mango snmpd[4576]: SNMPD_BIND_INFO: Source address for trap socket was set to 172.19.164.104
 Mar 12 18:15:03.285  mango snmpd[4576]: SNMPD_SOCKET_FAILURE: trap_io_send_trap_now: socket failure: trap_socket (not initialized)
 Mar 12 18:15:03.285  mango snmpd[4576]: SNMPD_SOCKET_FAILURE: bind_snmptrap_socket: socket failure: bind error on trap socket source ipv4 address 172.19.164.104, retry during send. (Can't assign requested address)
+Aug  2 03:11:20  CNCRCAGNFS02-RE0 fpc10 XMCHIP(0): XMCHIP(0): LI0: Received a parcel from the HSL2 interface with EOPE
+Aug  2 03:11:20  CNCRCAGNFS02-RE0 fpc10 LUCHIP(0) PPE_11 Errors lmem data error 0x00000d06
+Aug 21 08:07:34  HAANY-MB-CMNET-TXP01-huanghelu-RE0 lcc2-fpc7 HSL2: HSL2 detected fatal error on L_T0 with 0x4
