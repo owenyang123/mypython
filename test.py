@@ -8,7 +8,7 @@ class ListNode(object):
 
 class Solution:
     """
-    @param head: 
+    @param head:
     @return: nothing
     """
     def countNodesII(self, head):
