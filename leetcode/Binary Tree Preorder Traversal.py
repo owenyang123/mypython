@@ -11,7 +11,7 @@ class Solution:
 
     def traverse(self, root):
         if root is None:
-            return
+            retun []
         self.results.append(root.val)
         self.traverse(root.left)
         self.traverse(root.right)
