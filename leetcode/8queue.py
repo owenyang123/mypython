@@ -42,17 +42,19 @@ def dp(A,r,k):
     for i in range(len1):
         if A[r][i]==1:
             set1(A, r, i)
-        if r==6 and (1 in A[r+1]):
-            r=0
-            k=k+1
-            print k,A,r,i
-            A = [[1] * 8 for j in range(8)]
-            return
-        elif r==6:
-            r=0
-            A=[[1] * 8 for j in range(8)]
-        r=r+1
-        print r
-        dp(A,r,k)
-print dp(l,0,0)
+            print r,i,A
+            if r==6 and (1 in A[r+1]):
+                k.append(1)
+                r=0
+                A = [[1] * 8 for j in range(8)]
+                return
+            elif r==6:
+                r=0
+                A=[[1] * 8 for j in range(8)]
+                return
+            else:
+                r=r+1
+                dp(A,r,k)
+print  dp(l,0,[])
+
 
