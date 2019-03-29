@@ -21,9 +21,9 @@ def set1(A,r,c):
         c1=c1-1
         A[r1][c1] = 0
     while(r2<len1-1 and c2<len1-1):
-        A[r2][c2] = 0
         r2=r2+1
         c2=c2+1
+        A[r2][c2] = 0
     while(r3<len1-1 and c3>=1):
         c3=c3-1
         r3=r3+1
@@ -42,17 +42,24 @@ def dp(A,r,k):
     for i in range(len1):
         if A[r][i]==1:
             set1(A, r, i)
-        if r==6 and (1 in A[r+1]):
-            r=0
-            k=k+1
-            print k,A,r,i
-            A = [[1] * 8 for j in range(8)]
-            return
-        elif r==6:
-            r=0
-            A=[[1] * 8 for j in range(8)]
-        r=r+1
-        print r
-        dp(A,r,k)
+            B=A
+            if r==6 and (1 in A[r+1]):
+                r=0
+                k=k+1
+                A = [[1] * 8 for j in range(8)]
+                print r, i
+                return
+            elif r==6:
+                r=0
+                A=[[1] * 8 for j in range(8)]
+                print r, i
+                return
+            elif A[r]==[0,0,0,0,0,0,0,0] or A[r+1]==[0,0,0,0,0,0,0,0]:
+                dp(B,r,i+1)
+            else:
+                r=r+1
+                dp(A,r,k)
+        else:
+            pass
 print dp(l,0,0)
 
