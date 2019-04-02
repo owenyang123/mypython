@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 l= [[1] * 8 for i in range(8)]
 len1=len(l)
 
@@ -63,3 +64,6 @@ def dp(A,r,k):
             pass
 print dp(l,0,0)
 
+=======
+import requests
+>>>>>>> 2befe1f1f0386eb6c7e1b837b7509dc058654395

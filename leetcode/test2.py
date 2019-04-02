@@ -14,15 +14,15 @@ def pstr(a,b,c):
 pstr(str1,str2,"")
 print l
 dict1={2:["a","b","c"],3:["d","e","f"],4:["g","h","i"],5:["j","k","l"],6:["m","n","0"],7:["p","q","r","s"],8:["t","u","v"],9:["w","x","y","z"]}
-str2="72245"
+str2="7245"
 s=[]
 def  traver(a,c):
     if len(a)==0 or not a:
         return
     if len(a)==1:
-        tmp=c
+
         for i in dict1[int(a[0])]:
-            s.append(tmp+i)
+            s.append(c+i)
         return
     for i in dict1[int(a[0])]:
         traver(a[1:],c+i)
