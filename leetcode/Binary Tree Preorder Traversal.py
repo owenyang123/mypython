@@ -15,3 +15,10 @@ class Solution:
         self.results.append(root.val)
         self.traverse(root.left)
         self.traverse(root.right)
+
+    def traverseinorder(root, result):
+        if not root:
+            return
+        traverse(root.left, result)
+        result.append(root.val)  # 注意访问根节点放到了遍历左子树的后面
+        traverse(root.right, result)
