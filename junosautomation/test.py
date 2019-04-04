@@ -17,4 +17,4 @@ for i in range(1,1000):
     print t3
     print t2
     print t1
-    print i
+    print
