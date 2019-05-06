@@ -1,2 +1,3 @@
-str1="12313131"
-print str1[0:0]
+l=[1,2,3,4,5,2]
+l.sort()
+print l
