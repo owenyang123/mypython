@@ -1,11 +1,10 @@
-#65-90
 class Solution:
     def convertToTitle(self, n):
         if n<=0 or n==None:
             return None
         l=[]
         if n<=26:
-            return chr(76)
+            return chr(n+64)
         while (n>=1):
            if n%26==0:
                r=26
@@ -18,6 +17,3 @@ class Solution:
         for i in l[::-1]:
             str1=str1+chr(i+64)
         return str1
-k=Solution()
-x=k.convertToTitle(4312)
-print x
