@@ -1,0 +1,404 @@
+#!/usr/bin/env python
+
+
+
+from __future__ import print_function
+import binascii
+import datetime
+import glob
+import gzip
+import os
+import re
+import sys
+from argparse import ArgumentParser
+from tabulate import tabulate
+
+
+def main():
+    """
+    Generic main() statement
+    """
+
+    argparser = ArgumentParser()
+    argparser.add_argument(
+        "--timestamps",
+        action="store_const",
+        const="timestamps",
+        help="Print timestamps for each cmd",
+    )
+    argparser.add_argument(
+        "--table", action="store_const", const="table", help="Print in table format"
+    )
+    argparser.add_argument("filepath", help="Path to filename to work on")
+    args = argparser.parse_args()
+    if not args.filepath:
+        print("must specify path to file containing interactive-command logs, exiting")
+
+    per_user = dict()
+    month = None
+    day = None
+    hour = None
+    minute = None
+    second = None
+    pid = None
+    cmd = None
+    commit = None
+    file_list = []
+    all_lines = ""
+    foo_pid = 100000
+    foo_year = 2000
+    prev_month = None
+
+    if re.search("/", args.filepath):
+        file_dir = args.filepath.rsplit("/", 1)[0]
+        try:
+            os.chdir(file_dir)
+        except:
+            print("cannot cd to directory containing the file, exiting")
+            sys.exit(1)
+        file_name = args.filepath.rsplit("/", 1)[1]
+    else:
+        file_name = args.filepath
+
+    file_name = "{}*".format(file_name)
+    for file_glob in glob.glob(file_name):
+        file_list.append(file_glob)
+    for file_name in sorted(file_list, reverse=True):
+        if is_gz_file(file_name):
+            with gzip.open(file_name) as gz_file:
+                lines = gz_file.read()
+        else:
+            with open(file_name) as normal_file:
+                lines = normal_file.read()
+
+        all_lines = "".join([all_lines, lines])
+
+    cmd_list = (
+        "command 'insert|command 'commit|command 'load |command 'set|"
+        "command 'delete|command 'deactivate|command 'activate|"
+        "command 'rollback|command 'edit|command 'configure|command 'top|"
+        "command 'up|command 'request |command 'run request|"
+        "command 'restart|command 'run restart|command 'exit|"
+        "command 'open-configuration|command 'lock-configuration|"
+        "command 'load-configuration rpc|command 'close-configuration|"
+        "command 'command rpc|command 'commit-configuration|"
+        "command 'unlock-configuration|command 'request-package-add|"
+        "command 'request-vmhost-package-add"
+    )
+
+    all_lines = all_lines.split("\n")
+
+    for line in all_lines:
+        # if cmd not in cmd_list, ignore
+        if not re.search(cmd_list, line):
+            continue
+        # filter out those which are matched by cmd_list, but aren't interesting
+        if re.search(
+            "'set cli |'set task |'set alarm |.noop-command|"
+            "command show |'request system logout|'request pfe",
+            line,
+        ):
+            continue
+        # some noop-command lines are so long the '.noop-commanad' string
+        # is missing from the line
+        if len(line) > 928:
+            continue
+        # cmd is of interest
+        line = line.strip()
+
+        # 'set system syslog time-format year' timestamp format
+        year_regex = re.match(
+            r"([A-Za-z]+) +([0-9]+) +([0-9]+):([0-9]+):([0-9]+) +([0-9]+) .* mgd\[([0-9]+)\]: .* command \'(.*)",
+            line,
+        )
+        # default timestamp format
+        regex = re.match(
+            r"([A-Za-z]+) +([0-9]+) +([0-9]+):([0-9]+):([0-9]+).* mgd\[([0-9]+)\]: .* command \'(.*)",
+            line,
+        )
+
+        if year_regex:
+            (month, day, hour, minute, second, pid, cmd, year) = get_fields(
+                year_regex, year=True
+            )
+            (session_ts, t_stamp, foo_year, prev_month) = time_stamp(
+                foo_year, prev_month, month, day, hour, minute, second, year
+            )
+        elif regex:
+            (month, day, hour, minute, second, pid, cmd) = get_fields(regex)
+            (session_ts, t_stamp, foo_year, prev_month) = time_stamp(
+                foo_year, prev_month, month, day, hour, minute, second
+            )
+        else:
+            continue
+
+        if args.timestamps and year_regex:
+            f_line = "{} {} {} {}:{}:{}, {}\n".format(
+                year, month, day, hour, minute, second, cmd
+            )
+        elif args.timestamps:
+            f_line = "{} {} {}:{}:{}, {}\n".format(
+                month, day, hour, minute, second, cmd
+            )
+        else:
+            f_line = "{}\n".format(cmd)
+
+        # deal early with non-configuration cmds. Provide a bogus pid.
+        # max_pid on freebsd is 99999 so must be greater than this
+        if re.match(r"request|run request|restart|run restart", cmd):
+            foo_commit = 0
+            foo_session = 0
+            per_user[foo_pid] = dict()
+            per_user[foo_pid][foo_session] = dict()
+            per_user[foo_pid][foo_session][foo_commit] = dict()
+            per_user[foo_pid][foo_session][foo_commit]["lines"] = [f_line]
+            per_user[foo_pid][foo_session][foo_commit]["timestamp"] = t_stamp
+            foo_pid += 1
+            continue
+
+        if pid in per_user:
+            # check session timestamp, if older than a week its likely
+            # that this pid has been re-used
+            osession = max(per_user[pid])
+            osession_ts = per_user[pid][osession]["session_ts"]
+            timedelta = session_ts - osession_ts
+
+            if timedelta.days < 7:
+                # we assume that the same mgd pid wouldn't be reused within a week
+                session = osession
+            else:
+                session = osession + 1
+                per_user[pid][session] = dict()
+                per_user[pid][session]["session_ts"] = session_ts
+                per_user[pid][session][commit] = dict()
+                per_user[pid][session][commit]["lines"] = []
+                per_user[pid][session][commit]["timestamp"] = ""
+
+            commit_check(pid, session, cmd, per_user, f_line, t_stamp)
+            continue
+
+        # haven't seen this pid before, create a dict to store it
+        # because of pid-reuse, each unique session that uses the same pid
+        # will store its data under that session id
+        commit = 0
+        session = 0
+        per_user[pid] = dict()
+        per_user[pid][session] = dict()
+        per_user[pid][session]["session_ts"] = session_ts
+        per_user[pid][session][commit] = dict()
+        per_user[pid][session][commit]["lines"] = []
+        per_user[pid][session][commit]["timestamp"] = ""
+        commit_check(pid, session, cmd, per_user, f_line, t_stamp)
+
+        # end of per line loop
+
+    s_output = order_by_ts(per_user)
+    if args.table:
+        wrapper = []
+        for t_stamp in s_output:
+            wrapper.append(t_stamp[1])
+        print(tabulate(wrapper, tablefmt="grid"))
+    else:
+        print("-" * 80)
+        for t_stamp in s_output:
+            print(t_stamp[1][0], end="")
+            print("-" * 80)
+
+
+def is_gz_file(filepath):
+    """ checks if the file is gzipped
+        Args:
+            filepath(str): path to file
+        Returns:
+            true or false
+        Raises:
+            None
+    """
+    with open(filepath, "rb") as test_f:
+        return binascii.hexlify(test_f.read(2)) == b"1f8b"
+
+
+def order_by_ts(per_user):
+    """ pulls relevant data out of 'per_user', and creates a list of time
+        ordered commits
+        Args:
+            per_user(dict) - contains data gleaned from src file
+        Returns:
+            output(list), a list of timestamps, each containing a list
+            of commands per commit (as a single string)
+        Raises:
+            None
+    """
+    output = []
+    for pid in per_user:
+        for session in per_user[pid]:
+            for commit in per_user[pid][session]:
+                if isinstance(commit, int):
+                    t_stamp = []
+                    if per_user[pid][session][commit]["timestamp"]:
+                        t_stamp.append(per_user[pid][session][commit]["timestamp"])
+                        t_stamp.append(per_user[pid][session][commit]["lines"])
+                        output.append(t_stamp)
+
+    return sorted(output)
+
+
+def time_stamp(foo_year, prev_month, month, day, hour, minute, second, year=None):
+    """ returns an int representing a date + time
+        Args:
+            foo_year(int) - a dummy year
+            prev_month(int) - a month, used to tick over foo_year
+            year(int) - the year part of date string
+            month(str) - the month part of date string
+            day(int) - the day part of date string
+            hour(int) - the hour part of date string
+            minute(int) - the minute part of date string
+            second(int) - the second part of date string
+        Returns:
+            session_ts(datetime) - a datetime object
+            t_stamp(int) - a numeric representation of a date
+            foo_year(int) - a year
+            prev_month(int) - a month
+        Raises:
+            None
+    """
+    month = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ].index(month)
+    month += 1  # because month 0 doesn't exist
+
+    if not year and month == 1 and prev_month == 12:
+        foo_year += 1
+
+    if year:
+        year = int(year)
+    prev_month = month
+    day = int(day)
+    hour = int(hour)
+    minute = int(minute)
+    second = int(second)
+
+    if year:
+        session_ts = datetime.date(year, month, day)
+        t_stamp = datetime.datetime(year, month, day, hour, minute, second)
+        t_stamp = t_stamp.strftime("%Y%m%d%H%M%S")
+    else:
+        session_ts = datetime.date(foo_year, month, day)
+        t_stamp = datetime.datetime(foo_year, month, day, hour, minute, second)
+        t_stamp = t_stamp.strftime("%Y%m%d%H%M%S")
+
+    return session_ts, t_stamp, foo_year, prev_month
+
+
+def get_fields(line, year=None):
+    """ pulls relevant parts out of input string and updates variables
+        with this data
+        Args:
+            line(str) - a line from src file
+        Returns:
+            month(str) - the month part of date string
+            day(int) - the day part of date string
+            hour(int) - the hour part of date string
+            minute(int) - the minute part of date string
+            second(int) - the second part of date string
+            year(int) - the year part of date string
+            pid(int) - the mgd pid of the user
+            cmd(str) - the command part of the line
+        Raises:
+            None
+    """
+    if not year:
+        month = line.group(1)
+        day = line.group(2)
+        hour = line.group(3)
+        minute = line.group(4)
+        second = line.group(5)
+        pid = line.group(6)
+        cmd = line.group(7).rstrip(" '")
+        cmd = re.sub(r".*load-configuration ", "", cmd)
+    else:
+        month = line.group(1)
+        day = line.group(2)
+        hour = line.group(3)
+        minute = line.group(4)
+        second = line.group(5)
+        year = line.group(6)
+        pid = line.group(7)
+        cmd = line.group(8).rstrip(" '")
+        cmd = re.sub(r".*load-configuration ", "", cmd)
+
+    #    print("GetFields, {} {} {} {} {} {} {}".format(month, day, hour,
+    #                                                   minute, second, pid, cmd))
+
+    if not year:
+        return month, day, hour, minute, second, pid, cmd
+    else:
+        return month, day, hour, minute, second, pid, cmd, year
+
+
+def commit_check(pid, session, cmd, per_user, f_line, t_stamp):
+    """ performs actions depending whether the line performs a commit
+        Args:
+            pid(int) - the mgd pid of the user entering cmds
+            cmd(str) - the cmd entered
+            per_user(dict) - structure containing each users activity
+            f_line(str) - formatted line from src file
+            t_stamp(int) - timestamp
+        Returns:
+            None, but does write to the per_user(dict)
+        Raises:
+            None
+    """
+    if re.match(r"commit check|commit confirmed|commit-configuration.* check", cmd):
+        commit = max(
+            [commit for commit in per_user[pid][session] if isinstance(commit, int)]
+        )
+        if per_user[pid][session][commit]["lines"]:
+            old_line = per_user[pid][session][commit]["lines"][0]
+            new_line = "".join([old_line, f_line])
+            per_user[pid][session][commit]["lines"] = [new_line]
+        else:
+            per_user[pid][session][commit]["lines"] = [f_line]
+            per_user[pid][session][commit]["timestamp"] = None
+    elif re.match(r"commit.*", cmd):
+        commit = max(
+            [commit for commit in per_user[pid][session] if isinstance(commit, int)]
+        )
+        if per_user[pid][session][commit]["lines"]:
+            old_line = per_user[pid][session][commit]["lines"][0]
+            new_line = "".join([old_line, f_line])
+            per_user[pid][session][commit]["lines"] = [new_line]
+            per_user[pid][session][commit]["timestamp"] = t_stamp
+        else:
+            per_user[pid][session][commit]["lines"] = [f_line]
+            per_user[pid][session][commit]["timestamp"] = t_stamp
+        commit += 1
+        per_user[pid][session][commit] = dict()
+        per_user[pid][session][commit]["lines"] = []
+        per_user[pid][session][commit]["timestamp"] = ""
+    else:
+        commit = max(
+            [commit for commit in per_user[pid][session] if isinstance(commit, int)]
+        )
+        if per_user[pid][session][commit]["lines"]:
+            old_line = per_user[pid][session][commit]["lines"][0]
+            new_line = "".join([old_line, f_line])
+            per_user[pid][session][commit]["lines"] = [new_line]
+        else:
+            per_user[pid][session][commit]["lines"] = [f_line]
+            per_user[pid][session][commit]["timestamp"] = None
+
+
+if __name__ == "__main__":
+    main()
