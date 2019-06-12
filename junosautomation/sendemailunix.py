@@ -7,7 +7,7 @@ sent_from = gmail_user
 to = ['owenyang15@gmail.com', 'owenyang@juniper.net']
 subject = 'OMG Super Important Message'
 body = "Hey, what's up?"
-email_text="i am good"
+email_text="i am good u "
 try:
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
     server.ehlo()
