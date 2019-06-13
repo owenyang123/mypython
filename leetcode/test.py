@@ -1,23 +1,33 @@
-#65-90
-class Solution:
-    def convertToTitle(self, n):
-        if n<=0 or n==None:
-            return None
-        l=[]
-        if n<=26:
-            return chr(76)
-        while (n>=1):
-           if n%26==0:
-               r=26
-               n=n-1
-           else:
-               r=n%26
-           l.append(r)
-           n=n/26
-        str1=""
-        for i in l[::-1]:
-            str1=str1+chr(i+64)
-        return str1
-k=Solution()
-x=k.convertToTitle(4312)
-print x
+l=[1,2,3,4]
+l.insert(2,4)
+print l
+class Queue:
+    def __init__(self):
+        self.items = []
+        self.eyes="123"
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0,item)
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+def factors(n):
+    k=0
+    for  i in range(1,n+1):
+        if i*i>=n:
+            k=i
+            break
+        if n%i==0:
+            yield i,n/i
+    if k*k==n:
+        yield k
+
+for k in factors(100):
+    print k,type(k)
