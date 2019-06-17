@@ -1,18 +1,17 @@
 from turtle import *
 
 
-def nose(x,y):
-  
+def nose(x, y):
     penup()
 
-    goto(x,y)
+    goto(x, y)
     pendown()
 
     setheading(-30)
     begin_fill()
     a = 0.4
     for i in range(120):
-        if 0 <= i < 30 or 60 <= i <90:
+        if 0 <= i < 30 or 60 <= i < 90:
             a = a + 0.08
 
             left(3)
@@ -49,10 +48,9 @@ def nose(x,y):
 
 
 def head(x, y):
-
     color((255, 155, 192), "pink")
     penup()
-    goto(x,y)
+    goto(x, y)
     setheading(0)
     pendown()
     begin_fill()
@@ -70,7 +68,7 @@ def head(x, y):
     setheading(-30)
     a = 0.4
     for i in range(60):
-        if 0<= i < 30 or 60 <= i < 90:
+        if 0 <= i < 30 or 60 <= i < 90:
             a = a + 0.08
             lt(3)
             fd(a)
@@ -81,8 +79,7 @@ def head(x, y):
     end_fill()
 
 
-def ears(x,y):
-
+def ears(x, y):
     color((255, 155, 192), "pink")
     penup()
     goto(x, y)
@@ -107,8 +104,7 @@ def ears(x,y):
     end_fill()
 
 
-def eyes(x,y):
-
+def eyes(x, y):
     color((255, 155, 192), "white")
     penup()
     setheading(90)
@@ -151,11 +147,10 @@ def eyes(x,y):
     end_fill()
 
 
-def cheek(x,y):
-
+def cheek(x, y):
     color((255, 155, 192))
     penup()
-    goto(x,y)
+    goto(x, y)
     pendown()
     setheading(0)
     begin_fill()
@@ -163,8 +158,7 @@ def cheek(x,y):
     end_fill()
 
 
-def mouth(x,y):
-
+def mouth(x, y):
     color(239, 69, 19)
     penup()
     goto(x, y)
@@ -175,7 +169,6 @@ def mouth(x,y):
 
 
 def setting():
-
     pensize(4)
 
     hideturtle()
@@ -186,8 +179,7 @@ def setting():
 
 
 def main():
-
-    setting() 
+    setting()
     nose(-100, 100)
     head(-69, 167)
     ears(0, 160)

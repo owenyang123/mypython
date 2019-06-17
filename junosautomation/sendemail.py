@@ -10,4 +10,4 @@ def sendmail(to, title, body):
     msg.Body = body
     msg.Send()
 
-sendmailowenyang15@gmail.com", "replication", "we saw the issue")("
+sendmail("owenyang15@gmail.com", "replication", "we saw the issue")
