@@ -5,6 +5,8 @@ import time
 
 
 class JNPRdevops:
+    def __init__(self):
+        self.x = 'readygo'
     def healthcheck(self, A,users,password):
         if not A:
             print "not valid"
