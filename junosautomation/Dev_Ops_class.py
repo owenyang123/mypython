@@ -21,7 +21,7 @@ class JNPRdevops:
         msg.Send()
 
     def filecopy(self, server_name,filepath,users,password):
-        return 
+        return
 
 
     def healthcheck(self, A,users,password):
@@ -34,7 +34,6 @@ class JNPRdevops:
             self.err_list.append([A,err])
             print err
             sys.exit(1)
-        print dev.facts
         self.healthcheck_list.append(dev.facts)
         ss=StartShell(dev)
         ss.open()
@@ -62,6 +61,9 @@ if __name__ == "__main__":
     t.join()
     str_list=""
     for i in  k.healthcheck_list:
-        str_list+=" "+str(i["hostname"])+"\n"
-    k.sendmail("owenyang@juniper.net", "replication", str_list)
+        if str(i["hostname"])!=None:
+            str_list+=" "+str(i["hostname"])+"\n"
+    print str_list
+    if str_list:
+        k.sendmail("owenyang@juniper.net", "replication", str_list)
     print time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime())
