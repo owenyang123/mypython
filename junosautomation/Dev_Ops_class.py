@@ -7,11 +7,11 @@ from jnpr.junos.utils.start_shell import StartShell
 
 
 class JNPRdevops:
-    def __init__(self,):
+    def __init__(self):
         self.healthcheck_list=[]
         self.err_list = []
 
-    def sendmail(self,to, title, body):
+    def sendEmail(self,to, title, body):
         olMailItem = 0
         ol = win32com.client.Dispatch("Outlook.Application")
         msg = ol.CreateItem(olMailItem)
@@ -20,11 +20,17 @@ class JNPRdevops:
         msg.Body = body
         msg.Send()
 
+<<<<<<< HEAD
     def filecopy(self, server_name,filepath,users,password):
         return
+=======
+    def fileCopy(self, server_name,filepath,users,password):
+        return 
+>>>>>>> bb40af148f22f12078176baf5b2f4475ff3679bb
 
 
-    def healthcheck(self, A,users,password):
+
+    def healthCheck(self, A,users,password):
         if not A:
             print "not valid"
         dev = Device(host=A, user=users, passwd=password)
