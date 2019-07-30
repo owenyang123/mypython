@@ -15,9 +15,11 @@ class Solution:
             self.dfs(nums, i + 1, combination, combinations)
             combination.pop()
 
-testlist=[1,2,3,4,5,6]
+testlist=[1,2,3]
 
 k=Solution()
 x=k.subsets(testlist)
 print x,len(x)
+
+
 
