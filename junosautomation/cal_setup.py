@@ -7,7 +7,7 @@ from google.auth.transport.requests import Request
 
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
-CREDENTIALS_FILE = 'D:\Python272018\owenpython2018\mypython\junosautomation\googlecid.json'
+CREDENTIALS_FILE = 'D:\googlecid.json'
 
 def get_calendar_service():
    creds = None
