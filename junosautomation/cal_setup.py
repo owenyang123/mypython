@@ -8,7 +8,6 @@ from google.auth.transport.requests import Request
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 CREDENTIALS_FILE = 'D:\googlecid.json'
-
 def get_calendar_service():
    creds = None
    # The file token.pickle stores the user's access and refresh tokens, and is

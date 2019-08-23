@@ -7,13 +7,13 @@ def main():
    service = get_calendar_service()
 
    d = datetime.now().date()
-   tomorrow = datetime(d.year, d.month, d.day, 10)+timedelta(days=1)
+   tomorrow = datetime(d.year, d.month, d.day, 17)+timedelta(days=1)
    start = tomorrow.isoformat()
    end = (tomorrow + timedelta(hours=1)).isoformat()
 
    event_result = service.events().insert(calendarId='primary',
        body={
-           "summary": 'Automating calendar',
+           "summary": '8/19 gc intversiew',
            "description": 'owen google test',
            "start": {"dateTime": start, "timeZone": 'America/New_York'},
            "end": {"dateTime": end, "timeZone": 'America/New_York'},

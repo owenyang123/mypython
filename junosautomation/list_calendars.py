@@ -1,5 +1,6 @@
 from cal_setup import get_calendar_service
 
+
 def main():
    service = get_calendar_service()
    # Call the Calendar API
