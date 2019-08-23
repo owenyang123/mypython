@@ -23,19 +23,11 @@ asS'_id_token'
 p11
 NsS'token'
 p12
-<<<<<<< HEAD
 Vya29.GlxjB_otUsBeBRHHcXfBcMRH3e9Q3ARQlCs_cQbpzNcl7ByfWzTChqKcakeAK2OqPjY0J5goVRIE2pHwfQ6EmAvuqQe33viDn8IVbFlDFwoYodT5qa9mGwCpe51qeQ
 p13
 sS'_refresh_token'
 p14
 V1/r2vmFQBI1yNAwgJjB60_mI-03WgKfkfP48D1CKGR2e4
-=======
-Vya29.GlxsB5gNFs6LvUSx7vwOgEznLsL35RYqBgWpAGErjWGhDWqc-14Nw6aGsL3539GIlhnYlg6IJ72sEydMeA9GuchBbJW7K_fWADwYp-ErRRUzt_gtVnJ4mEAEI5E6MQ
-p13
-sS'_refresh_token'
-p14
-V1/gJUA7EzO26cYPl3hMFxXtFdRmZC7asfK-LO1a8FKHsDP8_GWecF0zajDhRHfxBu3
->>>>>>> 6778927526acc568e2c3fdb89bc58183074bc6a2
 p15
 sS'_client_secret'
 p16
@@ -50,11 +42,7 @@ p20
 cdatetime
 datetime
 p21
-<<<<<<< HEAD
 (S'\x07\xe3\x08\r\x04,#\x04h\xe8'
-=======
-(S'\x07\xe3\x08\x16\x15,\x11\x04]0'
->>>>>>> 6778927526acc568e2c3fdb89bc58183074bc6a2
 p22
 tp23
 Rp24
