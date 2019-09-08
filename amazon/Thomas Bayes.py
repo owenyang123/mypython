@@ -9,7 +9,7 @@ default_RB=0.3
 default_GB=1-default_RB
 
 list1=[0,0,0,0,1,1,1,1,1,1,1,1]
-list1.reverse()
+
 
 #a:default_RA,b:default_RB,c:default_A,d:default_B
 def bayesfun(a,b,c,d):
