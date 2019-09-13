@@ -1,5 +1,4 @@
 class Solution:
-
     def climbStairs(self, n):
         if n==None:
             return None
