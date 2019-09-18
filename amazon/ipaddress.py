@@ -6,7 +6,7 @@ class Solution:
                 temp1=ipstr[0:i+1]+"."
                 layer1=ipstr[i+1:]
                 for j in range(0,3):
-                    if layer1[j+1]!="0" and int(layer1[0:j+1])<256:
+                    if j<len(layer1)-1 and layer1[j+1]!="0" and int(layer1[0:j+1])<256:
                         temp2=layer1[0:j+1]+"."
                         layer2=layer1[j+1:]
                         for z in range(0,3):
@@ -18,18 +18,13 @@ class Solution:
 
 
 k=Solution()
-print k.allipaddress("1045894")
+
+print k.allipaddress("111123")
 
 
 
 
-given_number = "1045894"
 
-def parse_all_ip_address(n):
-
-    return get_next_sec([], str(n))
-
-    # end parse_all_ip_address
 
 class solutions1:
     def ipadd(self,ipstr):
@@ -45,8 +40,23 @@ class solutions1:
             return
         else:
             for i in range(1,4):
-                if i<len(ipstr ) and int(ipstr[0:i])<256 and ipstr[i]!="0":
+                if i<len(ipstr) and int(ipstr[0:i])<256 and ipstr[i]!="0":
                     self.dfs(ipstr[i:],tempstr+ipstr[0:i]+".",coms)
 
 k=solutions1()
-print k.ipadd("1045894")
+print k.ipadd("111123")
+
+
+
+class Solution2:
+    def trailingZeros(self, n):
+        number5=0
+        while(n!=0):
+            n=n/5
+            number5=number5+n
+        return number5
+
+x=Solution2()
+print x.trailingZeros(100)
+
+
