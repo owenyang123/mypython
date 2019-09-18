@@ -1,3 +1,9 @@
+
+
+
+
+
+
 class Solution:
     def allipaddress(self, ipstr):
         list1=[]
@@ -6,7 +12,7 @@ class Solution:
                 temp1=ipstr[0:i+1]+"."
                 layer1=ipstr[i+1:]
                 for j in range(0,3):
-                    if layer1[j+1]!="0" and int(layer1[0:j+1])<256:
+                    if layer1[j+1]!="0" and int(layer1[0:j+1])<256 :
                         temp2=layer1[0:j+1]+"."
                         layer2=layer1[j+1:]
                         for z in range(0,3):
@@ -18,7 +24,7 @@ class Solution:
 
 
 k=Solution()
-print k.allipaddress("12555894")
+print k.allipaddress("11223344")
 
 class solutions1:
     def ipadd(self,ipstr):
@@ -34,5 +40,14 @@ class solutions1:
             return
         else:
             for i in range(1,4):
-                if i<len(ipstr ) and int(ipstr[0:i])<256 and ipstr[i]!="0":
+                if i<=len(ipstr ) and int(ipstr[0:i])<256 and ipstr[i]!="0":
                     self.dfs(ipstr[i:],tempstr+ipstr[0:i]+".",coms)
+
+k=solutions1()
+print k.ipadd("11223344")
+
+
+
+
+
+
