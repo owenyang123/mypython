@@ -1,3 +1,9 @@
+
+
+
+
+
+
 class Solution:
     def allipaddress(self, ipstr):
         list1=[]
@@ -6,7 +12,11 @@ class Solution:
                 temp1=ipstr[0:i+1]+"."
                 layer1=ipstr[i+1:]
                 for j in range(0,3):
+<<<<<<< HEAD
                     if j<len(layer1)-1 and layer1[j+1]!="0" and int(layer1[0:j+1])<256:
+=======
+                    if layer1[j+1]!="0" and int(layer1[0:j+1])<256 :
+>>>>>>> d3685ee5740768bdfb35d6216b9b63f7d7664960
                         temp2=layer1[0:j+1]+"."
                         layer2=layer1[j+1:]
                         for z in range(0,3):
@@ -18,6 +28,7 @@ class Solution:
 
 
 k=Solution()
+<<<<<<< HEAD
 
 print k.allipaddress("111123")
 
@@ -25,6 +36,9 @@ print k.allipaddress("111123")
 
 
 
+=======
+print k.allipaddress("11223344")
+>>>>>>> d3685ee5740768bdfb35d6216b9b63f7d7664960
 
 class solutions1:
     def ipadd(self,ipstr):
@@ -40,6 +54,7 @@ class solutions1:
             return
         else:
             for i in range(1,4):
+<<<<<<< HEAD
                 if i<len(ipstr) and int(ipstr[0:i])<256 and ipstr[i]!="0":
                     self.dfs(ipstr[i:],tempstr+ipstr[0:i]+".",coms)
 
@@ -58,5 +73,16 @@ class Solution2:
 
 x=Solution2()
 print x.trailingZeros(100)
+=======
+                if i<=len(ipstr ) and int(ipstr[0:i])<256 and ipstr[i]!="0":
+                    self.dfs(ipstr[i:],tempstr+ipstr[0:i]+".",coms)
+
+k=solutions1()
+print k.ipadd("11223344")
+
+
+
+
+>>>>>>> d3685ee5740768bdfb35d6216b9b63f7d7664960
 
 
