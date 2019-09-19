@@ -1,30 +1,19 @@
-teststr="11223344"
-def bfslist(ipstr,n):
-    if ipstr=="" or  n>len(ipstr):
-        return None
-    list1=[]
-    list2=[]
-    for i in range(3):
-        if i<len(ipstr[n:]) and ipstr[n]!="0" and int(ipstr[n:n+i+1])<256:
-            list1.append(ipstr[0:n]+"."+ipstr[n:n+i+1])
-            list2.append(ipstr[n+i+1:])
-    return list1,list2
-
-l1=bfslist(teststr,1)
-l2=bfslist(teststr,2)
-l3=bfslist(teststr,3)
-
-for i in range(len(l1[1])):
-    ll1=bfslist(l1[1][i],1)
-    ll2= bfslist(l1[1][i], 2)
-    ll3= bfslist(l1[1][i], 3)
-    for j in ll1[1]:
-        print l1[0][i]+"."+j
-    for j in ll2[1]:
-        print ll2[0][i]+"."+j
-    for j in ll3[1]:
-        print ll3[0][i]+"."+j
-
-
+class Solution:
+    def luckyNumber(self, n):
+        len1 = len(n)
+        if len1 % 2 == 1:
+            return "3" * (len1 / 2 + 1) + "5" * (len1 / 2 + 1)
+        else:
+            k = len1 / 2
+            if int(n) <= int("3" * k + "5" * k):
+                return "3" * k + "5" * k
+            elif int(n) > int("5" * k + "3" * k):
+                return "3" * (k + 1) + "5" * (k + 1)
+            elif n[0] == "4" or (int(n)>):
+                return "5" + "3" * k + "5" * (k - 1)
+            else:
+            if n[0] == "3":
+                for i in len(n):
+                    if n[i] > 3:
 
 
