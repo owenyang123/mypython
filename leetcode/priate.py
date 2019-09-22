@@ -13,4 +13,4 @@ def coin(n,m):
             sum+=coin(i,m-n)
         return sum
 
-print coin(3,10)
+print coin(4,15)
