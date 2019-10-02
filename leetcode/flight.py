@@ -1,7 +1,6 @@
 class Solution:
 
     def findCheapestPrice(self, n, flights, src, dst, K):
-        # write your code here
         distance = [sys.maxsize for i in range(n)]
         distance[src] = 0
 
@@ -10,7 +9,7 @@ class Solution:
             for u, v, c in flights:
                 dN[v] = min(dN[v], distance[u] + c)
             distance = dN
-            print distance
+            print dN
 
         if distance[dst] != sys.maxsize:
             return distance[dst]

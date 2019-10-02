@@ -1,4 +1,4 @@
-l=[5,4,3,6,7.99,18,100,101,102,103,104,11,12,13,1000]
+l=[5,4,3,6,7.99,18,100,101,102,103,1040000,11,12,13,1000]
 def bubble(arr):
     def swap(i,j):
         arr[i],arr[j]=arr[j],arr[i]
@@ -12,5 +12,7 @@ def bubble(arr):
             if arr[i-1]>arr[i]:
                 swap(i-1,i)
                 swapped=True
+    print x
     return arr
 
+print bubble(l)
