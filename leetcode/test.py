@@ -1,19 +1,19 @@
-class Solution:
-    def luckyNumber(self, n):
-        len1 = len(n)
-        if len1 % 2 == 1:
-            return "3" * (len1 / 2 + 1) + "5" * (len1 / 2 + 1)
-        else:
-            k = len1 / 2
-            if int(n) <= int("3" * k + "5" * k):
-                return "3" * k + "5" * k
-            elif int(n) > int("5" * k + "3" * k):
-                return "3" * (k + 1) + "5" * (k + 1)
-            elif n[0] == "4" or (int(n)>):
-                return "5" + "3" * k + "5" * (k - 1)
-            else:
-            if n[0] == "3":
-                for i in len(n):
-                    if n[i] > 3:
+def power123(a,b):
+    if a==1:
+        return 1
+    if b==0:
+        return 1
+    if b==1:
+        return a
+    if b<0:
+        return 1.0000/float(power123(a,-b))
+    if b%2==0:
+        return power123(a,b/2)*power123(a,b/2)
+    else:
+        return power123(a, b / 2) * power123(a, b / 2)*a
 
+print power123(3,-15)
+
+
+print "1213132".join("asde")
 
