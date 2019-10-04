@@ -8,8 +8,8 @@ with open("bgp summary", 'r') as f:
             sum=sum+1
 print sum
 
-str = "The SraiSn in Spain123 456"
-x = re.search(r"\bS\w+", str)
-print x
-print x.group()
-print(x.span())
+
+
+
+s=[]
+print s[-1]
