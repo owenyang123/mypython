@@ -10,6 +10,3 @@ print sum
 
 
 
-
-s=[]
-print s[-1]

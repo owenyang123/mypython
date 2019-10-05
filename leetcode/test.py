@@ -17,3 +17,8 @@ print power123(3,-15)
 
 print "1213132".join("asde")
 
+
+for i in range(5):
+    if i==3:
+        continue
+    print i
