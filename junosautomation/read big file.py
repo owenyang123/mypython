@@ -10,3 +10,6 @@ print sum
 
 
 
+edges = {i:[] for i in range(7)}
+
+print edges
