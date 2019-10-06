@@ -1,5 +1,26 @@
 class Solution:
     def searchMatrix(self, matrix, target):
+        if matrix == [] or matrix == [[]]:
+            return False
+        len1 = len(matrix)
+        len2 = len(matrix[0])
+        start, end = 0, len1 - 1
+        while (start + 1 < end):
+            mid = start + ((end - start) / 2)
+            if matrix[mid][0] == target or matrix[mid][-1] == target:
+                return True
+            if matrix[mid][len2 - 1] < target:
+                start = mid
+            else:
+                end = mid
+
+        if target in matrix[start] or target in matrix[end]:
+            return True
+        return False
+
+
+class Solution:
+    def searchMatrix(self, matrix, target):
         if matrix==[] or matrix==[[]]:
             return False
         len1=len(matrix)
