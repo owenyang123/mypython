@@ -16,3 +16,7 @@ def bubble(arr):
     return arr
 
 print bubble(l)
+
+s="A"
+
+print s.islower()
