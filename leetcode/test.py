@@ -15,10 +15,14 @@ def power123(a,b):
 print power123(3,-15)
 
 
-print "1213132".join("asde")
+print ".".join("asde")
 
 
 for i in range(5):
     if i==3:
         continue
     print i
+l1=[1,2,3,4,5,6,7,8,9,0]
+
+print l1[1:9:2]
+
