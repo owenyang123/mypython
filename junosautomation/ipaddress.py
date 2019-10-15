@@ -1,9 +1,3 @@
-
-
-
-
-
-
 class Solution:
     def allipaddress(self, ipstr):
         list1=[]
