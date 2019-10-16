@@ -1,4 +1,5 @@
 import re
+
 filename=raw_input("please input file name :")
 if filename=="":
     print "please input the correct file name with path"

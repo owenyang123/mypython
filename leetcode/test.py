@@ -1,3 +1,17 @@
+import pyodbc
+conn = pyodbc.connect('Driver={SQL Server Native Client 11.0};'
+                      'Server=DESKTOP-MIB48GA\oweny;'
+                      'Database=MSSQLSERVER;'
+                      "username = sa;"                   
+                       "password = 222121wj;"
+                      'Trusted_Connection=yes;')
+
+cursor = conn.cursor()
+cursor.execute('SELECT * FROM MSSQLSERVER.Table')
+
+for row in cursor:
+    print(row)
+
 def power123(a,b):
     if a==1:
         return 1
@@ -11,18 +25,4 @@ def power123(a,b):
         return power123(a,b/2)*power123(a,b/2)
     else:
         return power123(a, b / 2) * power123(a, b / 2)*a
-
-print power123(3,-15)
-
-
-print ".".join("asde")
-
-
-for i in range(5):
-    if i==3:
-        continue
-    print i
-l1=[1,2,3,4,5,6,7,8,9,0]
-
-print l1[1:9:2]
 
