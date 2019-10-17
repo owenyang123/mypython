@@ -1,7 +1,7 @@
 import sys
 import os
 import re
-
+import collections
 
 def router_name(file):
     routerlist={}
@@ -25,3 +25,6 @@ if __name__ == "__main__":
                     print i,j[-1].strip("/n")
     else:
         print "please check the file path or the file does not exist "
+
+words = re.findall(r'\w+', open('ospfdb').read().lower())
+print collections.Counter(words).most_common(20)
