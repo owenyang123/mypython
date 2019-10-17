@@ -1,0 +1,877 @@
+t changed 4d 04:22:59 ago, Change count: 52
+OpaqArea 1.0.0.3          192.168.0.224    0x8000040d  1423  0x22 0xa090 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.93
+    LocIfAdr (3), length 4:
+      10.192.3.157
+    RemIfAdr (4), length 4:
+      10.192.3.158
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 100Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 100Gbps
+        Priority 4, 100Gbps
+        Priority 5, 100Gbps
+        Priority 6, 100Gbps
+        Priority 7, 100Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 330, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:36:16
+  Installed 00:23:34 ago, expires in 00:36:17, sent 00:23:32 ago
+  Last changed 4d 04:20:19 ago, Change count: 12
+OpaqArea 1.0.0.4          192.168.0.6      0x80000299  1884  0x22 0x7c0d 136
+  Area-opaque TE LSA
+  Link (2), length 112:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.7
+    LocIfAdr (3), length 4:
+      10.192.3.1
+    RemIfAdr (4), length 4:
+      10.192.3.2
+    TEMetric (5), length 4:
+      50
+    MaxBW (6), length 4:
+      10Gbps
+    MaxRsvBW (7), length 4:
+      10Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 10Gbps
+        Priority 1, 9.996Gbps
+        Priority 2, 9.996Gbps
+        Priority 3, 9.996Gbps
+        Priority 4, 9.996Gbps
+        Priority 5, 9.996Gbps
+        Priority 6, 9.996Gbps
+        Priority 7, 9.996Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 3442, Remote 0
+    Color (9), length 4:
+      0
+  Aging timer 00:28:35
+  Installed 00:31:20 ago, expires in 00:28:36, sent 00:31:18 ago
+  Last changed 3w1d 22:57:11 ago, Change count: 2
+OpaqArea 1.0.0.4          192.168.0.7      0x800011d5   736  0x22 0x18fc 136
+  Area-opaque TE LSA
+  Link (2), length 112:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.90
+    LocIfAdr (3), length 4:
+      10.192.3.78
+    RemIfAdr (4), length 4:
+      10.192.3.77
+    TEMetric (5), length 4:
+      12000
+    MaxBW (6), length 4:
+      20Gbps
+    MaxRsvBW (7), length 4:
+      20Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 20Gbps
+        Priority 1, 19.998Gbps
+        Priority 2, 19.998Gbps
+        Priority 3, 19.998Gbps
+        Priority 4, 19.998Gbps
+        Priority 5, 19.998Gbps
+        Priority 6, 19.998Gbps
+        Priority 7, 19.998Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 366, Remote 0
+    Color (9), length 4:
+      0
+  Aging timer 00:47:43
+  Installed 00:12:13 ago, expires in 00:47:44, sent 00:12:11 ago
+  Last changed 3w1d 20:54:16 ago, Change count: 16
+OpaqArea 1.0.0.4          192.168.0.77     0x80000295  1871  0x22 0x5726 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.91
+    LocIfAdr (3), length 4:
+      10.192.3.85
+    RemIfAdr (4), length 4:
+      10.192.3.86
+    TEMetric (5), length 4:
+      8000
+    MaxBW (6), length 4:
+      10Gbps
+    MaxRsvBW (7), length 4:
+      10Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 9.996Gbps
+        Priority 1, 8.7Gbps
+        Priority 2, 8.7Gbps
+        Priority 3, 9.99599Gbps
+        Priority 4, 9.99599Gbps
+        Priority 5, 9.99599Gbps
+        Priority 6, 9.99599Gbps
+        Priority 7, 9.99599Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 325, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 10Gbps
+        BC1, 8.7Gbps
+        BC2, 3.7Gbps
+        BC3, 3.6Gbps
+        BC4, 3.1Gbps
+        BC5, 2.1Gbps
+        BC6, 1.1Gbps
+        BC7, 100Mbps
+    Color (9), length 4:
+      64
+  Aging timer 00:28:48
+  Installed 00:31:04 ago, expires in 00:28:49, sent 00:31:02 ago
+  Last changed 3w1d 20:51:08 ago, Change count: 2
+OpaqArea*1.0.0.4          192.168.0.90     0x80000792   608  0x22 0x6122 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.94
+    LocIfAdr (3), length 4:
+      10.192.3.89
+    RemIfAdr (4), length 4:
+      10.192.3.90
+    TEMetric (5), length 4:
+      1
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.998Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 99.998Gbps
+        Priority 4, 99.998Gbps
+        Priority 5, 99.998Gbps
+        Priority 6, 99.998Gbps
+        Priority 7, 99.998Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 325, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      64
+  Gen timer 00:39:51
+  Aging timer 00:49:51
+  Installed 00:10:08 ago, expires in 00:49:52, sent 00:10:06 ago
+  Last changed 5d 02:57:17 ago, Change count: 70, Ours, TE Link ID: 2147483650
+OpaqArea 1.0.0.4          192.168.0.91     0x80000297  1627  0x22 0x7d19 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.77
+    LocIfAdr (3), length 4:
+      10.192.3.86
+    RemIfAdr (4), length 4:
+      10.192.3.85
+    TEMetric (5), length 4:
+      8001
+    MaxBW (6), length 4:
+      10Gbps
+    MaxRsvBW (7), length 4:
+      10Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 9.996Gbps
+        Priority 1, 8.7Gbps
+        Priority 2, 8.7Gbps
+        Priority 3, 9.996Gbps
+        Priority 4, 9.996Gbps
+        Priority 5, 9.99599Gbps
+        Priority 6, 9.99599Gbps
+        Priority 7, 9.99599Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 1827, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 10Gbps
+        BC1, 8.7Gbps
+        BC2, 3.7Gbps
+        BC3, 3.6Gbps
+        BC4, 3.1Gbps
+        BC5, 2.1Gbps
+        BC6, 1.1Gbps
+        BC7, 100Mbps
+    Color (9), length 4:
+      32
+  Aging timer 00:32:52
+  Installed 00:27:01 ago, expires in 00:32:53, sent 00:26:59 ago
+  Last changed 3w1d 21:28:36 ago, Change count: 2
+OpaqArea 1.0.0.4          192.168.0.92     0x80000376   863  0x22 0xe340 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.93
+    LocIfAdr (3), length 4:
+      10.192.3.165
+    RemIfAdr (4), length 4:
+      10.192.3.166
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.994Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 99.994Gbps
+        Priority 4, 99.994Gbps
+        Priority 5, 99.994Gbps
+        Priority 6, 99.994Gbps
+        Priority 7, 99.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 2921, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:45:36
+  Installed 00:14:17 ago, expires in 00:45:37, sent 00:14:15 ago
+  Last changed 4w2d 15:54:00 ago, Change count: 2
+OpaqArea 1.0.0.4          192.168.0.93     0x80000376  2364  0x22 0x1eb1 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.224
+    LocIfAdr (3), length 4:
+      10.192.3.158
+    RemIfAdr (4), length 4:
+      10.192.3.157
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 100Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 100Gbps
+        Priority 4, 100Gbps
+        Priority 5, 100Gbps
+        Priority 6, 100Gbps
+        Priority 7, 100Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 327, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:20:35
+  Installed 00:39:18 ago, expires in 00:20:36, sent 00:39:16 ago
+  Last changed 5d 00:36:06 ago, Change count: 5
+OpaqArea 1.0.0.4          192.168.0.94     0x8000091e  2769  0x22 0xa60c 160
+  Area-opaque TE LSA
+  Link (2), length 136:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.222
+    LocIfAdr (3), length 4:
+      10.192.3.153
+    RemIfAdr (4), length 4:
+      10.192.3.154
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      20Gbps
+    MaxRsvBW (7), length 4:
+      20Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 20Gbps
+        Priority 1, 1000Mbps
+        Priority 2, 1000Mbps
+        Priority 3, 20Gbps
+        Priority 4, 20Gbps
+        Priority 5, 20Gbps
+        Priority 6, 20Gbps
+        Priority 7, 20Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 327, Remote 0
+    BwConstraints (17), length 20:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 20Gbps
+        BC1, 1000Mbps
+        BC2, 1000Mbps
+        BC3, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:13:50
+  Installed 00:46:06 ago, expires in 00:13:51, sent 00:46:04 ago
+  Last changed 5d 02:26:23 ago, Change count: 5
+OpaqArea 1.0.0.4          192.168.0.211    0x800003ab  1167  0x22 0xdc6a 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.222
+    LocIfAdr (3), length 4:
+      10.192.3.30
+    RemIfAdr (4), length 4:
+      10.192.3.29
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      30Gbps
+    MaxRsvBW (7), length 4:
+      30Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 30Gbps
+        Priority 1, 26.1Gbps
+        Priority 2, 26.1Gbps
+        Priority 3, 30Gbps
+        Priority 4, 30Gbps
+        Priority 5, 30Gbps
+        Priority 6, 30Gbps
+        Priority 7, 30Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 324, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 30Gbps
+        BC1, 26.1Gbps
+        BC2, 11.1Gbps
+        BC3, 10.8Gbps
+        BC4, 9.3Gbps
+        BC5, 6.3Gbps
+        BC6, 3.3Gbps
+        BC7, 300Mbps
+    Color (9), length 4:
+      32
+  Aging timer 00:40:32
+  Installed 00:19:18 ago, expires in 00:40:33, sent 00:19:16 ago
+  Last changed 4d 04:19:25 ago, Change count: 7
+OpaqArea 1.0.0.4          192.168.0.214    0x80000377   161  0x22 0xf184 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.93
+    LocIfAdr (3), length 4:
+      10.192.3.181
+    RemIfAdr (4), length 4:
+      10.192.3.182
+    TEMetric (5), length 4:
+      22000
+    MaxBW (6), length 4:
+      20Gbps
+    MaxRsvBW (7), length 4:
+      20Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 20Gbps
+        Priority 1, 17.4Gbps
+        Priority 2, 17.4Gbps
+        Priority 3, 20Gbps
+        Priority 4, 20Gbps
+        Priority 5, 20Gbps
+        Priority 6, 20Gbps
+        Priority 7, 20Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 1834, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 20Gbps
+        BC1, 17.4Gbps
+        BC2, 7.4Gbps
+        BC3, 7.2Gbps
+        BC4, 6.2Gbps
+        BC5, 4.2Gbps
+        BC6, 2.2Gbps
+        BC7, 200Mbps
+    Color (9), length 4:
+      32
+  Aging timer 00:57:18
+  Installed 00:02:32 ago, expires in 00:57:19, sent 00:02:30 ago
+  Last changed 4w2d 16:39:12 ago, Change count: 2
+OpaqArea 1.0.0.4          192.168.0.222    0x800003b5   781  0x22 0x2604 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.211
+    LocIfAdr (3), length 4:
+      10.192.3.29
+    RemIfAdr (4), length 4:
+      10.192.3.30
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      30Gbps
+    MaxRsvBW (7), length 4:
+      30Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 30Gbps
+        Priority 1, 26.1Gbps
+        Priority 2, 26.1Gbps
+        Priority 3, 30Gbps
+        Priority 4, 30Gbps
+        Priority 5, 30Gbps
+        Priority 6, 30Gbps
+        Priority 7, 30Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 1844, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 30Gbps
+        BC1, 26.1Gbps
+        BC2, 11.1Gbps
+        BC3, 10.8Gbps
+        BC4, 9.3Gbps
+        BC5, 6.3Gbps
+        BC6, 3.3Gbps
+        BC7, 300Mbps
+    Color (9), length 4:
+      64
+  Aging timer 00:46:58
+  Installed 00:12:55 ago, expires in 00:46:59, sent 00:12:53 ago
+  Last changed 5d 00:54:50 ago, Change count: 31
+OpaqArea 1.0.0.5          192.168.0.91     0x80000297  1495  0x22 0xab1a 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.92
+    LocIfAdr (3), length 4:
+      10.192.3.161
+    RemIfAdr (4), length 4:
+      10.192.3.162
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      300Gbps
+    MaxRsvBW (7), length 4:
+      300Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 299.994Gbps
+        Priority 1, 261Gbps
+        Priority 2, 261Gbps
+        Priority 3, 299.994Gbps
+        Priority 4, 299.994Gbps
+        Priority 5, 299.994Gbps
+        Priority 6, 299.994Gbps
+        Priority 7, 299.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 1829, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 300Gbps
+        BC1, 261Gbps
+        BC2, 111Gbps
+        BC3, 108Gbps
+        BC4, 93Gbps
+        BC5, 63Gbps
+        BC6, 33Gbps
+        BC7, 3Gbps
+    Color (9), length 4:
+      16
+  Aging timer 00:35:04
+  Installed 00:24:49 ago, expires in 00:35:05, sent 00:24:47 ago
+  Last changed 3w1d 21:27:08 ago, Change count: 3
+OpaqArea 1.0.0.5          192.168.0.92     0x80000295  2063  0x22 0xdf9e 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.91
+    LocIfAdr (3), length 4:
+      10.192.3.162
+    RemIfAdr (4), length 4:
+      10.192.3.161
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      300Gbps
+    MaxRsvBW (7), length 4:
+      300Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 299.994Gbps
+        Priority 1, 261Gbps
+        Priority 2, 261Gbps
+        Priority 3, 299.994Gbps
+        Priority 4, 299.994Gbps
+        Priority 5, 299.994Gbps
+        Priority 6, 299.994Gbps
+        Priority 7, 299.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 2922, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 300Gbps
+        BC1, 261Gbps
+        BC2, 111Gbps
+        BC3, 108Gbps
+        BC4, 93Gbps
+        BC5, 63Gbps
+        BC6, 33Gbps
+        BC7, 3Gbps
+    Color (9), length 4:
+      16
+  Aging timer 00:25:36
+  Installed 00:34:15 ago, expires in 00:25:37, sent 00:34:13 ago
+  Last changed 3w1d 20:53:53 ago, Change count: 3
+OpaqArea 1.0.0.5          192.168.0.93     0x80000376   367  0x22 0xa0b0 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.92
+    LocIfAdr (3), length 4:
+      10.192.3.166
+    RemIfAdr (4), length 4:
+      10.192.3.165
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.994Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 99.994Gbps
+        Priority 4, 99.994Gbps
+        Priority 5, 99.994Gbps
+        Priority 6, 99.994Gbps
+        Priority 7, 99.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 325, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:53:53
+  Installed 00:06:01 ago, expires in 00:53:53, sent 00:05:59 ago
+  Last changed 3w1d 20:48:51 ago, Change count: 4
+OpaqArea 1.0.0.5          192.168.0.94     0x80000375  1770  0x22 0x19ce 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.93
+    LocIfAdr (3), length 4:
+      10.192.3.97
+    RemIfAdr (4), length 4:
+      10.192.3.98
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.994Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 99.994Gbps
+        Priority 4, 99.994Gbps
+        Priority 5, 99.994Gbps
+        Priority 6, 99.994Gbps
+        Priority 7, 99.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 326, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      0
+  Aging timer 00:30:30
+  Installed 00:29:27 ago, expires in 00:30:30, sent 00:29:25 ago
+  Last changed 5d 00:29:48 ago, Change count: 4
+OpaqArea 1.0.0.5          192.168.0.222    0x800003ae   182  0x22 0xe60b 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.213
+    LocIfAdr (3), length 4:
+      10.192.3.45
+    RemIfAdr (4), length 4:
+      10.192.3.46
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      10Gbps
+    MaxRsvBW (7), length 4:
+      10Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 10Gbps
+        Priority 1, 8.7Gbps
+        Priority 2, 8.7Gbps
+        Priority 3, 10Gbps
+        Priority 4, 10Gbps
+        Priority 5, 9.99999Gbps
+        Priority 6, 9.99999Gbps
+        Priority 7, 9.99999Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 1833, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 10Gbps
+        BC1, 8.7Gbps
+        BC2, 3.7Gbps
+        BC3, 3.6Gbps
+        BC4, 3.1Gbps
+        BC5, 2.1Gbps
+        BC6, 1.1Gbps
+        BC7, 100Mbps
+    Color (9), length 4:
+      64
+  Aging timer 00:56:58
+  Installed 00:02:56 ago, expires in 00:56:58, sent 00:02:54 ago
+  Last changed 5d 02:23:01 ago, Change count: 3
+OpaqArea 1.0.0.5          192.168.0.224    0x80000419   825  0x22 0x9098 176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.226
+    LocIfAdr (3), length 4:
+      10.192.3.53
+    RemIfAdr (4), length 4:
+      10.192.3.54
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      10Gbps
+    MaxRsvBW (7), length 4:
+      10Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 10Gbps
+        Priority 1, 8.7Gbps
+        Priority 2, 8.7Gbps
+        Priority 3, 10Gbps
+        Priority 4, 10Gbps
+        Priority 5, 10Gbps
+        Priority 6, 10Gbps
+        Priority 7, 10Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 328, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 10Gbps
+        BC1, 8.7Gbps
+        BC2, 3.7Gbps
+        BC3, 3.6Gbps
+        BC4, 3.1Gbps
+        BC5, 2.1Gbps
+        BC6, 1.1Gbps
+        BC7, 100Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:46:15
+  Installed 00:13:37 ago, expires in 00:46:15, sent 00:13:35 ago
+  Last changed 5d 01:25:16 ago, Change count: 1
+OpaqArea 1.0.0.6          192.168.0.93     0x80000375  1866  0x22 0xdc9  176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.94
+    LocIfAdr (3), length 4:
+      10.192.3.98
+    RemIfAdr (4), length 4:
+      10.192.3.97
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.994Gbps
+        Priority 1, 87Gbps
+        Priority 2, 87Gbps
+        Priority 3, 99.994Gbps
+        Priority 4, 99.994Gbps
+        Priority 5, 99.994Gbps
+        Priority 6, 99.994Gbps
+        Priority 7, 99.994Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 326, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 87Gbps
+        BC2, 37Gbps
+        BC3, 36Gbps
+        BC4, 31Gbps
+        BC5, 21Gbps
+        BC6, 11Gbps
+        BC7, 1000Mbps
+    Color (9), length 4:
+      16
+  Aging timer 00:28:54
+  Installed 00:31:00 ago, expires in 00:28:54, sent 00:30:58 ago
+  Last changed 4d 04:28:21 ago, Change count: 6
+OpaqArea 1.0.0.6          192.168.0.94     0x80000295  2270  0x22 0xcead 160
+  Area-opaque TE LSA
+  Link (2), length 136:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.91
+    LocIfAdr (3), length 4:
+      10.192.3.93
+    RemIfAdr (4), length 4:
+      10.192.3.94
+    TEMetric (5), length 4:
+      100
+    MaxBW (6), length 4:
+      100Gbps
+    MaxRsvBW (7), length 4:
+      100Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 99.99Gbps
+        Priority 1, 5Gbps
+        Priority 2, 5Gbps
+        Priority 3, 99.99Gbps
+        Priority 4, 99.99Gbps
+        Priority 5, 99.99Gbps
+        Priority 6, 99.99Gbps
+        Priority 7, 99.99Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 325, Remote 0
+    BwConstraints (17), length 20:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 100Gbps
+        BC1, 5Gbps
+        BC2, 5Gbps
+        BC3, 5Gbps
+    Color (9), length 4:
+      16
+  Aging timer 00:22:10
+  Installed 00:37:47 ago, expires in 00:22:10, sent 00:37:45 ago
+  Last changed 3w1d 20:51:12 ago, Change count: 3
+OpaqArea 1.0.0.7          192.168.0.224    0x8000007a  2625  0x22 0xb0d  176
+  Area-opaque TE LSA
+  Link (2), length 152:
+    Linktype (1), length 1:
+      1
+    LinkID (2), length 4:
+      192.168.0.211
+    LocIfAdr (3), length 4:
+      10.192.3.25
+    RemIfAdr (4), length 4:
+      10.192.3.26
+    TEMetric (5), length 4:
+      10000
+    MaxBW (6), length 4:
+      20Gbps
+    MaxRsvBW (7), length 4:
+      20Gbps
+    UnRsvBW (8), length 32:
+        Priority 0, 20Gbps
+        Priority 1, 17.4Gbps
+        Priority 2, 17.4Gbps
+        Priority 3, 20Gbps
+        Priority 4, 20Gbps
+        Priority 5, 20Gbps
+        Priority 6, 20Gbps
+        Priority 7, 20Gbps
+    LinkLocalRemoteIdentifier (11), length 8:
+      Local 325, Remote 0
+    BwConstraints (17), length 36:
+        Differv-TE bandwidth model: Russian dolls model
+        BC0, 20Gbps
+        BC1, 17.4Gbps
+        BC2, 7.4Gbps
+        BC3, 7.2Gbps
+        BC4, 6.2Gbps
+        BC5, 4.2Gbps
+        BC6, 2.2Gbps
+        BC7, 200Mbps
+    Color (9), length 4:
+      64
+  Aging timer 00:16:15
+  Installed 00:43:36 ago, expires in 00:16:15, sent 00:43:34 ago
+  Last changed 4d 04:40:20 ago, Change count: 2

@@ -23,4 +23,4 @@ def walker(filepath,filetype):
                 print t
 
 
-walker("D:/Python27/mypython2018/mypython","py")
+walker("D:/","pdf")

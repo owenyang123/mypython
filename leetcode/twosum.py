@@ -60,7 +60,7 @@ class Solution:
         j=len(nums)-1
         nums.sort()
         l=[]
-        while (i<j):
+        while (i<j-1):
             if nums[i]+nums[j]==target:
                 if [nums[i],nums[j]] not in l:
                     l.append([nums[i],nums[j]])
