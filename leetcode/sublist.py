@@ -9,28 +9,24 @@ class Solution:
         B=len(A)
         C=sum(A)
         combinations = []
-        if C%2==0:
-            self.dfs(A, 0, [], combinations, B,C)
-        else:
-            return []
+        self.dfs(A, 0, [], combinations, B,C)
         n = 0
         return combinations
 
     def dfs(self, nums, index, combination, combinations, B,C):
-        if len(combination) <= B and sum(combination)==C/2:
+        if len(combination) ==B/2:
             combinations.append(list(combination))
-
 
         for i in range(index, len(nums)):
             combination.append(nums[i])
             self.dfs(nums, i +1, combination, combinations, B,C)
             combination.pop()
 
-testlist=[ 1,2,3,4,5,7 ]
+testlist=[1,2]
 
 k=Solution()
 x=k.solve(testlist)
-print x,len(x)
+print x
 
 
 
