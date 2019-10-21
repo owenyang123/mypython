@@ -9,7 +9,7 @@ class Solution:
             return 0
         i,j=0,len(A)-1
         while (i<j):
-   
+
             if A[j]-A[i]==B:
                 return 1
             if A[j]-A[i]>B and i==j-1:
