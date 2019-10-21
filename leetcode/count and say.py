@@ -43,4 +43,4 @@ class Solution:
             str123=str123+str(i[0])+str(i[1])
         return str123
 k=Solution()
-print k.countAndSay(5)
+print k.countAndSay(24)
