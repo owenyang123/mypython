@@ -19,5 +19,5 @@ class Solution:
                 str123 += l[i]
         return str123
 k=Solution()
-print k.solve("l np dtejcxftenksppymy scbdql xdnzwj l gellcrpyhwqxwlrthbrjqochekqqtf cmc pf lnzu")
+print k.solve("i am working for juniper networks as JTAC                 engineer                ")
 
