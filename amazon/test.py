@@ -1,25 +1,15 @@
-import sys
-class Solution:
-    def maxset(self, A):
-        n=len(A)
-        if n==1:
-            return A[0]
-        min_prefix_sum=0
-        max_sum=-sys.maxsize
-        prefix_sum=0
-        l=[]
-        for num in A:
-            prefix_sum+=num
-            if max_sum<(prefix_sum-min_prefix_sum):
-                l.append(num)
-            max_sum=max(max_sum,prefix_sum-min_prefix_sum)
-            min_prefix_sum=min(min_prefix_sum,prefix_sum)
-        if sum(l)<0:
-            return []
-        else:
-            return l
+import collections
+def bfs(graph, root):
+    visited, queue = set(), collections.deque([root])
+    visited.add(root)
 
-k=Solution()
-print k.maxset([ -1, -1, -1, -1, -1 ])
-
-kk
+    while queue:
+        vertex = queue.popleft()
+        for neighbour in graph[vertex]:
+            if neighbour not in visited:
+                visited.add(neighbour)
+                queue.append(neighbour)
+    print visited
+if __name__ == '__main__':
+    graph = {0: [1, 2], 1: [2], 2: [3], 3: [1,2]}
+    bfs(graph, 0)

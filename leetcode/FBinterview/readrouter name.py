@@ -29,3 +29,4 @@ if __name__ == "__main__":
 
 words = re.findall(r'\w+', open('ospfdb').read().lower())
 print collections.Counter(words).most_common(20)
+
