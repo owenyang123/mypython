@@ -26,3 +26,6 @@ print prime(73)
 print listprimes(101)
 
 print  os.path.exists("D:/Python27/mypython2018/mypython/leetcode/findprime1.py")
+
+B = [[0] * 5]* 6
+print B

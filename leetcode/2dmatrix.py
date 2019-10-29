@@ -19,4 +19,20 @@ class Solution:
         return l
 
 k=Solution()
-print k.prettyPrint(10)
+print k.prettyPrint(5)
+
+
+class Solution1:
+    # @param A : list of list of integers
+    # @return the same list modified
+    def rotate(self, A):
+        rows,clos=len(A),len(A[0])
+        B=[[0 for x in range(rows)] for y in range(clos)]
+        for i in range(clos):
+            for j in range(rows):
+                B[i][j]=A[rows-1-j][i]
+        return B
+
+
+k1=Solution1()
+print k1.rotate([[1, 2],[3, 4],[5,6]])
