@@ -1,19 +1,24 @@
-def helper(data,k,memo):
-    if k==0:
+def helper(instring,strlen):
+    if strlen==0 or strlen==1:
         return 1
-    s=len(data)-k
-    if data[s]=="0" :
-        return 0
-    if memo[k]!=None:
-        return memo[k]
-    result=helper(data,k-1,memo)
-    if k>=2 and int(data[s:s+2])<=26:
-        result += helper(data, k - 2,memo)
+    if strlen==2 and int(instring)<27:
+        return 2
+    s=len(instring)-strlen
+    result=helper(instring[s+1:],strlen-1)
+    if strlen>2 and int(instring[s:s+2])<27 :
+        result+=helper(instring,strlen-2)
     return result
 
-def numways(data):
-    memo=[None]*(len(data)+1)
-    return helper(data,len(data),memo)
+def decodeways(instring):
+    if not instring:return 0
+    if len(instring)==1:return 1
+    if instring[0]=="0":
+        return decodeways(instring[1:])
+    str123=instring[0]
+    for i in range(1,len(instring)):
+        if instring[i]=="0" and instring[i-1]=="0":
+            continue
+        str123+=instring[i]
+    return helper(str123,len(str123))
 
-
-print numways("123423000100")
+print decodeways("001021")
