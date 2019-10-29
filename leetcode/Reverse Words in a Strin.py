@@ -16,6 +16,10 @@ class Solution:
         return result
 
 
-x="This won iz correkt. It has, No Mistakes et Oll. But there are two BIG mistakes in this sentence. and here is one more."
+x="This won iz correkt. It has, No Mistakes et Oll. But there are two BIG mistakes in this sentence. and here is one      more."
 k=Solution()
 print k.reverseWords(x)
+
+
+
+print str(bin(100))[2:]
