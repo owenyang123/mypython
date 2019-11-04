@@ -7,22 +7,21 @@ class Solution:
         if not A:
             return 0
         B=len(A)
-        C=sum(A)
         combinations = []
-        self.dfs(A, 0, [], combinations, B,C)
+        self.dfs(A, 0, [], combinations, B)
         n = 0
         return combinations
 
-    def dfs(self, nums, index, combination, combinations, B,C):
-        if len(combination) ==B/2:
+    def dfs(self, nums, index, combination, combinations, B):
+        if 1 :
             combinations.append(list(combination))
 
         for i in range(index, len(nums)):
             combination.append(nums[i])
-            self.dfs(nums, i +1, combination, combinations, B,C)
+            self.dfs(nums, i +1, combination, combinations, B)
             combination.pop()
 
-testlist=[1,2]
+testlist=[1,2,3,4,5]
 
 k=Solution()
 x=k.solve(testlist)

@@ -21,4 +21,4 @@ def decodeways(instring):
         str123+=instring[i]
     return helper(str123,len(str123))
 
-print decodeways("001021")
+print  decodeways("111111111111111111111111111111111111111111111111111111111111")
