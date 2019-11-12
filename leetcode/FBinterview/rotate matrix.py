@@ -8,3 +8,16 @@ class Solution:
             for j in range(rows):
                 B[i][j]=A[rows-1-j][i]
         return B
+
+def maxfactor(a,b):
+    if a <= 0 or b <= 0:
+        return None
+    if a>b :
+        return maxfactor(b,a)
+    if b%a==0:
+        return a
+    else:
+        return maxfactor(b%a, a)
+
+alst=[1,2,3,4,5,6]
+print list(filter(lambda  x:x%2==1,alst))
