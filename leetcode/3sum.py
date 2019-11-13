@@ -27,13 +27,13 @@ class Solution:
     @return: Find all unique triplets in the array which gives the sum of zero.
     """
 
-    def threeSum(self, numbers):
+    def threeSum(self, numbers,target):
         if len(numbers) < 3:
             return []
         numbers.sort()
         l = []
         for i in range(len(numbers) - 2):
-            self.twoSum6(numbers[i + 1:], 0 - numbers[i], l, numbers[i])
+            self.twoSum6(numbers[i + 1:], target- numbers[i], l, numbers[i])
 
         return l
 
@@ -55,6 +55,6 @@ class Solution:
         return len(l)
 
 k=Solution()
-print k.threeSum([-1,0,1,2,-1,-4])
+print k.threeSum([-1,0,1,2,-1,-4],5)
 
 

@@ -35,4 +35,4 @@ class Solution1:
 
 
 k1=Solution1()
-print k1.rotate([[1, 2],[3, 4],[5,6]])
+print k1.rotate([[1,2,7],[3, 4,8],[5,6,9]])
