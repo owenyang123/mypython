@@ -20,4 +20,3 @@ for i in range(1,len(l)):
 
 print "max value is "+str(max(l))
 
-os.makedirs("12321312312")
