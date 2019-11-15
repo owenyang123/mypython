@@ -1,8 +1,8 @@
 class Solution:
     def countAndSay(self, n):
-        if n==0:
-            return "1"
         if n==1:
+            return "1"
+        if n==2:
             return "11"
         for i in range(2,n+1):
             l=self.numbercount(self.countAndSay(i-1))
@@ -43,4 +43,4 @@ class Solution:
             str123=str123+str(i[0])+str(i[1])
         return str123
 k=Solution()
-print k.countAndSay(5)
+print k.countAndSay(23)

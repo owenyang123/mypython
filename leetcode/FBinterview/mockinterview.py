@@ -24,7 +24,6 @@ def worklist(wordlist):
         if temp_str in dict_list.keys():
             dict_list[temp_str].append(i)
         else:
-            print 2,i
             dict_list[temp_str]=[i]
     list_all=[]
     for i in dict_list.keys():
