@@ -17,3 +17,6 @@ for row in cur.fetchall():
     print row[0]
 
 db.close()
+
+
+print
