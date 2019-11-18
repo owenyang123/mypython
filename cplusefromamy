@@ -1,0 +1,184 @@
+Given a set of distinct integers, nums, return all possible subsets (the power set).
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, int s, vector<int>& nums){
+        res.push_back(tmp);
+        for(int i = s; i < nums.size(); i++){
+            tmp.push_back(nums[i]);
+            helper(res, tmp, i + 1, nums);
+            tmp.pop_back();
+        }
+}
+
+Subsets 2
+Given a collection of integers that might contain duplicates, nums, return all possible subsets (the power set).
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, int s, vector<int>& nums){
+        res.push_back(tmp);
+        for(int i = s; i < nums.size(); i++){
+            tmp.push_back(nums[i]);
+            helper(res, tmp, i + 1, nums);
+            tmp.pop_back();
+            while(i < nums.size() - 1 && nums[i] == nums[i + 1]){
+                i++;
+            }
+        }
+}
+
+vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        vector<vector<int>> res;
+        vector<int> tmp;
+        helper(res, tmp, 0, nums);
+        return res;
+}
+
+Combinations
+Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, int s, int n, int k){
+        if(tmp.size() == k){
+            res.push_back(tmp);
+            return;
+        }
+        for(int i = s; i <= n; i++){
+            tmp.push_back(i);
+            helper(res, tmp, i + 1, n, k);
+            tmp.pop_back();
+        }
+}
+vector<vector<int>> combine(int n, int k) {
+        vector<vector<int>> res;
+        vector<int> tmp;
+        helper(res, tmp, 1, n, k);
+        return res;
+ }
+
+Permutations
+Given a collection of distinct numbers, return all possible permutations.
+
+void helper(vector<vector<int>>& res, vector<int>& nums, int s){
+        if(s == nums.size()){
+            res.push_back(nums);
+            return;
+        }
+        for(int i = s; i < nums.size(); i++){
+            swap(nums[i], nums[s]);
+            helper(res, nums, s + 1);
+            swap(nums[i], nums[s]);
+        }
+}
+vector<vector<int>> permute(vector<int>& nums) {
+        vector<vector<int>> res;
+        helper(res, nums, 0);
+        return res;
+}
+
+Permutations II
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+
+void helper(vector<vector<int>>& res, vector<int>& nums, int s){
+        if(s == nums.size()){
+            res.push_back(nums);
+            return;
+        }
+
+        for(int i = s; i < nums.size(); i++){
+            swap(nums[s], nums[i]);
+            vector<int> tmp = nums;
+            sort(tmp.begin() + s + 1, tmp.end());
+            helper(res, tmp, s + 1);
+            swap(nums[s], nums[i]);
+            while(nums[i] == nums[i + 1])   i++;
+        }
+ }
+vector<vector<int>> permuteUnique(vector<int>& nums) {
+        vector<vector<int>> res;
+        sort(nums.begin(), nums.end());
+        helper(res, nums, 0);
+        return res;
+}
+
+Combination Sum
+Given a set of candidate numbers (C) (without duplicates) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+The same repeated number may be chosen from C unlimited number of times.
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, vector<int>& candidates, int target, int s){
+        if(target == 0){
+            res.push_back(tmp);
+            return;
+        }else if(target < candidates[s])    return;
+        for(int i = s; i < candidates.size(); i++){
+            tmp.push_back(candidates[i]);
+            helper(res, tmp, candidates, target - candidates[i], i);
+            tmp.pop_back();
+        }
+}
+vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int>> res;
+        vector<int> tmp;
+        sort(candidates.begin(), candidates.end());
+        helper(res, tmp, candidates, target, 0);
+        return res;
+}
+
+Combination Sum II
+Given a collection of candidate numbers (C) and a target number (T), find all unique combinations in C where the candidate numbers sums to T.
+Each number in C may only be used once in the combination.
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, vector<int>& candidates, int target, int s){
+        if(target == 0){
+            res.push_back(tmp); return;
+        }else if(target < candidates[s])    return;
+        for(int i = s; i < candidates.size(); i++){
+            tmp.push_back(candidates[i]);
+            helper(res, tmp, candidates, target - candidates[i], i + 1);
+            tmp.pop_back();
+            while(i < candidates.size() - 1 && candidates[i + 1] == candidates[i]){
+                i++;
+            }
+        }
+}
+
+Combination Sum III
+Find all possible combinations of k numbers that add up to a number n, given that only numbers from 1 to 9 can be used and each combination should be a unique set of numbers.
+
+void helper(vector<vector<int>>& res, vector<int>& tmp, int k, int s, int target){
+        if(tmp.size() == k){
+            if(target == 0) res.push_back(tmp);
+            return;
+        }else if(target < 1)  return;
+        for(int i = s; i <= 9; i++){
+            tmp.push_back(i);
+            helper(res, tmp, k, i + 1, target - i);
+            tmp.pop_back();
+        }
+}
+vector<vector<int>> combinationSum3(int k, int n) {
+        vector<vector<int>> res;
+        vector<int> tmp;
+        helper(res, tmp, k, 1, n);
+        return res;
+}
+
+Generalized Abbreviation
+Write a function to generate the generalized abbreviations of a word.
+
+void helper(vector<string>& res, string& tmp, int s){
+        res.push_back(tmp);
+        if(s >= tmp.size())  return;
+        for(int j = tmp.size() - s; j > 0; j--){
+            string c = to_string(j);
+            for(int i = s; i < tmp.size() - j + 1; i++){
+                string subs = tmp.substr(i, j);
+                tmp.replace(i, j, c);
+                helper(res, tmp, i + c.size() + 1);
+                tmp.replace(i, c.size(), subs);
+            }
+        }
+}
+vector<string> generateAbbreviations(string word) {
+        vector<string> res;
+        string tmp = word;
+        helper(res, tmp, 0);
+        return res;
+}

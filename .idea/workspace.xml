@@ -16,7 +16,7 @@
     <SUITE FILE_PATH="coverage/mypython$sumquery.coverage" NAME="sumquery Coverage Results" MODIFIED="1571799566225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mypython$mockinterview.coverage" NAME="mockinterview Coverage Results" MODIFIED="1572576678695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode/FBinterview" />
     <SUITE FILE_PATH="coverage/mypython$Permutations.coverage" NAME="Permutations Coverage Results" MODIFIED="1573623004437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
-    <SUITE FILE_PATH="coverage/mypython$count_and_say.coverage" NAME="count and say Coverage Results" MODIFIED="1573700972142" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
+    <SUITE FILE_PATH="coverage/mypython$count_and_say.coverage" NAME="count and say Coverage Results" MODIFIED="1573972772728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
     <SUITE FILE_PATH="coverage/mypython$Diffk.coverage" NAME="Diffk Coverage Results" MODIFIED="1571800019861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode/FBinterview" />
     <SUITE FILE_PATH="coverage/mypython$reverse_sting.coverage" NAME="reverse sting Coverage Results" MODIFIED="1573706761639" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode/FBinterview" />
     <SUITE FILE_PATH="coverage/mypython$dfsbfs.coverage" NAME="dfsbfs Coverage Results" MODIFIED="1572318333374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode/FBinterview" />
@@ -30,8 +30,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/leetcode/count and say.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            <state relative-caret-position="267">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mysqlpython/testconnection.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -60,14 +69,15 @@
         <option value="$PROJECT_DIR$/amazon/test.py" />
         <option value="$PROJECT_DIR$/leetcode/FBinterview/dfsbfs.py" />
         <option value="$PROJECT_DIR$/leetcode/FBinterview/mockinterview.py" />
-        <option value="$PROJECT_DIR$/leetcode/count and say.py" />
         <option value="$PROJECT_DIR$/leetcode/google/poweof2.py" />
+        <option value="$PROJECT_DIR$/cplusefromamy" />
+        <option value="$PROJECT_DIR$/mysqlpython/testconnection.py" />
+        <option value="$PROJECT_DIR$/leetcode/count and say.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1048" />
-    <option name="y" value="117" />
+    <option name="x" value="1249" />
     <option name="width" value="2068" />
     <option name="height" value="788" />
   </component>
@@ -86,23 +96,12 @@
             <path>
               <item name="mypython" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypython" type="462c0819:PsiDirectoryNode" />
-              <item name="amazon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mypython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mypython" type="462c0819:PsiDirectoryNode" />
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypython" type="b2602c69:ProjectViewProjectNode" />
               <item name="mypython" type="462c0819:PsiDirectoryNode" />
-              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
-              <item name="google" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mypython" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mypython" type="462c0819:PsiDirectoryNode" />
-              <item name="pythonlearning" type="462c0819:PsiDirectoryNode" />
+              <item name="mysqlpython" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mypython" type="b2602c69:ProjectViewProjectNode" />
@@ -187,7 +186,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.reverse sting">
+  <component name="RunManager" selected="Python.count and say">
     <configuration name="Permutations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -332,9 +331,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.count and say" />
         <item itemvalue="Python.reverse sting" />
         <item itemvalue="Python.poweof2" />
-        <item itemvalue="Python.count and say" />
         <item itemvalue="Python.Permutations" />
         <item itemvalue="Python.factors" />
       </list>
@@ -354,23 +353,22 @@
       <workItem from="1572491275486" duration="3898000" />
       <workItem from="1573332646736" duration="65000" />
       <workItem from="1573332899989" duration="9482000" />
-      <workItem from="1573789792557" duration="658000" />
+      <workItem from="1573789792557" duration="3540000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28104000" />
+    <option name="totallyTimeSpent" value="30986000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28214827" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.30327868" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32459018" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -570,10 +568,24 @@
     <entry file="file://$PROJECT_DIR$/leetcode/Permutations.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/cplusefromamy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="158" column="17" selection-start-line="158" selection-start-column="17" selection-end-line="158" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysqlpython/testconnection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/count and say.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="267">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
