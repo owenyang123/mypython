@@ -1,4 +1,5 @@
 import MySQLdb
+import pandas
 
 db = MySQLdb.connect(host="10.85.209.89",    # your host, usually localhost
                      user="owenyang",         # your username
@@ -10,10 +11,10 @@ db = MySQLdb.connect(host="10.85.209.89",    # your host, usually localhost
 cur = db.cursor()
 
 # Use all the SQL you like
-cur.execute("SELECT user FROM user")
+cur.execute("SELECT * FROM GOOG")
 
 # print all the first cell of all the rows
 for row in cur.fetchall():
-    print row[0]
+    print row
 
 db.close()
