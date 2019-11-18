@@ -2,7 +2,7 @@ class Solution:
     # @param A : list of list of integers
     # @return an integer
     def uniquePathsWithObstacles(self, A):
-        if not A or A[0][0]==1:
+        if not A or A[0][0]==1 orA:
             return 0
         B=[[0 for x in range(len(A[0]))] for y in range(len(A))]
         B[0][0]=1
