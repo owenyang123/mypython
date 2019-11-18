@@ -63,3 +63,4 @@ class Solution:
             ndict[nums[i]] = i
 
         return [0, 0]
+
