@@ -4,6 +4,7 @@ n=1
 l=[]
 with open("piclog", 'r') as loglines:
     for line in loglines.readlines():
+        print line
         if n%3==0:
             str123=""
             for i in range(len(line)):
