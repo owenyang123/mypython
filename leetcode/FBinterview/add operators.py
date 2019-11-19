@@ -1,3 +1,5 @@
+l=[1,2,3,4]
+print l[2:6]
 class Solution:
     # @param {string} num a string contains only digits 0-9
     # @param {int} target an integer
