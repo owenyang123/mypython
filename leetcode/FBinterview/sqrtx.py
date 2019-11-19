@@ -70,21 +70,3 @@ class Solution2:
 k=Solution2()
 print k.pow(71045970,41535484,64735492)
 
-
-int quick(int a,int b,int c)
-    {
-        int A=1;   //结果的保存，就是An，初始化一下
-        T=a%c;     //首先计算T0的值，用于Tn的递推
-        while(b!=0)
-        {
-          //这个if是判断目前最右边的一位bn是不是1，如果是1，那么Kn=Tn直接用Tn递推，具体看上面原理，如果bn=0,那么Kn=1,考虑到An-1是小于c的，所以 An=（An-1）%c =An-1 就是说可以不用计算了 因为相当于直接 A=A
-       if(b&1) {
-           A = ( A * T ) % c;
-       }
-       b>>=1;       //二进制位移，相当于从右到左读取位b0 b1 b2 b3 b4等等
-       T=(T*T)%c;   //更新T，如果下一位是1就可以用这个算A，具体的可以看上面原理的递推关系
-   }
-   return A;
-————————————————
-版权声明：本文为CSDN博主「Liiiiiiiiiiiiiiiiiiq」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/qq_36760780/article/details/80092665
