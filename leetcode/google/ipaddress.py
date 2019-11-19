@@ -6,11 +6,8 @@ class Solution:
                 temp1=ipstr[0:i+1]+"."
                 layer1=ipstr[i+1:]
                 for j in range(0,3):
-
                     if j<len(layer1)-1 and layer1[j+1]!="0" and int(layer1[0:j+1])<256:
-=======
                     if layer1[j+1]!="0" and int(layer1[0:j+1])<256 :
-
                         temp2=layer1[0:j+1]+"."
                         layer2=layer1[j+1:]
                         for z in range(0,3):
