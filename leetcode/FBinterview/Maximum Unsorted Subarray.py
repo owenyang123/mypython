@@ -16,6 +16,26 @@ class Solution:
                         return [i,j-1]
         return -1
 
-k=Solution()
-print k.subUnsort([1,3,2,4,5])
-l=sys.maxint
+
+
+
+class Solution1:
+    # @param A : list of integers
+    # @return a list of integers
+    def subUnsort(self, A):
+        l=[]
+        for i in range(len(A)-1):
+            if A[i]>A[i+1]:
+                l.append(i)
+                break
+        for j in range(len(A)-1,0,-1):
+            if A[j]<A[j-1]:
+                l.append(j)
+                break
+        if l:
+            return l
+        else:
+            return -1
+
+k=Solution1()
+print k.subUnsort([1, 3, 2, 4, 5])
