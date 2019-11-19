@@ -23,12 +23,9 @@ class Solution:
                     l.append(" " * temp + A[i])
                 else:
                     l[-1]=l[-1]+A[i]
-        str123=""
-        for i in l:
-            str123+=i+"\n"
-        return str123
+        return "\n".join(l)
 
 
 k=Solution()
-strtest='{"id":100,"firstName":"Jack","lastName":"Jones","age":12}'
+strtest='{A:"B",C:{D:"E",F:{G:"H",I:"J"}}}'
 print k.prettyJSON(strtest)
