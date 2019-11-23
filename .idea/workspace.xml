@@ -42,8 +42,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/google/merge interval.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="15" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/leetcode/google/Wave Array.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -89,6 +98,7 @@
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/mysqlpython/stockdata/test.py" />
         <option value="$PROJECT_DIR$/leetcode/google/merge interval.py" />
+        <option value="$PROJECT_DIR$/leetcode/google/Wave Array.py" />
       </list>
     </option>
   </component>
@@ -382,12 +392,12 @@
       <workItem from="1572491275486" duration="3898000" />
       <workItem from="1573332646736" duration="65000" />
       <workItem from="1573332899989" duration="9482000" />
-      <workItem from="1573789792557" duration="24574000" />
+      <workItem from="1573789792557" duration="25927000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52020000" />
+    <option name="totallyTimeSpent" value="53373000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
@@ -431,13 +441,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/leetcode/google/add one number.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/junosautomation/junosrepro/backup_lab_routers.v2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -714,6 +717,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/google/merge interval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="5" selection-start-column="8" selection-end-line="15" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/google/Wave Array.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
