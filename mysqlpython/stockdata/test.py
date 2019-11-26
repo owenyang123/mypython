@@ -4,7 +4,11 @@ with open("PFE.csv", 'r') as loglines:
         if k[2][0].isdigit():
             m=k[2]
 
-for i in range(5,10):
-    if i<=7:
-        continue
+def printn(n):
+    for i in range(1,n+1):
+        yield i
+
+k=printn(10)
+print type(k)
+for i in  k:
     print i
