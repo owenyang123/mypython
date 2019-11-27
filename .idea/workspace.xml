@@ -75,8 +75,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/google/Largest Number.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/leetcode/google/Longest Substring Without Repeating.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -154,6 +163,7 @@
         <option value="$PROJECT_DIR$/leetcode/google/N/3 Repeat Number.py" />
         <option value="$PROJECT_DIR$/leetcode/sublist.py" />
         <option value="$PROJECT_DIR$/leetcode/google/Largest Number.py" />
+        <option value="$PROJECT_DIR$/leetcode/google/Longest Substring Without Repeating.py" />
       </list>
     </option>
   </component>
@@ -447,12 +457,12 @@
       <workItem from="1572491275486" duration="3898000" />
       <workItem from="1573332646736" duration="65000" />
       <workItem from="1573332899989" duration="9482000" />
-      <workItem from="1573789792557" duration="31369000" />
+      <workItem from="1573789792557" duration="31989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58815000" />
+    <option name="totallyTimeSpent" value="59435000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
@@ -496,9 +506,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/junosautomation/factors.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/Permutations.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -785,6 +792,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/google/Largest Number.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/google/Longest Substring Without Repeating.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
