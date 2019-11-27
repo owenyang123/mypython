@@ -13,19 +13,20 @@ class Solution:
         return combinations
 
     def dfs(self, nums, index, combination, combinations, B):
-        if 1 :
-            combinations.append(list(combination))
+        combinations.append(list(combination))
 
         for i in range(index, len(nums)):
             combination.append(nums[i])
             self.dfs(nums, i +1, combination, combinations, B)
             combination.pop()
 
-testlist=[1,2,3,4,5]
+testlist=[8,89]
 
 k=Solution()
 x=k.solve(testlist)
 print x
 
+l=[1,2,3]
+print "".join(str(l))
 
 
