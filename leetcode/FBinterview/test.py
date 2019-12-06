@@ -1,1 +1,1 @@
-print (type([1]) is list)
+print(type([1])is list)
