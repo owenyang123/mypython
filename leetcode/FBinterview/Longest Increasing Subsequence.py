@@ -18,6 +18,8 @@ class Solution:
         if A[n]<=min(A[0:n]):return -1
         for i in range(0,n):
             if A[i]<A[n]:
+
+
                 temp_l.append(i)
         if temp_l==[]:
             return -1

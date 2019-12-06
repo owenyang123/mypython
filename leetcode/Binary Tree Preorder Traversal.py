@@ -20,5 +20,5 @@ class Solution:
         if not root:
             return
         traverse(root.left, result)
-        result.append(root.val)  # 注意访问根节点放到了遍历左子树的后面
+        result.append(root.val)
         traverse(root.right, result)
