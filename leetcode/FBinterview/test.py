@@ -1,1 +1,1 @@
-print(type([1])is list)
+print "".join(i) for i in [[1,2,3,4,5]]
