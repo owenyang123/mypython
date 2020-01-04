@@ -1,1 +1,3 @@
-print(type([1])is list)
+import sys
+
+sys.max
