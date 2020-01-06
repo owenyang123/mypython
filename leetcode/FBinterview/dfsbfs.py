@@ -30,7 +30,7 @@ def BFS(self, s):
         # Dequeue a vertex from
         # queue and print it
         s = queue.pop(0)
-        print (s, end = " ")
+        print (s, end )
 
         # Get all adjacent vertices of the
         # dequeued vertex s. If a adjacent

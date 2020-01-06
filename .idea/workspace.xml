@@ -39,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+            <state relative-caret-position="133">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -48,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Level Order Traversal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
+            <state relative-caret-position="950">
               <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
             </state>
           </provider>
@@ -57,7 +57,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/leetcode/sublist.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="371">
+            <state relative-caret-position="532">
               <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
             </state>
           </provider>
@@ -172,8 +172,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1358" />
-    <option name="y" value="-8" />
+    <option name="x" value="1447" />
+    <option name="y" value="25" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -182,7 +182,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -280,6 +279,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -473,17 +473,18 @@
       <workItem from="1573332899989" duration="9482000" />
       <workItem from="1573789792557" duration="49198000" />
       <workItem from="1576032638308" duration="2159000" />
+      <workItem from="1578105125896" duration="1198000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78803000" />
+    <option name="totallyTimeSpent" value="80001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28668684" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2912254" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -761,30 +762,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/Binary Tree Vertical Order Traversal.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Preorder Traversal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" selection-start-line="11" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Postorder Traversal.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="133">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Level Order Traversal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
+        <state relative-caret-position="950">
           <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/sublist.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -792,13 +787,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/leetcode/sublist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -810,6 +798,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/Decode String.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/Binary Tree Vertical Order Traversal.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Preorder Traversal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" selection-start-line="11" selection-end-line="16" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/leetcode/Binary Tree Postorder Traversal.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/leetcode/FBinterview/Convert Sorted Array to Binary Search Tree With Minimal Height.py">
