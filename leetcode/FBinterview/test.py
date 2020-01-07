@@ -1,7 +1,10 @@
-<<<<<<< HEAD
-import sys
+from functools import reduce
 
-sys.max
-=======
-print "".join(i) for i in [[1,2,3,4,5]]
->>>>>>> 9951d25641684bb75829042e091ebdd8c185d60c
+def fn(x, y):
+    return x * 10 + y
+
+print reduce(fn, [1, 3, 5, 7, 9])
+
+l=[1,2,3,4,5]
+l.pop(1)
+print l
