@@ -20,13 +20,13 @@ class Solution:
             self.dfs(nums, i +1, combination, combinations, B)
             combination.pop()
 
-testlist=[8,89]
+testlist=[8,89,2,3,4,5,6,7]
 
 k=Solution()
 x=k.solve(testlist)
 print x
 
-l=[1,2,3]
-print "".join(str(l))
+l=["1","2","3"]
+print "".join(l)
 
 
