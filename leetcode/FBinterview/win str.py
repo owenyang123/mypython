@@ -12,15 +12,13 @@ class Solution:
         temp1 = ""
         for i in range(len(source)):
             for j in range(i + 1, len(source) + 1):
-                if self.helper(list(source[i:j]), target) and len(source[i:j]) < temp:
+                if self.helper(source[i:j], target) and len(source[i:j]) < temp:
                     temp = len(source[i:j])
                     temp1 = source[i:j]
         return temp1
 
     def helper(self, k, str123):
         for i in str123:
-            if i not in k:
+            if str123.count(i)>k.count(i):
                 return False
-            else:
-                k.
         return True
