@@ -1,10 +1,8 @@
-from functools import reduce
-
-def fn(x, y):
-    return x * 10 + y
-
-print reduce(fn, [1, 3, 5, 7, 9])
-
-l=[1,2,3,4,5]
-l.pop(1)
-print l
+def product(*argus):
+    if not argus:
+        return "fail"
+    k=1
+    for i in argus:
+       k=k*i
+    return k
+print product()
