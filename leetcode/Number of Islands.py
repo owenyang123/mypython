@@ -26,7 +26,7 @@ class Solution:
             self.removeIsland(grid, i, j - 1)
         if j < len(grid[0]) - 1 and grid[i][j + 1] == 1:
             self.removeIsland(grid, i, j + 1)
-
+count=0
 class Solution1:
     """
     @param grid: a 2D array
@@ -47,7 +47,6 @@ class Solution1:
                     count=0
                     self.removeIsland(grid, i, j)
                     temp=max(temp,count)
-                    print temp
 
         return temp
 
