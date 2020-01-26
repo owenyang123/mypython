@@ -1,15 +1,22 @@
-import collections
-def bfs(graph, root):
-    visited, queue = set(), collections.deque([root])
-    visited.add(root)
+def addtwostring(str1,str2):
 
-    while queue:
-        vertex = queue.popleft()
-        for neighbour in graph[vertex]:
-            if neighbour not in visited:
-                visited.add(neighbour)
-                queue.append(neighbour)
-    print visited
-if __name__ == '__main__':
-    graph = {0: [1, 2], 1: [2], 2: [3], 3: [1,2]}
-    bfs(graph, 0)
+    if not str1 and str2:
+        return str2
+    if not str2 and str1:
+        return str1
+    if len(str2)>len(str1):
+        return addtwostring(str2,str1)
+    l1=list(str1)
+    l2=["0"]*(len(str1)-len(str2))+list(str2)
+    listcarry=[0]+[0]*len(str1)
+    sumstr=""
+    for i in range(len(l1)-1,-1,-1):
+        temp=int(l1[i])+int(l2[i])+listcarry[i+1]
+        if temp<10:
+            sumstr+=str(temp)
+        else:
+            sumstr+=str(temp)[-1]
+            listcarry[i]=1
+    if listcarry[0]==1:
+        return "1"+sumstr[::-1]
+    return sumstr[::-1]
