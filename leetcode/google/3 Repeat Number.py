@@ -1,3 +1,4 @@
+import collections
 class Solution:
     # @param A : tuple of integers
     # @return an integer
@@ -6,16 +7,10 @@ class Solution:
             return -1
         if len(A)<=2:
             return A[0]
-        B=list(A)
-        B.sort()
-        integer_dict={}
-        lenth=len(B)
-        target=lenth/3
-        for i in B:
-            if i in integer_dict.keys():
-                integer_dict[i]+=1
-                if integer_dict[i]>target:
-                    return i
-            else:
-                integer_dict[i]=1
+        num=len(A)/3
+        counterlist=collections.Counter(A)
+        for i in counterlist:
+            if counterlist[i]>num:
+                return i
         return -1
+print Solution().repeatedNumber([1,2,3,1,1])
