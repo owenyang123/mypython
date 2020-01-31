@@ -12,8 +12,6 @@ def bwalloc(total,weight_list):
             leftbw=0
     return list1
 
-<<<<<<< HEAD
+
 print bwalloc(923,[1,2,3,2,4,5,6])
-=======
-print bwalloc(1000,[1,2,3,2,4,5,6])
->>>>>>> f4de45edf8dc53d0d479eecdcb96f63015122cef
+
