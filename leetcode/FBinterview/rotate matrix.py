@@ -24,4 +24,4 @@ print list(filter(lambda  x:x%2==1,alst))
 
 k=(1,2)
 
-print k[4]
+print k[]
