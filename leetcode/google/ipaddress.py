@@ -17,7 +17,6 @@ class Solution:
                         layer2 = layer1[j + 1:]
                         for z in range(0, 3):
                             if z < len(layer2) - 1 and self.helper(layer2[0:z + 1]) and self.helper(layer2[z + 1:]):
-                                print layer2[z + 1:]
                                 temp3 = layer2[0:z + 1] + "." + layer2[z + 1:]
                                 list1.append(temp1 + temp2 + temp3)
         return list1
@@ -30,4 +29,7 @@ class Solution:
         if str1[0] != "0":
             return True
         return False
+
+
+
 
