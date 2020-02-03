@@ -1,5 +1,6 @@
+import time
+start_time = time.time()
 class Solution:
-
     def restoreIpAddresses(self, s):
         if not s or len(s) <= 1:
             return []
@@ -8,11 +9,11 @@ class Solution:
         if len(ipstr) < 4 or len(ipstr) > 12 or not ipstr:
             return []
         for i in range(0, 3):
-            if self.helper(ipstr[0:i + 1]) and int(ipstr[0:i + 1]) < 256:
+            if self.helper(ipstr[0:i + 1]) :
                 temp1 = ipstr[0:i + 1] + "."
                 layer1 = ipstr[i + 1:]
                 for j in range(0, 3):
-                    if j < len(layer1) - 1 and int(layer1[0:j + 1]) < 256 and self.helper(layer1[0:j + 1]):
+                    if j < len(layer1) - 1 and self.helper(layer1[0:j + 1]):
                         temp2 = layer1[0:j + 1] + "."
                         layer2 = layer1[j + 1:]
                         for z in range(0, 3):
@@ -20,7 +21,6 @@ class Solution:
                                 temp3 = layer2[0:z + 1] + "." + layer2[z + 1:]
                                 list1.append(temp1 + temp2 + temp3)
         return list1
-
     def helper(self, str1):
         if len(str1) == 1:
             return True
@@ -29,7 +29,28 @@ class Solution:
         if str1[0] != "0":
             return True
         return False
+k=Solution()
+print k.restoreIpAddresses("111111111")
+print("--- %s seconds ---" % (time.time() - start_time))
 
+start_time = time.time()
+class Solution1:
+    def restoreIpAddresses(self, s):
+        res=[]
+        for i in [1,2,3]:
+            for j in [i+1,i+2,i+3]:
+                for k in [j+1,j+2,j+3]:
+                    if k>=len(s):
+                        break
+                    s1,s2,s3,s4=s[:i],s[i:j],s[j:k],s[k:]
+                    add_ip = True
+                    for st in [s1,s2,s3,s4]:
+                        if (st!="0" and st[0]=="0") or int(st)>255:
+                            add_ip=False
+                            break
+                    if add_ip: res.append(s1+"."+s2+"."+s3+"."+s4)
+        return res
 
-
-
+k=Solution1()
+print k.restoreIpAddresses("111111111")
+print("--- %s seconds ---" % (time.time() - start_time))
