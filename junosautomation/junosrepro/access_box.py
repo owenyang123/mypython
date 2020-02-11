@@ -4,13 +4,17 @@ import time
 import datetime
 from pprint import pprint  
 from jnpr.junos import Device
+import csv
 
-dev = Device(host='mango.ultralab.juniper.net', user='labroot', password='lab123')
+dev = Device(host='10.85.174.57', user='labroot', password='lab123')
 dev.open()  
 data = dev.facts
-print data
-print 'You successfully connected to router %s at %s' % (data['hostname'], datetime.datetime.utcnow())
-dev.close() 
+dev.close()
+
+with open('namemodel.csv','wb') as csvfile:
+    filewriter = csv.writer(csvfile, delimiter=',',
+                            quotechar='|', quoting=csv.QUOTE_MINIMAL)
+    filewriter.writerow(['Name', 'Model'])
 
 
 

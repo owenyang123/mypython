@@ -1,5 +1,5 @@
 import collections
-import re
+import re,copy
 
 with open("piclog") as x:
 
@@ -13,7 +13,7 @@ import os, time, random
 def long_time_task(name):
     print('Run task %s (%s)...' % (name, os.getpid()))
     start = time.time()
-    time.sleep(random.random() * 3)
+    time.sleep(random.random() * 10)
     end = time.time()
     print('Task %s runs %0.2f seconds.' % (name, (end - start)))
 
@@ -27,9 +27,21 @@ if __name__=='__main__':
     p.join()
     print('All subprocesses done.')
 
+
 mapping = {
             '(':')',
             '{':'}',
             '[':']',
         }
 print (")" in mapping)
+
+print 1
+k=[[i for i in range(10)] for y in range(5)]
+
+k[0][0]=100
+print k
+
+l1=["aaa","bb","ccc"]
+l1.sort(key=lambda x:len(x))
+print ("aa" in "badaa")
+
