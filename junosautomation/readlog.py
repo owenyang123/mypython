@@ -10,7 +10,7 @@ with open("piclog", 'r') as loglines:
             for i in range(len(line)):
                 if line[i].isdigit():
                     str123+=line[i]
-            l.append(int(str123))
+            l.append((str123))
         n+=1
 
 for i in range(1,len(l)):
