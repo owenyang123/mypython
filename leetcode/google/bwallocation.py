@@ -7,7 +7,7 @@ def bwalloc(total,weight_list):
     for i in range(lenth-1,-1,-1):
         list1[i]=(weight_list[i]*total)/sumweight
         list1[i]+=min(leftbw,weight_list[i])
-        leftbw-=list1[i]
+        leftbw-=min(leftbw,weight_list[i])
         if leftbw<=0:
             leftbw=0
     return list1
@@ -26,9 +26,6 @@ def findex(n):
         else:
             yield temp0+temp1
             temp0,temp1=temp1,temp0+temp1
-
-for i in findex(10):
-    print i
 
 
 def getNarcissisticNumbers(n):

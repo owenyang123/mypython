@@ -1,6 +1,6 @@
 import collections
 import re,copy
-copy.d
+
 
 with open("piclog") as x:
 
