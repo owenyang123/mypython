@@ -22,7 +22,6 @@ if __name__=='__main__':
     devlist=["10.85.174.196","10.85.174.190","10.85.174.78","10.85.174.66","10.85.174.69","10.85.174.57"]
     procs=[]
     for i in devlist:
-        print i
         p=Process(target=newdev.info_collecting,args=(i,filename,))
         procs.append(p)
         p.start()
