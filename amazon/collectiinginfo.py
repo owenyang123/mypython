@@ -7,6 +7,7 @@ class automation_junos():
     def info_collecting(self,ipaddr,filename):
         dev = Device(host=ipaddr, user='labroot', password='lab123')
         dev.open()
+
         data = dev.facts
         with open(filename,"a") as csvfile:
             writer = csv.writer(csvfile)

@@ -20,3 +20,6 @@ def addtwostring(str1,str2):
     if listcarry[0]==1:
         return "1"+sumstr[::-1]
     return sumstr[::-1]
+str1="rightrightright"
+
+print str1.isalpha()
