@@ -22,4 +22,4 @@ def addtwostring(str1,str2):
     return sumstr[::-1]
 str1="rightrightright"
 
-print str1.isalpha()
+print str1[::-1].replace("r","R",1)[::-1][1:]
