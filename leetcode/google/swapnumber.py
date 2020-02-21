@@ -12,10 +12,9 @@ def swapnumber(num):
             list1[0],list1[i]=list1[i],list1[0]
     return int("".join(list1))
 
-<<<<<<< HEAD
+
 print swapnumber(11111992)
-=======
-print swapnumber(1992)
+
 
 
 
@@ -63,4 +62,3 @@ k=Solution2()
 print k.swapnumber(1199234)
 
 
->>>>>>> b0d19ca806e8526ff4efc1152a900d5a217a1f21
