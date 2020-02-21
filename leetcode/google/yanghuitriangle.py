@@ -1,5 +1,5 @@
 import copy
-copy.
+
 class Solution:
     # @param A : integer
     # @return a list of list of integers
@@ -34,3 +34,8 @@ class Solution:
             if len(ret)>=A:
                 break
         return l
+
+
+
+str1="123"
+print str1.isdigit()

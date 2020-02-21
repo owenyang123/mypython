@@ -25,4 +25,4 @@ def decryptPassword(s):
     return "".join(list1[::-1])
 
 print  3^4
-call 
+call
