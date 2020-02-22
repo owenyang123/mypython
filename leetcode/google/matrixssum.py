@@ -7,7 +7,6 @@ def matrixsum(mat,b):
     for i in range(b[1]+1):
         sum+=mat[0][i]+mat[b[0]][i]
     for i in range(1,b[0]):
-        print mat[i][0],mat[i][b[1]]
         sum+=mat[i][0]+mat[i][b[1]]
     return sum
 

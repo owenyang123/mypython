@@ -28,5 +28,5 @@ class Solution:
 
 
 k=Solution()
-strtest='{A:"B",C:{D:"E",F:{G:"H",I:"J"}}}'
+strtest='{"id":100,"firstName":"Jack","lastName":"Jones","age":12}'
 print k.prettyJSON(strtest)
