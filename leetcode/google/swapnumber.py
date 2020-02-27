@@ -61,4 +61,4 @@ class Solution2():
 k=Solution2()
 print k.swapnumber(1199234)
 
-
+print str.isalpha()
