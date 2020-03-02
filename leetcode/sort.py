@@ -15,7 +15,7 @@ def bubble(arr):
     print x
     return arr
 
-
+sor
 print bubble(l)
 s="A"
 

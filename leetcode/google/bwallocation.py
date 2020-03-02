@@ -5,11 +5,9 @@ def bwalloc(total,weight_list):
     leftbw=total%sumweight
     list1=[0]*lenth
     for i in range(lenth-1,-1,-1):
-        list1[i]=(weight_list[i]*total)/sumweight
+        list1[i]=weight_list[i]*(total/sumweight)
         list1[i]+=min(leftbw,weight_list[i])
         leftbw-=min(leftbw,weight_list[i])
-        if leftbw<=0:
-            leftbw=0
     return list1
 
 
@@ -44,4 +42,4 @@ def getNarcissisticNumbers(n):
             result.append(i)
     return result
 
-print getNarcissisticNumbers(7)
+print getNarcissisticNumbers(3)

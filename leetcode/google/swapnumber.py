@@ -47,7 +47,7 @@ class Solution2():
         return int(self.helper(str1))
     def helper(self,str1):
         if len(str1)==1:return str1
-        if str1[-1]=="0":return self.helper(str1[0:-1])
+        if str1[-1]=="0":return str1[0:-1]
         list1=[x for x in str1]
         minstr=min(list1)
         if list1[0]==minstr:
@@ -59,4 +59,6 @@ class Solution2():
 k=Solution2()
 print k.swapnumber(1199234)
 
+
+print round((float(5)/3),2)
 

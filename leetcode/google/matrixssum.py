@@ -24,6 +24,14 @@ def matrixsum1(mat,b):
     return sum
 
 
+def power2(n):
+    if n==1:
+        return 1
+    if n%2==1:
+        return 0
+    return power2(n/2)
+print power2(256)
+
 
 m=[[1, 4, 6, 4, 1],
  [1, 4, 6, 4, 1],
