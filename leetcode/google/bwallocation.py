@@ -8,10 +8,14 @@ def bwalloc(total,weight_list):
         list1[i]=weight_list[i]*(total/sumweight)
         list1[i]+=min(leftbw,weight_list[i])
         leftbw-=min(leftbw,weight_list[i])
+<<<<<<< HEAD
     return list1
+=======
+    return list1,sum(list1)
+>>>>>>> c62e426afd51e1938a055f5d0c530bbb4980021c
 
 
-print bwalloc(923,[1,2,3,2,4,5,6])
+print bwalloc(923,[5,2,3,3,3,4,4,4,4,4,4])
 
 print [x for x in range(1,11)][0::2]
 
@@ -25,6 +29,8 @@ def findex(n):
             yield temp0+temp1
             temp0,temp1=temp1,temp0+temp1
 
+for i in findex(2):
+    print i
 
 def getNarcissisticNumbers(n):
     if n == 1:
@@ -42,4 +48,7 @@ def getNarcissisticNumbers(n):
             result.append(i)
     return result
 
+<<<<<<< HEAD
 print getNarcissisticNumbers(3)
+=======
+>>>>>>> c62e426afd51e1938a055f5d0c530bbb4980021c

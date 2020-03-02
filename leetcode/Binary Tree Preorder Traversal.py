@@ -22,3 +22,5 @@ class Solution:
         traverse(root.left, result)
         result.append(root.val)
         traverse(root.right, result)
+
+print divmod(100,31)
