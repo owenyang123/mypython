@@ -29,3 +29,6 @@ print  os.path.exists("D:/Python27/mypython2018/mypython/leetcode/findprime1.py"
 
 B = [[0] * 5]* 6
 print B
+
+set1=set(["1","2"])
+print set1

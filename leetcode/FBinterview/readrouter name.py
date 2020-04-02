@@ -7,7 +7,7 @@ def router_name(file):
     routerlist={}
     with open(file, 'r') as hostnames:
         for line in hostnames.readlines():
-            temp=line.replace("\n","").split("_")
+            temp=line.strip("\n").split("_")
             if temp[0] not in routerlist.keys():
                 routerlist[temp[0]]={temp[1]:[temp[2]]}
             elif temp[1] not in routerlist[temp[0]].keys():
@@ -30,3 +30,4 @@ if __name__ == "__main__":
 words = re.findall(r'\w+', open('routername').read().lower().replace("_"," "))
 print collections.Counter(words).most_common(3)
 
+str.isalpha()

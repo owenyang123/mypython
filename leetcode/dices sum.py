@@ -63,3 +63,5 @@ print k.dicesSum1(15)
 k=Solution()
 print k.dicesSum(7)
 
+
+
