@@ -45,4 +45,4 @@ class Solution:
 k=Solution()
 print k.countAndSay(23)
 
-print 56*78
+

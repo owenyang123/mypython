@@ -1,4 +1,6 @@
 import webbrowser as wb
-website='www.google.com'
+#website='www.google.com'
 
-wb.open('http://175.100.207.204')
+#wb.open('http://175.100.207.204')
+
+print "app123".startswith("a")
