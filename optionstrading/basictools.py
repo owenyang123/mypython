@@ -12,6 +12,14 @@ def get_stock_data(start_time,end_time,*stocklist):
         data_dict[i]=data1
     return data_dict
 
+def get_next_event(*stocklist):
+    data_next_ear_data={}
+    for i in stocklist:
+        temp = yf.Ticker(i)
+        data_next_ear_data[i]=temp.calendar.loc['Earnings Date'].tolist()[0]
+    return data_next_ear_data[
+
+
 
 
 if __name__ == "__main__":
