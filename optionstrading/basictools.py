@@ -13,12 +13,15 @@ def get_stock_data(start_time,end_time,*stocklist):
     return data_dict
 
 def get_next_event(*stocklist):
+    if not stocklist: return {}
     data_next_ear_data={}
     for i in stocklist:
         temp = yf.Ticker(i)
         data_next_ear_data[i]=temp.calendar.loc['Earnings Date'].tolist()[0]
-    return data_next_ear_data[
+    return data_next_ear_data
 
+#def kelly_caculation():
+    #return invest_percentage
 
 
 
