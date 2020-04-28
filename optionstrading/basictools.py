@@ -12,7 +12,5 @@ def get_stock_data(start_time,end_time,*stocklist):
         data_dict[i]=data1
     return data_dict
 
-
-
 if __name__ == "__main__":
     pass
