@@ -29,8 +29,14 @@ def get_date_delta(str1,str2):
     date_time_obj2 = datetime.datetime.strptime(str2, '%Y-%m-%d')
     return int(str(date_time_obj1-date_time_obj2).split()[0])
 
-def get_options_data(date_str,type="call"):
-    return
+def get_options_data(*stocklist,date_str,cp="call"):
+    if not stocklist: return {}
+    data_options={}
+    for i in stocklist:
+        temp=yf.Ticker(i)
+        if cp=="put":data_options[i]=temp.option_chain(date_str).puts
+        else:data_options[i]=temp.option_chain(date_str).calls
+    return data_options
 
 
 #def kelly_caculation():

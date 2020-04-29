@@ -6,6 +6,4 @@ import datetime
 aapl = yf.Ticker("MSFT")
 print aapl.calendar
 print sorted(aapl.options)
-print aapl.option_chain('2020-04-30').calls[["bid","ask",'strike']]
-
-
+print aapl.option_chain('2020-04-30').calls.loc[:,["bid","strike"]]
