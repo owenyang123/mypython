@@ -40,7 +40,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.123">
+  <component name="RunManager" selected="Python.basictools">
     <configuration name="123" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,9 +163,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.basictools" />
         <item itemvalue="Python.123" />
         <item itemvalue="Python.test (2)" />
-        <item itemvalue="Python.basictools" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test (1)" />
       </list>
@@ -201,7 +201,7 @@
       <workItem from="1586063227326" duration="2332000" />
       <workItem from="1586724555934" duration="6583000" />
       <workItem from="1586926588059" duration="24965000" />
-      <workItem from="1587697198136" duration="15823000" />
+      <workItem from="1587697198136" duration="16594000" />
     </task>
     <servers />
   </component>
