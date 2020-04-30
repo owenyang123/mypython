@@ -26,7 +26,6 @@ def get_next_event(*stocklist):
             temp = yf.Ticker(i)
             templist=temp.calendar.loc['Earnings Date'].tolist()
             if templist:
-                print str(templist[0])[0:10]
                 data_next_ear_data[i]=str(templist[0])[0:10]
         except:
             pass

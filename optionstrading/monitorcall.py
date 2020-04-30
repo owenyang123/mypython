@@ -1,12 +1,7 @@
-import yfinance as yf
-import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 import datetime
-import os
-import requests
 import basictools as bt
 import time
 if __name__ == "__main__":
@@ -26,7 +21,8 @@ if __name__ == "__main__":
         for i in earningdate:
             if bt.get_date_delta(earningdate[i],cur_date)<=20:
                 msg+=i +" "+str(bt.get_date_delta(earningdate[i],cur_date))+" ,"
-        if msg:bt.mail_notice(msg,*maillist)
+        print msg
+        #if msg:bt.mail_notice(msg,*maillist)
         time.sleep(172800)
 
 
