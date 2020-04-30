@@ -6,4 +6,11 @@ import basictools as bt
 import pandas as pd
 import os
 
-print pd.read_csv('sp500index.csv')['Symbol']
+
+while (1):
+    aapl = yf.Ticker("MO")
+    print (aapl.major_holders)
+    print (aapl.calendar)
+    print (sorted(aapl.options))
+    print aapl.option_chain('2020-05-07').calls.loc[:,["ask","bid","strike"]]
+    time.sleep(180)
