@@ -3,7 +3,7 @@ import numpy as np
 import time
 import datetime
 import basictools as bt
+import pandas as pd
 import os
 
-temp = yf.Ticker("MSFT")
-print str(temp.calendar.loc['Earnings Date'].tolist()[0])[0:10]
+print pd.read_csv('sp500index.csv')['Symbol']
