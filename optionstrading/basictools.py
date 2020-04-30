@@ -26,6 +26,7 @@ def get_next_event(*stocklist):
             temp = yf.Ticker(i)
             templist=temp.calendar.loc['Earnings Date'].tolist()
             if templist:
+                print str(templist[0])[0:10]
                 data_next_ear_data[i]=str(templist[0])[0:10]
         except:
             pass
@@ -59,7 +60,6 @@ def mail_notice(msg,*maillist):
         try:
             str1 ="sudo echo " + "\'"+msg+" "+" \'" +"| "+"mail -s " +"\'" + "less then 20 days left to earning call" + "\' " +i
             os.system(str1)
-            print (str1)
         except:pass
     return
 

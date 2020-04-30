@@ -25,7 +25,7 @@ if __name__ == "__main__":
         print("finding the delta less then 20days")
         for i in earningdate:
             if bt.get_date_delta(earningdate[i],cur_date)<=20:
-                msg+=i +" "+str(bt.get_date_delta(earningdate[i][0:10],cur_date))+" ,"
+                msg+=i +" "+str(bt.get_date_delta(earningdate[i],cur_date))+" ,"
         if msg:bt.mail_notice(msg,*maillist)
         time.sleep(172800)
 
