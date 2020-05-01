@@ -5,4 +5,4 @@ import datetime
 import basictools as bt
 import os
 
-print bt.get_options_data("2020-05-07","call",*['MO'])['MO'].loc[lambda x:x['strike']==39.5].loc[:,["ask","bid","strike"]]
+print bt.get_options_data("2020-05-07","call",*['ZM'])['ZM'].loc[lambda x:x['strike']== 130.0].loc[:,["ask","bid","strike"]]
