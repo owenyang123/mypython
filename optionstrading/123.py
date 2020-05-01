@@ -4,5 +4,8 @@ import time
 import datetime
 import basictools as bt
 import os
-
-print bt.get_options_data("2020-05-07","call",*['MO'])['MO'].loc[lambda x:x['strike']==39.5].loc[:,["ask","bid","strike"]]
+import seaborn as sns
+import pandas as pd
+import matplotlib as plt
+data1=pd.read_csv('train.csv')
+sns.factorplot('Sex',data=data1)
