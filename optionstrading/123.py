@@ -5,5 +5,4 @@ import datetime
 import basictools as bt
 import os
 
-temp = yf.Ticker("MSFT")
-print str(temp.calendar.loc['Earnings Date'].tolist()[0])[0:10]
+print bt.get_options_data("2020-05-07","call",*['MO'])['MO'].loc[lambda x:x['strike']==39.5].loc[:,["ask","bid","strike"]]

@@ -14,8 +14,7 @@ def get_stock_data(start_time,end_time,*stocklist):
         try:
             data1 = yf.download(i,start_time,end_time)
             data_dict[i]=data1
-        except:
-            pass
+        except:pass
     return data_dict
 
 def get_next_event(*stocklist):
@@ -27,8 +26,7 @@ def get_next_event(*stocklist):
             templist=temp.calendar.loc['Earnings Date'].tolist()
             if templist:
                 data_next_ear_data[i]=str(templist[0])[0:10]
-        except:
-            pass
+        except:pass
     return data_next_ear_data
 
 def get_data(days):
