@@ -10,6 +10,7 @@ sns.set(style="whitegrid")
 x=bt.get_stock_data("2019-04-01","2020-05-01",*["LMT"])
 print x
 
-#x[["Adj Close","10 days","30 days","50 days"]].plot(subplots=False,figsize=(10,4))
+x['LMT'].plot(subplots=False,figsize=(10,4))
 
 newdata=pdr.DataReader(['OXY'],'yahoo',"2019-04-01","2020-05-03")
+plt.show()
