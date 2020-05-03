@@ -17,8 +17,8 @@ def get_stock_data(start_time,end_time,*stocklist):
             data1 = yf.download(i,start_time,end_time)
             for day in days:
                 columnday = str(day) + " days"
-                data1[columnday] = x['Adj Close'].rolling(day).mean()
-            data_dict[i]=data1[["Adj Close","10 days","30 days","50 days"]]
+                data1[columnday] = data1['Adj Close'].rolling(day).mean()
+            data_dict[i]=data1[["Adj Close","10 days","20 days","50 days"]]
         except:pass
     return data_dict
 
