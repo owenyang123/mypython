@@ -24,7 +24,7 @@ if __name__ == "__main__":
             for i in earningdate:
                 if 0<bt.get_date_delta(earningdate[i],cur_date)<=20:
                     msg+=i +" "+str(bt.get_date_delta(earningdate[i],cur_date))+" ,"
-            if msg:bt.mail_notice(msg,*maillist)
+            #if msg:bt.mail_notice(msg,*maillist)
             time.sleep(172800)
         except:
             print ("error seen")

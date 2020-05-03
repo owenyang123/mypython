@@ -18,7 +18,8 @@ axes[0].plot_date(x1,y*1.5,"-")
 axes[0].yaxis.grid(True)
 axes[1].plot_date(x2,z,"-")
 fig.autofmt_xdate()
-#plt.savefig('test.png')
-plt.show()
+xtr1="12331.png"
+plt.savefig(xtr1)
+
 
 
