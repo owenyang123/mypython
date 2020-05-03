@@ -1,3 +1,6 @@
-import collections
-l=[1,2,3,4]
-print collections.Counter(l)
+import random as ran
+for i in ["a","b","c"]:
+    globals()[i]=ran.randrange(100)
+print a
+print b
+print c

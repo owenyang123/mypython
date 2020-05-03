@@ -10,6 +10,7 @@ import os
 def get_stock_data(start_time,end_time,*stocklist):
     if not stocklist:return {}
     data_dict={}
+    days = [10, 20, 50]
     for i  in stocklist:
         try:
             data1 = yf.download(i,start_time,end_time)
