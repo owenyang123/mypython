@@ -6,6 +6,7 @@ from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 import datetime
 import os
+import pandas_datareader as pdr
 
 def get_stock_data(start_time,end_time,*stocklist):
     if not stocklist:return {}
@@ -14,7 +15,10 @@ def get_stock_data(start_time,end_time,*stocklist):
     for i  in stocklist:
         try:
             data1 = yf.download(i,start_time,end_time)
-            data_dict[i]=data1
+            for day in days:
+                columnday = str(day) + " days"
+                data1[columnday] = x['Adj Close'].rolling(day).mean()
+            data_dict[i]=data1[["Adj Close","10 days","30 days","50 days"]]
         except:pass
     return data_dict
 
