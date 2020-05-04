@@ -65,7 +65,17 @@ def mail_notice(msg,*maillist):
         except:pass
     return
 
-#def monte_carlo
+
+def perdict10days(startprice,mu,dt,sigma,days=10):
+    price=np.zeros(days)
+    price[0]=startprice
+    shock=np.zeros(days)
+    drift=np.zeros(days)
+    for x in range(1,days):
+        shock[x]=np.random.normal(loc=mu*dt,scale=sigma*np.sqrt(dt))
+        drift[x]=mu*dt
+        price[x]=price[x-1]+(price[x-1]*(drift[x]+shock[x]))
+    return price
 
 #def kelly_caculation():
     #return invest_percentage

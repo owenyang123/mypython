@@ -47,12 +47,12 @@ with open('1.html', 'w') as file:
     x=bt.get_stock_data("2019-04-01","2020-05-01",*["LMT"])
 x['LMT'].plot(subplots=False,figsize=(10,4))
 plt.show()
-'''
+
 
 l=["7asdb","6bca"]
 l.sort()
 print l
-=======
+
     
 sns.distplot(x["daily"].dropna(),bins=100,color='purple')
 plt.show()
@@ -60,17 +60,16 @@ print x["daily"].quantile(1)
 '''
 
 sns.set(style="whitegrid")
-x=yf.download("XOM","2020-02-01","2020-05-01")
-x["daily"]=x['Close'].shift(1)/x['Close']-1.0
-print x
+x=yf.download("XOM","2020-02-01","2020-05-04")
+x["daily"]=x['Close'].pct_change()
 
-days=60
+print x['Close'].tolist()[-1]
+
+days=10
 dt=1.0000/days
 mu=x["daily"].mean()
 sigma=x["daily"].std()
-print mu
-print sigma
-startprice=59
+startprice=43
 def mc(startprice,days,mu,dt,sigma):
     price=np.zeros(days)
     price[0]=startprice
@@ -86,5 +85,5 @@ def mc(startprice,days,mu,dt,sigma):
 for run in xrange(100):
     plt.plot(mc(startprice,days,mu,dt,sigma))
 plt.show()
->>>>>>> 1f9159558a23ee29581ac7b1696e0252494d5db2
+
 
