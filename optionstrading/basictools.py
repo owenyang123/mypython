@@ -65,6 +65,8 @@ def mail_notice(msg,*maillist):
         except:pass
     return
 
+#def monte_carlo
+
 #def kelly_caculation():
     #return invest_percentage
 
