@@ -44,6 +44,7 @@ for i in data1:
 
 
 
+
 import numpy as np
 import seaborn as sns
 import pandas as pd
@@ -55,16 +56,16 @@ import os
 import time
 sns.set(style="whitegrid")
 if __name__ == "__main__":
-    stocklist = ['ISRG', 'SRPT', 'MO', 'CRON', 'YELP', 'COST', 'BABA', 'DIS', 'AMZN', 'MSFT']
-    with open('zx.html', 'w') as file:
+    stocklist = ['JD','NIO','AMZN','UAL','OXY','T']
+    with open('/var/www/html/ps.html', 'w') as file:
         file.write('<html> \n')
         file.write('    <head> \n')
         file.write('        <title>Stock Data</title> \n')
         file.write('    </head> \n')
         file.write('    <body> \n')
         for i in stocklist:
-            file.write('        <H1> ' + i + ' </H1> \n')
-            file.write("        <img alt='no image1' src='" + i + "zx10days.png'></img> \n")
+            file.write('        <H1> ' + i +" "+ bt.get_data(0)+' </H1> \n')
+            file.write("        <img alt='no image1' src='" + i + "ps10days.png'></img> \n")
         file.write('    </body> \n')
         file.write('<html> \n')
     while(1):
@@ -76,10 +77,13 @@ if __name__ == "__main__":
                 dt = 1.0000 / days
                 mu = data1[i]["daily"].mean()
                 sigma = data1[i]["daily"].std()
-                startprice = data1[i]['Adj Close'].tolist()[-1]
+                if data1[i]['Adj Close'].tolist() != []:
+                    startprice = data1[i]['Adj Close'].tolist()[-1]
+                else:
+                    startprice = 0 - 100.00
                 for j in range(100):
                     plt.plot(bt.perdict10days(startprice,mu,dt,sigma,days=10))
-                str1=i+"zx10days.png"
+                str1="/var/www/html/"+i+"ps10days.png"
                 print(str1)
                 plt.savefig(str1)
                 plt.clf()
@@ -90,4 +94,4 @@ if __name__ == "__main__":
             plt.cla()
             plt.close()
             pass
-        timesleep(86400)
+        time.sleep(86400)
