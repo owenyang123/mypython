@@ -6,6 +6,7 @@ import basictools as bt
 import pandas_datareader as pdr
 import yfinance as yf
 import os
+import time
 sns.set(style="whitegrid")
 if __name__ == "__main__":
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
@@ -22,18 +23,19 @@ if __name__ == "__main__":
             file.write("        <img alt='no image1' src='" + i + ".png'></img> \n")
         file.write('    </body> \n')
         file.write('<html> \n')
-    #start while
-    data1 = bt.get_stock_data(bt.get_data(365), bt.get_data(0), *stocklist)
-    for i in stocklist:
-        try:
-            data1[i].plot(subplots=False, figsize=(10, 4))
-            str1=i+".png"
-            plt.savefig(str1)
-            plt.clf()
-            plt.cla()
-            plt.close()
-        except:
-            plt.clf()
-            plt.cla()
-            plt.close()
-            pass
+    while(1):
+        data1 = bt.get_stock_data(bt.get_data(365), bt.get_data(0), *stocklist)
+        for i in sorted(stocklist):
+            try:
+                data1[i].plot(subplots=False, figsize=(10, 4))
+                str1=i+".png"
+                plt.savefig(str1)
+                plt.clf()
+                plt.cla()
+                plt.close()
+            except:
+                plt.clf()
+                plt.cla()
+                plt.close()
+        time.sleep(86400)
+

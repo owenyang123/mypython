@@ -6,6 +6,9 @@ import basictools as bt
 import pandas_datareader as pdr
 import yfinance as yf
 import os
+import time
+sns.set(style="whitegrid")
+
 '''
 sns.set(style="whitegrid")
 x=bt.get_stock_data("2019-04-01","2020-05-01",*["LMT"])
@@ -40,9 +43,12 @@ with open('1.html', 'w') as file:
         file.write("        <img alt='no image1' src='"+i+".png'></img> \n")
     file.write('    </body> \n')
     file.write('<html> \n')
-'''
-
-sns.set(style="whitegrid")
-x=bt.get_stock_data("2019-04-01","2020-05-01",*["LMT"])
+    x=bt.get_stock_data("2019-04-01","2020-05-01",*["LMT"])
 x['LMT'].plot(subplots=False,figsize=(10,4))
 plt.show()
+'''
+
+l=["7asdb","6bca"]
+l.sort()
+print l
+
