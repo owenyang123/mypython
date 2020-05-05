@@ -77,8 +77,16 @@ def perdict10days(startprice,mu,dt,sigma,days=10):
         price[x]=price[x-1]+(price[x-1]*(drift[x]+shock[x]))
     return price
 
-#def kelly_caculation():
-    #return invest_percentage
+def kelly_caculation(b,p):
+    if b*p<=1-p:return 0
+    return (p(b+1)-1)/b
+
+def closestprice(pricelist,price):
+    l= [abs(i-price) for i in pricelist]
+    result=zip(pricelist,l)
+    result.sort(key=lambda x:x[1])
+    return result[0][0]
+
 
 if __name__ == "__main__":
     pass
