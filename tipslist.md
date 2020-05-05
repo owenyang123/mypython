@@ -10,3 +10,6 @@ https://pandas-datareader.readthedocs.io/en/latest/
 
 4 plt related
 https://seaborn.pydata.org/examples/grouped_barplot.html
+
+5 finance
+https://pypi.org/project/yfinance/
