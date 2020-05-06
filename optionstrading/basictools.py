@@ -60,7 +60,7 @@ def get_options_data(date_str,cp="call",*stocklist):
 def mail_notice(msg,*maillist):
     for i in maillist:
         try:
-            str1 ="sudo echo " + "\'"+msg+" "+" \'" +"| "+"mail -s " +"\'" + "less then 20 days left to earning call" + "\' " +i
+            str1 ="sudo echo " + "\'"+msg+" "+" \'" +"| "+"mail -s " +"\'" + "less then 10 days left to earning call" + "\' " +i
             os.system(str1)
         except:pass
     return
@@ -77,7 +77,7 @@ def perdict10days(startprice,mu,dt,sigma,days=10):
         price[x]=price[x-1]+(price[x-1]*(drift[x]+shock[x]))
     return price
 
-def kelly_caculation(b,p):
+def kelly_caculation(p,b):
     if b*p<=1-p:return 0
     return (p(b+1)-1)/b
 
@@ -86,6 +86,9 @@ def closestprice(pricelist,price):
     result=zip(pricelist,l)
     result.sort(key=lambda x:x[1])
     return result[0][0]
+
+def incornot(list1):
+    return float(list1[-1]-list1[0])/list1[0]
 
 
 if __name__ == "__main__":

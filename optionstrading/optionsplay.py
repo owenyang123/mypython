@@ -10,16 +10,69 @@ import os
 import time
 sns.set(style="whitegrid")
 
-str1="AMAT ,MTD ,SYY ,DISCK ,QRVO ,FRT ,KLAC ,FLT ,NEM ,BDX ,CTSH ,IPGP ,EQIX ,MRO ,ALL ,NCLH ,MAA ,TDG ,VRSK ,KIM ,ANSS ,ESS ,EQR ,GPC ,MLM ,ED ,DISH ,CTVA ,WU ,AME ,JKHY ,OXY ,LNC ,PYPL ,BWA ,BKNG ,ATO ,RSG ,ANET ,AWK ,AMCR ,BR ,MCHP ,AES ,ZBH ,HII ,NRG ,SBAC ,IFF ,EXC ,CF ,J ,WRK ,WYNN ,NWSA ,AMP ,INCY ,CVS ,LIN ,AEP ,DLR ,D ,UAA ,PRU ,HPQ ,ATVI ,ALXN ,FISV ,FIS ,CSCO ,EVRG ,DIS ,EOG ,ALB ,VMC ,CDW ,SWKS ,NLOK ,EXPD ,VFC ,EXR ,PGR ,FTNT ,ALK ,REG ,HSIC ,ES ,MOS ,AEE ,FOXA ,UDR ,MYL ,PWR ,AOS ,MPC ,RCL ,GPN ,LNT ,ZTS ,REGN ,LDOS ,MET ,ITW ,IRM ,COTY ,CNP ,APA ,TMUS ,FLIR ,EA ,DVA ,MAR ,GM ,BLL ,"
+str1="LNT ,AMCR ,D ,APA ,PYPL,EVRG "
 stocklist=str1.replace(" ","").split(",")
-earningdate = {'EOG': '2020-05-07', 'EXC': '2020-05-08', 'LIN': '2020-05-07', 'VFC': '2020-05-15', 'WU': '2020-05-05', 'QRVO': '2020-05-07', 'BR': '2020-05-08', 'SBAC': '2020-05-05', 'FLIR': '2020-05-06', 'PRU': '2020-05-05', 'BWA': '2020-05-06', 'AWK': '2020-05-06', 'MYL': '2020-05-11', 'UAA': '2020-05-11', 'ATVI': '2020-05-05', 'HSIC': '2020-05-05', 'CTSH': '2020-05-07', 'FIS': '2020-05-07', 'GPN': '2020-05-06', 'D': '2020-05-05', 'EVRG': '2020-05-06', 'PYPL': '2020-05-06', 'EQR': '2020-05-05', 'WRK': '2020-05-05', 'GPC': '2020-05-06', 'MRO': '2020-05-06', 'GM': '2020-05-06', 'MAR': '2020-05-11', 'VRSK': '2020-05-05', 'FOXA': '2020-05-06', 'AMCR': '2020-05-11', 'MAA': '2020-05-06', 'KIM': '2020-05-08', 'EXR': '2020-05-06', 'SYY': '2020-05-05', 'APA': '2020-05-06', 'AEP': '2020-05-06', 'AES': '2020-05-07', 'TDG': '2020-05-05', 'FLT': '2020-05-07', 'REGN': '2020-05-05', 'AMAT': '2020-05-14', 'IFF': '2020-05-11', 'SWKS': '2020-08-05', 'KLAC': '2020-05-05', 'ESS': '2020-05-06', 'TMUS': '2020-05-06', 'NWSA': '2020-05-07', 'AME': '2020-05-05', 'AMP': '2020-05-06', 'OXY': '2020-05-05', 'ED': '2020-05-07', 'DISCK': '2020-05-06', 'EA': '2020-05-05', 'COTY': '2020-05-11', 'DLR': '2020-05-07', 'ITW': '2020-05-05', 'BDX': '2020-05-07', 'ES': '2020-05-06', 'MPC': '2020-05-05', 'IPGP': '2020-05-05', 'BLL': '2020-05-07', 'MOS': '2020-08-03', 'MCHP': '2020-05-07', 'IRM': '2020-05-07', 'NEM': '2020-05-05', 'CTVA': '2020-05-07', 'ATO': '2020-05-06', 'DVA': '2020-05-05', 'FISV': '2020-05-07', 'REG': '2020-05-07', 'LNT': '2020-05-07', 'ZBH': '2020-05-11', 'NLOK': '2020-05-14', 'AOS': '2020-05-05', 'LNC': '2020-05-06', 'EXPD': '2020-05-05', 'J': '2020-05-06', 'CF': '2020-05-06', 'JKHY': '2020-05-04', 'FRT': '2020-05-06', 'ZTS': '2020-05-06', 'ALL': '2020-05-05', 'ALK': '2020-05-05', 'ALB': '2020-05-06', 'VMC': '2020-05-06', 'MET': '2020-05-06', 'CDW': '2020-05-06', 'ANET': '2020-05-05', 'AEE': '2020-05-11', 'WYNN': '2020-05-06', 'NRG': '2020-05-07', 'ANSS': '2020-05-06', 'CVS': '2020-05-06', 'RCL': '2020-05-05', 'DISH': '2020-05-07', 'LDOS': '2020-05-05', 'DIS': '2020-05-05', 'INCY': '2020-05-05', 'PGR': '2020-05-05', 'HII': '2020-05-07', 'FTNT': '2020-05-06', 'CNP': '2020-05-07', 'HPQ': '2020-05-07', 'MLM': '2020-05-05', 'ALXN': '2020-05-06', 'MTD': '2020-05-07', 'UDR': '2020-05-06', 'PWR': '2020-05-07', 'EQIX': '2020-05-06', 'NCLH': '2020-05-07', 'RSG': '2020-05-05', 'CSCO': '2020-05-13', 'BKNG': '2020-05-07'}
-
+earningdate = bt.get_next_event(*stocklist)
 latest_option_date={}
+optiondata_call={}
+optiondata_put={}
 for i in earningdate:
     temp=yf.Ticker(i)
-    latest_option_date[i]=sorted(temp.options)[1]
-days90_data = bt.get_stock_data(bt.get_data(95), bt.get_data(0), *stocklist)
+    for j in sorted(temp.options):
+        if 3<bt.get_date_delta(j,earningdate[i])<35:
+            latest_option_date[i]=j
+            break
+    if i in latest_option_date:
+        optiondata_call[i] = temp.option_chain(latest_option_date[i]).calls
+        optiondata_put[i] = temp.option_chain(latest_option_date[i]).puts
+
+'''
+check the stock flipping  more than 2%
+'''
+days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
 days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
 days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
 days30to60_data = bt.get_stock_data(bt.get_data(60), bt.get_data(30), *stocklist)
 days60to90_data = bt.get_stock_data(bt.get_data(90), bt.get_data(60), *stocklist)
+kelly_data={}
+probability_rate=np.array([0.5,1.0,0.25,0.125])
+for i in latest_option_date:
+    '''
+    get p
+    '''
+    days0to100_data[i]["daily"] = days0to100_data[i]['Adj Close'].pct_change()
+    days = 10
+    dt = 1.0000 / days
+    mu = days0to100_data[i]["daily"].mean()
+    sigma = days0to100_data[i]["daily"].std()
+    startprice = days0to100_data[i]['Adj Close'].tolist()[-1]
+    temp1,temp2,temp3,temp4=0.0,0.0,0.0,0.0
+    for j in range(100):
+        pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
+        if bt.incornot(list(pricelist))>0.02:temp1+=1
+    temp1=float(temp1)/100
+    if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0:temp2=1
+    if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0: temp3 = 1
+    if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0: temp4 = 1
+    p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
+    corp=""
+    if p>=0.7:corp="call"
+    elif p<=0.2:corp="put"
+    else:corp="hold"
+    if corp=="call":kelly_data[i]=[corp,i,latest_option_date,p]
+    elif corp=="put":kelly_data[i]=[corp,i,latest_option_date,1-p]
+    '''
+    get b
+    '''
+    strikelist_call=optiondata_call[i]["strike"].tolist()
+    strikelist_put = optiondata_put[i]["strike"].tolist()
+    target=bt.closestprice(strikelist_call,startprice)
+    option_call_price=optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2
+    option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[
+        0]/2
+    b_call=((startprice*0.2-option_call_price)/option_call_price)-1
+    b_put=((startprice*0.2-option_put_price)/option_put_price)-1
+    if kelly_data[i][0]=="call":kelly_data[i].append(b_call)
+    if kelly_data[i][0] == "put": kelly_data[i].append(b_put)
+
+print kelly_data
