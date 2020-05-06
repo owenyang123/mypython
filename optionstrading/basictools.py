@@ -79,7 +79,7 @@ def perdict10days(startprice,mu,dt,sigma,days=10):
 
 def kelly_caculation(p,b):
     if b*p<=1-p:return 0
-    return (p(b+1)-1)/b
+    return (p*(b+1)-1)/b
 
 def closestprice(pricelist,price):
     l= [abs(i-price) for i in pricelist]

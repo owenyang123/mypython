@@ -41,3 +41,6 @@ for i in data1:
     plt.close()
 
 '''
+import basictools as bt
+
+print bt.kelly_caculation(0.9093333333333333,0.273111131456)

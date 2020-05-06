@@ -59,20 +59,24 @@ for i in latest_option_date:
     if p>=0.7:corp="call"
     elif p<=0.2:corp="put"
     else:corp="hold"
-    if corp=="call":kelly_data[i]=[corp,i,latest_option_date,p]
-    elif corp=="put":kelly_data[i]=[corp,i,latest_option_date,1-p]
+    if corp=="call":kelly_data[i]=[corp,i,latest_option_date[i],p]
+    elif corp=="put":kelly_data[i]=[corp,i,latest_option_date[i],1-p]
+    else:kelly_data[i]=[corp,i,-1,-1]
     '''
     get b
     '''
     strikelist_call=optiondata_call[i]["strike"].tolist()
     strikelist_put = optiondata_put[i]["strike"].tolist()
     target=bt.closestprice(strikelist_call,startprice)
-    option_call_price=optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2
-    option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[
-        0]/2
-    b_call=((startprice*0.2-option_call_price)/option_call_price)-1
-    b_put=((startprice*0.2-option_put_price)/option_put_price)-1
+    option_call_price=float(optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2)
+    option_put_price = float(optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[
+        0]/2)
+    b_call=((startprice*0.04-option_call_price)/option_call_price)
+    b_put=((startprice*0.04-option_put_price)/option_put_price)
     if kelly_data[i][0]=="call":kelly_data[i].append(b_call)
     if kelly_data[i][0] == "put": kelly_data[i].append(b_put)
 
-print kelly_data
+for i in kelly_data:
+    if kelly_data[i][0]!="hold":
+        print kelly_data[i][3],kelly_data[i][4]
+print bt.kelly_caculation(0.9093333333333333,0.273111131456)
