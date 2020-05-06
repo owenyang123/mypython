@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-str1="LNT ,AMCR ,D ,ANSS ,ALB ,UAA ,LNC ,PWR ,CDW ,SBAC ,HII ,AES ,CTSH ,FRT ,ATO ,RCL ,EXR ,MET ,ES ,EOG ,AWK ,IRM ,SYY ,FISV ,FLT ,LIN ,CF ,MRO ,HPQ ,ESS ,DISH ,FTNT ,EQIX ,CVS ,KIM ,ZTS ,TMUS ,AEP ,J ,FOXA ,ED ,FIS ,BWA ,ZBH ,MAA ,BR ,COTY ,MYL ,AMAT ,AEE ,UDR ,DLR ,MAR ,FLIR ,QRVO ,AMP ,CTVA ,MCHP ,VFC ,DISCK ,NRG ,MTD ,CNP ,IFF ,NWSA ,NLOK ,CSCO ,GPN ,BLL ,ALXN ,REG ,WYNN ,VMC ,EVRG ,NCLH ,GPC ,BKNG ,EXC ,BDX ,APA ,PYPL"
+str1="LNT ,AMCR ,D ,ANSS ,ALB ,UAA ,LNC ,PWR ,CDW ,SBAC ,HII ,AES ,CTSH ,FRT ,ATO ,RCL ,EXR ,MET ,ES ,EOG ,AWK ,IRM ,SYY ,FISV ,FLT ,LIN ,CF ,MRO ,HPQ ,ESS ,DISH ,FTNT ,EQIX ,CVS ,KIM ,ZTS ,TMUS ,AEP ,J ,FOXA ,ED ,FIS ,BWA ,ZBH ,MAA ,BR ,COTY ,MYL ,AMAT ,AEE ,UDR ,DLR ,MAR ,FLIR ,QRVO ,AMP ,CTVA ,MCHP ,VFC ,DISCK ,NRG ,MTD ,CNP ,IFF ,NWSA ,NLOK ,CSCO ,GPN ,BLL ,ALXN ,REG ,WYNN ,VMC ,EVRG ,NCLH ,GPC ,BKNG ,EXC ,BDX ,APA ,PYPL "
 stocklist=str1.replace(" ","").split(",")
 earningdate = bt.get_next_event(*stocklist)
 latest_option_date={}
@@ -32,8 +32,8 @@ check the stock flipping  more than 2%
 days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
 days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
 days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
-days30to60_data = bt.get_stock_data(bt.get_data(60), bt.get_data(30), *stocklist)
-days60to90_data = bt.get_stock_data(bt.get_data(90), bt.get_data(60), *stocklist)
+days30to60_data = bt.get_stock_data(bt.get_data(90), bt.get_data(0), *stocklist)
+days60to90_data = bt.get_stock_data(bt.get_data(180), bt.get_data(91), *stocklist)
 kelly_data={}
 probability_rate=np.array([0.5,1.0,0.25,0.125])
 for i in latest_option_date:
@@ -56,7 +56,7 @@ for i in latest_option_date:
     if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0: temp4 = 1
     p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
     corp=""
-    if p>=0.7:corp="call"
+    if p>=0.6:corp="call"
     elif p<=0.2:corp="put"
     else:corp="hold"
     if corp=="call":kelly_data[i]=[corp,i,latest_option_date[i],p]
@@ -68,9 +68,12 @@ for i in latest_option_date:
     strikelist_call=optiondata_call[i]["strike"].tolist()
     strikelist_put = optiondata_put[i]["strike"].tolist()
     target=bt.closestprice(strikelist_call,startprice)
-    option_call_price=float(optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2)
-    option_put_price = float(optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[
-        0]/2)
+    if optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()!=[]:
+        option_call_price=optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2
+    else:option_call_price=100
+    if optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist() != []:
+        option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[0]/2
+    else:option_put_price=100
     b_call=((startprice*0.04-option_call_price)/option_call_price)
     b_put=((startprice*0.04-option_put_price)/option_put_price)
     if kelly_data[i][0]=="call":kelly_data[i].append(b_call)
