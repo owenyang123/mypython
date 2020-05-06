@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-str1="LNT ,AMCR ,D ,APA ,PYPL,EVRG "
+str1="LNT ,AMCR ,D ,ANSS ,ALB ,UAA ,LNC ,PWR ,CDW ,SBAC ,HII ,AES ,CTSH ,FRT ,ATO ,RCL ,EXR ,MET ,ES ,EOG ,AWK ,IRM ,SYY ,FISV ,FLT ,LIN ,CF ,MRO ,HPQ ,ESS ,DISH ,FTNT ,EQIX ,CVS ,KIM ,ZTS ,TMUS ,AEP ,J ,FOXA ,ED ,FIS ,BWA ,ZBH ,MAA ,BR ,COTY ,MYL ,AMAT ,AEE ,UDR ,DLR ,MAR ,FLIR ,QRVO ,AMP ,CTVA ,MCHP ,VFC ,DISCK ,NRG ,MTD ,CNP ,IFF ,NWSA ,NLOK ,CSCO ,GPN ,BLL ,ALXN ,REG ,WYNN ,VMC ,EVRG ,NCLH ,GPC ,BKNG ,EXC ,BDX ,APA ,PYPL"
 stocklist=str1.replace(" ","").split(",")
 earningdate = bt.get_next_event(*stocklist)
 latest_option_date={}
@@ -77,6 +77,7 @@ for i in latest_option_date:
     if kelly_data[i][0] == "put": kelly_data[i].append(b_put)
 
 for i in kelly_data:
-    if kelly_data[i][0]!="hold":
-        print kelly_data[i][3],kelly_data[i][4]
-print bt.kelly_caculation(0.9093333333333333,0.273111131456)
+    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][3],kelly_data[i][4]))
+    else:kelly_data[i]=[]
+
+print kelly_data
