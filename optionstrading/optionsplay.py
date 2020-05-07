@@ -87,5 +87,5 @@ for i in kelly_data:
     else:kelly_data[i]=[]
 
 for i in kelly_data:
-    if kelly_data[i]==[]:continue
+    if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
     print(kelly_data[i])
