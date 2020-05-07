@@ -73,8 +73,8 @@ def wealthfree(stocklist):
         if optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist() != []:
             option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[0]/2
         else:option_put_price=100
-        if option_call_price==0:option_call_price=1000
-        if option_put_price == 0: option_put_price = 1000
+        if option_call_price==0 or not option_call_price :option_call_price=1000
+        if option_put_price == 0 or not  option_put_price: option_put_price = 1000
         b_call=((startprice*0.04-option_call_price)/option_call_price)
         b_put=((startprice*0.04-option_put_price)/option_put_price)
         if kelly_data[i][0]=="call":
