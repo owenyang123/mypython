@@ -79,11 +79,15 @@ for i in latest_option_date:
     else:option_put_price=100
     b_call=((startprice*0.03-option_call_price)/option_call_price)
     b_put=((startprice*0.03-option_put_price)/option_put_price)
-    if kelly_data[i][0]=="call":kelly_data[i].append(b_call)
-    if kelly_data[i][0] == "put": kelly_data[i].append(b_put)
+    if kelly_data[i][0]=="call":
+        kelly_data[i].append(option_call_price)
+        kelly_data[i].append(b_call)
+    if kelly_data[i][0] == "put":
+        kelly_data[i].append(option_put_price)
+        kelly_data[i].append(b_put)
 
 for i in kelly_data:
-    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][3],kelly_data[i][4]))
+    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
     else:kelly_data[i]=[]
 
 for i in kelly_data:
