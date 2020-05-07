@@ -40,7 +40,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.optionsplay">
+  <component name="RunManager" selected="Python.test2">
     <configuration name="123" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -82,7 +82,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dumpstock100days" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="basictools" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -92,7 +92,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/dumpstock100days.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/basictools.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +160,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.optionsplay" />
         <item itemvalue="Python.test2" />
+        <item itemvalue="Python.basictools" />
+        <item itemvalue="Python.optionsplay" />
         <item itemvalue="Python.test (2)" />
         <item itemvalue="Python.123" />
-        <item itemvalue="Python.dumpstock100days" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +198,7 @@
       <workItem from="1586063227326" duration="2332000" />
       <workItem from="1586724555934" duration="6583000" />
       <workItem from="1586926588059" duration="24965000" />
-      <workItem from="1587697198136" duration="71846000" />
+      <workItem from="1587697198136" duration="74613000" />
     </task>
     <servers />
   </component>

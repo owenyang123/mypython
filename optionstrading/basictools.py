@@ -83,7 +83,7 @@ def kelly_caculation(p,b):
 
 def closestprice(pricelist,price):
     l= [abs(i-price) for i in pricelist]
-    result=zip(pricelist,l)
+    result=list(zip(pricelist,l))
     result.sort(key=lambda x:x[1])
     return result[0][0]
 
