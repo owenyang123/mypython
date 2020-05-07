@@ -7,6 +7,7 @@ register_matplotlib_converters()
 import datetime
 import os
 import pandas_datareader as pdr
+import csv
 
 def get_stock_data(start_time,end_time,*stocklist):
     if not stocklist:return {}
@@ -83,7 +84,7 @@ def kelly_caculation(p,b):
 
 def closestprice(pricelist,price):
     l= [abs(i-price) for i in pricelist]
-    result=zip(pricelist,l)
+    result=list(zip(pricelist,l))
     result.sort(key=lambda x:x[1])
     return result[0][0]
 

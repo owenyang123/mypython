@@ -21,5 +21,8 @@ fig.autofmt_xdate()
 xtr1="12331.png"
 plt.savefig(xtr1)
 
+str1="abcdefg"
+print str1[::-1]
+
 
 
