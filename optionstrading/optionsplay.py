@@ -87,9 +87,9 @@ for i in latest_option_date:
         kelly_data[i].append(b_put)
 
 for i in kelly_data:
-    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
+    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-3],kelly_data[i][-1]))
     else:kelly_data[i]=[]
 
 for i in kelly_data:
-    if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
+    if kelly_data[i]==[] or kelly_data[i][-1]!=0:continue
     print(kelly_data[i])
