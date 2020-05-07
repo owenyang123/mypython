@@ -45,8 +45,9 @@ import basictools as bt
 import optionsplay as op
 import csv
 
-str1="LNT ,AMCR ,D ,ANSS ,ALB ,UAA ,LNC ,PWR ,CDW ,SBAC ,HII ,AES ,CTSH ,FRT ,ATO ,RCL ,EXR ,MET ,ES ,EOG ,AWK ,IRM ,SYY ,FISV ,FLT ,LIN ,CF ,MRO ,HPQ ,ESS ,DISH ,FTNT ,EQIX ,CVS ,KIM ,ZTS ,TMUS ,AEP ,J ,FOXA ,ED ,FIS ,BWA ,ZBH ,MAA ,BR ,COTY ,MYL ,AMAT ,AEE ,UDR ,DLR ,MAR ,FLIR ,QRVO ,AMP ,CTVA ,MCHP ,VFC ,DISCK ,NRG ,MTD ,CNP ,IFF ,NWSA ,NLOK ,CSCO ,GPN ,BLL ,ALXN ,REG ,WYNN ,VMC ,EVRG ,NCLH ,GPC ,BKNG ,EXC ,BDX ,APA ,PYPL"
+str1="LNT ,AMCR ,D ,ANSS ,ALB "
 stocklist=str1.replace(" ","").split(",")
+x=op.wealthfree(stocklist)
 l=[['put', 'AEP', '2020-08-20', 1.0, "nan", 0.25, 45.0, "nan"],
 ['put', 'EXC', '2020-05-14', 0.9359999999999999, 0.25381816517223, 1.1, 34.0, 0.6838509863288453],
 ['put', 'CSCO', '2020-05-21', 0.9359999999999999, 0.1121622034021327, 1.48, 41.0, 0.365397800161412],
@@ -60,7 +61,7 @@ l=[['put', 'AEP', '2020-08-20', 1.0, "nan", 0.25, 45.0, "nan"],
 ['put', 'BLL', '2020-05-14', 0.9093333333333333, 0.4020266927083334, 1.875, 65.0, 0.6838093362676845]]
 
 with open(r'document.csv','a') as fd:
-    for t in l:
+    for t in x:
         writer=csv.writer(fd)
         writer.writerow([bt.get_data(0)]+t)
 
