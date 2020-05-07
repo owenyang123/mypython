@@ -51,12 +51,9 @@ for i in latest_option_date:
         pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
         if bt.incornot(list(pricelist))>0.02:temp1+=1
     temp1=float(temp1)/100
-    if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.3:temp2=1.5
-    elif bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0:temp2=1
-    if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.3: temp3 = 1.5
-    elif bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0:temp3=1
-    if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1.5
-    elif bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0:temp4 = 1
+    if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.05:temp2=1
+    if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.1: temp3 = 1
+    if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1
     p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
     corp=""
     if p>=0.6:corp="call"
@@ -77,19 +74,20 @@ for i in latest_option_date:
     if optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist() != []:
         option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[0]/2
     else:option_put_price=100
-    b_call=((startprice*0.03-option_call_price)/option_call_price)
-    b_put=((startprice*0.03-option_put_price)/option_put_price)
+    b_call=((startprice*0.04-option_call_price)/option_call_price)
+    b_put=((startprice*0.04-option_put_price)/option_put_price)
     if kelly_data[i][0]=="call":
-        kelly_data[i].append(option_call_price)
         kelly_data[i].append(b_call)
+        kelly_data[i].append(option_call_price)
+        kelly_data[i].append(target)
     if kelly_data[i][0] == "put":
-        kelly_data[i].append(option_put_price)
         kelly_data[i].append(b_put)
+        kelly_data[i].append(option_put_price)
+        kelly_data[i].append(target)
 
 for i in kelly_data:
-    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
+    if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-4],kelly_data[i][-3]))
     else:kelly_data[i]=[]
-
 for i in kelly_data:
     if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
     print(kelly_data[i])

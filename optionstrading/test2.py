@@ -43,4 +43,4 @@ for i in data1:
 '''
 import basictools as bt
 
-print bt.kelly_caculation(0.9093333333333333,0.173111131456)
+print bt.kelly_caculation(0.784, 0.4454479006901841)
