@@ -29,7 +29,6 @@ def wealthfree(stocklist):
     check the stock flipping  more than 2%
     '''
     days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
-    days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
     days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
     days30to60_data = bt.get_stock_data(bt.get_data(90), bt.get_data(0), *stocklist)
     days60to90_data = bt.get_stock_data(bt.get_data(180), bt.get_data(91), *stocklist)
@@ -54,7 +53,6 @@ def wealthfree(stocklist):
         if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.1: temp3 = 1
         if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1
         p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
-        corp=""
         if p>=0.6:corp="call"
         elif p<=0.2:corp="put"
         else:corp="hold"
@@ -96,3 +94,4 @@ def wealthfree(stocklist):
 
 if __name__ == "__main__":
     pass
+
