@@ -6,15 +6,18 @@ import basictools as bt
 import time
 import csv
 import optionsplay as op
+import stockplay as sp
 
-str1="LNT ,AMCR ,UAA ,PWR ,HII ,AES ,CTSH ,RCL ,EOG ,IRM ,FISV ,FLT ,LIN ,DISH ,KIM ,ED ,FIS ,ZBH ,BR ,COTY ,MYL ,AMAT ,A"
+url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+content = pd.read_html(url)
+stocklist = content[0]['Symbol'].tolist()
+l=sp.wealthfree(stocklist)
 
-stocklist=str1.replace(" ","").split(",")
-
-l= op.wealthfree(stocklist)
-
-
-with open(r'document.csv','a') as fd:
+with open(r'ymh.csv','a') as fd:
     for t in l:
-        writer=csv.writer(fd)
-        writer.writerow([bt.get_data(0)]+[bt.get_next_event(t[1])[t[1]]]+t)
+        if t[-1]!=0:
+            writer=csv.writer(fd)
+            writer.writerow([str(datetime.datetime.now())]+t)
+
+
+
