@@ -16,7 +16,7 @@ def wealthfree(stocklist):
     days0to15_data = bt.get_stock_data(bt.get_data(15), bt.get_data(0), *stocklist)
     days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
     kelly_data={}
-    probability_rate=np.array([0.2,0.3,0.5,1.0])
+    probability_rate=np.array([0.2,0.5,0.3,1.0])
     for i in days0to100_data:
         try:
             '''
@@ -39,16 +39,15 @@ def wealthfree(stocklist):
             temp1=float(temp1)/100
             if bt.incornot(days0to5_data[i]['Adj Close'].tolist())>0.03:temp2=1
             if bt.incornot(days0to15_data[i]['Adj Close'].tolist()) > 0.06: temp3 = 1
-            if bt.incornot(days0to30_data[i]['Adj Close'].tolist()) > 0.1: temp4 = 1
+            if bt.incornot(days0to30_data[i]['Adj Close'].tolist()) > 0.07: temp4 = 1
             p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
-            kelly_data[i]=[i,p,b*10.0]
+            kelly_data[i]=[i,p,b*8]
         except:
             pass
-    l = []
-    print kelly_data
+    l=[]
     for i in kelly_data:
-        kelly_data[i]=bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1])
-        l.append([i,kelly_data[i]])
+        kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
+        l.append(kelly_data[i])
     return l
 
 if __name__ == "__main__":
