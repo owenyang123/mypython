@@ -17,4 +17,4 @@ l= op.wealthfree(stocklist)
 with open(r'document.csv','a') as fd:
     for t in l:
         writer=csv.writer(fd)
-        writer.writerow([bt.get_data(0)]+[bt.get_next_event(t[1])[t[1]]]+t)
+        writer.writerow([str(datetime.datetime.now())]+[bt.get_data(0)]+[bt.get_next_event(t[1])[t[1]]]+t)
