@@ -33,7 +33,7 @@ def wealthfree(stocklist):
     days30to60_data = bt.get_stock_data(bt.get_data(90), bt.get_data(0), *stocklist)
     days60to90_data = bt.get_stock_data(bt.get_data(180), bt.get_data(91), *stocklist)
     kelly_data={}
-    probability_rate=np.array([0.5,1.0,0.25,0.125])
+    probability_rate=np.array([0.5,1.0,0.5,0.25])
     for i in latest_option_date:
         '''
         get p
@@ -86,6 +86,7 @@ def wealthfree(stocklist):
     for i in kelly_data:
         if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-4],kelly_data[i][-3]))
         else:kelly_data[i]=[]
+    print kelly_data
     l=[]
     for i in kelly_data:
         if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
