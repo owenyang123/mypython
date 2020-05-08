@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-def wealthfree(stocklist):
+def caifuziyou(stocklist):
     days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
     days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
     days0to15_data = bt.get_stock_data(bt.get_data(15), bt.get_data(0), *stocklist)

@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-def wealthfree(stocklist):
+def caifuziyou(stocklist):
     earningdate = bt.get_next_event(*stocklist)
     latest_option_date={}
     optiondata_call={}
