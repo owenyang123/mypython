@@ -7,8 +7,14 @@ import time
 import csv
 import optionsplay as op
 
-str1="LNT ,AMCR ,D ,ANSS ,ALB ,UAA ,LNC ,PWR ,CDW ,SBAC ,HII ,AES ,CTSH ,FRT ,ATO ,RCL ,EXR ,MET ,ES ,EOG ,AWK ,IRM ,SYY ,FISV ,FLT ,LIN ,CF ,MRO ,HPQ ,ESS ,DISH ,FTNT ,EQIX ,CVS ,KIM ,ZTS ,TMUS ,AEP ,J ,FOXA ,ED ,FIS ,BWA ,ZBH ,MAA ,BR ,COTY ,MYL ,AMAT ,AEE ,UDR ,DLR ,MAR ,FLIR ,QRVO ,AMP ,CTVA ,MCHP ,VFC ,DISCK ,NRG ,MTD ,CNP ,IFF ,NWSA ,NLOK ,CSCO ,GPN ,BLL ,ALXN ,REG ,WYNN ,VMC ,EVRG ,NCLH ,GPC ,BKNG ,EXC ,BDX ,APA ,PYPL "
+str1="LNT ,AMCR ,UAA ,PWR ,HII ,AES ,CTSH ,RCL ,EOG ,IRM ,FISV ,FLT ,LIN ,DISH ,KIM ,ED ,FIS ,ZBH ,BR ,COTY ,MYL ,AMAT ,A"
 
 stocklist=str1.replace(" ","").split(",")
 
-print op.wealthfree(stocklist)
+l= op.wealthfree(stocklist)
+
+
+with open(r'document.csv','a') as fd:
+    for t in l:
+        writer=csv.writer(fd)
+        writer.writerow([bt.get_data(0)]+[bt.get_next_event(t[1])[t[1]]]+t)

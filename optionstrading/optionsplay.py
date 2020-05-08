@@ -83,7 +83,6 @@ def wealthfree(stocklist):
             kelly_data[i].append(b_put)
             kelly_data[i].append(option_put_price)
             kelly_data[i].append(target)
-    print kelly_data
     for i in kelly_data:
         if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-4],kelly_data[i][-3]))
         else:kelly_data[i]=[]
