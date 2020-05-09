@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-def wealthfree(stocklist):
+def caifuziyou(stocklist):
     earningdate = bt.get_next_event(*stocklist)
     latest_option_date={}
     optiondata_call={}
@@ -86,6 +86,7 @@ def wealthfree(stocklist):
     for i in kelly_data:
         if kelly_data[i][0]!="hold":kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-4],kelly_data[i][-3]))
         else:kelly_data[i]=[]
+    print kelly_data
     l=[]
     for i in kelly_data:
         if kelly_data[i]==[] or kelly_data[i][-1]==0:continue

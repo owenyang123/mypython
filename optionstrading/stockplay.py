@@ -10,7 +10,7 @@ import os
 import time
 sns.set(style="whitegrid")
 
-def wealthfree(stocklist):
+def caifuziyou(stocklist):
     days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
     days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
     days0to15_data = bt.get_stock_data(bt.get_data(15), bt.get_data(0), *stocklist)
@@ -41,13 +41,14 @@ def wealthfree(stocklist):
             if bt.incornot(days0to15_data[i]['Adj Close'].tolist()) > 0.06: temp3 = 1
             if bt.incornot(days0to30_data[i]['Adj Close'].tolist()) > 0.07: temp4 = 1
             p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
-            kelly_data[i]=[i,p,b*8]
+            kelly_data[i]=[i,startprice,p,b*8]
         except:
             pass
     l=[]
     for i in kelly_data:
         kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
         l.append(kelly_data[i])
+    l.sort(key=lambda x:x[-3],reverse=True)
     return l
 
 if __name__ == "__main__":

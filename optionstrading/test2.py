@@ -1,23 +1,16 @@
 import pandas as pd
-from pandas.plotting import register_matplotlib_converters
-register_matplotlib_converters()
 import datetime
 import basictools as bt
 import time
 import csv
 import optionsplay as op
 import stockplay as sp
-
-url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-content = pd.read_html(url)
-stocklist = content[0]['Symbol'].tolist()
-print sp.wealthfree(stocklist)
-'''
-l= op.wealthfree(stocklist)
+str1="AMCR ,UAA ,RCL ,LIN ,KIM ,ZBH ,BR ,COTY ,MYL ,AMAT ,AEE ,MAR ,VFC ,IFF ,NLOK ,CSCO ,NCLH ,EXC"
+stocklist=str1.replace(" ","").split(",")
+l=sp.caifuziyou(stocklist)
 with open(r'ymh.csv','a') as fd:
     for t in l:
-        writer=csv.writer(fd)
-        writer.writerow([str(datetime.datetime.now())]+[bt.get_data(0)]+[bt.get_next_event(t[1])[t[1]]]+t)
-'''
-
+        if t[-1]!=0:
+            writer=csv.writer(fd)
+            writer.writerow([str(datetime.datetime.now())]+t)
 
