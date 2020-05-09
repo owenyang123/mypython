@@ -10,4 +10,4 @@ import time
 sns.set(style="whitegrid")
 import stockplay as sp
 stocklist = ["TSLA","NTDOY"]
-print sp.wealthfree(stocklist)
+print sp.caifuziyou(stocklist)
