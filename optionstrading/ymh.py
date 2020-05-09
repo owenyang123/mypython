@@ -9,5 +9,5 @@ import os
 import time
 sns.set(style="whitegrid")
 import stockplay as sp
-stocklist = ["ATVI","NTDOY"]
+stocklist = ["TSLA","NTDOY"]
 print sp.wealthfree(stocklist)
