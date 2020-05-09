@@ -7,7 +7,10 @@ import pandas_datareader as pdr
 import yfinance as yf
 import os
 import time
+import optionsplay as op
+import stockplay as sp
 sns.set(style="whitegrid")
 import stockplay as sp
-stocklist = ["ATVI","NTDOY"]
-print sp.wealthfree(stocklist)
+str1='AMCR ,UAA ,RCL ,LIN ,KIM ,ZBH ,BR ,COTY ,MYL ,AMAT ,AEE ,MAR ,VFC ,IFF ,NLOK ,CSCO ,NCLH ,EXC'
+stocklist = str1.replace(" ","").split(",")
+print op.caifuziyou(stocklist)
