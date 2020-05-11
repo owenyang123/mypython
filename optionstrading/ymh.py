@@ -11,6 +11,7 @@ import optionsplay as op
 import stockplay as sp
 sns.set(style="whitegrid")
 import stockplay as sp
+<<<<<<< HEAD
 '''
 str1='COST,TQQQ'
 stocklist = str1.replace(" ","").split(",")
@@ -35,4 +36,7 @@ str1='CSCO2020-05-13 ,NCLH2020-05-14 ,TTWO2020-05-20 ,VFC2020-05-15 ,ZBH2020-05-
 
 stocklist= [i[0] for i in rmvdate(str1)]
 print op.caifuziyou(stocklist)
+=======
+stocklist = ["TSLA","NTDOY"]
+>>>>>>> d1bdc89e94dae21573999d8f07c1a8b77c4eaf02
 print sp.caifuziyou(stocklist)
