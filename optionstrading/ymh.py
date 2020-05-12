@@ -9,5 +9,5 @@ import os
 import time
 sns.set(style="whitegrid")
 import stockplay as sp
-stocklist = ["TSLA","NTDOY"]
+stocklist = ["QCOM"]
 print sp.caifuziyou(stocklist)
