@@ -15,4 +15,3 @@ with open(r'ymh.csv','a') as fd:
         if t[-1]!=0:
             writer=csv.writer(fd)
             writer.writerow([str(datetime.datetime.now())]+t)
-

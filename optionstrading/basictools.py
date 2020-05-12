@@ -92,5 +92,16 @@ def incornot(list1):
     return float(list1[-1]-list1[0])/list1[0]
 
 
+def rmvdate(str1):
+    if not str1:return []
+    list1=str1.replace(" ","").split(",")
+    temp=[]
+    for i in list1:
+        for j in range(len(i)):
+            if i[j]=="2":
+                temp.append((i[0:j],i[j:]))
+                break
+    return temp
+
 if __name__ == "__main__":
     pass
