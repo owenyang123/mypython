@@ -90,6 +90,7 @@ def caifuziyou(stocklist):
     for i in kelly_data:
         if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
         l.append(kelly_data[i])
+    l.sort(key=lambda x:x[-5],reverse=True)
     return l
 
 if __name__ == "__main__":
