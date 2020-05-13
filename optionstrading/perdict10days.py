@@ -12,14 +12,14 @@ if __name__ == "__main__":
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     content = pd.read_html(url)
     stocklist = content[0]['Symbol'].tolist()
-    with open('2.html', 'w') as file:
+    with open('/var/www/html/2.html', 'w') as file:
         file.write('<html> \n')
         file.write('    <head> \n')
         file.write('        <title>Stock Data</title> \n')
         file.write('    </head> \n')
         file.write('    <body> \n')
         for i in stocklist:
-            file.write('        <H1> ' + i + ' </H1> \n')
+            file.write('        <H1> ' + i +" "+bt.get_data(0)+ ' </H1> \n')
             file.write("        <img alt='no image1' src='" + i + "10days.png'></img> \n")
         file.write('    </body> \n')
         file.write('<html> \n')
@@ -35,7 +35,7 @@ if __name__ == "__main__":
                 startprice = data1[i]['Adj Close'].tolist()[-1]
                 for j in range(100):
                     plt.plot(bt.perdict10days(startprice,mu,dt,sigma,days=10))
-                str1=i+"10days.png"
+                str1="/var/www/html/"+i+"10days.png"
                 print str1
                 plt.savefig(str1)
                 plt.clf()
@@ -46,5 +46,4 @@ if __name__ == "__main__":
             plt.cla()
             plt.close()
             pass
-        print("quit")
-        break
+        time.sleep(3600*12)
