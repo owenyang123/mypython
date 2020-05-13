@@ -57,7 +57,7 @@ def caifuziyou(stocklist):
         elif p<=0.2:corp="put"
         else:corp="hold"
         if corp=="call":kelly_data[i]=[corp,i,latest_option_date[i],p]
-        elif corp=="put":kelly_data[i]=[corp,i,latest_option_date[i],1-p]
+        elif corp=="put" and 1-p>0.6:kelly_data[i]=[corp,i,latest_option_date[i],1-p]
         else:kelly_data[i]=[corp,i,-1,-1]
         '''
         get b
