@@ -36,7 +36,7 @@ def caifuziyou(stocklist):
                     temp1+=1
                     bsum+=bt.incornot(list(pricelist))
             b=bsum/temp1
-            temp1=float(temp1)/100
+            temp1=float(temp1)/1000
             if bt.incornot(days0to5_data[i]['Adj Close'].tolist())>0.03:temp2=1
             if bt.incornot(days0to15_data[i]['Adj Close'].tolist()) > 0.06: temp3 = 1
             if bt.incornot(days0to30_data[i]['Adj Close'].tolist()) > 0.07: temp4 = 1

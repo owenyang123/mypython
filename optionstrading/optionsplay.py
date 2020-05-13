@@ -48,7 +48,7 @@ def caifuziyou(stocklist):
         for j in range(1000):
             pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
             if bt.incornot(list(pricelist))>0.02:temp1+=1
-        temp1=float(temp1)/100
+        temp1=float(temp1)/1000
         if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.05:temp2=1
         if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.1: temp3 = 1
         if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1
