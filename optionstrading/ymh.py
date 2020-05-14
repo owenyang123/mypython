@@ -5,6 +5,7 @@ import optionsplay as op
 sns.set(style="whitegrid")
 import stockplay as sp
 import pandas as pd
+import csv
 
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)

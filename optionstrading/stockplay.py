@@ -11,7 +11,7 @@ import time
 sns.set(style="whitegrid")
 
 def caifuziyou(stocklist):
-    days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
+    days0to100_data = bt.get_stock_data(bt.get_data(300), bt.get_data(0), *stocklist)
     days0to5_data = bt.get_stock_data(bt.get_data(5), bt.get_data(0), *stocklist)
     days0to15_data = bt.get_stock_data(bt.get_data(15), bt.get_data(0), *stocklist)
     days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
