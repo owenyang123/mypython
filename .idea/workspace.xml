@@ -111,9 +111,6 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -173,8 +170,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.ymh" />
-        <item itemvalue="Python.AI" />
         <item itemvalue="Python.stockplay" />
+        <item itemvalue="Python.AI" />
         <item itemvalue="Python.optionsplay" />
         <item itemvalue="Python.test2" />
       </list>
@@ -211,7 +208,7 @@
       <workItem from="1586724555934" duration="6583000" />
       <workItem from="1586926588059" duration="24965000" />
       <workItem from="1587697198136" duration="96215000" />
-      <workItem from="1589253378388" duration="7006000" />
+      <workItem from="1589253378388" duration="7520000" />
     </task>
     <servers />
   </component>
