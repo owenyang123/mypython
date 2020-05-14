@@ -45,10 +45,10 @@ def caifuziyou(stocklist):
         sigma = days0to100_data[i]["daily"].std()
         startprice = days0to100_data[i]['Adj Close'].tolist()[-1]
         temp1,temp2,temp3,temp4=0.0,0.0,0.0,0.0
-        for j in range(100):
+        for j in range(1000):
             pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
             if bt.incornot(list(pricelist))>0.02:temp1+=1
-        temp1=float(temp1)/100
+        temp1=float(temp1)/1000
         if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.05:temp2=1
         if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.1: temp3 = 1
         if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1
@@ -90,6 +90,7 @@ def caifuziyou(stocklist):
     for i in kelly_data:
         if kelly_data[i]==[] or kelly_data[i][-1]==0:continue
         l.append(kelly_data[i])
+    l.sort(key=lambda x:x[-5],reverse=True)
     return l
 
 if __name__ == "__main__":
