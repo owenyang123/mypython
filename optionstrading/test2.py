@@ -5,6 +5,7 @@ import time
 import csv
 import optionsplay as op
 import stockplay as sp
+'''
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
 stocklist = ['CSCO', 'NCLH', 'TTWO', 'VFC', 'ZBH', 'JWN', 'AEE', 'AAP', 'A', 'MAR', 'WMT', 'HRL', 'COTY', 'IFF', 'CPRT', 'LOW', 'ROST', 'SNPS', 'PGR', 'ADI', 'HPE', 'LB', 'UAA', 'AMCR', 'NLOK', 'KSS', 'BBY', 'NVDA', 'TJX', 'HD', 'MDT', 'MYL', 'INTU', 'AMAT', 'DXC']+['TQQQ']
@@ -15,10 +16,8 @@ with open(r'stocks.csv','a') as fd:
         if t[-1]!=0:
             writer=csv.writer(fd)
             writer.writerow([str(datetime.datetime.now())]+t)
-l=op.caifuziyou(stocklist)
-with open(r'options.csv','a') as fd:
-    for t in l:
-        if t[-1]!=0:
-            writer=csv.writer(fd)
-            writer.writerow([str(datetime.datetime.now())]+t)
+'''
+
+print sp.caifuziyou(['IPGP'])
+
 

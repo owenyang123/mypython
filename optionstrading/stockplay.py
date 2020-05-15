@@ -32,7 +32,7 @@ def caifuziyou(stocklist):
             bsum=0
             for j in range(1000):
                 pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
-                if bt.incornot(list(pricelist))>0.03:
+                if bt.incornot(list(pricelist))>=0.03:
                     temp1+=1
                     bsum+=bt.incornot(list(pricelist))
             b=bsum/temp1
