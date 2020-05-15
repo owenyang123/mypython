@@ -16,7 +16,7 @@ def caifuziyou(stocklist):
     days0to15_data = bt.get_stock_data(bt.get_data(15), bt.get_data(0), *stocklist)
     days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
     kelly_data={}
-    probability_rate=np.array([0.2,0.5,0.3,1.0])
+    probability_rate=np.array([0.2,0.5,0.5,0.8])
     for i in days0to100_data:
         try:
             '''
