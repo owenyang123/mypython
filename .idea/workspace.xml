@@ -111,9 +111,6 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -212,7 +209,7 @@
       <workItem from="1586926588059" duration="24965000" />
       <workItem from="1587697198136" duration="96215000" />
       <workItem from="1589253378388" duration="8683000" />
-      <workItem from="1589513515296" duration="333000" />
+      <workItem from="1589513515296" duration="1631000" />
     </task>
     <servers />
   </component>

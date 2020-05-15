@@ -41,7 +41,7 @@ def caifuziyou(stocklist):
             if bt.incornot(days0to15_data[i]['Adj Close'].tolist()) > 0.06: temp3 = 1
             if bt.incornot(days0to30_data[i]['Adj Close'].tolist()) > 0.07: temp4 = 1
             p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
-            kelly_data[i]=[i,startprice,p,b*8]
+            kelly_data[i]=[i,startprice,p,b*10]
         except:
             pass
     l=[]
