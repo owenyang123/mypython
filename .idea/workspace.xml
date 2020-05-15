@@ -40,7 +40,7 @@
       </console-settings>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ymh">
+  <component name="RunManager" selected="Python.test2">
     <configuration name="AI" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -130,9 +130,6 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -169,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test2" />
         <item itemvalue="Python.ymh" />
         <item itemvalue="Python.stockplay" />
         <item itemvalue="Python.AI" />
         <item itemvalue="Python.optionsplay" />
-        <item itemvalue="Python.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +205,8 @@
       <workItem from="1586724555934" duration="6583000" />
       <workItem from="1586926588059" duration="24965000" />
       <workItem from="1587697198136" duration="96215000" />
-      <workItem from="1589253378388" duration="7520000" />
+      <workItem from="1589253378388" duration="8683000" />
+      <workItem from="1589513515296" duration="3776000" />
     </task>
     <servers />
   </component>
