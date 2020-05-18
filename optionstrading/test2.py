@@ -17,7 +17,5 @@ with open(r'stocks.csv','a') as fd:
             writer=csv.writer(fd)
             writer.writerow([str(datetime.datetime.now())]+t)
 '''
-
-import collections
-
-print collections.Counter([1,2,2]).most_common(1)[0][0]
+print bt.get_data(0)
+print bt.get_stock_data("2020-02-01","2020-05-16",*['NVDA'])
