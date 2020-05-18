@@ -18,6 +18,6 @@ with open(r'stocks.csv','a') as fd:
             writer.writerow([str(datetime.datetime.now())]+t)
 '''
 
-print sp.caifuziyou(['IPGP'])
+import collections
 
-
+print collections.Counter([1,2,2]).most_common(1)[0][0]
