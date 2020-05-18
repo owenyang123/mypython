@@ -11,7 +11,7 @@ import csv
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
 stocklist = content[0]['Symbol'].tolist()
-<<<<<<< HEAD
+
 
 l=sp.caifuziyou(['JD'])
 print l
@@ -24,16 +24,25 @@ for i in str1.split(","):
         if i[j]==" ":
             l1.append(i[0:j])
             break
+'''
+str1='NTAP ,ADSK ,GPS ,A ,KSS ,AZO ,COST ,AAP ,SNPS ,DE ,NVDA ,HPE ,PVH ,BBY ,DXC ,HD ,DLTR ,WMT ,KEYS ,JWN ,ULTA ,ADI ,DG ,PGR ,HPQ ,TJX ,CPRT ,LOW ,MDT ,HRL ,LB ,TTWO ,ROST ,INTU '
+list1=str1.replace(",","").split(" ")
+l=sp.caifuziyou(list1)
 
-l=sp.caifuziyou(['Bili'])
->>>>>>> 139c47b0324e41a130ecd3aaae2f9e15dd1af883
+with open(r'ymh.csv','a') as fd:
+    for t in l:
+        if t[-1]!=0:
+            writer=csv.writer(fd)
+            writer.writerow([bt.get_data(0)]+t)
+l=op.caifuziyou(list1)
+
 with open(r'ymh.csv','a') as fd:
     for t in l:
         if t[-1]!=0:
             writer=csv.writer(fd)
             writer.writerow([bt.get_data(0)]+t)
 
-'''
+
 
 
 

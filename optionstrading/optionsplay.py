@@ -33,7 +33,7 @@ def caifuziyou(stocklist):
     days30to60_data = bt.get_stock_data(bt.get_data(90), bt.get_data(0), *stocklist)
     days60to90_data = bt.get_stock_data(bt.get_data(180), bt.get_data(91), *stocklist)
     kelly_data={}
-    probability_rate=np.array([0.3,1.0,0.5,0.125])
+    probability_rate=np.array([0.2,1.0,0.5,0.125])
     for i in latest_option_date:
         '''
         get p
