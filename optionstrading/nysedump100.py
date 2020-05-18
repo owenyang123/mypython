@@ -1,3 +1,4 @@
+
 import numpy as np
 import seaborn as sns
 import pandas as pd
@@ -8,14 +9,16 @@ import yfinance as yf
 import os
 import time
 sns.set(style="whitegrid")
+stocklist=[]
+with open('nsdqlist') as f:
+    for i in f.readlines():
+        stocklist.append(i.replace("\n", ""))
+print stocklist
 if __name__ == "__main__":
-    url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-    content = pd.read_html(url)
-    stocklist = content[0]['Symbol'].tolist()
-    with open('/var/www/html/1.html', 'w') as file:
+    with open('/var/www/html/nsdq.html', 'w') as file:
         file.write('<html> \n')
         file.write('    <head> \n')
-        file.write('        <title>Stock Data</title> \n')
+        file.write('        <title> NYSE Stock Data</title> \n')
         file.write('    </head> \n')
         file.write('    <body> \n')
         for i in stocklist:
@@ -24,6 +27,7 @@ if __name__ == "__main__":
         file.write('    </body> \n')
         file.write('<html> \n')
     while(1):
+
         data1 = bt.get_stock_data(bt.get_data(365), bt.get_data(0), *stocklist)
         for i in stocklist:
             try:
