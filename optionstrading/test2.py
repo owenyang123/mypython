@@ -16,6 +16,24 @@ with open('nsdqlist') as f:
         if "-" not in i and "." not in i:
             nsdq.append(i.replace("\n",""))
 
-print sp.caifuziyou(nyse)
+len1=len(nyse)/100+1
+for i in range(len1):
+    l=sp.caifuziyou(nyse[i*100:i*100+100])
+    with open(r'ymh.csv', 'a') as fd:
+        for t in l:
+            if t[-1] != 0:
+                writer = csv.writer(fd)
+                writer.writerow([bt.get_data(0)] + t)
+
+len1=len(nsdq)/100+1
+for i in range(len1):
+    l=sp.caifuziyou(nsdq[i*100:i*100+100])
+    with open(r'ymh.csv', 'a') as fd:
+        for t in l:
+            if t[-1] != 0:
+                writer = csv.writer(fd)
+                writer.writerow([bt.get_data(0)] + t)
+
+
 
 
