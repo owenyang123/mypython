@@ -25,10 +25,9 @@ for i in str1.split(","):
             l1.append(i[0:j])
             break
 '''
-str1='NTAP ,ADSK ,GPS ,A ,KSS ,AZO ,COST ,AAP ,SNPS ,DE ,NVDA ,HPE ,PVH ,BBY ,DXC ,HD ,DLTR ,WMT ,KEYS ,JWN ,ULTA ,ADI ,DG ,PGR ,HPQ ,TJX ,CPRT ,LOW ,MDT ,HRL ,LB ,TTWO ,ROST ,INTU '
+str1='UBER'
 list1=str1.replace(",","").split(" ")
-l=sp.caifuziyou(list1)
-
+l=op.caifuziyou(list1)
 with open(r'ymh.csv','a') as fd:
     for t in l:
         if t[-1]!=0:
