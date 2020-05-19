@@ -34,13 +34,8 @@ with open(r'ymh.csv','a') as fd:
         if t[-1]!=0:
             writer=csv.writer(fd)
             writer.writerow([bt.get_data(0)]+t)
-l=op.caifuziyou(list1)
 
-with open(r'ymh.csv','a') as fd:
-    for t in l:
-        if t[-1]!=0:
-            writer=csv.writer(fd)
-            writer.writerow([bt.get_data(0)]+t)
+
 
 
 
