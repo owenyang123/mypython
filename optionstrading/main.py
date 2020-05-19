@@ -1,6 +1,7 @@
-def s123(*str1):
-    for  i in str1:
-        print i
-
-
-s123("123","123","eqweqe")
+import csv
+l=[]
+with open('ymh.csv') as fd:
+    for i in fd.readlines():
+        l.append(i.replace("\n","").split(","))
+l.sort(key=lambda x:x[-2])
+print l
