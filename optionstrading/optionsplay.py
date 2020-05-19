@@ -73,8 +73,8 @@ def caifuziyou(stocklist):
         else:option_put_price=100
         if option_call_price==0 or not option_call_price :option_call_price=1000
         if option_put_price == 0 or not  option_put_price: option_put_price = 1000
-        b_call=((startprice*0.08-option_call_price)/option_call_price)
-        b_put=((startprice*0.08-option_put_price)/option_put_price)
+        b_call=((startprice*0.04-0)/option_call_price)
+        b_put=((startprice*0.04-0)/option_put_price)
         if kelly_data[i][0]=="call":
             kelly_data[i].append(b_call)
             kelly_data[i].append(option_call_price)
