@@ -29,11 +29,11 @@ def caifuziyou(stocklist):
     check the stock flipping  more than 2%
     '''
     days0to100_data = bt.get_stock_data(bt.get_data(100), bt.get_data(0), *stocklist)
-    days0to30_data = bt.get_stock_data(bt.get_data(30), bt.get_data(0), *stocklist)
+    days0to30_data = bt.get_stock_data(bt.get_data(20), bt.get_data(0), *stocklist)
     days30to60_data = bt.get_stock_data(bt.get_data(90), bt.get_data(0), *stocklist)
     days60to90_data = bt.get_stock_data(bt.get_data(180), bt.get_data(91), *stocklist)
     kelly_data={}
-    probability_rate=np.array([0.2,1.0,0.5,0.125])
+    probability_rate=np.array([0.2,0.3,1,0.2])
     for i in latest_option_date:
         '''
         get p
@@ -49,9 +49,9 @@ def caifuziyou(stocklist):
             pricelist=bt.perdict10days(startprice, mu, dt, sigma, days=10)
             if bt.incornot(list(pricelist))>0.02:temp1+=1
         temp1=float(temp1)/1000
-        if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.05:temp2=1
+        if bt.incornot(days0to30_data[i]['Adj Close'].tolist())>0.03:temp2=1
         if bt.incornot(days30to60_data[i]['Adj Close'].tolist()) > 0.1: temp3 = 1
-        if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.3: temp4 = 1
+        if bt.incornot(days60to90_data[i]['Adj Close'].tolist()) > 0.1: temp4 = 1
         p=sum(probability_rate*np.array([temp1,temp2,temp3,temp4]))/sum(probability_rate)
         if p>=0.6:corp="call"
         elif p<=0.2:corp="put"
@@ -73,8 +73,8 @@ def caifuziyou(stocklist):
         else:option_put_price=100
         if option_call_price==0 or not option_call_price :option_call_price=1000
         if option_put_price == 0 or not  option_put_price: option_put_price = 1000
-        b_call=((startprice*0.04-option_call_price)/option_call_price)
-        b_put=((startprice*0.04-option_put_price)/option_put_price)
+        b_call=(startprice*0.03-0)/option_call_price
+        b_put=(startprice*0.02-0)/option_put_price
         if kelly_data[i][0]=="call":
             kelly_data[i].append(b_call)
             kelly_data[i].append(option_call_price)
