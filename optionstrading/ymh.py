@@ -10,17 +10,17 @@ import csv
 
 
 
-str1='AAP ,LB ,HPQ ,KEYS ,INTU ,RCL ,NTAP ,ADI ,HPE ,DG ,DXC ,ROST ,JWN ,DLTR ,AZO ,NVDA ,TJX ,DE ,PVH ,A ,CPRT ,KSS ,PGR ,MDT ,HRL ,BBY ,HD ,TTWO ,COST ,LOW ,ULTA ,ADSK ,SNPS '
+str1='JWN ,NTAP ,SNPS ,CPRT ,TJX ,COST ,MDT ,LB ,PGR ,A ,KEYS ,HRL ,ROST ,NVDA ,ADSK ,HPE ,PVH ,BBY ,TTWO ,DG ,DE ,INTU ,ULTA ,DLTR ,RCL ,HPQ ,ADI ,AZO ,DXC '
 list1=str1.replace(",","").split(" ")
 l=op.caifuziyou(list1)
-with open(r'ymh.csv','a') as fd:
+with open(r'ymh1.csv','a') as fd:
     for t in l:
         if t[-1]!=0:
             writer=csv.writer(fd)
             writer.writerow([bt.get_data(0)]+t)
 
 l=sp.caifuziyou(list1)
-with open(r'ymh.csv','a') as fd:
+with open(r'ymh1.csv','a') as fd:
     for t in l:
         if t[-1]!=0:
             writer=csv.writer(fd)
