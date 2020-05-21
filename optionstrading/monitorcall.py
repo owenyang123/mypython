@@ -22,9 +22,9 @@ if __name__ == "__main__":
             print("finding the delta less then 10days")
             for i in earningdate:
                 if 0<bt.get_date_delta(earningdate[i],cur_date)<=10:
-                    msg+=i +" "+str(bt.get_date_delta(earningdate[i],cur_date))+" ,"
-            if msg:bt.mail_notice(msg,*maillist)
-            print msg
+                    msg+=i +" "+" ,"
+            #if msg:bt.mail_notice(msg[:-1],*maillist)
+            print msg[:-1]
             time.sleep(40000)
         except:
             print ("error seen")
