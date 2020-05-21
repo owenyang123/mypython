@@ -5,31 +5,29 @@ import datetime
 import basictools as bt
 import time
 if __name__ == "__main__":
-    maillist=[" owenyang@juniper.net"," pings@juniper.net"," hfzhang@juniper.net"]
+    maillist=[" owenyang@juniper.net"," pings@juniper.net"," hfzhang@juniper.net","xinzhou@juniper.net"]
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
     content = pd.read_html(url)
     stocklist = content[0]['Symbol'].tolist()
-    print(stocklist)
-    print ("Start")
     while(1):
         try:
             print('sp500 index data got')
             if not stocklist: exit()
             print("starting polling date from yahoo")
             earningdate = bt.get_next_event(*stocklist)
-            if not earningdate:continue
+            print earningdate
+            if not earningdate:print "1231"
             cur_date=str(datetime.date.today())
             msg=""
-            print("finding the delta less then 20days")
+            print("finding the delta less then 10days")
             for i in earningdate:
                 if 0<bt.get_date_delta(earningdate[i],cur_date)<=10:
                     msg+=i +" "+str(bt.get_date_delta(earningdate[i],cur_date))+" ,"
-            #if msg:bt.mail_notice(msg,*maillist)
+            if msg:bt.mail_notice(msg,*maillist)
             print msg
-            time.sleep(172800)
+            time.sleep(40000)
         except:
             print ("error seen")
-            time.sleep(86400)
             pass
 
 

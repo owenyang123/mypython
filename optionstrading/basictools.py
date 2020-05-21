@@ -105,3 +105,5 @@ def rmvdate(str1):
 
 if __name__ == "__main__":
     pass
+
+yf.Ticker.calendar
