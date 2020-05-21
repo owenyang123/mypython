@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-l=[1]
-print l[:-1]
 
-import stockplay as sp
-import optionsplay as op
-
-print sp.caifuziyou(['nwsa'])
-=======
 import numpy as np
 import seaborn as sns
 import pandas as pd
@@ -18,5 +10,12 @@ import csv
 import yfinance as yf
 sns.set(style="whitegrid")
 if __name__ == "__main__":
-    print sp.caifuziyou(['XLE'])
->>>>>>> e360db794e52799b49e8264705a5fd3d984b0b88
+    set1 = set(['Financial', 'Energy', 'Financial Services', 'Consumer Cyclical', 'Basic Materials', 'Communication Services','Industrials', 'Healthcare', 'Real Estate', 'Utilities', 'Technology', 'Consumer Defensive'])
+    for i in set1:
+        stocklist = []
+        str1 = i + ".csv"
+        with open(str1) as fd:
+            for j in fd.readlines():
+                temp = j.replace("\n", "")
+                print i,temp
+
