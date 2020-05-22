@@ -26,7 +26,7 @@ def caifuziyou(stocklist):
 
 if __name__ == "__main__":
     stocklist = []
-    with open('nsdqlist') as f:
+    with open('nyselist') as f:
         for i in f.readlines():
             stocklist.append(i.replace("\n", ""))
     l=caifuziyou(stocklist)
