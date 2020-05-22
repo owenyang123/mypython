@@ -10,5 +10,16 @@ import csv
 import yfinance as yf
 sns.set(style="whitegrid")
 if __name__ == "__main__":
+<<<<<<< HEAD
     print sp.caifuziyou(['XLE'])
+=======
+    set1 = set(['Financial', 'Energy', 'Financial Services', 'Consumer Cyclical', 'Basic Materials', 'Communication Services','Industrials', 'Healthcare', 'Real Estate', 'Utilities', 'Technology', 'Consumer Defensive'])
+    for i in set1:
+        stocklist = []
+        str1 = i + ".csv"
+        with open(str1) as fd:
+            for j in fd.readlines():
+                temp = j.replace("\n", "")
+                print i,temp
+>>>>>>> 91dfbc7ea80de923b33d3e351f97e47b70c2724a
 

@@ -44,7 +44,6 @@ def caifuziyou(stocklist):
             kelly_data[i]=[i,startprice,p,b*9]
         except:
             pass
-    print("got final data")
     l=[]
     for i in kelly_data:
         kelly_data[i].append(bt.kelly_caculation(kelly_data[i][-2],kelly_data[i][-1]))
