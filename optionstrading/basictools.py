@@ -58,12 +58,12 @@ def get_options_data(date_str,cp="call",*stocklist):
         except:pass
     return data_options
 
-def mail_notice(msg,*maillist):
+def mail_notice(msg,maillist):
     for i in maillist:
-        try:
-            str1 ="sudo echo " + "\'"+msg+" "+" \'" +"| "+"mail -s " +"\'" + "less then 10 days left to earning call" + "\' " +i
-            os.system(str1)
-        except:pass
+        str1 = "sudo echo " + "\'" + msg + " " + " \'" + "| " + "mail -s " + "\'" + "less then 10 days left to earning call" + "\' " + i
+        str2 = "sudo echo " + "\'" + msg + " " + " \'" + "| " + "mail -s " + "\'" + "less then 10 days left to earning call" + "\' " + i+" "+"-A " +"caifu"+get_data(0)+".csv"
+        try:os.system(str2)
+        except:os.system(str1)
     return
 
 
@@ -105,5 +105,3 @@ def rmvdate(str1):
 
 if __name__ == "__main__":
     pass
-
-yf.Ticker.calendar
