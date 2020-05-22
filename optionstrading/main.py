@@ -1,25 +1,36 @@
-
 import numpy as np
+import csv
 import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
 import basictools as bt
-import time
-import stockplay as sp
-import csv
+import pandas_datareader as pdr
 import yfinance as yf
+import os
+import time
 sns.set(style="whitegrid")
+
+def caifuziyou(stocklist):
+    days0to15_data = bt.get_stock_data(bt.get_data(20), bt.get_data(0), *stocklist)
+    days0to180_data = bt.get_stock_data(bt.get_data(180), bt.get_data(30), *stocklist)
+    kelly_data={}
+    for i in days0to15_data:
+        try:
+            x1=days0to15_data[i]['Adj Close'].tolist()[-1]
+            x2=max(days0to180_data[i]['Adj Close'].tolist())
+            if x2/x1 >=2:kelly_data[i]=x1/x2
+        except:
+            pass
+
+    return kelly_data
+
 if __name__ == "__main__":
-<<<<<<< HEAD
-    print sp.caifuziyou(['XLE'])
-=======
-    set1 = set(['Financial', 'Energy', 'Financial Services', 'Consumer Cyclical', 'Basic Materials', 'Communication Services','Industrials', 'Healthcare', 'Real Estate', 'Utilities', 'Technology', 'Consumer Defensive'])
-    for i in set1:
-        stocklist = []
-        str1 = i + ".csv"
-        with open(str1) as fd:
-            for j in fd.readlines():
-                temp = j.replace("\n", "")
-                print i,temp
->>>>>>> 91dfbc7ea80de923b33d3e351f97e47b70c2724a
+    stocklist = []
+    with open('nsdqlist') as f:
+        for i in f.readlines():
+            stocklist.append(i.replace("\n", ""))
+    l=caifuziyou(stocklist)
+    for i in l:
+        print i,l[i]
+
 
