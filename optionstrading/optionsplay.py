@@ -17,13 +17,15 @@ def caifuziyou(stocklist):
     optiondata_put={}
     for i in earningdate:
         temp=yf.Ticker(i)
-        for j in sorted(temp.options):
-            if 3<bt.get_date_delta(j,earningdate[i])<35:
-                latest_option_date[i]=j
-                break
-        if i in latest_option_date:
-            optiondata_call[i] = temp.option_chain(latest_option_date[i]).calls
-            optiondata_put[i] = temp.option_chain(latest_option_date[i]).puts
+        if temp.options:
+            for j in sorted(temp.options):
+                    if 3<bt.get_date_delta(j,earningdate[i])<35:
+                        latest_option_date[i]=j
+                        break
+            if i in latest_option_date:
+                optiondata_call[i] = temp.option_chain(latest_option_date[i]).calls
+                optiondata_put[i] = temp.option_chain(latest_option_date[i]).puts
+        else:pass
 
     '''
     check the stock flipping  more than 2%
