@@ -13,10 +13,10 @@ url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
 stocklist = content[0]['Symbol'].tolist()
 
-l=op.caifuziyou(stocklist)
+l=sp.caifuziyou(stocklist)
 with open(r'today.csv', 'a') as fd:
     for t in l:
         if t[-1] != 0:
             writer = csv.writer(fd)
-            writer.writerow(t)
+            writer.writerow([bt.get_data(0)]+t)
 

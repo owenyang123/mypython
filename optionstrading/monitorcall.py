@@ -28,12 +28,12 @@ if __name__ == "__main__":
         for t in l:
             if t[-1] != 0:
                 writer = csv.writer(fd)
-                writer.writerow(t)
+                writer.writerow([bt.get_date_delta(earningdate[i],cur_date)]+t)
     l = op.caifuziyou(list1)
     with open(str1, 'a') as fd:
         for t in l:
             if t[-1] != 0:
                 writer = csv.writer(fd)
-                writer.writerow(t)
+                writer.writerow([bt.get_date_delta(earningdate[i],cur_date)]+t)
 
     #if msg:bt.mail_notice("Todays Briefing from SP500",maillist)

@@ -19,9 +19,9 @@ def caifuziyou(stocklist):
         temp=yf.Ticker(i)
         if temp.options:
             for j in sorted(temp.options):
-                    if 3<bt.get_date_delta(j,earningdate[i])<35:
-                        latest_option_date[i]=j
-                        break
+                if 3<bt.get_date_delta(j,earningdate[i])<35:
+                    latest_option_date[i]=j
+                    break
             if i in latest_option_date:
                 optiondata_call[i] = temp.option_chain(latest_option_date[i]).calls
                 optiondata_put[i] = temp.option_chain(latest_option_date[i]).puts
