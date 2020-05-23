@@ -14,7 +14,6 @@ with open('nsdqlist') as f:
     for i in f.readlines():
         if "-" not in i and "." not in i:
             alllist.append(i.replace("\n", ""))
-'''
 set1=set(['Financial','Energy','Financial Services','Consumer Cyclical','Basic Materials','Communication Services','Industrials','Healthcare','Real Estate','Utilities','Technology','Consumer Defensive'])
 for i in set1:
     stocklist=[]
@@ -38,3 +37,7 @@ for i in set1:
                 writer.writerow([i]+ t)
 
 
+'''
+
+l=[1,2,3,4,5]
+print filter(lambda x:x>2,l)
