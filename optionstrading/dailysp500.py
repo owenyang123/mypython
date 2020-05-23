@@ -14,7 +14,7 @@ content = pd.read_html(url)
 stocklist = content[0]['Symbol'].tolist()
 
 l=sp.caifuziyou(stocklist)
-with open(r'today.csv', 'a') as fd:
+with open(r'today.csv', 'w') as fd:
     for t in l:
         if t[-1] != 0:
             writer = csv.writer(fd)
