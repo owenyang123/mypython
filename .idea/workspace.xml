@@ -200,7 +200,7 @@
       <workItem from="1586926588059" duration="24965000" />
       <workItem from="1587697198136" duration="96215000" />
       <workItem from="1589253378388" duration="8683000" />
-      <workItem from="1589513515296" duration="33449000" />
+      <workItem from="1589513515296" duration="34566000" />
     </task>
     <servers />
   </component>
@@ -212,6 +212,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="22" key="#Inspections/0.0.1366.728@0.0.1366.728" timestamp="1585367537341" />
+    <state x="1801" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590299603151">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1801" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1590299603151" />
     <state x="462" y="118" key="FileChooserDialogImpl" timestamp="1585541934854">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
