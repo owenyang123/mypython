@@ -41,3 +41,8 @@ for i in set1:
 
 l=[1,2,3,4,5]
 print filter(lambda x:x>2,l)
+
+str1="12313"
+print str1.isdigit()
+
+
