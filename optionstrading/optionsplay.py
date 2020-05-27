@@ -69,10 +69,10 @@ def caifuziyou(stocklist):
         target=bt.closestprice(strikelist_call,startprice)
         if optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()!=[]:
             option_call_price=optiondata_call[i].loc[lambda df: df['strike'] == target][["bid","ask"]].sum(axis=1).tolist()[0]/2
-        else:option_call_price=100
+        else:option_call_price=1000
         if optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist() != []:
             option_put_price = optiondata_put[i].loc[lambda df: df['strike'] == target][["bid", "ask"]].sum(axis=1).tolist()[0]/2
-        else:option_put_price=100
+        else:option_put_price=1000
         if option_call_price==0 or not option_call_price :option_call_price=1000
         if option_put_price == 0 or not  option_put_price: option_put_price = 1000
         b_call=(startprice*0.03-0)/option_call_price
