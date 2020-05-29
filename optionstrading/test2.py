@@ -7,7 +7,9 @@ import optionsplay as op
 import stockplay as sp
 import yfinance as yf
 import yahoofinancials as yf1
-print str(bin(4))[2:]
+with open('2020-05-28.csv') as fd:
+    for i in fd.readlines():
+        if len(i)>10:print i.replace("\n","").split(",")[1]
 
 '''
 nyse=[]
