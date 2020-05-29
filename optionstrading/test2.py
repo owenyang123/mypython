@@ -7,12 +7,7 @@ import optionsplay as op
 import stockplay as sp
 import yfinance as yf
 import yahoofinancials as yf1
-url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-content = pd.read_html(url)
-stocklist = content[0]['Symbol'].tolist()
-
-assets = stocklist
-print yf.download('FB', '2019-12-01', '2019-12-30')
+print str(bin(4))[2:]
 
 '''
 nyse=[]
