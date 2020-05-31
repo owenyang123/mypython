@@ -30,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="D:/python38" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/optionstrading" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -39,6 +39,11 @@
         <option name="useSoftWraps" value="true" />
       </console-settings>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\pythonproject\mypython\optionstrading" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.test2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -200,7 +205,7 @@
       <workItem from="1586926588059" duration="24965000" />
       <workItem from="1587697198136" duration="96215000" />
       <workItem from="1589253378388" duration="8683000" />
-      <workItem from="1589513515296" duration="42518000" />
+      <workItem from="1589513515296" duration="44473000" />
     </task>
     <servers />
   </component>
