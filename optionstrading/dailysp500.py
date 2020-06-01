@@ -29,7 +29,7 @@ with open(filename_yes) as fd:
             set_yes.add(i.replace("\n", "").split(",")[0])
 for i in set_tod:
     if i not in set_yes:
-        print i
+        print
 
 
 
