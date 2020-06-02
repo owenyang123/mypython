@@ -27,9 +27,11 @@ with open(filename_yes) as fd:
     for i in fd.readlines():
         if len(i) > 10:
             set_yes.add(i.replace("\n", "").split(",")[0])
-for i in set_tod:
-    if i not in set_yes:
-        print i
+temp1=[]
+for i in l:
+    if i[0] not in set_yes and i[0] in set_tod:
+        temp1.append([i[0],i[1],i[-1]])
+print sorted(temp1,key=lambda x:x[1])
 
 
 
