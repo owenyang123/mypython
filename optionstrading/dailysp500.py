@@ -26,7 +26,7 @@ with open(filename_tod, 'w') as fd:
 with open(filename_yes) as fd:
     for i in fd.readlines():
         if len(i) > 10:
-            set_yes.add(i.replace("\n", "").split(",")[1])
+            set_yes.add(i.replace("\n", "").split(",")[0])
 for i in set_tod:
     if i not in set_yes:
         print i
