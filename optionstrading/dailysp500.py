@@ -22,14 +22,14 @@ with open(filename_tod, 'w') as fd:
         if t[-1] != 0 :
             set_tod.add(t[0])
             writer = csv.writer(fd)
-            writer.writerow([bt.get_data(0)]+t)
+            writer.writerow(t)
 with open(filename_yes) as fd:
     for i in fd.readlines():
         if len(i) > 10:
             set_yes.add(i.replace("\n", "").split(",")[0])
 for i in set_tod:
     if i not in set_yes:
-        print i
+        print
 
 
 
