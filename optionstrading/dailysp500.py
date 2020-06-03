@@ -31,13 +31,12 @@ temp1=[]
 for i in l:
     if i[0] not in set_yes and i[0] in set_tod:
         temp1.append([i[0],i[1],i[-1]])
-<<<<<<< HEAD
+temp1.sort(key=lambda x:x[-1],reverse=True)
 for i in temp1:
     print i
-=======
-temp1.sort(key=lambda x:x[-1])
-print temp1
->>>>>>> 3c36a687fe047e535c5a8ad29196dbf3c65b9296
+
+
+
 
 
 
