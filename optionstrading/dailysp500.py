@@ -31,6 +31,7 @@ temp1=[]
 for i in l:
     if i[0] not in set_yes and i[0] in set_tod:
         temp1.append([i[0],i[1],i[-1]])
+temp1.sort(key=lambda x:x[-1])
 print temp1
 
 
