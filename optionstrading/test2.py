@@ -16,7 +16,7 @@ import stockplay as sp
 import csv
 import yfinance as yf
 import optionsplay as op
-
+import fu
 print sp.caifuziyou(['MELI'])
 
 
