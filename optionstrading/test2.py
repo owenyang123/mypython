@@ -16,21 +16,10 @@ import stockplay as sp
 import csv
 import yfinance as yf
 import optionsplay as op
-<<<<<<< HEAD
-from futu
-=======
-<<<<<<< HEAD
-import fu
-print sp.caifuziyou(['MELI'])
 
-=======
-import random
+str1="abc"
 
-while (1):
-    print random.choice('|| _')
->>>>>>> b9f24b941fcb732c184f80757afc2f774cffd276
-
->>>>>>> 3c36a687fe047e535c5a8ad29196dbf3c65b9296
+print globals()[str1]
 
 
 
