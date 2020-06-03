@@ -16,11 +16,7 @@ import stockplay as sp
 import csv
 import yfinance as yf
 import optionsplay as op
-import random
-
-while (1):
-    print random.choice('|| _')
-
+from futu
 
 
 
