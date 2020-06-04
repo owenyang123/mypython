@@ -19,7 +19,9 @@ import optionsplay as op
 
 str1="abc"
 
-print globals()[str1]
+globals()[str1]=190
+
+print abc
 
 
 
