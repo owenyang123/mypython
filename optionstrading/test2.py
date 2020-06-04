@@ -17,17 +17,15 @@ import csv
 import yfinance as yf
 import optionsplay as op
 
-<<<<<<< HEAD
+
 print sp.caifuziyou(['ZM'])
 
 
 
-
-=======
 str1="abc"
 
 globals()[str1]=190
->>>>>>> eda9e87ac37f490b84a23a71218e25c1e5fd430a
+
 
 print abc
 
