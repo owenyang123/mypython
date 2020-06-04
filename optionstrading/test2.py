@@ -17,7 +17,7 @@ import csv
 import yfinance as yf
 import optionsplay as op
 
-print sp.caifuziyou(['MELI'])
+print sp.caifuziyou(['ZM'])
 
 
 

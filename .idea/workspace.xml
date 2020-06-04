@@ -45,7 +45,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.test2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -165,9 +165,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.dailysp500" />
-        <item itemvalue="Python.test2" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.ymh" />
       </list>
