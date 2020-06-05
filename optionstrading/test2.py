@@ -25,12 +25,10 @@ filename_tod=bt.get_data(0)+".csv"
 filename_yes=bt.get_data(1)+".csv"
 set_tod=set([])
 set_yes=set([])
-with open(filename_tod) as fd:
-    for i in fd.readlines():
-        if len(i) > 10:
-            set_tod.add(i.replace("\n", "").split(",")[0])
+print filename_yes
 with open(filename_yes) as fd:
     for i in fd.readlines():
+        print i
         if len(i) > 10:
             set_yes.add(i.replace("\n", "").split(",")[0])
 temp1=[]
