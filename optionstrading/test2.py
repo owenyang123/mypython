@@ -18,17 +18,27 @@ import yfinance as yf
 import optionsplay as op
 
 
-for i  in sp.caifuziyou(["UBER","AMT","VRSK","WM","SWKS","FANG","SYY","OKE","SYF","PEAK","ADBE"]):
-    print i
+#for i  in sp.caifuziyou(["UBER","AMT","VRSK","WM","SWKS","FANG","SYY","OKE","SYF","PEAK","ADBE"]):
+#   print i
+
+filename_tod=bt.get_data(0)+".csv"
+filename_yes=bt.get_data(1)+".csv"
+set_tod=set([])
+set_yes=set([])
+with open(filename_tod) as fd:
+    for i in fd.readlines():
+        if len(i) > 10:
+            set_tod.add(i.replace("\n", "").split(",")[0])
+with open(filename_yes) as fd:
+    for i in fd.readlines():
+        if len(i) > 10:
+            set_yes.add(i.replace("\n", "").split(",")[0])
+temp1=[]
+print len(set_tod),len(set_yes)
 
 
 
-str1="abc"
 
-globals()[str1]=190
-
-
-print abc
 
 
 
