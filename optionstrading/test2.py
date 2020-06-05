@@ -18,7 +18,8 @@ import yfinance as yf
 import optionsplay as op
 
 
-print sp.caifuziyou(['ZM'])
+for i  in sp.caifuziyou(["UBER","AMT","VRSK","WM","SWKS","FANG","SYY","OKE","SYF","PEAK","ADBE"]):
+    print i
 
 
 
