@@ -45,7 +45,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bfs">
+  <component name="RunManager" selected="Python.dailysp500">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,9 +94,6 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -180,8 +177,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.bfs" />
         <item itemvalue="Python.dailysp500" />
+        <item itemvalue="Python.bfs" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
@@ -221,6 +218,7 @@
       <workItem from="1587697198136" duration="96215000" />
       <workItem from="1589253378388" duration="8683000" />
       <workItem from="1589513515296" duration="78865000" />
+      <workItem from="1591846988598" duration="2601000" />
     </task>
     <servers />
   </component>
