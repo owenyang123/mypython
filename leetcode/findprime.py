@@ -1,34 +1,11 @@
-import math
-import sys
-import os
-import re
-def prime(n):
-    if n<=1:
-        return False
-    if n==2 or n==3:
-        return True
-    if n%2==0:
-        return False
-    k=int(math.sqrt(n)+1)
-    for i in range(3,k,2):
-        if n%i==0:
-            return False
-    return True
-def listprimes(n):
-    l=[]
-    for i in range(2,n+1):
-        if not prime(i):
-            continue
-        l.append(i)
-    return l
+def countPrimes(n):
+    if n < 3:
+        return 0
+    primes = [1] * n
+    primes[0] = primes[1] = 0
+    for i in range(2, int(n ** 0.5) + 1):
+        if primes[i]:
+            primes[i * i: n: i] = [0] * len(primes[i * i: n: i])
+    return sum(primes)
 
-print prime(73)
-print listprimes(101)
-
-print  os.path.exists("D:/Python27/mypython2018/mypython/leetcode/findprime1.py")
-
-B = [[0] * 5]* 6
-print B
-
-set1=set(["1","2"])
-print set1
+print countPrimes(100)

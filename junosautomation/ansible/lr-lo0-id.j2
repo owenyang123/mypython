@@ -1,0 +1,36 @@
+groups {
+ test {
+    logical-systems {
+    {# 
+      LR is a dictionary, I can also do " {% for k, v in LR.iteritems() %}, and use v['ip'] as a variable"
+    #}
+        {% for r in LR %}
+        {{ r['name'] }} {
+            interfaces {
+                lo0 {
+                    unit {{ r['id'] }} {
+                        description "{{ r['name'] }} loopbak";
+                        family inet {
+                            address {{ r['ip'] }}/32;
+                        }
+                    }
+                }
+            }
+            protocols {
+                ospf {
+                    area 0.0.0.0 {
+                        interface lo0.{{ r['id'] }} {
+                            passive;
+                        }
+                    }
+                }
+            }
+            routing-options {
+                router-id {{ r['id'] }};
+                autonomous-system {{ ASN }};
+            }
+        }
+        {% endfor %}
+    }
+ }
+}
