@@ -18,6 +18,6 @@ def binaryserach(list1,target):
             print "round " + str(count) + " number "+str(temp)+ " too big"
             r=r-(r-l)/2
     return
-print "PC:I just picked up one number ,please figure it our what it is"
-print "AI starts working to find out "+str(target)
+print "PC:I just picked up one number ,please figure it out what it is"
+print "AI starts working to find out the magic number"
 binaryserach(range(1024),target)
