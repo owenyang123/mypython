@@ -1,6 +1,9 @@
 import random
 
-target=random.randint(0,1000):I just picked up one number ,please figure it our what it is"
+target=random.randint(0,1000)
+print "PC:I just picked up one number ,please figure it out what it is"
+flag=False
+count=0
 while (flag==False):
     inputnum=int(input("please input the number: "))
     count+=1

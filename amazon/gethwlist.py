@@ -38,9 +38,3 @@ for  i in dict1:
 temp.sort(key=lambda a:a[0])
 for i in temp:
     print i
-print "*************"
-for i in temp:
-    for j in i[1:]:
-        if "MPC7" in j:
-            print i[0]
-

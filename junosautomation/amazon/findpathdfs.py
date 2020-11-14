@@ -16,4 +16,4 @@ class SR_input():
 test=SR_input()
 topology={1:[2,3,4],2:[1,3,5],3:[1,2,4,5],4:[1,3,5],5:[2,3,4,6],6:[5]}
 
-print sorted(test.findpath(topology,1,1),key=lambda x:len(x))
+print sorted(test.findpath(topology,1,6),key=lambda x:len(x))
