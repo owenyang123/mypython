@@ -2,7 +2,7 @@ import basictools as bt
 import random
 import copy
 import csv
-parent_list=["Mandy","Owen","Chao","Maggie","Vivian","Nina"]
+parent_list=["Gavin","Owen","Chao","Maggie","Vivian","Nina"]
 child_list=["Angelina","Audrey","Nora","Ethan","Edwin","Annie"]
 arrange_list=[]
 n=0
@@ -19,7 +19,7 @@ while (n<=9):
             for _ in range(1,len(parent_list)):
                 arrange_list.pop()
         else:
-            arrange_list.append((parent_list[i],temp[index_k],str(bt.get_data(-21-n*7)),"Week "+str(n+11)))
+            arrange_list.append((parent_list[i],temp[index_k],str(bt.get_data(-7-n*7)),"Week "+str(n+11)))
             temp.pop(index_k)
     if loop==5:pass
     else:n+=1
