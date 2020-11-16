@@ -5,11 +5,10 @@ import json
 import os
 import csv
 import threading
-with open('log.csv', 'r') as file:
+with open('2020-07-13.csv', 'r') as file:
     reader = csv.reader(file)
     for row in reader:
-        break
-        #print row
+        print row
 with open('2020-07-13.csv', 'r') as file:
     for row in file.readlines():
-        if row:print row.replace("\n","").split(',')
+        if row:print row.replace("\n","").replace("\r","").split(',')
