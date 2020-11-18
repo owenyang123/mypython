@@ -1,299 +1,55 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Gavin,Audrey,2020-11-21,Week 11
-Owen,Edwin,2020-11-21,Week 11
-Chao,Ethan,2020-11-21,Week 11
-Maggie,Annie,2020-11-21,Week 11
-Vivian,Nora,2020-11-21,Week 11
-Nina,Angelina,2020-11-21,Week 11
+Gavin,Edwin,2020-11-21,Week 11
+Owen,Nora,2020-11-21,Week 11
+Chao,Annie,2020-11-21,Week 11
+Maggie,Audrey,2020-11-21,Week 11
+Vivian,Angelina,2020-11-21,Week 11
+Nina,Ethan,2020-11-21,Week 11
 Gavin,Ethan,2020-11-28,Week 12
-Owen,Edwin,2020-11-28,Week 12
-Chao,Angelina,2020-11-28,Week 12
-Maggie,Annie,2020-11-28,Week 12
-Vivian,Audrey,2020-11-28,Week 12
-Nina,Nora,2020-11-28,Week 12
+Owen,Annie,2020-11-28,Week 12
+Chao,Edwin,2020-11-28,Week 12
+Maggie,Audrey,2020-11-28,Week 12
+Vivian,Nora,2020-11-28,Week 12
+Nina,Angelina,2020-11-28,Week 12
 Gavin,Annie,2020-12-05,Week 13
-Owen,Ethan,2020-12-05,Week 13
-Chao,Audrey,2020-12-05,Week 13
-Maggie,Edwin,2020-12-05,Week 13
+Owen,Edwin,2020-12-05,Week 13
+Chao,Ethan,2020-12-05,Week 13
+Maggie,Angelina,2020-12-05,Week 13
 Vivian,Nora,2020-12-05,Week 13
-Nina,Angelina,2020-12-05,Week 13
-Gavin,Annie,2020-12-12,Week 14
-Owen,Angelina,2020-12-12,Week 14
+Nina,Audrey,2020-12-05,Week 13
+Gavin,Ethan,2020-12-12,Week 14
+Owen,Edwin,2020-12-12,Week 14
 Chao,Audrey,2020-12-12,Week 14
-Maggie,Edwin,2020-12-12,Week 14
-Vivian,Nora,2020-12-12,Week 14
-Nina,Ethan,2020-12-12,Week 14
-Gavin,Nora,2020-12-19,Week 15
-Owen,Ethan,2020-12-19,Week 15
-Chao,Annie,2020-12-19,Week 15
-Maggie,Audrey,2020-12-19,Week 15
+Maggie,Nora,2020-12-12,Week 14
+Vivian,Annie,2020-12-12,Week 14
+Nina,Angelina,2020-12-12,Week 14
+Gavin,Audrey,2020-12-19,Week 15
+Owen,Annie,2020-12-19,Week 15
+Chao,Edwin,2020-12-19,Week 15
+Maggie,Nora,2020-12-19,Week 15
 Vivian,Angelina,2020-12-19,Week 15
-Nina,Edwin,2020-12-19,Week 15
-Gavin,Ethan,2020-12-26,Week 16
-Owen,Annie,2020-12-26,Week 16
-Chao,Edwin,2020-12-26,Week 16
-Maggie,Angelina,2020-12-26,Week 16
-Vivian,Audrey,2020-12-26,Week 16
-Nina,Nora,2020-12-26,Week 16
-Gavin,Nora,2021-01-02,Week 17
-Owen,Angelina,2021-01-02,Week 17
-Chao,Audrey,2021-01-02,Week 17
-Maggie,Edwin,2021-01-02,Week 17
-Vivian,Annie,2021-01-02,Week 17
-Nina,Ethan,2021-01-02,Week 17
-Gavin,Edwin,2021-01-09,Week 18
-Owen,Nora,2021-01-09,Week 18
-Chao,Audrey,2021-01-09,Week 18
-Maggie,Annie,2021-01-09,Week 18
-Vivian,Angelina,2021-01-09,Week 18
-Nina,Ethan,2021-01-09,Week 18
-Gavin,Annie,2021-01-16,Week 19
-Owen,Ethan,2021-01-16,Week 19
-Chao,Audrey,2021-01-16,Week 19
-Maggie,Angelina,2021-01-16,Week 19
-Vivian,Nora,2021-01-16,Week 19
+Nina,Ethan,2020-12-19,Week 15
+Gavin,Annie,2020-12-26,Week 16
+Owen,Angelina,2020-12-26,Week 16
+Chao,Ethan,2020-12-26,Week 16
+Maggie,Audrey,2020-12-26,Week 16
+Vivian,Nora,2020-12-26,Week 16
+Nina,Edwin,2020-12-26,Week 16
+Gavin,Edwin,2021-01-02,Week 17
+Owen,Nora,2021-01-02,Week 17
+Chao,Ethan,2021-01-02,Week 17
+Maggie,Annie,2021-01-02,Week 17
+Vivian,Audrey,2021-01-02,Week 17
+Nina,Angelina,2021-01-02,Week 17
+Gavin,Annie,2021-01-09,Week 18
+Owen,Angelina,2021-01-09,Week 18
+Chao,Edwin,2021-01-09,Week 18
+Maggie,Audrey,2021-01-09,Week 18
+Vivian,Nora,2021-01-09,Week 18
 Nina,Edwin,2021-01-16,Week 19
-Gavin,Annie,2021-01-23,Week 20
-Owen,Angelina,2021-01-23,Week 20
-Chao,Edwin,2021-01-23,Week 20
-Maggie,Nora,2021-01-23,Week 20
-Vivian,Audrey,2021-01-23,Week 20
-Nina,Ethan,2021-01-23,Week 20
+Gavin,Audrey,2021-01-23,Week 20
+Owen,Ethan,2021-01-23,Week 20
+Chao,Annie,2021-01-23,Week 20
+Maggie,Edwin,2021-01-23,Week 20
+Vivian,Angelina,2021-01-23,Week 20
+Nina,Nora,2021-01-23,Week 20
