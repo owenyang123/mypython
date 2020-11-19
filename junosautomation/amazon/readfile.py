@@ -24,3 +24,10 @@ for i in l1:
     else:
         x[i[0]]={i[1]:[i[2]]}
 print x
+
+import collections
+
+
+with open("piclog") as x:
+    words = re.findall(r'\w+', x.read().lower())
+    print collections.Counter(words).most_common(10)

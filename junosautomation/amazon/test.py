@@ -26,49 +26,38 @@ def set_plate(plates):
 print set_plate(l)
 print allin1(l)
 '''
-def validcheck(list1,str1):
-    if not list1:return "empty"
-    temp=[1 for i in list1 if i==int(str1)]
-    return "done" if len(temp)==len(list1) else"yet"
-dict1={'0':[0,1,2],"1":[2,1,0],"2":[1,1,0]}
-def movestone(dcit1,k):
-    current=[validcheck(dcit1[i],i) for i in sorted(dict1.keys())]
-    if "yet" not in current:return
-    for i in range(k):
-        if current[i]=="done":
-            dict1[str(i)]=[]
-            temp=i
-            break
-        elif current[i]=="empty":
-            temp=i
-            break
-        temp=-1
-    for i in range(k):
-        if current[i]=="yet":
-            while (validcheck(dcit1[str(i)],str(i))=="yet"):
-                if temp==-1:
-                    temp1,ton=dict1[str(i)].pop(),i%k+1
-                    if ton==3:ton=0
-                    print "form line "+str(i)+" to line " +str(ton)
-                else:
-                    temp1, ton = dict1[str(i)].pop(), temp
-                    print "form line " + str(i) + " to line " + str(ton)
-                dict1[str(ton)].append(temp1)
-        temp3=i
-        break
-    current = [validcheck(dcit1[i], i) for i in sorted(dict1.keys())]
-    for i in range(k):
-        if i==temp3:continue
-        temp4=[]
-        while (validcheck(dcit1[str(i)],str(i))=="yet"):
-            print current
-            break
+def numberstps(x,y):
+    print (x,y)
+    if x==0 and y==0:return 0
+    if x==1 and y==0:return 1
+    if x>0 and y<0 and x+y==1:
+        l = [1] + [i * 8 for i in range(1, x)]
+        return sum(l)
+    if abs(x)==abs(y) and x>0:
+        if y<0:return numberstps(x+1,y)-1
+        return numberstps(y,1-y)+y-1+y
+    if abs(x)==abs(y) and x<0:
+        if y>0:return numberstps(-x,-y+1)+3*abs(x)+abs(-y+1)
+        return numberstps(-y+1,y)-2*abs(x)-1
+    if abs(x)==max(abs(x),abs(y)):
+        if x>0:
+            if y>=0:return numberstps(x,x)-abs(x)+y
+            return numberstps(x,-x+1)+abs(-x+1-y)
+        if x<0:
+            if y>=0:return numberstps(x,-x)+abs(-x-y)
+            return numberstps(x,x)-abs(x-y)
+    if abs(y) == max(abs(x), abs(y)):
+        if y>0:
+            if x>=0:return numberstps(y,y)+abs(y)-abs(x)
+            return numberstps(y,-y)-abs(y)+abs(x)
+        if y<0:
+            if x>0:return numberstps(-y,y)-abs(y)+abs(x)
+            return numberstps(y,y)+abs(y)-abs(x)
+
+print numberstps(999,999)
 
 
 
-
-    return
-print movestone(dict1,3)
 
 
 

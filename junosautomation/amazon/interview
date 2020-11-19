@@ -1,0 +1,36 @@
+ 1 protocl dhcp dns arp ,tcp 3 handshake
+
+ 2  bgp/ospf/mpls
+
+ 3 automation coder ,read/modify script
+
+ 4 platform ,moduel ,life path/detail
+
+ 5 design detail
+
+ 6 14 pricinple ,
+
+ python RE
+
+
+txt = "The rain in Spain"
+x = re.search("^The.*Spain$", txt)
+
+if x:
+  print("YES! We have a match!")
+else:
+  print("No match")
+
+----------
+import re
+
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+
+#Search for an upper case "S" character in the beginning of a word, and print the word:
+
+txt = "The rain in Spain"
+x = re.search(r"\bS\w+", txt)
+print(x.group())
