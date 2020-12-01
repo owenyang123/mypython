@@ -32,4 +32,3 @@ for i in temp1:
     print(i)
 
 
-

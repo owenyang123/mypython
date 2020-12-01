@@ -25,7 +25,7 @@ def set_plate(plates):
     return sum(abs(r) for r in res)
 print set_plate(l)
 print allin1(l)
-'''
+
 def numberstps(x,y):
     print (x,y)
     if x==0 and y==0:return 0
@@ -55,11 +55,39 @@ def numberstps(x,y):
             return numberstps(y,y)+abs(y)-abs(x)
 
 print numberstps(999,999)
+'''
 
 
 
+# you can write to stdout for debugging purposes, e.g.
+# print("this is a debug message")
 
+def solution(A, T):
+    dict1={}
+    templog=[]
+    i=0
+    while(i<len(A)-1):
+        templog.append([A[i:i+4]])
+        i+=4
+    for i in templog:
+        if i[2]==T:
+            if i[2] in dict1:
+                if i[3] in dict1[i[2]]:dcit1[i[2]][i[3]]+=1
+                else:dict1[i[2]][i[3]]=1
+            else:dict1[i[2]]={i[3]:1}
+    for i in dict1.keys():
+        for j in i.keys():
+            print (i,j,dict1[i][j])
+    return dict1
+[0,1,'xxx','crc']
+{'xxx':{'crc':1}}
+temp=[1,2,3,4,5,6,7,8]
+i=0
+while(i<len(temp)-1):
+    print [temp[i:i+4]]
+    i+=4
 
+print int("101",2)
 
 
 

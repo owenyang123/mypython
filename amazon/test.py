@@ -1,25 +1,19 @@
-def addtwostring(str1,str2):
-
-    if not str1 and str2:
-        return str2
-    if not str2 and str1:
-        return str1
-    if len(str2)>len(str1):
-        return addtwostring(str2,str1)
-    l1=list(str1)
-    l2=["0"]*(len(str1)-len(str2))+list(str2)
-    listcarry=[0]+[0]*len(str1)
-    sumstr=""
-    for i in range(len(l1)-1,-1,-1):
-        temp=int(l1[i])+int(l2[i])+listcarry[i+1]
-        if temp<10:
-            sumstr+=str(temp)
+def rm2str(str1):
+    temp1, temp2 = False, 0
+    res = ""
+    for i in range(len(str1)):
+        if not temp1:
+            temp1 = str1[i]
+            temp2 = 1
+        elif str1[i] == str1[i - 1]:temp2 += 1
         else:
-            sumstr+=str(temp)[-1]
-            listcarry[i]=1
-    if listcarry[0]==1:
-        return "1"+sumstr[::-1]
-    return sumstr[::-1]
-str1="rightrightright"
+            if temp2 != 2:res += temp1 * temp2
+            else:res += temp1
+            temp1 = str1[i]
+            temp2 = 1
+    if temp2 != 2:res += temp1 * temp2
+    else:res += temp1
+    return str1,res
 
-print str1[::-1].replace("r","R",1)[::-1][1:]
+l="aazbbbcddeffffffffghh"
+print rm2str(l)
