@@ -1,0 +1,13 @@
+---
+#Arrays
+colors:
+  - red
+  - blue
+person:
+  name: owen
+  hoby: tabletennis
+hostports:
+  - ge1
+  - ge2
+  - ge3
+  - xe400

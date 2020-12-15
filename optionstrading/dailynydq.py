@@ -30,5 +30,3 @@ for i in l:
 temp1.sort(key=lambda x:x[-1],reverse=True)
 for i in temp1:
     print(i)
-
-
