@@ -9,7 +9,7 @@ import csv
 sns.set(style="whitegrid")
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
-stocklist = content[0]['Symbol'].tolist()+['pdd','tsla',"sqqq","tqqq","pltr","qqq"]
+stocklist = content[0]['Symbol'].tolist()+['pdd','tsla',"sqqq","tqqq","pltr","qqq","vldr"]
 l=sp.caifuziyou(stocklist)
 filename_tod=bt.get_data(0)+".csv"
 filename_yes=bt.get_data(1)+".csv"
