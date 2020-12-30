@@ -1,6 +1,7 @@
 from jnpr.junos import Device
 import multiprocessing
 from lxml import etree
+import os
 from os import getpid
 import datetime
 list1=["erebus.ultralab.juniper.net","hypnos.ultralab.juniper.net","moros.ultralab.juniper.net","norfolk.ultralab.juniper.net","alcoholix.ultralab.juniper.net","antalya.ultralab.juniper.net","automatix.ultralab.juniper.net","beltway.ultralab.juniper.net","bethesda.ultralab.juniper.net","botanix.ultralab.juniper.net","dogmatix.ultralab.juniper.net","getafix.ultralab.juniper.net","idefix.ultralab.juniper.net","kratos.ultralab.juniper.net","pacifix.ultralab.juniper.net","photogenix.ultralab.juniper.net","rio.ultralab.juniper.net","matrix.ultralab.juniper.net","cacofonix.ultralab.juniper.net","asterix.ultralab.juniper.net","timex.ultralab.juniper.net","greece.ultralab.juniper.net","holland.ultralab.juniper.net","nyx.ultralab.juniper.net","atlantix.ultralab.juniper.net","obelix.ultralab.juniper.net","camaro.ultralab.juniper.net","mustang.ultralab.juniper.net"]
@@ -26,11 +27,12 @@ def listhw(str1):
         multiprocessing.freeze_support()
         print str1+" is unreachable"
         pass
+    print os.getpid()
     return dict1
 if __name__ == '__main__':
     jobs=[]
     multiprocessing.freeze_support()
-    p=multiprocessing.Pool(processes=len(list1))
+    p=multiprocessing.Pool(processes=50)
     data=p.map(listhw,[i for i in list1])
     p.close()
     for i in data:

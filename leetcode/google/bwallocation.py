@@ -1,5 +1,6 @@
 def bwalloc(total,weight_list):
     lenth=len(weight_list)
+    weight_list.sort(reverse=True)
     sumweight=sum(weight_list)
     leftbw=total%sumweight
     list1=[0]*lenth
@@ -11,5 +12,5 @@ def bwalloc(total,weight_list):
 
 
 
-print bwalloc(927,sorted([2,2,2,1,3,3,3,4,8]))
+print bwalloc(927,[2,2,2,1,3,3,3,4,8])
 

@@ -7,7 +7,7 @@ file_list.sort()
 n=int(input('plese input the number of days(less than 30): '))
 if n<0:exit()
 file_list=file_list[0-n:]
-days=len(file_list)*0.7
+days=len(file_list)*0.6
 stockdays={}
 for i in file_list:
     with open(i) as fd:
@@ -21,11 +21,11 @@ print [i for i in listorder if i[1]>days]
 
 os.chdir("D:\Python272018\owenpython2018\mypython\optionstrading")
 file_list=[]
-for file in glob.glob("20*.csv"):
+for file in glob.glob("2*.csv"):
     file_list.append(file)
 file_list.sort()
 file_list=file_list[0-n:]
-days=len(file_list)*0.7
+days=len(file_list)*0.5
 stockdays={}
 for i in file_list:
     with open(i) as fd:

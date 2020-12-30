@@ -1,0 +1,8 @@
+---
+ - hosts: all
+   remote_user: root
+   gather_facts: no
+   tasks:
+     - name: check the mysql stauts
+       service: name=mysqld state=running
+ - owen: xx
