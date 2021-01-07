@@ -1,22 +1,35 @@
-import yfinance as yf
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-from pandas.plotting import register_matplotlib_converters
-register_matplotlib_converters()
-import matplotlib.dates as dates
-# Get the data for the stock Apple by specifying the stock ticker, start date, and end date
-data1 = yf.download('AAPL','2020-01-13','2020-04-20')
-data2 = yf.download('AMZN','2020-01-13','2020-04-20')
-x1=np.array(data1.index)
-y=np.array([i for i in data1['Close']])
-x2=np.array(data2.index)
-z=np.array([i for i in data2['Close']])
-fig,axes=plt.subplots(1,2,figsize=(10,5))
-axes[0].plot_date(x1,y,"-")
-axes[0].yaxis.grid(True)
-axes[1].plot_date(x2,z,"-")
-fig.autofmt_xdate()
-plt.savefig('test.png')
-plt.show()
+def fb123(list1):
+    dict1={}
+    for i in list1:
+        temp="".join(sorted(i))
+        if temp in dict1:dict1[temp].append(i)
+        else:dict1[temp]=[i]
+    return [ list(set(dict1[i])) for i in dict1]
+
+list1=["star","rats","car","arts","arc","stars"]
+print fb123(list1)
+
+
+class Solution:
+    def Closest(self, num, target):
+        if not num:return []
+        self.l=[]
+        self.dfs(num,[])
+        print len(self.l)
+        res1=[[abs(sum(i)-target),i] for i in self.l]
+        res1.sort(key=lambda x:x[0])
+        res=[i  for i in res1 if i[0]==res1[0][0]]
+        res.sort(key=lambda x:len(x[1]))
+        return res[0][1]
+    def dfs(self,num,temp):
+        if len(num)==1:
+            self.l.append(temp+num)
+            return
+        for i in range(len(num)):
+            self.l.append(temp+[num[i]])
+            self.dfs(num[i+1:],temp+[num[i]])
+
+
+
+
 

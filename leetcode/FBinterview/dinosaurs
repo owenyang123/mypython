@@ -1,0 +1,43 @@
+# read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH]
+#formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
+dino_dict={}
+
+with open('log2.csv', 'r') as file:
+    for row in file.readlines():
+        temp=row.replace("\n","").split(",")
+        if temp[-1]=="bipedal":dino_dict[temp[0]]=[float(temp[1])]
+with open('log1.csv', 'r') as file:
+    for row in file.readlines():
+        temp=row.replace("\n","").split(",")
+        if temp[0] in dino_dict: dino_dict[temp[0]].append(float(temp[1]))
+print dino_dict
+#fuction to check the speed
+def caulatespeed(dict1):
+    res=[]
+    for i in dict1.keys():
+        if len(dict1[i])>1:
+            speed=((dict1[i][0]/dict1[i][1])-1)*((dict1[i][1]*9.8)**0.5)
+            res.append([i,speed])
+    res.sort(key=lambda x:x[1],reverse=True)
+    return [i[0] for i in res]
+print caulatespeed(dino_dict)
+
+def addtwostring(str1,str2):
+    if not str1 and str2:return str2
+    if not str2 and str1:return str1
+    if len(str2)>len(str1):return addtwostring(str2,str1)
+    l1=list(str1)
+    l2=["0"]*(len(str1)-len(str2))+list(str2)
+    carry=0
+    sumstr=""
+    for i in range(len(l1)-1,-1,-1):
+        temp=int(l1[i])+int(l2[i])+carry
+        sumstr+=str(temp%10)
+        if temp>=10:carry=1
+        else:carry=0
+    if carry==1:
+        return "1"+sumstr[::-1]
+    return sumstr[::-1]
+
+print(addtwostring("9999999","2"))
+

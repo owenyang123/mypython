@@ -5,6 +5,7 @@ import csv
 
 class automation_junos():
     def info_collecting(self,ipaddr,filename):
+        print('Parent process %s.' % os.getpid())
         dev = Device(host=ipaddr, user='labroot', password='lab123')
         dev.open()
 
@@ -17,7 +18,6 @@ class automation_junos():
 
 
 if __name__=='__main__':
-    print('Parent process %s.' % os.getpid())
     filename="namemodel.csv"
     newdev=automation_junos()
     devlist=["10.85.174.196","10.85.174.190","10.85.174.78","10.85.174.66","10.85.174.69","10.85.174.57"]

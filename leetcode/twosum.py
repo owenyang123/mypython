@@ -22,7 +22,7 @@ class Solution:
     def twoSum(self, nums, target):
         dict1 = {}
         for i in range(len(nums)):
-            if nums[i] in dict1.keys():
+            if nums[i] in dict1:
                 return [dict1[nums[i]] + 1, i + 1]
             else:
                 dict1[target - nums[i]] = i

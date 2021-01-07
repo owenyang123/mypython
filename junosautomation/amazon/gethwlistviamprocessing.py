@@ -9,6 +9,7 @@ dict1={}
 def listhw(str1):
     if not str1:return None
     global dict1
+    print('Parent process %s.' % os.getpid())
     try:
         dev = Device(host = str1, user='labroot', password='lab123')
         dev.open()
