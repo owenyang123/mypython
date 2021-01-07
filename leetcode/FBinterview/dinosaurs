@@ -1,4 +1,4 @@
-# read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH]
+# read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
 dino_dict={}
 
