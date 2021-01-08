@@ -92,3 +92,14 @@ if __name__ == '__main__':
         thread.join()
     print res
 
+class Solution(object):
+    def smallerNumbersThanCurrent(self, nums):
+        dict1={}
+        for i in  nums:
+            dict1[i]=dict1.get(i,0)+1
+        temp=sorted(dict1.items(),key=lambda x:x[0])
+        sum1,dict2=0,{}
+        for i in temp:
+            dict2[i[0]]=sum1
+            sum1+=i[1]
+        return [dict2[i] for i in nums]
