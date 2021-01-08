@@ -1,5 +1,7 @@
 # read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
+import os,commands
+import threading
 dino_dict={}
 
 with open('log2.csv', 'r') as file:
@@ -59,3 +61,34 @@ def bubble(arr):
                 swap(i-1,i)
                 swapped=True
     return arr
+
+import commands
+import threading
+
+#host->ip
+hostlist=[]
+with open('log.csv', 'r') as file:
+    for row in file.readlines():
+        temp=row.replace("\n","").split(",")
+        if temp[0].isalnum():hostlist.append(temp[1])
+hostlist.pop(0)
+res = {}
+def findipadd(str1):
+    global res
+    cmd = "nslookup " + str1
+    _, result = commands.getstatusoutput(cmd)
+    temp = result.replace("\t", '').split("\n")
+    if len(temp)>5:res[str1]=temp[-2].split(" ")[-1]
+    else:res[str1]='0.0.0.0'
+    return
+
+if __name__ == '__main__':
+    instance = []
+    for i in hostlist:
+        trd = threading.Thread(target=findipadd, args=(i,))
+        trd.start()
+        instance.append(trd)
+    for thread in instance:
+        thread.join()
+    print res
+
