@@ -23,8 +23,7 @@ if __name__ == "__main__":
         "port":22
     }
     result = send_show_command(device, ["show arp","show route"])
-    #pprint(result, width=120)
-    print(result['show route'])
-import collections
-hash_table = collections.defaultdict(lambda:0)
-print(hash_table)
+    with open("Output.txt", "w") as out:
+        for i in result:
+            out.write(device["ip"]+"  "+i+"\n")
+            out.write(result[i])

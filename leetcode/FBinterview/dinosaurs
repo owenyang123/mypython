@@ -124,11 +124,22 @@ if __name__ == "__main__":
         "ip": "10.85.174.59",
         "username": "labroot",
         "password": "lab123",
-        "port":"22"
+        "port":22
     }
     result = send_show_command(device, ["show arp","show route"])
-    #pprint(result, width=120)
-    print(result['show route'])
+    with open("Output.txt", "w") as out:
+        for i in result:
+            out.write(device["ip"]+"  "+i+"\n")
+            out.write(result[i])
+
+    
+with open('2020-07-13.csv', 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print row
+with open('2020-07-13.csv', 'r') as file:
+    for row in file.readlines():
+        if row:print row.replace("\n","").replace("\r","").split(',')
 '''
 
 
@@ -164,3 +175,48 @@ class Solution(object):
             if 10<=int(s[i-2:i]) <= 26:
                 dp[i] += dp[i - 2]
         return dp[-1]
+
+class Solution(object):
+    def reverseVowels(self, s):
+        if len(s)<=1:return s
+        set1=set(list("aeiou"))
+        list1=[i for i in s if i.lower() in set1]
+        str1=""
+        for i in s:
+            if i.lower() not in set1:str1+=i
+            else:str1+=list1.pop()
+        return str1
+
+
+class Solution(object):
+    def subsets(self, nums):
+        if not nums: return [[]]
+        len1 = len(nums)
+        if len1 == 1: return [[], nums]
+        self.l = [[]]
+        self.helper(nums, [])
+        return self.l
+    def helper(self, nums, temp):
+        if len(nums) == 1:
+            self.l.append(temp + [nums[0]])
+            return
+        for i in range(len(nums)):
+            self.l.append(temp + [nums[i]])
+            self.helper(nums[i + 1:], temp + [nums[i]])
+
+class Solution(object):
+    def subsetsWithDup(self, nums):
+        if not nums: return [[]]
+        len1 = len(nums)
+        if len1 == 1: return [[], nums]
+        nums.sort()
+        self.l = [[]]
+        self.helper(nums, [])
+        return self.l
+    def helper(self, nums, temp):
+        if len(nums) == 1:
+            if temp + [nums[0]] not in self.l:self.l.append(temp + [nums[0]])
+            return
+        for i in range(len(nums)):
+            if temp + [nums[i]] not in self.l:self.l.append(temp + [nums[i]])
+            self.helper(nums[i + 1:], temp + [nums[i]])
