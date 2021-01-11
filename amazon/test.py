@@ -1,19 +1,3 @@
-def rm2str(str1):
-    temp1, temp2 = False, 0
-    res = ""
-    for i in range(len(str1)):
-        if not temp1:
-            temp1 = str1[i]
-            temp2 = 1
-        elif str1[i] == str1[i - 1]:temp2 += 1
-        else:
-            if temp2 != 2:res += temp1 * temp2
-            else:res += temp1
-            temp1 = str1[i]
-            temp2 = 1
-    if temp2 != 2:res += temp1 * temp2
-    else:res += temp1
-    return str1,res
+import collections
 
-l="aazbbbcddeffffffffghh"
-print rm2str(l)
+print collections.Counter([1,2,3,4,1,1,1,1,5,100,200,4,4,4,4]).most_common(1)[0][0]

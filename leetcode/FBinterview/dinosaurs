@@ -14,6 +14,7 @@ with open('log1.csv', 'r') as file:
 print dino_dict
 #fuction to check the speed
 def caulatespeed(dict1):
+    if not dict1:return []
     res=[]
     for i in dict1.keys():
         if len(dict1[i])>1:
@@ -220,3 +221,60 @@ class Solution(object):
         for i in range(len(nums)):
             if temp + [nums[i]] not in self.l:self.l.append(temp + [nums[i]])
             self.helper(nums[i + 1:], temp + [nums[i]])
+
+class Solution(object):
+    def validPalindrome(self, s):
+        left, right = 0, len(s) - 1
+        while left < right:
+            if s[left] != s[right]:
+                one, two = s[left:right], s[left + 1:right + 1]
+                return one == one[::-1] or two == two[::-1]
+            left, right = left + 1, right - 1
+        return True
+
+
+class Solution(object):
+    def calculate(self, s):
+        if not s:return "0"
+        stack, num, sign = [], 0, "+"
+        for i in range(len(s)):
+            if s[i].isdigit():
+                num = num*10+int(s[i])
+            if (not s[i].isdigit() and not s[i].isspace()) or i == len(s)-1:
+                if sign == "-":stack.append(-num)
+                elif sign == "+":stack.append(num)
+                elif sign == "*":stack.append(stack.pop()*num)
+                else:
+                    tmp = stack.pop()
+                    if tmp//num < 0 and tmp%num != 0:stack.append(tmp//num+1)
+                    else:stack.append(tmp//num)
+                sign = s[i]
+                num = 0
+        return sum(stack)
+
+
+class Solution:
+    """
+    @param A: An array of Integer
+    @return: an integer
+    """
+    def longestIncreasingContinuousSubsequence(self, A):
+        if not A:return 0
+        if len(A)==1:return 1
+        count,temp=0,1
+        for i in range(1,len(A)):
+            if A[i]-A[i-1]>0:
+                temp+=1
+            else:
+                count=max(count,temp)
+                temp=1
+        count=max(count,temp)
+        temp=1
+        for i in range(len(A)-1,0,-1):
+            if A[i]-A[i-1]<0:
+                temp+=1
+            else:
+                count=max(count,temp)
+                temp=1
+        count=max(count,temp)
+        return count
