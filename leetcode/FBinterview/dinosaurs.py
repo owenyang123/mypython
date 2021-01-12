@@ -437,3 +437,17 @@ class Solution:
             else:
                 return False
         return True
+
+class Solution:
+    """
+    @param n: An integer
+    @return: An integer which is the first bad version.
+    """
+    def findFirstBadVersion(self, n):
+        if n==1:return 1
+        l,r=0,n
+        while(l<r-1):
+            m=l+(r-l)/2
+            if SVNRepo.isBadVersion(m):r=m
+            else:l=m
+        return r
