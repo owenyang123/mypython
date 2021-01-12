@@ -516,3 +516,21 @@ def isValidParentheses(self, s):
             if not temp1 or dict1[i] != temp1.pop(): return False
     return temp1 == []
 
+class Solution:
+    """
+    @param a: A number
+    @return: Returns the maximum number after insertion
+    """
+    def InsertFive(self, a):
+        if a==0:return 50
+        if a>0:
+            temp=str(a)
+            for i in range(len(temp)):
+                if int(temp[i])<=5:return int(temp[0:i]+"5"+temp[i:])
+            return int(temp+"5")
+        if a<0:
+            temp=str(-a)
+            for i in range(len(temp)):
+                if int(temp[i])>=5:return 0-int(temp[0:i]+"5"+temp[i:])
+            return 0-int(temp+"5")
+
