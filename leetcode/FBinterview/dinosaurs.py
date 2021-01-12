@@ -58,9 +58,8 @@ def addtwostring(str1,str2):
         sumstr+=str(temp%10)
         if temp>=10:carry=1
         else:carry=0
-    if carry==1:
-        return "1"+sumstr[::-1]
-    return sumstr[::-1]
+    if carry==1:return "1"+sumstr[::-1]
+    else:return sumstr[::-1]
 
 print(addtwostring("9999999","2"))
 
@@ -111,7 +110,7 @@ if __name__ == '__main__':
     for thread in instance:
         thread.join()
     print res
-
+#next
 class Solution(object):
     def smallerNumbersThanCurrent(self, nums):
         dict1={}
@@ -299,19 +298,17 @@ class Solution:
                 temp=1
         count=max(count,temp)
         return count
-
+#
 with open("piclog") as x:
     words = re.findall(r'\w+', x.read().lower())
     print collections.Counter(words).most_common(10)
-
+#
 class Solution:
-    def restoreIpAddresses(self, s):
-        if not s or len(s) <= 1:
-            return []
-        ipstr = s
+    def restoreIpAddresses(self, ipstr):
+        if not ipstr or len(ipstr) <= 1:return []
         list1 = []
-        if len(ipstr) < 4 or len(ipstr) > 12 or not ipstr:
-            return []
+        if len(ipstr) < 4 or len(ipstr) > 12 or not ipstr:return []
+        list1 = []
         for i in range(0, 3):
             if self.helper(ipstr[0:i + 1]) :
                 temp1 = ipstr[0:i + 1] + "."
@@ -377,8 +374,7 @@ class Solution:
     def helper(self,s):
         b,e=0,0
         for i in range(len(s)):
-            if s[i]=="[":
-                b=i
+            if s[i]=="[":b=i
             if s[i]=="]":
                 e=i
                 break
@@ -411,14 +407,9 @@ class Solution:
         return nums[-3]
 
 class Solution:
-    """
-    @param numbers: Give an array numbers of n integer
-    @return: Find all unique triplets in the array which gives the sum of zero.
-    """
     def threeSum(self, nums):
         l=[]
-        if nums==[]:
-            return []
+        if nums==[]:return []
         nums.sort()
         for i,j in enumerate(nums):
             left=i+1
