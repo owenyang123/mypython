@@ -388,3 +388,29 @@ class Solution:
         if len(nums) < 3: return nums[-1]
 
         return nums[-3]
+
+class Solution:
+    """
+    @param numbers: Give an array numbers of n integer
+    @return: Find all unique triplets in the array which gives the sum of zero.
+    """
+    def threeSum(self, nums):
+        l=[]
+        if nums==[]:
+            return []
+        nums.sort()
+        for i,j in enumerate(nums):
+            left=i+1
+            right=len(nums)-1
+            while (left<right):
+                s=j+nums[left]+nums[right]
+                if s==0:
+                    if [j,nums[left],nums[right]] not in l:
+                        l.append([j,nums[left],nums[right]])
+                    left=left+1
+                    right=right-1
+                elif s<0:
+                    left=left+1
+                elif s>0:
+                    right=right-1
+        return l
