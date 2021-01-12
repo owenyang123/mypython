@@ -1,0 +1,21 @@
+---
+- name: Install Config File
+  hosts:
+    - vmx 
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: 2.1 upload the cfg template, which is already in the groups hierarchy, and mentioned by apply-groups
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         src: "vmx_config/template-7.conf"
+         comment: "by ansible juniper_junos_config"
+      register: response2
+          
+    - name: 3. Print the responses
+      debug:
+        var: response2

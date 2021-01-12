@@ -1,0 +1,782 @@
+{
+    "ospf-database-information" : [
+    {
+        "attributes" : {"xmlns" : "http://xml.juniper.net/junos/16.1R7/junos-routing"},
+        "ospf-area-header" : [
+        {
+            "ospf-area" : [
+            {
+                "data" : "0.0.0.0"
+            }
+            ]
+        }
+        ],
+        "ospf-database" : [
+        {
+            "attributes" : {"heading" : " Type       ID               Adv Rtr           Seq      Age  Opt  Cksum  Len "},
+            "lsa-type" : [
+            {
+                "data" : "Router"
+            }
+            ],
+            "our-entry" : [
+            {
+                "data" : [null]
+            }
+            ],
+            "lsa-id" : [
+            {
+                "data" : "12.122.122.86"
+            }
+            ],
+            "advertising-router" : [
+            {
+                "data" : "12.122.122.86"
+            }
+            ],
+            "sequence-number" : [
+            {
+                "data" : "0x80000695"
+            }
+            ],
+            "age" : [
+            {
+                "data" : "2441"
+            }
+            ],
+            "options" : [
+            {
+                "data" : "0x22"
+            }
+            ],
+            "checksum" : [
+            {
+                "data" : "0x7d2"
+            }
+            ],
+            "lsa-length" : [
+            {
+                "data" : "60"
+            }
+            ],
+            "ospf-router-lsa" : [
+            {
+                "bits" : [
+                {
+                    "data" : "0x0"
+                }
+                ],
+                "link-count" : [
+                {
+                    "data" : "3"
+                }
+                ],
+                "ospf-link" : [
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.94.56"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.252"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "10000"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.165.130"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "12.122.165.129"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Transit"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "2"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "1000"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.122.86"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.255"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "0"
+                    }
+                    ]
+                }
+                ],
+                "ospf-lsa-topology" : [
+                {
+                    "ospf-topology-name" : [
+                    {
+                        "data" : "default"
+                    }
+                    ],
+                    "ospf-topology-id" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "ospf-lsa-topology-link" : [
+                    {
+                        "link-type-name" : [
+                        {
+                            "data" : "Transit"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-node-id" : [
+                        {
+                            "data" : "12.122.165.130"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-metric" : [
+                        {
+                            "data" : "1000"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-state" : [
+                        {
+                            "data" : "Bidirectional"
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ]
+            }
+            ],
+            "ospf-database-extensive" : [
+            {
+                "generation-timer" : [
+                {
+                    "data" : "00:03:49",
+                    "attributes" : {"junos:seconds" : "229"}
+                }
+                ],
+                "aging-timer" : [
+                {
+                    "data" : "00:19:19",
+                    "attributes" : {"junos:seconds" : "1159"}
+                }
+                ],
+                "installation-time" : [
+                {
+                    "data" : "00:40:41",
+                    "attributes" : {"junos:seconds" : "2441"}
+                }
+                ],
+                "expiration-time" : [
+                {
+                    "data" : "00:19:19",
+                    "attributes" : {"junos:seconds" : "1159"}
+                }
+                ],
+                "send-time" : [
+                {
+                    "data" : "00:40:41",
+                    "attributes" : {"junos:seconds" : "2441"}
+                }
+                ],
+                "lsa-changed-time" : [
+                {
+                    "data" : "00:40:41",
+                    "attributes" : {"junos:seconds" : "2441"}
+                }
+                ],
+                "lsa-change-count" : [
+                {
+                    "data" : "12"
+                }
+                ],
+                "database-entry-state" : [
+                {
+                    "data" : "Ours"
+                }
+                ]
+            }
+            ]
+        },
+        {
+            "lsa-type" : [
+            {
+                "data" : "Router"
+            }
+            ],
+            "lsa-id" : [
+            {
+                "data" : "12.122.122.87"
+            }
+            ],
+            "advertising-router" : [
+            {
+                "data" : "12.122.122.87"
+            }
+            ],
+            "sequence-number" : [
+            {
+                "data" : "0x800023d0"
+            }
+            ],
+            "age" : [
+            {
+                "data" : "117"
+            }
+            ],
+            "options" : [
+            {
+                "data" : "0x22"
+            }
+            ],
+            "checksum" : [
+            {
+                "data" : "0x3877"
+            }
+            ],
+            "lsa-length" : [
+            {
+                "data" : "72"
+            }
+            ],
+            "ospf-router-lsa" : [
+            {
+                "bits" : [
+                {
+                    "data" : "0x0"
+                }
+                ],
+                "link-count" : [
+                {
+                    "data" : "4"
+                }
+                ],
+                "ospf-link" : [
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.165.192"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.252"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "1"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.165.130"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "12.122.165.130"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Transit"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "2"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "2000"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.123.53.123"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.255"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "0"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.122.87"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.255"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "0"
+                    }
+                    ]
+                }
+                ],
+                "ospf-lsa-topology" : [
+                {
+                    "ospf-topology-name" : [
+                    {
+                        "data" : "default"
+                    }
+                    ],
+                    "ospf-topology-id" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "ospf-lsa-topology-link" : [
+                    {
+                        "link-type-name" : [
+                        {
+                            "data" : "Transit"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-node-id" : [
+                        {
+                            "data" : "12.122.165.130"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-metric" : [
+                        {
+                            "data" : "2000"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-state" : [
+                        {
+                            "data" : "Bidirectional"
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ]
+            }
+            ],
+            "ospf-database-extensive" : [
+            {
+                "aging-timer" : [
+                {
+                    "data" : "00:58:02",
+                    "attributes" : {"junos:seconds" : "3482"}
+                }
+                ],
+                "installation-time" : [
+                {
+                    "data" : "00:01:54",
+                    "attributes" : {"junos:seconds" : "114"}
+                }
+                ],
+                "expiration-time" : [
+                {
+                    "data" : "00:58:03",
+                    "attributes" : {"junos:seconds" : "3483"}
+                }
+                ],
+                "send-time" : [
+                {
+                    "data" : "00:40:41",
+                    "attributes" : {"junos:seconds" : "2441"}
+                }
+                ],
+                "lsa-changed-time" : [
+                {
+                    "data" : "00:40:41",
+                    "attributes" : {"junos:seconds" : "2441"}
+                }
+                ],
+                "lsa-change-count" : [
+                {
+                    "data" : "2715"
+                }
+                ]
+            }
+            ]
+        },
+        {
+            "lsa-type" : [
+            {
+                "data" : "Router"
+            }
+            ],
+            "lsa-id" : [
+            {
+                "data" : "12.122.127.239"
+            }
+            ],
+            "advertising-router" : [
+            {
+                "data" : "12.122.127.239"
+            }
+            ],
+            "sequence-number" : [
+            {
+                "data" : "0x80002399"
+            }
+            ],
+            "age" : [
+            {
+                "data" : "3342"
+            }
+            ],
+            "options" : [
+            {
+                "data" : "0x22"
+            }
+            ],
+            "checksum" : [
+            {
+                "data" : "0xea6e"
+            }
+            ],
+            "lsa-length" : [
+            {
+                "data" : "60"
+            }
+            ],
+            "ospf-router-lsa" : [
+            {
+                "bits" : [
+                {
+                    "data" : "0x0"
+                }
+                ],
+                "link-count" : [
+                {
+                    "data" : "3"
+                }
+                ],
+                "ospf-link" : [
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.127.239"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "255.255.255.255"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Stub"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "3"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "0"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.165.194"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "12.122.165.194"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Transit"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "2"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "1"
+                    }
+                    ]
+                },
+                {
+                    "link-id" : [
+                    {
+                        "data" : "12.122.94.58"
+                    }
+                    ],
+                    "link-data" : [
+                    {
+                        "data" : "12.122.94.58"
+                    }
+                    ],
+                    "link-type-name" : [
+                    {
+                        "data" : "Transit"
+                    }
+                    ],
+                    "link-type-value" : [
+                    {
+                        "data" : "2"
+                    }
+                    ],
+                    "ospf-topology-count" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "metric" : [
+                    {
+                        "data" : "1"
+                    }
+                    ]
+                }
+                ],
+                "ospf-lsa-topology" : [
+                {
+                    "ospf-topology-name" : [
+                    {
+                        "data" : "default"
+                    }
+                    ],
+                    "ospf-topology-id" : [
+                    {
+                        "data" : "0"
+                    }
+                    ],
+                    "ospf-lsa-topology-link" : [
+                    {
+                        "link-type-name" : [
+                        {
+                            "data" : "Transit"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-node-id" : [
+                        {
+                            "data" : "12.122.94.58"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-metric" : [
+                        {
+                            "data" : "1"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-state" : [
+                        {
+                            "data" : "Bidirectional"
+                        }
+                        ]
+                    },
+                    {
+                        "link-type-name" : [
+                        {
+                            "data" : "Transit"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-node-id" : [
+                        {
+                            "data" : "12.122.165.194"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-metric" : [
+                        {
+                            "data" : "1"
+                        }
+                        ],
+                        "ospf-lsa-topology-link-state" : [
+                        {
+                            "data" : "Bidirectional"
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ]
+            }
+            ],
+            "ospf-database-extensive" : [
+            {
+                "aging-timer" : [
+                {
+                    "data" : "00:04:18",
+                    "attributes" : {"junos:seconds" : "258"}
+                }
+                ],
+                "installation-time" : [
+                {
+                    "data" : "00:55:41",
+                    "attributes" : {"junos:seconds" : "3341"}
+                }
+                ],
+                "expiration-time" : [
+                {
+                    "data" : "00:04:18",
+                    "attributes" : {"junos:seconds" : "258"}
+                }
+                ],
+                "send-time" : [
+                {
+                    "data" : "00:55:41",
+                    "attributes" : {"junos:seconds" : "3341"}
+                }
+                ],
+                "lsa-changed-time" : [
+                {
+                    "data" : "00:55:41",
+                    "attributes" : {"junos:seconds" : "3341"}
+                }
+                ],
+                "lsa-change-count" : [
+                {
+                    "data" : "2682"
+                }
+                ]
+            }
+            ]
+        }
+        ]
+    }
+    ]
+}

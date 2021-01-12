@@ -1,0 +1,32 @@
+---
+- name: repeat common config over logical-systems
+  hosts:
+    - vmx 
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars:
+    template_src: "template/lr-lo0-id.j2"
+ 
+  tasks:
+    - name: repeat common config over LR
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         template: "{{ template_src }}"
+         format: text
+         vars:
+           LR:
+            - {name: 'r1', id: '1', ip: '1.1.1.1'}
+            - {name: 'r2', id: '2', ip: '2.2.2.2'}
+           ASN: '65535'
+         commit: true
+         diff: true
+         comment: "by ansible juniper_junos_config"
+      register: result
+  
+    - name: print result  
+      debug:
+        var: result.msg

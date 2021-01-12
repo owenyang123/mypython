@@ -1,0 +1,44 @@
+---
+- name: Install Config File
+  hosts:
+    - vmx 
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  vars:
+    mgmt_cfg_file: "vmx_config/MacOS-mgmt-group.conf"
+
+  vars_prompt:
+    - name: dir
+      prompt: directory of the config file
+      private: no
+    - name: filename
+      prompt: filename
+      private: no
+      
+  tasks:
+    - name: 1. override the whole config with only group "MacOS-mgmt" and apply-group first to ensure mgmt connection
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "override"
+         src: "{{ mgmt_cfg_file }}"
+         comment: "by ansible juniper_junos_config"
+      register: response1
+
+##    - name: 2. Print the responses
+##      debug:
+##        var: response1
+
+    - name: 3 upload the cfg template, which is already in the groups hierarchy, and mentioned by apply-groups
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         src: "{{dir}}/{{ filename }}"
+         comment: "by ansible juniper_junos_config"
+      register: response2
+          
+##    - name: 4. Print the responses
+##      debug:
+##        var: response2

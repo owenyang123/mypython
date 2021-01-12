@@ -1,17 +1,19 @@
-import numpy as np
+
 import seaborn as sns
 import pandas as pd
-import matplotlib.pyplot as plt
+
 import basictools as bt
-import time
 import stockplay as sp
 import csv
-import yfinance as yf
-import optionsplay as op
+
 sns.set(style="whitegrid")
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
+<<<<<<< HEAD
 stocklist = content[0]['Symbol'].tolist()
+=======
+stocklist = content[0]['Symbol'].tolist()+['pdd',"sqqq","tqqq","pltr","qqq","vldr","SOXL"]
+>>>>>>> bd0b7fa129262ff7e84455e5bc7ada8bd15f877a
 l=sp.caifuziyou(stocklist)
 filename_tod=bt.get_data(0)+".csv"
 filename_yes=bt.get_data(1)+".csv"
@@ -33,7 +35,15 @@ for i in l:
         temp1.append([i[0],i[1],i[2]])
 temp1.sort(key=lambda x:x[-1],reverse=True)
 for i in temp1:
+<<<<<<< HEAD
     print (i)
+=======
+    print(i)
+
+
+
+
+>>>>>>> bd0b7fa129262ff7e84455e5bc7ada8bd15f877a
 
 
 

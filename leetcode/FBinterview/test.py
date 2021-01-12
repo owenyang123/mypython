@@ -1,4 +1,5 @@
 import collections
+import re
 class Solution:
     # @param A : tuple of integers
     # @return an integer
@@ -18,4 +19,12 @@ class Solution:
 k=Solution()
 print k.repeatedNumber([ 1000441, 1000441, 1000994 ])
 
-print [1,2,3].
+str1="case  case case        owen       123" \
+     "131312 123123" \
+     "13131 123123 owen owen " \
+     "wjing " \
+     "ge-0/0/0" \
+     "1000" \
+     "200"
+l=re.findall(r'\w+',str1)
+print l

@@ -1,0 +1,42 @@
+---
+- name: move config template into groups
+  hosts: localhost
+  connection: local
+  vars_prompt:
+    - name: dir
+      prompt: directory of the config file
+      private: no
+    - name: filename
+      prompt: filename
+      private: no
+
+  tasks:
+    - name: insert '<group_name> {' before BOF
+      lineinfile:
+         path: "{{ dir }}/{{ filename }}"
+         insertbefore: BOF
+         line: '"{{ filename }}" {'
+      register: 
+    - name: insert '}' after EOF
+      lineinfile:
+         path: "{{ dir }}/{{ filename }}"
+         insertafter: EOF
+         line: '} ## end of group_name'
+
+    - name: insert 'groups {' before BOF
+      lineinfile:
+         path: "{{ dir }}/{{ filename }}"
+         insertbefore: BOF
+         line: 'groups {'      
+
+    - name: again insert '}' after EOF
+      lineinfile:
+         path: "{{ dir }}/{{ filename }}"
+         insertafter: EOF
+         line: '} ## end of groups'            
+
+    - name: insert 'apply-groups <group_name>' after EOF
+      lineinfile:
+         path: "{{ dir }}/{{ filename }}"
+         insertafter: EOF
+         line: 'apply-groups "{{ filename }}";'            

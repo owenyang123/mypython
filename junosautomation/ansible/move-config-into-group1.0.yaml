@@ -1,0 +1,35 @@
+---
+- name: move config template into groups
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: insert group_name and '{' before BOF
+      lineinfile:
+         path: vmx_config/template-7.conf
+         insertbefore: BOF
+         line: 'template-7.conf {'
+
+    - name: insert '}' after EOF
+      lineinfile:
+         path: vmx_config/template-7.conf
+         insertafter: EOF
+         line: '} ## end of group_name'
+
+    - name: insert groups and '{' before BOF and '}' after EOF
+      lineinfile:
+         path: vmx_config/template-7.conf
+         insertbefore: BOF
+         line: 'groups {'      
+
+    - name: again insert '}' after EOF
+      lineinfile:
+         path: vmx_config/template-7.conf
+         insertafter: EOF
+         line: '} ## end of groups'            
+
+    - name: insert apply-groups after EOF
+      lineinfile:
+         path: vmx_config/template-7.conf
+         insertafter: EOF
+         line: 'apply-groups template-7.conf;'            

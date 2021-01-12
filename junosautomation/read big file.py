@@ -10,6 +10,3 @@ print sum
 
 
 
-edges = {i:[] for i in range(7)}
-
-print range(1,6)

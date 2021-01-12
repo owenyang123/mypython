@@ -1,0 +1,17 @@
+---
+- name: Get facts from vmx Junos router
+  hosts: vmx
+  connection: local
+  gather_facts: no
+  roles:
+    - Juniper.junos
+  vars:
+    default_user: labroot
+    default_port: 830
+  tasks:
+    - name: Get Junos Facts
+      junos_get_facts:
+        host: "{{ inventory_hostname }}"
+        user: "{{ netconf_user | default(default_user) }}"
+        port: "{{ default_port }}"
+        passwd: lab123

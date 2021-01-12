@@ -12,6 +12,5 @@ def bubble(arr):
             if arr[i-1]>arr[i]:
                 swap(i-1,i)
                 swapped=True
-    print x
     return arr
 

@@ -1,0 +1,54 @@
+---
+- name: Install Config File
+  hosts:
+    - vmx 
+  roles:
+    - Juniper.junos
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: 1. override the config with "MacOS-mgmt" and apply-group first to ensure mgmt connection
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "override"
+         src: "vmx_config/MacOS-mgmt.conf"
+         comment: "by ansible juniper_junos_config"
+      register: response1
+
+    - name: 2.0 create a group, but think about how to put plain template under this group
+#
+#     Ideally, my template files are not under hierarchy groups, 
+#     I need to create a group name and try to put the following template under this group
+#
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         lines:
+           - "set groups template-7.conf"
+         comment: "by ansible juniper_junos_config"
+      register: response2.0
+            
+    - name: 2.1 merge the config with group of my template, this later on to work as a variable
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         src: "vmx_config/template-7.conf"
+         comment: "by ansible juniper_junos_config"
+      register: response2.1
+          
+    - name: 2.2 set apply-groups, the group name to be worked into variable later
+      juniper_junos_config:
+         host: "{{ ansible_host }}"
+         load: "merge"
+         lines:
+           - "set apply-groups template-7.conf"
+         comment: "by ansible juniper_junos_config"
+      register: response2.2
+
+    - name: 3. Print the responses
+      debug:
+        var: response1
+        var: response2.0
+        var: response2.1
+        var: response2.2
