@@ -414,3 +414,26 @@ class Solution:
                 elif s>0:
                     right=right-1
         return l
+
+#Next
+class Solution:
+    """
+    @param A: a array
+    @return: is it monotonous
+    """
+
+    def isMonotonic(self, A):
+        if not A: return False
+        if len(A) == 1 or len(A) == 2: return True
+        x1, x2 = self.helper(A), self.helper(A[::-1])
+        return x1 or x2
+
+    def helper(self, A):
+        i, j = 0, 1
+        while (j < len(A)):
+            if A[j] >= A[i]:
+                j += 1
+                i += 1
+            else:
+                return False
+        return True
