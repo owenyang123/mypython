@@ -377,3 +377,14 @@ def maxSubArray(self, nums):
         max_sum = max(max_sum, prefix_sum - min_sum)
         min_sum = min(min_sum, prefix_sum)
     return max_sum
+
+
+class Solution:
+
+    def thirdMax(self, nums):
+        if not nums: return None
+        nums = list(set(nums))
+        nums.sort()
+        if len(nums) < 3: return nums[-1]
+
+        return nums[-3]
