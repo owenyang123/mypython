@@ -13,5 +13,4 @@ def dfstm(dict1,start,end):
             q.append([x,path+[node]])
     return pathlist
 x=dfstm(dict1,1,5)
-print "==========="
-print x
+print [2,3,4]>5

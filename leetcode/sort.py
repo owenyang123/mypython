@@ -8,15 +8,10 @@ def bubble(arr):
     while swapped :
         swapped=False
         x=x+1
-        for i in range(1,n-x):
+        for i in range(1,n-x-1):
             if arr[i-1]>arr[i]:
                 swap(i-1,i)
                 swapped=True
     print x
     return arr
 
-sor
-print bubble(l)
-s="A"
-
-print s.islower()

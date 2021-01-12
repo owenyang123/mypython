@@ -11,7 +11,7 @@ import optionsplay as op
 sns.set(style="whitegrid")
 url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
-stocklist = content[0]['Symbol'].tolist()+['bp','epd']
+stocklist = content[0]['Symbol'].tolist()
 l=sp.caifuziyou(stocklist)
 filename_tod=bt.get_data(0)+".csv"
 filename_yes=bt.get_data(1)+".csv"
@@ -33,11 +33,7 @@ for i in l:
         temp1.append([i[0],i[1],i[2]])
 temp1.sort(key=lambda x:x[-1],reverse=True)
 for i in temp1:
-    print i
-
-
-
-
+    print (i)
 
 
 
