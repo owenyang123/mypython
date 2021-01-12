@@ -61,7 +61,7 @@ def bubble(arr):
                 swap(i-1,i)
                 swapped=True
     return arr
-
+#next
 import commands
 import threading
 
@@ -278,3 +278,102 @@ class Solution:
                 temp=1
         count=max(count,temp)
         return count
+
+with open("piclog") as x:
+    words = re.findall(r'\w+', x.read().lower())
+    print collections.Counter(words).most_common(10)
+
+class Solution:
+    def restoreIpAddresses(self, s):
+        if not s or len(s) <= 1:
+            return []
+        ipstr = s
+        list1 = []
+        if len(ipstr) < 4 or len(ipstr) > 12 or not ipstr:
+            return []
+        for i in range(0, 3):
+            if self.helper(ipstr[0:i + 1]) :
+                temp1 = ipstr[0:i + 1] + "."
+                layer1 = ipstr[i + 1:]
+                for j in range(0, 3):
+                    if j < len(layer1) - 1 and self.helper(layer1[0:j + 1]):
+                        temp2 = layer1[0:j + 1] + "."
+                        layer2 = layer1[j + 1:]
+                        for z in range(0, 3):
+                            if z < len(layer2) - 1 and self.helper(layer2[0:z + 1]) and self.helper(layer2[z + 1:]):
+                                temp3 = layer2[0:z + 1] + "." + layer2[z + 1:]
+                                list1.append(temp1 + temp2 + temp3)
+        return list1
+    def helper(self, str1):
+        if len(str1) == 1:
+            return True
+        if int(str1) > 255:
+            return False
+        if str1[0] != "0":
+            return True
+        return False
+
+
+class Solution(object):
+    def findMaxAverage(self, nums, k):
+        sum1 = sum(nums[0:k])
+        max1 = float(sum1) / k
+        if k == len(nums): return max1
+        for i in range(k, len(nums)):
+            sum1 = sum1 - nums[i - k] + nums[i]
+            max1 = max(max1, float(sum1) / k)
+        return max1
+
+def intersection(self, nums1, nums2):
+    if not nums1 or not nums2:return []
+    if len(nums1)>len(nums2):return self.intersection(nums2, nums1)
+    tempset=set(nums2)
+    res=set([])
+    for i in nums1:
+        if i in tempset:res.add(i)
+    return list(res)
+
+import collections
+class Solution:
+    def intersection(self, nums1, nums2):
+        if not nums1 or not nums2:return []
+        x1=collections.Counter(nums1)
+        x2=collections.Counter(nums2)
+        l=[]
+        for i in x1:
+            if i in x2:
+                temp=min(x1[i],x2[i])
+                l+=[i]*temp
+        return l
+#next
+
+class Solution:
+    def expressionExpand(self, s):
+        if not s:return ""
+        if "[" not in s:return s
+        temp=self.helper(s)
+        return self.expressionExpand(s[0:temp[0]-temp[3]]+(s[temp[0]+1:temp[1]])*temp[2]+s[temp[1]+1:])
+    def helper(self,s):
+        b,e=0,0
+        for i in range(len(s)):
+            if s[i]=="[":
+                b=i
+            if s[i]=="]":
+                e=i
+                break
+        temp,str1=b-1,""
+        while(temp>=0):
+            if s[temp].isdigit():
+                str1+=s[temp]
+                temp-=1
+            else:break
+        return (b,e,int(str1[::-1]),len(str1))
+#next
+def maxSubArray(self, nums):
+    min_sum, max_sum = 0, -sys.maxsize
+    prefix_sum = 0
+    for num in nums:
+        prefix_sum += num
+        max_sum = max(max_sum, prefix_sum - min_sum)
+        min_sum = min(min_sum, prefix_sum)
+    return max_sum

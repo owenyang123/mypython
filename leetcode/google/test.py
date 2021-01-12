@@ -1,3 +1,4 @@
+'''
 import collections
 import re,copy
 
@@ -25,3 +26,64 @@ for i in l1:
     else:
         x[i[0]]={i[1]:[i[2]]}
 print x
+'''
+
+
+
+class Solution:
+    """
+    @param s: an expression includes numbers, letters and brackets
+    @return: a string
+    """
+
+    def expressionExpand(self, s):
+        if not s: return ""
+        if "[" not in s: return s
+        for i in s:
+            if i.isalnum():
+                temp = self.helper(s)
+                print temp[0],typotemp[1]
+                return s[0:i] + self.expressionExpand(s[5:6])*int(i) + s[7:]
+
+    def helper(self, s):
+        b, e = 0, 0
+        for i in range(len(s)):
+            if s[i] == "[":
+                b = i
+                break
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == "]":
+                e = i
+                break
+        return (b, i)
+
+k=Solution()
+print k.expressionExpand("abc3[a]")
+
+class Solution:
+    """
+    @param s: an expression includes numbers, letters and brackets
+    @return: a string
+    """
+    def expressionExpand(self, s):
+        if not s:return ""
+        if "[" not in s:return s
+        temp=self.helper(s)
+        print s
+        print temp
+        return self.expressionExpand(s[0:temp[0]-temp[3]]+(s[temp[0]+1:temp[1]])*temp[2]+s[temp[1]+1:])
+    def helper(self,s):
+        b,e=0,0
+        for i in range(len(s)):
+            if s[i]=="[":
+                b=i
+            if s[i]=="]":
+                e=i
+                break
+        temp,str1=b-1,""
+        while(temp>=0):
+            if s[temp].isdigit():
+                str1+=s[temp]
+                temp-=1
+            else:break
+        return (b,e,int(str1[::-1]),len(str1))
