@@ -451,3 +451,68 @@ class Solution:
             if SVNRepo.isBadVersion(m):r=m
             else:l=m
         return r
+#Next
+class Solution:
+    """
+    @param grid: a boolean 2D matrix
+    @return: an integer
+    """
+
+    def numIslands(self, grid):
+        # write your code here
+        if not grid or not grid[0]:
+            return 0
+        ret = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1:
+                    ret += 1
+                    self.removeIsland(grid, i, j)
+        return ret
+
+    def removeIsland(self, grid, i, j):
+        grid[i][j] = 0
+        if i > 0 and grid[i - 1][j] == 1:
+            self.removeIsland(grid, i - 1, j)
+        if i < len(grid) - 1 and grid[i + 1][j] == 1:
+            self.removeIsland(grid, i + 1, j)
+        if j > 0 and grid[i][j - 1] == 1:
+            self.removeIsland(grid, i, j - 1)
+        if j < len(grid[0]) - 1 and grid[i][j + 1] == 1:
+            self.removeIsland(grid, i, j + 1)
+
+#Next
+class Solution:
+    """
+    @param source:
+    @param target:
+    @return: return the index
+    """
+    def strStr(self, source, target):
+        if not target :return 0
+        if target not in source:return -1
+        len1=len(target)
+        for i in range(len(source)):
+            if source[i]==target[0]:
+                if source[i:i+len1]==target:return i
+#Next two sum
+
+    def twoSum(self, numbers, target):
+        dict1={}
+        for i in range(len(numbers)):
+            if target-numbers[i] not in dict1:
+                dict1[numbers[i]]=i
+            else:return [dict1[target-numbers[i]],i]
+        return []
+#Next valic bracket
+
+def isValidParentheses(self, s):
+    temp1 = []
+    dict1 = {")": "(", "]": "[", "}": "{"}
+    for i in s:
+        if i in "([{":
+            temp1.append(i)
+        elif i in dict1:
+            if not temp1 or dict1[i] != temp1.pop(): return False
+    return temp1 == []
+
