@@ -1,30 +1,18 @@
-import collections
-import re
-class Solution:
-    # @param A : tuple of integers
-    # @return an integer
-    def repeatedNumber(self, A):
-        if not A:
-            return -1
-        if len(A)<=2:
-            return A[0]
-        num=len(A)/3
-        counterlist=collections.Counter(A)
-        for i in counterlist:
-            if counterlist[i]>num:
-                return i
-        return -1
-
-
-k=Solution()
-print k.repeatedNumber([ 1000441, 1000441, 1000994 ])
-
-str1="case  case case        owen       123" \
-     "131312 123123" \
-     "13131 123123 owen owen " \
-     "wjing " \
-     "ge-0/0/0" \
-     "1000" \
-     "200"
-l=re.findall(r'\w+',str1)
-print l
+switch_data={}
+with open('switch.csv', 'r') as file:
+    for row in file.readlines():
+        temp=row.replace("\n","").split(",")
+        if temp[2].isdigit():
+            if temp[0] in switch_data:
+                switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
+            else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+def findhightalk(dict1):
+    if not dict1:return []
+    res=[]
+    for i in dict1:
+        temp = [i, 0]
+        for j in zip(*switch_data[i])[1:]:
+            temp[1] += sum(j)
+        res.append(temp)
+    return sorted(res,key=lambda x:x[1])[-1]
+print findhightalk(switch_data)

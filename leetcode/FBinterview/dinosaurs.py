@@ -1,3 +1,24 @@
+#switch speed
+switch_data={}
+with open('switch.csv', 'r') as file:
+    for row in file.readlines():
+        temp=row.replace("\n","").split(",")
+        if temp[2].isdigit():
+            if temp[0] in switch_data:
+                switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
+            else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+def findhightalk(dict1):
+    if not dict1:return []
+    res=[]
+    for i in dict1:
+        temp = [i, 0]
+        for j in zip(*switch_data[i])[1:]:
+            temp[1] += sum(j)
+        res.append(temp)
+    return sorted(res,key=lambda x:x[1])[-1]
+print findhightalk(switch_data)
+
+
 # read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
 
@@ -534,3 +555,12 @@ class Solution:
                 if int(temp[i])>=5:return 0-int(temp[0:i]+"5"+temp[i:])
             return 0-int(temp+"5")
 
+items = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x**2, items))
+
+number_list = range(-5, 5)
+less_than_zero = list(filter(lambda x: x < 0, number_list))
+print(less_than_zero)
+
+from functools import reduce
+product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
