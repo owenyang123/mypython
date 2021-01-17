@@ -546,6 +546,20 @@ class Solution:
                 if int(temp[i])>=5:return 0-int(temp[0:i]+"5"+temp[i:])
             return 0-int(temp+"5")
 
+
+class Solution:
+    def lengthOfLIS(self, nums):
+        if not nums:
+            return 0
+        n = len(nums)
+        dp = [0] * n
+        for i in range(1, n):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], 1 + dp[j])
+
+        return 1 + max(dp)
+
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 

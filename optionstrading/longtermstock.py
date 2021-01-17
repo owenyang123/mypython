@@ -1,5 +1,5 @@
 import glob, os
-os.chdir("D:\Python272018\owenpython2018\mypython\optionstrading")
+os.chdir("D:\pythonproject\mypython\optionstrading")
 file_list=[]
 for file in glob.glob("*ND20*.csv"):
     file_list.append(file)
@@ -19,13 +19,13 @@ for i in file_list:
 listorder=sorted(stockdays.items(),key=lambda x:x[1],reverse=True)
 print [i for i in listorder if i[1]>days]
 
-os.chdir("D:\Python272018\owenpython2018\mypython\optionstrading")
+os.chdir("D:\pythonproject\mypython\optionstrading")
 file_list=[]
 for file in glob.glob("2*.csv"):
     file_list.append(file)
 file_list.sort()
 file_list=file_list[0-n:]
-days=len(file_list)*0.5
+days=len(file_list)*0.6
 stockdays={}
 for i in file_list:
     with open(i) as fd:
