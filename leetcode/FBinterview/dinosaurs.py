@@ -559,7 +559,20 @@ class Solution:
                     dp[i] = max(dp[i], 1 + dp[j])
 
         return 1 + max(dp)
+#next
 
+class Solution(object):
+    def maximalSquare(self, matrix):
+        dp,temp = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))],0
+        for i in xrange(0, len(matrix)):
+            for j in xrange(0, len(matrix[0])):
+                if i == 0 or j == 0:
+                    dp[i][j] = int(matrix[i][j])
+                elif int(matrix[i][j]) == 1:
+                    dp[i][j] = min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1
+                temp=max(dp[i][j],temp)
+        return temp**2
+    
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 
