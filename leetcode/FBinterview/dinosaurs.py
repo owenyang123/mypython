@@ -355,14 +355,42 @@ class Solution(object):
             max1 = max(max1, float(sum1) / k)
         return max1
 
-def intersection(self, nums1, nums2):
+
+class Solution(object):
+    def intersect(self, nums1, nums2):
+        if not nums1 or not nums2: return []
+        if len(nums1) > len(nums2): return self.intersect(nums2, nums1)
+        dict1 = {}
+        for i in nums2:
+            dict1[i] = dict1.get(i, 0) + 1
+        l = []
+        for i in nums1:
+            if i in dict1.keys() and dict1[i] != 0:
+                l.append(i)
+                dict1[i] -= 1
+        return l
+
+class Solution(object):
+    def intersection2(self, nums1, nums2):
+        set1=set(nums1)
+        set2=set(nums2)
+        if len(set1)>len(set2):return self.intersection(nums2, nums1)
+        l=[]
+        for i in set1:
+            if i in set2:
+                l.append(i)
+        return l
+def intersection1(self, nums1, nums2):
     if not nums1 or not nums2:return []
-    if len(nums1)>len(nums2):return self.intersection(nums2, nums1)
-    tempset=set(nums2)
-    res=set([])
-    for i in nums1:
-        if i in tempset:res.add(i)
-    return list(res)
+    res=[]
+    i,j,l1,l2,res=0,0,len(nums1),len(nums2),[]
+    while(i<l1 and j<l2):
+        if nums1[i]==nums2[j]:
+            i+=1
+            j+=1
+        elif nums[i]>nums[j]:j+=1
+        else:i+=1
+    return res
 
 import collections
 class Solution:
