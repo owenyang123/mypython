@@ -34,17 +34,18 @@ fout.close()
 # read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
 
-dino_dict={}
 
-with open('log2.csv', 'r') as file:
-    for row in file.readlines():
-        temp=row.replace("\n","").split(",")
-        if temp[-1]=="bipedal":dino_dict[temp[0]]=[float(temp[1])]
-with open('log1.csv', 'r') as file:
-    for row in file.readlines():
-        temp=row.replace("\n","").split(",")
-        if temp[0] in dino_dict: dino_dict[temp[0]].append(float(temp[1]))
-print dino_dict
+def generatedata(file1,file2):
+    dino_dict = {}
+    with open(file2, 'r') as file:
+        for row in file.readlines():
+            temp=row.replace("\n","").split(",")
+            if temp and temp[-1]=="bipedal":dino_dict[temp[0]]=[float(temp[1])]
+    with open(file1, 'r') as file:
+        for row in file.readlines():
+            temp=row.replace("\n","").split(",")
+            if temp and temp[0] in dino_dict: dino_dict[temp[0]].append(float(temp[1]))
+    return dino_dict
 #fuction to check the speed
 def caulatespeed(dict1):
     if not dict1:return []

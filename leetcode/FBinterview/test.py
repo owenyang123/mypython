@@ -1,20 +1,16 @@
+'''
+1. Speed of Code: The interviewer is going to look at how quickly you solve the problem.
+You’ll want to complete the problem with a working solution in 10-15 minutes from
+beginning to end.
+2. Communication/Problem Solving: Before you start coding, make sure to ask clarifying
+questions. Repeat the coding question back to the interviewer as well to ensure that you
+are both on the same page. Walk the interviewer through your entire thought process
+prior to writing out your code. Also, listen for hints or advice from the interviewer and
+make sure to incorporate them.
+3. Cleanliness/Optimization: The interviewer will expect you to come up with the most
+optimized solution. You should run test cases and check for edge and corner cases. The
+interviewer will also look for a clean, bug-free solution. Also, no pseudo-code.
+4. Working Solution: The interviewer will want to see an executable working solution. You
+should be able to come up with a good argument for why your solution is correct.
 
-def generate_dict(filename):
-    switch_data={}
-    with open(filename, 'r') as file:
-        for row in file.readlines():
-            temp=[ i for i in row.replace("\n","").split(",") if i!=""]
-            if temp and temp[2].isdigit():
-                if temp[0] in switch_data:switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
-                else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
-    return switch_data
-def findhightalk(dict1):
-    if not dict1:return []
-    res=[]
-    for i in dict1:
-        temp = [i, 0]
-        for j in zip(*dict1[i])[1:]:
-            temp[1] += sum(j)
-        res.append(temp)
-    return sorted(res,key=lambda x:x[1])[-1]
-print findhightalk(generate_dict('switch.csv'))
+'''
