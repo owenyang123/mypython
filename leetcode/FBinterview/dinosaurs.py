@@ -1,24 +1,36 @@
 #switch speed
-switch_data={}
-with open('switch.csv', 'r') as file:
-    for row in file.readlines():
-        temp=row.replace("\n","").split(",")
-        if temp[2].isdigit():
-            if temp[0] in switch_data:
-                switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
-            else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+def generate_dict(filename):
+    switch_data={}
+    with open(filename, 'r') as file:
+        for row in file.readlines():
+            temp=[ i for i in row.replace("\n","").split(",") if i!=""]
+            if temp and temp[2].isdigit():
+                if temp[0] in switch_data:switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
+                else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+    return switch_data
 def findhightalk(dict1):
     if not dict1:return []
     res=[]
     for i in dict1:
         temp = [i, 0]
-        for j in zip(*switch_data[i])[1:]:
+        for j in zip(*dict1[i])[1:]:
             temp[1] += sum(j)
         res.append(temp)
     return sorted(res,key=lambda x:x[1])[-1]
-print findhightalk(switch_data)
+print findhightalk(generate_dict('switch.csv'))
+#remove workds in file
+infile = r"messy_data_file.txt"
+outfile = r"cleaned_file.txt"
 
-
+delete_list = ["firstname1 lastname1","firstname2 lastname2"....,"firstnamen lastnamen"]
+fin=open(infile,"")
+fout = open(outfile,"w+")
+for line in fin:
+    for word in delete_list:
+        line = line.replace(word, "")
+    fout.write(line)
+fin.close()
+fout.close()
 # read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
 
@@ -572,7 +584,7 @@ class Solution(object):
                     dp[i][j] = min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1
                 temp=max(dp[i][j],temp)
         return temp**2
-    
+
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 
