@@ -59,7 +59,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.longtermstock">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,10 +182,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.longtermstock" />
         <item itemvalue="Python.dailynsdq" />
         <item itemvalue="Python.dailysp500" />
-        <item itemvalue="Python.longtermstock" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.test2" />
       </list>
     </recent_temporary>
@@ -232,7 +232,7 @@
       <workItem from="1599696459160" duration="44372000" />
       <workItem from="1602827602560" duration="920000" />
       <workItem from="1610425128825" duration="3784000" />
-      <workItem from="1610861154146" duration="11227000" />
+      <workItem from="1610861154146" duration="17688000" />
     </task>
     <servers />
   </component>
@@ -240,6 +240,38 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1317" height="223" key="GridCell.Tab.0.bottom" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.0.center" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.0.left" timestamp="1611213117030">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117030" />
+    <state width="1317" height="223" key="GridCell.Tab.0.right" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.1.bottom" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.1.center" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.1.left" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state width="1317" height="223" key="GridCell.Tab.1.right" timestamp="1611213117031">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state width="1317" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
     <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611211698432">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -267,6 +299,7 @@
     <SUITE FILE_PATH="coverage/mypython$test.coverage" NAME="test Coverage Results" MODIFIED="1586833287763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mypython$testconnection.coverage" NAME="testconnection Coverage Results" MODIFIED="1585549194770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqlpython" />
     <SUITE FILE_PATH="coverage/mypython$parabola.coverage" NAME="parabola Coverage Results" MODIFIED="1585542112936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mypython$dailysp500.coverage" NAME="dailysp500 Coverage Results" MODIFIED="1611212370365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/optionstrading" />
     <SUITE FILE_PATH="coverage/mypython$myemail.coverage" NAME="myemail Coverage Results" MODIFIED="1585544145927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mypython$overrides.coverage" NAME="overrides Coverage Results" MODIFIED="1585369412164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python37/Lib/site-packages/numpy/core" />
     <SUITE FILE_PATH="coverage/mypython$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585346971400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sqlodbc" />

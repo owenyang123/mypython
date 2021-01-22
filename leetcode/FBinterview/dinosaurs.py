@@ -1,3 +1,24 @@
+class Solution(object):
+    def validIPAddress(self, IP):
+        def isIPv4(s):
+            if not s:return False
+            try:
+                if str(int(s)) == s and 0 <= int(s) <= 255:return True
+                return False
+            except:
+                return False
+        def isIPv6(s):
+            if not s:return False
+            try:
+                if len(s) <= 4 and int(s, 16) >= 0:return True
+                return False
+            except:
+                return False
+        if IP.count(".") == 3 and all(isIPv4(i) for i in IP.split(".")):
+            return "IPv4"
+        if IP.count(":") == 7 and all(isIPv6(i) for i in IP.split(":")):
+            return "IPv6"
+        return "Neither"
 #switch speed
 def generate_dict(filename):
     switch_data={}
@@ -335,13 +356,9 @@ class Solution:
                                 temp3 = layer2[0:z + 1] + "." + layer2[z + 1:]
                                 list1.append(temp1 + temp2 + temp3)
         return list1
-    def helper(self, str1):
-        if len(str1) == 1:
-            return True
-        if int(str1) > 255:
-            return False
-        if str1[0] != "0":
-            return True
+    def helper(self,s):
+        if not s:return False
+        if str(int(s)) == s and 0 <= int(s) <= 255:return True
         return False
 
 
@@ -357,18 +374,14 @@ class Solution(object):
 
 
 class Solution(object):
-    def intersect(self, nums1, nums2):
-        if not nums1 or not nums2: return []
-        if len(nums1) > len(nums2): return self.intersect(nums2, nums1)
-        dict1 = {}
-        for i in nums2:
-            dict1[i] = dict1.get(i, 0) + 1
-        l = []
-        for i in nums1:
-            if i in dict1.keys() and dict1[i] != 0:
-                l.append(i)
-                dict1[i] -= 1
-        return l
+    def intersection(self, nums1, nums2):
+            if not nums1 or not nums2:return []
+            if len(nums2)<len(nums1):return self.intersection(nums2, nums1)
+            set1=set(nums2)
+            res=set([])
+            for i in nums1:
+                if i in set1:res.add(i)
+            return list(res)
 
 class Solution(object):
     def intersection2(self, nums1, nums2):
@@ -444,7 +457,6 @@ class Solution:
         nums = list(set(nums))
         nums.sort()
         if len(nums) < 3: return nums[-1]
-
         return nums[-3]
 
 class Solution:
@@ -613,6 +625,21 @@ class Solution(object):
                     dp[i][j] = min(dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]) + 1
                 temp=max(dp[i][j],temp)
         return temp**2
+class Solution(object):
+    def validIPAddress(self, IP):
+        def isIPv4(s):
+            try: return str(int(s)) == s and 0 <= int(s) <= 255
+            except: return False
+
+        def isIPv6(s):
+            try: return len(s) <= 4 and int(s, 16) >= 0
+            except: return False
+
+        if IP.count(".") == 3 and all(isIPv4(i) for i in IP.split(".")):
+            return "IPv4"
+        if IP.count(":") == 7 and all(isIPv6(i) for i in IP.split(":")):
+            return "IPv6"
+        return ""
 
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
