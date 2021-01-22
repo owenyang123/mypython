@@ -18,7 +18,7 @@ class Solution(object):
             return "IPv4"
         if IP.count(":") == 7 and all(isIPv6(i) for i in IP.split(":")):
             return "IPv6"
-        return "Neither"
+        return ""
 #switch speed
 def generate_dict(filename):
     switch_data={}
@@ -376,7 +376,7 @@ class Solution(object):
 class Solution(object):
     def intersection(self, nums1, nums2):
             if not nums1 or not nums2:return []
-            if len(nums2)<len(nums1):return self.intersection(nums2, nums1)
+            if len(nums2)>len(nums1):return self.intersection(nums2, nums1)
             set1=set(nums2)
             res=set([])
             for i in nums1:
@@ -641,6 +641,34 @@ class Solution(object):
             return "IPv6"
         return ""
 
+
+def nomal_search(wait_list, key):
+    mid = 0
+    n = len(wait_list)
+    res_index = -1
+    while mid < n - 1:
+        cur = (n + mid) // 2
+        if wait_list[cur] == key:
+            res_index = cur
+            break
+        elif wait_list[cur] < key:
+            mid = cur
+        else:
+            n = cur
+    return res_index
+
+
+# 测试数组
+arr = [2, 3, 4, 10, 40]
+x = 10
+
+# 函数调用
+result = binarySearch(arr, 0, len(arr) - 1, x)
+
+if result != -1:
+    print ("元素在数组中的索引为 %d" % result)
+else:
+    print ("元素不在数组中")
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 
