@@ -566,13 +566,13 @@ class Solution:
                 if source[i:i+len1]==target:return i
 #Next two sum
 
-    def twoSum(self, numbers, target):
-        dict1={}
-        for i in range(len(numbers)):
-            if target-numbers[i] not in dict1:
-                dict1[numbers[i]]=i
-            else:return [dict1[target-numbers[i]],i]
-        return []
+def twoSum(self, numbers, target):
+    dict1={}
+    for i in range(len(numbers)):
+        if target-numbers[i] not in dict1:
+            dict1[numbers[i]]=i
+        else:return [dict1[target-numbers[i]],i]
+    return []
 #Next valic bracket
 
 def isValidParentheses(self, s):
@@ -690,20 +690,27 @@ from functools import reduce
 product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 
 
+import itertools
 class Solution(object):
     def isAdditiveNumber(self, num):
-        length = len(num)
-        for i in range(1, length):
-            for j in range(i + 1, length):
-                first, second, remaining = num[:i], num[i:j], num[j:]
-                if (first.startswith('0') and first != '0') or (second.startswith('0') and second != '0'):
-                    continue
-                while remaining:
-                    third = str(int(first) + int(second))
-                    if not remaining.startswith(third): break
-                    first = second
-                    second = third
-                    remaining = remaining[len(third):]
-                if not remaining:
-                    return True
-        return False
+      length = len(num)
+      for i,j in itertools.combinations(range(1,length),2):
+          first, second, remaining = num[:i], num[i:j], num[j:]
+          if (first.startswith('0') and first != '0') or (second.startswith('0') and second != '0'):
+            continue
+          while remaining:
+            third = str(int(first) + int(second))
+            if not remaining.startswith(third):break
+            first = second
+            second = third
+            remaining = remaining[len(third):]
+          if not remaining:
+            return True
+      return    False
+
+import itertools
+l=[]
+for i in range(7):
+    for  k  in  itertools.combinations([1,2,3,4,5,6,7],i):
+        l.append(k)
+print l

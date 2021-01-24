@@ -20,6 +20,9 @@ def findhightalk(dict1):
     return sorted(res,key=lambda x:x[1])
 
 import itertools
-
-for  i,j,z in  itertools.combinations([1,2,3,4,5,6,7],3):
-    print i,j,z
+l=[]
+for i in range(8):
+    for  k  in  itertools.combinations([1,2,3,4,5,6,2],2):
+        l.append(list(k))
+print l
+print len(l)
