@@ -24,11 +24,14 @@ def generate_dict(filename):
     switch_data={}
     with open(filename, 'r') as file:
         for row in file.readlines():
-            temp=[ i for i in row.replace("\n","").split(",") if i!=""]
-            if temp and temp[2].isdigit():
-                if temp[0] in switch_data:switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
-                else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+            try:
+                temp = [i for i in row.replace("\n", "").split(",") if i != ""]
+                if temp and (temp[1].startswith("xe") or temp[1].startswith("ge")):
+                    if temp[0] in switch_data:switch_data[temp[0]].append([temp[1],int(temp[2]),int(temp[3])])
+                    else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
+            except:pass
     return switch_data
+#findnext
 def findhightalk(dict1):
     if not dict1:return []
     res=[]
@@ -56,15 +59,15 @@ fout.close()
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
 
 
-def generatedata(file1,file2):
+def generatedata(file1,file2，pattern):
     dino_dict = {}
     with open(file2, 'r') as file:
         for row in file.readlines():
-            temp=row.replace("\n","").split(",")
-            if temp and temp[-1]=="bipedal":dino_dict[temp[0]]=[float(temp[1])]
+            temp=[i for i in row.replace("\n","").split(",") if i!=""]
+            if temp and temp[-1]==pattern:dino_dict[temp[0]]=[float(temp[1])]
     with open(file1, 'r') as file:
         for row in file.readlines():
-            temp=row.replace("\n","").split(",")
+            temp=[i for i in row.replace("\n","").split(",") if i!=""]
             if temp and temp[0] in dino_dict: dino_dict[temp[0]].append(float(temp[1]))
     return dino_dict
 #fuction to check the speed
@@ -72,6 +75,7 @@ def caulatespeed(dict1):
     if not dict1:return []
     res=[]
     for i in dict1.keys():
+#to avoid some corner case only one parameter in dict
         if len(dict1[i])>1:
             speed=((dict1[i][0]/dict1[i][1])-1)*((dict1[i][1]*9.8)**0.5)
             res.append([i,speed])
@@ -643,32 +647,38 @@ class Solution(object):
 
 
 def nomal_search(wait_list, key):
-    mid = 0
-    n = len(wait_list)
+    left,right = 0,len(wait_list)
     res_index = -1
-    while mid < n - 1:
-        cur = (n + mid) // 2
+    while left < right - 1:
+        cur = (left+(right-left))//2
         if wait_list[cur] == key:
             res_index = cur
             break
-        elif wait_list[cur] < key:
-            mid = cur
-        else:
-            n = cur
+        elif wait_list[cur] < key:left = cur
+        else:right = cur
     return res_index
 
 
-# 测试数组
-arr = [2, 3, 4, 10, 40]
-x = 10
+def generate_dict(filename):
+    switch_data={}
+    with open(filename, 'r') as file:
+        for row in file.readlines():
+            temp=[ i for i in row.replace("\n","").split(",") if i!=""]
+            if temp and (temp[1].startswith("xe") or temp[1].startswith("ge")):
+                if temp[0] not in switch_data:switch_data[temp[0]]={temp[1]:{"input":int(temp[2]),"output":int(temp[3])}}
+                else:switch_data[temp[0]][temp[1]]={"input":int(temp[2]),"output":int(temp[3])}
+    print switch_data
+    return switch_data
 
-# 函数调用
-result = binarySearch(arr, 0, len(arr) - 1, x)
-
-if result != -1:
-    print ("元素在数组中的索引为 %d" % result)
-else:
-    print ("元素不在数组中")
+def findhightalk(dict1):
+    if not dict1:return []
+    res=[]
+    for i in dict1:
+        temp = [i, 0]
+        for j in dict1[i]:
+            temp[1]+=dict1[i][j]["input"]+dict1[i][j]["output"]
+        res.append(temp)
+    return sorted(res,key=lambda x:x[1])
 items = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x**2, items))
 
@@ -678,3 +688,22 @@ print(less_than_zero)
 
 from functools import reduce
 product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
+
+
+class Solution(object):
+    def isAdditiveNumber(self, num):
+        length = len(num)
+        for i in range(1, length):
+            for j in range(i + 1, length):
+                first, second, remaining = num[:i], num[i:j], num[j:]
+                if (first.startswith('0') and first != '0') or (second.startswith('0') and second != '0'):
+                    continue
+                while remaining:
+                    third = str(int(first) + int(second))
+                    if not remaining.startswith(third): break
+                    first = second
+                    second = third
+                    remaining = remaining[len(third):]
+                if not remaining:
+                    return True
+        return False
