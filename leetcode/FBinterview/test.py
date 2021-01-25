@@ -19,10 +19,5 @@ def findhightalk(dict1):
         res.append(temp)
     return sorted(res,key=lambda x:x[1])
 
-import itertools
-l=[]
-for i in range(8):
-    for  k  in  itertools.combinations([1,2,3,4,5,6,2],2):
-        l.append(list(k))
-print l
-print len(l)
+print chr(65)
+print ord("a")

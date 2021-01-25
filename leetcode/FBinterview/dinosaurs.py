@@ -236,6 +236,20 @@ class Solution(object):
         return dp[-1]
 
 class Solution(object):
+    def numDecodings(self, s):
+        return self._rec_helper(s)
+    def _rec_helper(self, data):
+        # Base Case 1: Empty string
+        if not data:return 1
+        first_call, second_call = 0, 0
+        if 1 <= int(data[:1]) <= 9:
+            first_call = self._rec_helper(data[1:])
+        if 10 <= int(data[:2]) <= 26:
+            second_call = self._rec_helper(data[2:])
+
+        return first_call + second_call
+
+class Solution(object):
     def reverseVowels(self, s):
         if len(s)<=1:return s
         set1=set(list("aeiou"))
@@ -714,3 +728,24 @@ for i in range(7):
     for  k  in  itertools.combinations([1,2,3,4,5,6,7],i):
         l.append(k)
 print l
+
+
+class Solution(object):
+    def titleToNumber(self, s):
+        temp=0
+        s1=s[::-1]
+        for i in range(len(s1)):
+            temp+=(ord(s1[i])-64)*(26**i)
+        return temp
+
+
+class Solution:
+    # @return a string
+    def convertToTitle(self, num):
+        capitals = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
+        result = []
+        while num > 0:
+            result.append(capitals[(num - 1) % 26])
+            num = (num - 1) // 26
+        result.reverse()
+        return ''.join(result)
