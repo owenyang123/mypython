@@ -739,13 +739,58 @@ class Solution(object):
         return temp
 
 
-class Solution:
-    # @return a string
+class Solution(object):
     def convertToTitle(self, num):
         capitals = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
-        result = []
+        result = ""
         while num > 0:
-            result.append(capitals[(num - 1) % 26])
+            result+=capitals[(num - 1) % 26]
             num = (num - 1) // 26
-        result.reverse()
-        return ''.join(result)
+            print result
+        return result[::-1]
+
+
+class Solution:
+    # @param A : list of list of integers
+    # @return the same list modified
+    def rotate(self, A):
+        rows, clos = len(A), len(A[0])
+        B = [[0 for x in range(rows)] for y in range(clos)]
+        for i in range(clos):
+            for j in range(rows):
+                B[i][j] = A[rows - 1 - j][i]
+        return B
+
+
+class Solution:
+    """
+    @param numbers: Give an array numbers of n integer
+    @return: Find all unique triplets in the array which gives the sum of zero.
+    """
+
+    def threeSum(self, numbers):
+        if len(numbers) < 3:
+            return []
+        numbers.sort()
+        l = []
+        for i in range(len(numbers) - 2):
+            self.twoSum6(numbers[i + 1:], 0 - numbers[i], l, numbers[i])
+
+        return l
+
+    def twoSum6(self, nums, target, l, num):
+        if len(nums) < 2:
+            return l
+        i = 0
+        j = len(nums) - 1
+        while (i < j):
+            if nums[i] + nums[j] == target:
+                if [num, nums[i], nums[j]] not in l:
+                    l.append([num, nums[i], nums[j]])
+                i += 1
+                j -= 1
+            elif nums[i] + nums[j] > target:
+                j -= 1
+            else:
+                i += 1
+        return 

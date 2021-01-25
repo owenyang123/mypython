@@ -21,3 +21,4 @@ def findhightalk(dict1):
 
 print chr(65)
 print ord("a")
+x=raw
