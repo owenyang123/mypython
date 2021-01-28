@@ -1,24 +1,15 @@
-def generate_dict(filename):
-    switch_data={}
-    with open(filename, 'r') as file:
-        for row in file.readlines():
-            temp=[ i for i in row.replace("\n","").split(",") if i!=""]
-            if temp and (temp[1].startswith("xe") or temp[1].startswith("ge")):
-                if temp[0] not in switch_data:switch_data[temp[0]]={temp[1]:{"input":int(temp[2]),"output":int(temp[3])}}
-                else:switch_data[temp[0]][temp[1]]={"input":int(temp[2]),"output":int(temp[3])}
-    print switch_data
-    return switch_data
-
-def findhightalk(dict1):
-    if not dict1:return []
-    res=[]
-    for i in dict1:
-        temp = [i, 0]
-        for j in dict1[i]:
-            temp[1]+=dict1[i][j]["input"]+dict1[i][j]["output"]
-        res.append(temp)
-    return sorted(res,key=lambda x:x[1])
-
-print chr(65)
-print ord("a")
-x=raw
+class Solution:
+    # @param A : integer
+    # @return an integer
+    def solve(self, A):
+        if A==1 or A==2 :return 1
+        if A==3:return 2
+        temp1,temp2,temp3=3,2,1
+        for i in range(4,A+1):
+            temp1=temp2+temp3
+            temp3=temp2
+            temp2=temp1
+            print temp1
+        return temp1
+k=Solution()
+print k.solve(50)

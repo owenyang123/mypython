@@ -832,3 +832,12 @@ class Solution:
                     res = s
 
         return res
+
+def main():
+    try:
+        return 0
+    except:
+        return 1
+
+if __name__ == "__main__":
+    sys.exit(main())

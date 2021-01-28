@@ -180,10 +180,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.longtermstock" />
         <item itemvalue="Python.dailynsdq" />
         <item itemvalue="Python.dailysp500" />
         <item itemvalue="Python.dinosaurs" />
-        <item itemvalue="Python.longtermstock" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +229,7 @@
       <workItem from="1599696459160" duration="44372000" />
       <workItem from="1602827602560" duration="920000" />
       <workItem from="1610425128825" duration="3784000" />
-      <workItem from="1610861154146" duration="52580000" />
+      <workItem from="1610861154146" duration="58388000" />
     </task>
     <servers />
   </component>
