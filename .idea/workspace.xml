@@ -229,7 +229,7 @@
       <workItem from="1599696459160" duration="44372000" />
       <workItem from="1602827602560" duration="920000" />
       <workItem from="1610425128825" duration="3784000" />
-      <workItem from="1610861154146" duration="58388000" />
+      <workItem from="1610861154146" duration="59083000" />
     </task>
     <servers />
   </component>
@@ -237,6 +237,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1780" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611808956763">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1780" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611808956763" />
     <state width="1317" height="223" key="GridCell.Tab.0.bottom" timestamp="1611213117031">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
