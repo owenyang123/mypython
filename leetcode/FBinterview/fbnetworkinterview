@@ -1,19 +1,25 @@
 ---
-q1:what is the window size....how is it negotiated if it is?
+8021x: 802.1X is a network authentication protocol that opens ports for network access
+       when an organization authenticates a user’s identity and authorizes them for access
+       to the network. The user’s identity is determined based on their credentials or
+       certificate, which is confirmed by the RADIUS server. The RADIUS server is able to
+       do this by communicating with the organization’s directory, typically over the LDAP or SAML protocol.
+dhcp :
+  - discver: 0.0.0.0 68 to 255.255.255.255 67
+  - offer: sip 67 to 255.255.255.255 68
+  - request: 0.0.0.0 68 255.255.255 67(unicast in renew,broadcast in rebinding)
+  - ack: sip 67 to 255.255.255.255 68
+ndp:
+q1: what is the window size....how is it negotiated if it is?
   answer: local buffer,it does not negosiate ,it just used its own buffer
-q2:how window size coreelates with segment size.. what is the role os mss in it?
-  answer: segment is from mss ,mss is to avoid the fragment
-he MSS announcement (often mistakenly called a negotiation)
-is sent during the three-way handshake by both sides,
-saying: “I can accept TCP segments up to size x”. The size (x) may be larger or smaller than the default.
+q2: how window size coreelates with segment size.. what is the role os mss in it?
+  answer: segment is from mss ,mss is to avoid the fragment the MSS announcement (often mistakenly called a negotiation) is sent during the three-way handshake by both sides saying I can accept TCP segments up to size x”. The size (x) may be larger or smaller than the default.
 The MSS can be used completely independently in each direction of data flow.
 
-if window size is 16kb then how many segments will it send
+q3: if window size is 16kb then how many segments will it send can client say 16 kb and server say 32 kb?
 
-can client say 16 kb and server say 32 kb?
-
-Fragmentation in detail
-https://en.wikipedia.org/wiki/IP_fragmentation
+q4: Fragmentation in detail
+ answer: https://en.wikipedia.org/wiki/IP_fragmentation
 
 path mtu trace in detail
 ...
@@ -26,11 +32,11 @@ mpls ldp neigborship in too much detail
 
 Bgp states in detail.... Also what happens after open confirm done?... Immediately established state or some more stuff happens etc
 Idle State:
-Refuse all incoming BGP connections.
-Start the initialization of event triggers.
-Initiates a TCP connection with its configured BGP peer.
-Listens for a TCP connection from its peer.
-Changes its state to Connect.
+ - 1: Refuse all incoming BGP connections.
+ - 2: Start the initialization of event triggers.
+ - 3: Initiates a TCP connection with its configured BGP peer.
+ - 4: Listens for a TCP connection from its peer.
+ - 5: Changes its state to Connect.
 If an error occurs at any state of the FSM process, the BGP session is terminated immediately and returned to the Idle state. Some of the reasons why a router does not progress from the Idle state are:
 TCP port 179 is not open.
 A random TCP port over 1023 is not open.

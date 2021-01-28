@@ -841,3 +841,42 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
+
+import itertools
+class Solution(object):
+    def canThreePartsEqualSum(self, arr):
+        if not arr or len(arr)<3:return False
+        if sum(arr)%3==0:sum1=sum(arr)/3
+        else:return False
+        temp=self.helper(arr,sum1)
+        if temp[0]:
+            return self.helper(arr[temp[1]+1:],sum1)[0]
+        return False
+    def helper(self,arr,target):
+        if not arr:return (False,-1)
+        if len(arr)<2:return (False,-1)
+        sum1=arr[0]
+        if sum1==target:return (True,0)
+        for i in range(1,len(arr)):
+            sum1+=arr[i]
+            if sum1==target and i!=len(arr)-1:return (True,i)
+        return (False,-1)
+import itertools
+class Solution(object):
+    def canThreePartsEqualSum(self, arr):
+        if not arr or len(arr)<3:return False
+        for i ,j in itertools.combinations(range(1,len(arr)),2):
+            temp1,temp2,temp3=arr[0:i],arr[i:j],arr[j:]
+            if sum(temp1)==sum(temp2)==sum(temp3):return True
+        return False
+
+def canThreePartsEqualSum(self, arr):
+    total = sum(arr)
+    if total % 3 != 0: return False
+    count, cumsum, target = 0, 0, total // 3
+    for num in arr:
+        cumsum += num
+        if cumsum == target:
+            cumsum = 0
+            count += 1
+    return count >= 3
