@@ -5,7 +5,7 @@
        certificate, which is confirmed by the RADIUS server. The RADIUS server is able to
        do this by communicating with the organization’s directory, typically over the LDAP or SAML protocol.
 dhcp :
-  - discver: 0.0.0.0 68 to 255.255.255.255 67
+  - discover: 0.0.0.0 68 to 255.255.255.255 67
   - offer: sip 67 to 255.255.255.255 68
   - request: 0.0.0.0 68 255.255.255 67(unicast in renew,broadcast in rebinding)
   - ack: sip 67 to 255.255.255.255 68
