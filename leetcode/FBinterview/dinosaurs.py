@@ -880,3 +880,35 @@ def canThreePartsEqualSum(self, arr):
             cumsum = 0
             count += 1
     return count >= 3
+class Solution(object):
+    def robotSim(self, commands, obstacles):
+        direct={0:"North",2:"South",-2:"South",1:"West",-3:"West",-1:"East",3:"East"}
+        cur,x,y,res=0,0,0,0
+        set1=set(map(tuple, obstacles))
+        for i in commands:
+            if i==-1:
+                cur-=1
+                if abs(cur)>=4:cur=abs(cur)-4
+            if i==-2:
+                cur+=1
+                if abs(cur)>=4:cur=abs(cur)-4
+            if i>0:
+                for _ in range(i):
+                    if direct[cur]=="North":
+                        tempx,tempy=x,y+1
+                        if (tempx,tempy) in set1:break
+                        x,y=tempx,tempy
+                    elif direct[cur]=="South":
+                        tempx,tempy=x,y-1
+                        if (tempx,tempy) in set1:break
+                        x,y=tempx,tempy
+                    elif direct[cur]=="East":
+                        tempx,tempy=x+1,y
+                        if (tempx,tempy) in set1:break
+                        x,y=tempx,tempy
+                    else:
+                        tempx,tempy=x-1,y
+                        if (tempx,tempy) in set1:break
+                        x,y=tempx,tempy
+                res=max(res, x**2+y**2)
+        return res

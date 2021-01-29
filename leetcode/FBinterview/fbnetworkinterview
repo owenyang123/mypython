@@ -10,6 +10,9 @@ dhcp :
   - request: 0.0.0.0 68 255.255.255 67(unicast in renew,broadcast in rebinding)
   - ack: sip 67 to 255.255.255.255 68
 ndp:
+  - icmpv6: 133 Router Solicitation (RS),134 Router Advertisement (RA),Type 135 Neighbor Solicitation (NS),136 Neighbor Advertisement (NA)
+  - process: https://blog.apnic.net/2019/10/18/how-to-ipv6-neighbor-discovery/
+
 q1: what is the window size....how is it negotiated if it is?
   answer: local buffer,it does not negosiate ,it just used its own buffer
 q2: how window size coreelates with segment size.. what is the role os mss in it?

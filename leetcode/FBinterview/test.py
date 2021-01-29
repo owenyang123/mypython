@@ -1,1 +1,1 @@
-print str(bin(7))
+print int("111",2)
