@@ -22,7 +22,7 @@ q1: what is the window size....how is it negotiated if it is?
   answer: local buffer,it does not negosiate ,it just used its own buffer
 q2: how window size coreelates with segment size.. what is the role os mss in it?
   answer: segment is from mss ,mss is to avoid the fragment the MSS announcement (often mistakenly called a negotiation) is sent during the three-way handshake by both sides saying I can accept TCP segments up to size x”. The size (x) may be larger or smaller than the default.
-The MSS can be used completely independently in each direction of data flow.
+           The MSS can be used completely independently in each direction of data flow.
 
 q3: if window size is 16kb then how many segments will it send can client say 16 kb and server say 32 kb?
 
