@@ -18,6 +18,9 @@ pmtu: any device along the path whose MTU is smaller than the packet will drop i
       ICMPv6 Packet Too Big (Type 2) message containing its MTU
 STP: disable,blocking,listening ,learning ,Spanning Tree Switch Priority,Switch Mac Address
 TCP:
+  reno: set the cwnd to ssthresh(3 ack)
+  tahoe: set the cwnd to 1mss(3 ack)
+  both: ack timeout set cwnd to 1mss
 q1: what is the window size....how is it negotiated if it is?
   answer: local buffer,it does not negosiate ,it just used its own buffer
 q2: how window size coreelates with segment size.. what is the role os mss in it?
