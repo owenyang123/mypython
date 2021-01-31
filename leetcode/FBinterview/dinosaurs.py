@@ -912,3 +912,14 @@ class Solution(object):
                         x,y=tempx,tempy
                 res=max(res, x**2+y**2)
         return res
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        ans = heapq.nlargest(k, nums)
+        return ans[-1]
+
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        if not nums: return None
+        nums.sort(key=lambda x: 0 - x)
+        if k > len(nums): return nums[-1]
+        return nums[k - 1]

@@ -16,7 +16,12 @@ pmtu: any device along the path whose MTU is smaller than the packet will drop i
       and send back an Internet Control Message Protocol (ICMP) Fragmentation Needed (Type 3, Code 4) message containing its MTU
       . For IPv6, Path MTU Discovery works by initially assuming the path MTU is the same as the MTU on the link layer interface where the traffic originates. Then, similar to IPv4, any device along the path whose MTU is smaller than the packet will drop the packet and send back an
       ICMPv6 Packet Too Big (Type 2) message containing its MTU
-STP: disable,blocking,listening ,learning ,Spanning Tree Switch Priority,Switch Mac Address
+Trace: The time-to-live (TTL) value, also known as hop limit, is used in
+        determining the intermediate routers being traversed towards the destination.
+        Traceroute sends packets with TTL values that gradually increase from packet to packet,
+        starting with TTL value of one. Routers decrement TTL values of packets by one when routing and discard packets
+        whose TTL value has reached zero, returning the ICMP error message ICMP Time Exceeded.
+STP: disable,blocking,listening ,learning ,forwarding Spanning Tree Switch Priority,Switch Mac Address
 TCP:
   reno: set the cwnd to ssthresh(3 ack)
   tahoe: set the cwnd to 1mss(3 ack)
@@ -83,3 +88,5 @@ If a timer expires before a Keepalive message is received, or if an error condit
 Established State:
 In this state, the peers send Update messages to exchange information about each route being advertised to the BGP peer.
 If there is any error in the Update message then a Notification message is sent to the peer, and BGP transitions back to the Idle state.
+
+Design:
