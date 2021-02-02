@@ -4,6 +4,7 @@
        to the network. The user’s identity is determined based on their credentials or
        certificate, which is confirmed by the RADIUS server. The RADIUS server is able to
        do this by communicating with the organization’s directory, typically over the LDAP or SAML protocol.
+
 dhcp :
   - discover: 0.0.0.0 68 to 255.255.255.255 67
   - offer: sip 67 to 255.255.255.255 68
