@@ -59,7 +59,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dailynsdq">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,9 +179,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.dailynsdq" />
         <item itemvalue="Python.dailysp500" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.longtermstock" />
         <item itemvalue="Python.dinosaurs" />
       </list>
@@ -229,7 +229,7 @@
       <workItem from="1599696459160" duration="44372000" />
       <workItem from="1602827602560" duration="920000" />
       <workItem from="1610425128825" duration="3784000" />
-      <workItem from="1610861154146" duration="80838000" />
+      <workItem from="1610861154146" duration="84248000" />
     </task>
     <servers />
   </component>
