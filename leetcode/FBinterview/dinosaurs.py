@@ -923,3 +923,14 @@ class Solution(object):
         nums.sort(key=lambda x: 0 - x)
         if k > len(nums): return nums[-1]
         return nums[k - 1]
+
+
+class Solution(object):
+    def gcdOfStrings(self, str1, str2):
+        if not str2 or not str1: return ""
+        if len(str2) > len(str1): return self.gcdOfStrings(str2, str1)
+        if str1.startswith(str2):
+            if not str1[len(str2):]: return str1
+            return self.gcdOfStrings(str1[len(str2):], str2)
+        else:
+            return ""
