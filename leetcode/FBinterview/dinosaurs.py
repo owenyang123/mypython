@@ -934,3 +934,24 @@ class Solution(object):
             return self.gcdOfStrings(str1[len(str2):], str2)
         else:
             return ""
+
+class Solution(object):
+    def findOcurrences(self, text, first, second):
+        list1 = text.split()
+        res=[]
+        for i in range(2,len(list1)):
+            if list1[i-2]==first and list1[i-1]==second:res.append(list1[i])
+        return res
+class Solution(object):
+    def distributeCandies(self, candies, num_people):
+        l=[0]*num_people
+        count=0
+        while candies>0:
+            if candies>=count+1:
+                l[count%num_people]+=count+1
+                candies-=count+1
+            else:
+                l[count%num_people]+=candies
+                candies=0
+            count+=1
+        return l
