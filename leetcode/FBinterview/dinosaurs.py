@@ -417,6 +417,7 @@ def intersection1(self, nums1, nums2):
     i,j,l1,l2,res=0,0,len(nums1),len(nums2),[]
     while(i<l1 and j<l2):
         if nums1[i]==nums2[j]:
+            res.append(nums1[i])
             i+=1
             j+=1
         elif nums[i]>nums[j]:j+=1
@@ -955,3 +956,78 @@ class Solution(object):
                 candies=0
             count+=1
         return l
+
+class Solution(object):
+    def rangeSumBST(self, root, L, R):
+        if not root:return 0
+        self.l=[]
+        self.helper(root)
+        return sum([i for i in self.l if L<=i<=R])
+    def helper(self,root):
+        self.l.append(root.val)
+        if not root.left and not root.right:return
+        if root.left:self.helper(root.left)
+        if root.right:self.helper(root.right)
+
+
+class Solution(object):
+    def arraysIntersection(self, arr1, arr2, arr3):
+        set1, set2, set3 = set(arr1), set(arr2), set(arr3)
+        temp = set([])
+        for i in set1:
+            if i in set2: temp.add(i)
+        res = []
+        for i in set3:
+            if i in temp: res.append(i)
+
+        return sorted(res)
+
+
+class Solution(object):
+    def arraysIntersection(self, arr1, arr2, arr3):
+        i = j = k = 0
+        res = []
+        while i < len(arr1) and j < len(arr2) and k < len(arr3):
+            if arr1[i] == arr2[j] == arr3[k]:
+                res.append(arr1[i])
+                i += 1
+                j += 1
+                k += 1
+                continue
+            max_ = max(arr1[i], arr2[j], arr3[k])
+            if arr1[i] < max_:
+                i += 1
+            if arr2[j] < max_:
+                j += 1
+            if arr3[k] < max_:
+                k += 1
+        return res
+
+class Solution(object):
+    def productExceptSelf(self, nums):
+        if not nums:return None
+        if len(nums)==1:return [1]
+        temp=[i for i in nums if i!=0]
+        if not temp or len(temp)<=len(nums)-2:return [0]*len(nums)
+        l,pro1,pro2=[],reduce((lambda x,y:x*y),nums),reduce((lambda x,y:x*y),temp)
+        for i in nums:
+            if i!=0:l.append(pro1/i)
+            else:l.append(pro2)
+        return l
+class Solution(object):
+    def addBinary(self, a, b):
+        if not a:a="0"
+        if not b:b="0"
+        return str(bin(int(a,2)+int(b,2)))[2:]
+class Solution:
+    def isAlienSorted(self, words, order):
+        ind = {c: i for i, c in enumerate(order)}
+        for a, b in list(zip(words, words[1:])):
+            if len(a) > len(b) and a[:len(b)] == b:
+                return False
+            for s1, s2 in zip(a, b):
+                if ind[s1] < ind[s2]:
+                    break
+                elif ind[s1] > ind[s2]:
+                    return False
+        return True

@@ -9,4 +9,6 @@ animals = ['dog', 'cat', 'parrot', 'rabbit']
 
 uppered_animals = list(map(lambda animal: str.upper(animal),animals))
 
-print uppered_animals
+str1="adasdasldkasd"
+for a,b in (zip(str1,str1[1:])):
+    print a,b
