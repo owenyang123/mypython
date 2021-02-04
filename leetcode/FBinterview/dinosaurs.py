@@ -1031,3 +1031,42 @@ class Solution:
                 elif ind[s1] > ind[s2]:
                     return False
         return True
+class Solution(object):
+    def merge(self, nums1, m, nums2, n):
+        for i in range(m,m+n):
+            nums1[i]=nums2[i-m]
+        nums1.sort()
+        return nums1
+
+class Solution(object):
+    def countAndSay(self, n):
+        if n==1:return "1"
+        if n==2:return "11"
+        temp2,temp3='11',""
+        for i in range(3,n+1):
+            temp3=self.helper(temp2)
+            temp2=temp3
+        return temp3
+    def helper(self,str1):
+        l=[]
+        i,j=0,1
+        while(j<len(str1)):
+            if str1[i]==str1[j]:j+=1
+            else:
+                l.append([str1[i],j-i])
+                i=j
+                j+=1
+        l.append([str1[i],j-i])
+        res=''
+        for i in l:
+            res+=str(i[1])+i[0]
+        return res
+class Solution(object):
+    def reverse(self, x):
+        if x<0:
+            return 0-self.reverse(-x)
+        str1=str(x)
+        k=int(str1[::-1])
+        if k>=2**31:
+            return 0
+        return int(str1[::-1])
