@@ -1020,17 +1020,15 @@ class Solution(object):
         if not b:b="0"
         return str(bin(int(a,2)+int(b,2)))[2:]
 class Solution:
-    def isAlienSorted(self, words, order):
-        ind = {c: i for i, c in enumerate(order)}
-        for a, b in list(zip(words, words[1:])):
-            if len(a) > len(b) and a[:len(b)] == b:
-                return False
-            for s1, s2 in zip(a, b):
-                if ind[s1] < ind[s2]:
-                    break
-                elif ind[s1] > ind[s2]:
-                    return False
-        return True
+    def isAlienSorted(self, words,order):
+        dict1={x:i for i,x in enumerate(order)}
+        l=[]
+        for i in words:
+            temp=[]
+            for j in i:
+                temp.append(dict1[j])
+            l.append(temp)
+        return l==sorted(l)
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         for i in range(m,m+n):
@@ -1070,3 +1068,8 @@ class Solution(object):
         if k>=2**31:
             return 0
         return int(str1[::-1])
+class Solution(object):
+    def isPalindrome(self, s):
+        l=[i.lower() for i in s if i.isalnum() ]
+        str1="".join(l)
+        return str1==str1[::-1]

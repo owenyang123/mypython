@@ -1,14 +1,7 @@
-def gcf(a, b):
-    if b > a: return gcf(b, a)
-    if a % b == 0: return b
-    while (a % b != 0):
-        return gcf(a - b, b)
+orders="hlabcdefgijkmnopqrstuvwxyz"
 
+words = ["hello","leetcode"]
 
-animals = ['dog', 'cat', 'parrot', 'rabbit']
+print [97+orders.index(c) for c in "leetcode"]
 
-uppered_animals = list(map(lambda animal: str.upper(animal),animals))
-
-str1="adasdasldkasd"
-for a,b in (zip(str1,str1[1:])):
-    print a,b
+print sorted(["123","111","11111"])
