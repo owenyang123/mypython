@@ -1029,6 +1029,11 @@ class Solution:
                 temp.append(dict1[j])
             l.append(temp)
         return l==sorted(l)
+class Solution:
+    def isAlienSorted(self, words,order) :
+        dict1={x:i for i,x in enumerate(order)}
+        return sorted(words, key=lambda x: [dict1[c] for c in x]) == words
+
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         for i in range(m,m+n):
