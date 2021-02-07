@@ -1178,3 +1178,24 @@ class Solution(object):
         for i in range(len(arr) - x):
             if arr[i] == arr[i + x]: return arr[i]
         return None
+
+class Solution:
+    def minRemoveToMakeValid(self, s):
+        index,stack=[],[]
+        for i in range(len(s)):
+            if s[i]=="(":stack.append(i)
+            elif s[i]==")":
+                if len(stack)==0:index.append(i)
+                else:stack.pop()
+        ans=""
+        arr=[1]*(len(s))
+        for i in index:arr[i]=0
+        for i in stack:arr[i]=0
+        for i in range(len(s)):if arr[i]==1:ans+=s[i]
+        return ans
+
+
+class Solution(object):
+    def kClosest(self, points, K):
+        points.sort(key=lambda x: x[0] * x[0] + x[1] * x[1])
+        return points[:K]

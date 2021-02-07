@@ -1,1 +1,1 @@
-print not []
+print len([])
