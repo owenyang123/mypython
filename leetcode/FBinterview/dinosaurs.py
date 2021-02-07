@@ -975,12 +975,9 @@ class Solution(object):
         set1, set2, set3 = set(arr1), set(arr2), set(arr3)
         temp = set([])
         for i in set1:
-            if i in set2: temp.add(i)
-        res = []
-        for i in set3:
-            if i in temp: res.append(i)
+            if i in set2 and i in set3: temp.add(i)
 
-        return sorted(res)
+        return sorted(list(temp))
 
 
 class Solution(object):
@@ -1022,13 +1019,9 @@ class Solution(object):
 class Solution:
     def isAlienSorted(self, words,order):
         dict1={x:i for i,x in enumerate(order)}
-        l=[]
-        for i in words:
-            temp=[]
-            for j in i:
-                temp.append(dict1[j])
-            l.append(temp)
-        return l==sorted(l)
+
+
+
 class Solution:
     def isAlienSorted(self, words,order) :
         dict1={x:i for i,x in enumerate(order)}
@@ -1078,3 +1071,57 @@ class Solution(object):
         l=[i.lower() for i in s if i.isalnum() ]
         str1="".join(l)
         return str1==str1[::-1]
+class Solution(object):
+    def removeDuplicates(self, S):
+        if not S: return s
+        stack = []
+        for ch in S:
+            if stack and stack[-1]==ch:
+                stack.pop()
+                continue
+            stack.append(ch)
+        return "".join(stack)
+
+class Solution(object):
+    def removeDuplicates(self, S):
+        if not S:return ""
+        for i in range(1,len(S)):
+            if S[i]==S[i-1]:
+                return self.removeDuplicates(S[0:i-1]+S[i+1:])
+        return S
+
+
+import collections
+
+class Solution(object):
+    def canPermutePalindrome(self, s):
+        temp = collections.Counter(s)
+        return sum([1 for i in temp if temp[i] % 2 == 1]) < 2
+
+class Solution(object):
+    def isToeplitzMatrix(self, matrix):
+        for i in range(len(matrix)):
+            for j in range(len(matrix[0])):
+                if i-1<0 or j-1<0:continue
+                if matrix[i][j]!=matrix[i-1][j-1]:return False
+        return True
+
+
+class Solution(object):
+    def islandPerimeter(self, grid):
+        numsq = 0
+        for i in grid:
+            numsq += i.count(1)
+        count_adj = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j] == 1: count_adj += self.helper(grid, i, j)
+        return numsq * 4 - count_adj
+
+    def helper(self, grid, i, j):
+        count = 0
+        if i - 1 >= 0 and grid[i - 1][j] == 1: count += 1
+        if i + 1 <= len(grid) - 1 and grid[i + 1][j] == 1: count += 1
+        if j - 1 >= 0 and grid[i][j - 1] == 1: count += 1
+        if j + 1 <= len(grid[0]) - 1 and grid[i][j + 1] == 1: count += 1
+        return count
