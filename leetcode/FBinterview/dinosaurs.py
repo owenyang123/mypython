@@ -1125,3 +1125,42 @@ class Solution(object):
         if j - 1 >= 0 and grid[i][j - 1] == 1: count += 1
         if j + 1 <= len(grid[0]) - 1 and grid[i][j + 1] == 1: count += 1
         return count
+class Solution(object):
+    def singleNumber(self, nums):
+        return sum(list(set(nums)))*2-sum(nums)
+class Solution(object):
+    def moveZeroes(self, nums):
+        temp=[i for i in nums if i!=0]
+        nums.sort(key=lambda x:abs(x),reverse=True)
+        for i in range(len(temp)):
+            nums[i]=temp[i]
+        return nums
+class Solution(object):
+    def moveZeroes(self, nums):
+        i = 0
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+class Solution(object):
+    def moveZeroes(self, nums):
+        i = 0
+        def swap(arr,i,j):arr[i],arr[j]= arr[j],arr[i]
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                swap(nums,i,j)
+                i += 1
+        return
+class Solution(object):
+    def isMonotonic(self, A):
+        flag1=all([A[i]<=A[i+1] for i in range(len(A)-1)])
+        flag2=all([A[i]>=A[i+1] for i in range(len(A)-1)])
+        return flag1 or flag2
+
+
+class Solution(object):
+    def findSpecialInteger(self, arr):
+        x = int(len(arr) * 0.25)
+        for i in range(len(arr) - x):
+            if arr[i] == arr[i + x]: return arr[i]
+        return None
