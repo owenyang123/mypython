@@ -83,21 +83,35 @@ def caulatespeed(dict1):
     return [i[0] for i in res]
 print caulatespeed(dino_dict)
 
-def addtwostring(str1,str2):
-    if not str1 and str2:return str2
-    if not str2 and str1:return str1
-    if len(str2)>len(str1):return addtwostring(str2,str1)
-    l1=list(str1)
-    l2=["0"]*(len(str1)-len(str2))+list(str2)
-    carry=0
-    sumstr=""
-    for i in range(len(l1)-1,-1,-1):
-        temp=int(l1[i])+int(l2[i])+carry
-        sumstr+=str(temp%10)
-        if temp>=10:carry=1
-        else:carry=0
-    if carry==1:return "1"+sumstr[::-1]
-    else:return sumstr[::-1]
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        temp1,temp2=[],[]
+        while l1:
+            temp1.append(str(l1.val))
+            l1=l1.next
+        while l2:
+            temp2.append(str(l2.val))
+            l2=l2.next
+        res=[ListNode(int(i)) for i in self.addtwostring("".join(temp1),"".join(temp2))]
+        for i in range(len(res)-1):
+            res[i].next=res[i+1]
+        res[-1].next=None
+        return res[0]
+    def addtwostring(self,str1,str2):
+        if not str1 and str2:return str2
+        if not str2 and str1:return str1
+        if len(str2)>len(str1):return self.addtwostring(str2,str1)
+        l1=list(str1)
+        l2=["0"]*(len(str1)-len(str2))+list(str2)
+        carry=0
+        sumstr=""
+        for i in range(len(l1)-1,-1,-1):
+            temp=int(l1[i])+int(l2[i])+carry
+            sumstr+=str(temp%10)
+            if temp>=10:carry=1
+            else:carry=0
+        if carry==1:return "1"+sumstr[::-1]
+        else:return sumstr[::-1]
 
 print(addtwostring("9999999","2"))
 
