@@ -1266,3 +1266,30 @@ class Solution(object):
                 k -= 1
             i += 1
         return i-1
+class Solution(object):
+    def canAttendMeetings(self, intervals):
+        if not intervals or len(intervals)==1:return True
+        intervals.sort(key=lambda x:x[0])
+        for i in range(1,len(intervals)):
+            if intervals[i][0]<intervals[i-1][1]:return False
+        return True
+
+        res=[int(i) for  i in str(int(temp)+K)]
+
+class Solution(object):
+    def findMissingRanges(self, nums, lower, upper):
+        if not nums:
+            if lower==upper:return [str(lower)]
+            return [str(lower)+"->"+str(upper)]
+        nums.sort()
+        if lower==nums[0]:res=[]
+        elif nums[0]-lower==1:res=[str(lower)]
+        else:res=[str(lower)+"->"+str(nums[0]-1)]
+        for i in range(1,len(nums)):
+            if nums[i]-nums[i-1]==1:continue
+            if nums[i]-nums[i-1]==2:res.append(str(nums[i-1]+1))
+            else:res.append(str(nums[i-1]+1)+"->"+str(nums[i]-1))
+        if upper==nums[-1]:pass
+        elif upper-nums[-1]==1:res.append(str(upper))
+        else:res.append(str(nums[-1]+1)+"->"+str(upper))
+        return res
