@@ -1235,3 +1235,34 @@ class Solution(object):
             self.rdfs(root.left)
         else:
             self.l2.append(-1)
+
+class Solution(object):
+    def isStrobogrammatic(self, num):
+        dict1={1:1,2:None,3:None,4:None,5:None,6:9,7:None,8:8,9:6,0:0}
+        temp1=""
+        for i in num[::-1]:
+            if dict1[int(i)]==None:return False
+            temp1+=str(dict1[int(i)])
+        return temp1==num
+class Solution(object):
+    def addToArrayForm(self, A, K):
+        temp="".join([str(i) for i in A])
+        res=[int(i) for  i in str(int(temp)+K)]
+        return res
+class Solution(object):
+    def pivotIndex(self, nums):
+        sum1=sum(nums)
+        sum2=0
+        for i in range(len(nums)):
+            if sum2==(sum1-nums[i])/2 and (sum1-nums[i])%2==0:return i
+            sum2+=nums[i]
+        return -1
+class Solution(object):
+    def findKthPositive(self, arr, k):
+        i = 1
+        set1=set(arr)
+        while k > 0:
+            if i not in set1:
+                k -= 1
+            i += 1
+        return i-1
