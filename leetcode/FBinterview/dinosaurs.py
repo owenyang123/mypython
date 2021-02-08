@@ -1199,3 +1199,39 @@ class Solution(object):
     def kClosest(self, points, K):
         points.sort(key=lambda x: x[0] * x[0] + x[1] * x[1])
         return points[:K]
+
+
+class Solution(object):
+    def isSymmetric(self, root):
+        if not root: return True
+        if not root.right and not root.left: return True
+        if not root.right or not root.left: return False
+        self.l1 = []
+        self.l2 = []
+        self.ldfs(root)
+        self.rdfs(root)
+        return self.l1 == self.l2
+
+    def ldfs(self, root):
+        self.l1.append(root.val)
+        if not root.right and not root.left: return
+        if root.left:
+            self.ldfs(root.left)
+        else:
+            self.l1.append(-1)
+        if root.right:
+            self.ldfs(root.right)
+        else:
+            self.l1.append(-1)
+
+    def rdfs(self, root):
+        self.l2.append(root.val)
+        if not root.right and not root.left: return
+        if root.right:
+            self.rdfs(root.right)
+        else:
+            self.l2.append(-1)
+        if root.left:
+            self.rdfs(root.left)
+        else:
+            self.l2.append(-1)
