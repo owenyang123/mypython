@@ -1293,3 +1293,17 @@ class Solution(object):
         elif upper-nums[-1]==1:res.append(str(upper))
         else:res.append(str(nums[-1]+1)+"->"+str(upper))
         return res
+class Solution(object):
+    def findMissingRanges(self, nums, lower, upper):
+        if not nums:
+            if lower==upper:return [str(lower)]
+            return [str(lower)+"->"+str(upper)]
+        if nums[0]>lower:nums.insert(0,lower-1)
+        if nums[-1]<upper:nums.append(upper+1)
+        nums.sort()
+        res=[]
+        for i in range(1,len(nums)):
+            if nums[i]-nums[i-1]==1:continue
+            if nums[i]-nums[i-1]==2:res.append(str(nums[i-1]+1))
+            else:res.append(str(nums[i-1]+1)+"->"+str(nums[i]-1))
+        return res
