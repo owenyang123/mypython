@@ -24,3 +24,17 @@ class Solution(object):
             temp=min(temp,prices[i])
             dp[i]=prices[i]-temp
         return max(dp) if max(dp)>0 else 0
+
+class Solution:
+    def maxAncestorDiff(self, root):
+        self.ans = 0
+        def dfs(root, l, h):
+            if not root:
+                self.ans = max(self.ans, h-l)
+                return
+            l = min(l,root.val)
+            h = max(h,root.val)
+            dfs(root.left, l, h)
+            dfs(root.right, l, h)
+        dfs(root, root.val, root.val)
+        return self.ans

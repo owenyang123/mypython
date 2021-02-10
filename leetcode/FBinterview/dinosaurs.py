@@ -1288,3 +1288,21 @@ class Solution(object):
             if nums[i]-nums[i-1]==2:res.append(str(nums[i-1]+1))
             else:res.append(str(nums[i-1]+1)+"->"+str(nums[i]-1))
         return res
+class Solution(object):
+    def subarraySum(self, nums, k):
+            sums = {0: 1}  # prefix sum array
+            res = s = 0
+            for n in nums:
+                s += n  # increment current sum
+                res += sums.get(s - k, 0)  # check if there is a prefix subarray we can take out to reach k
+                sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
+            return res
+class Solution(object):
+    def subarraySum(self, nums, k):
+            sums = {0: 1}  # prefix sum array
+            res = s = 0
+            for n in nums:
+                s += n  # increment current sum
+                res += sums.get(s - k, 0)  # check if there is a prefix subarray we can take out to reach k
+                sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
+            return res
