@@ -1306,3 +1306,26 @@ class Solution(object):
                 res += sums.get(s - k, 0)  # check if there is a prefix subarray we can take out to reach k
                 sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
             return res
+class Solution(object):
+    def intervalIntersection(self, f, s):
+        if not f or not s:return []
+        res,i,j=[],0,0
+        while (i<len(f) and j<len(s)):
+            small,big=max(f[i][0],s[j][0]),min(f[i][1],s[j][1])
+            if small<=big:res.append([small,big])
+            if f[i][1]<s[j][1]:i+=1
+            else:j+=1
+        return res
+
+class Solution(object):
+    def longestOnes(self, a, k):
+        st, res = 0, 0
+        for i in range(len(a)):
+            if a[i] == 0 and k:
+                k -= 1
+            elif a[i] == 0:
+                while a[st] != 0:
+                    st += 1
+                st += 1
+            res = max(res, i-st+1)
+        return res
