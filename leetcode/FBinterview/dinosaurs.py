@@ -1318,6 +1318,7 @@ class Solution(object):
                 sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
             return res
 class Solution(object):
+#merge meeting
     def intervalIntersection(self, f, s):
         if not f or not s:return []
         res,i,j=[],0,0
@@ -1354,3 +1355,19 @@ class Solution:
         if n % 2:
             return x * self.myPow(x, n-1)
         return self.myPow(x*x, n/2)
+
+
+class Solution(object):
+    def merge(self, intervals):
+        if len(intervals) <= 1 or not intervals: return intervals
+        intervals.sort(key=lambda x: x[0])
+        temp = []
+        for i in intervals:
+            if not temp:
+                temp.append(i)
+                continue
+            if i[0] > temp[-1][1]:
+                temp.append(i)
+            else:
+                temp[-1][1] = max(temp[-1][1], i[1])
+        return temp
