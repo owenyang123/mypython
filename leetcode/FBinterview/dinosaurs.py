@@ -1329,3 +1329,8 @@ class Solution(object):
                 st += 1
             res = max(res, i-st+1)
         return res
+class Solution(object):
+    def findKthLargest(self, nums, k):
+        if not nums:return None
+        ans = heapq.nlargest(k, nums)
+        return ans[-1]
