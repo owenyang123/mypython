@@ -990,7 +990,6 @@ class Solution(object):
         temp = set([])
         for i in set1:
             if i in set2 and i in set3: temp.add(i)
-
         return sorted(list(temp))
 
 
@@ -1027,9 +1026,21 @@ class Solution(object):
         return l
 class Solution(object):
     def addBinary(self, a, b):
-        if not a:a="0"
-        if not b:b="0"
-        return str(bin(int(a,2)+int(b,2)))[2:]
+        #return str(bin(int(a,2)+int(b,2)))[2:]
+        carry = 0
+        result = ''
+        a = list(a)
+        b = list(b)
+        while a or b or carry:
+            if a:
+                carry += int(a.pop())
+            if b:
+                carry += int(b.pop())
+
+            result += str(carry %2)
+            carry //= 2
+
+        return result[::-1]
 class Solution:
     def isAlienSorted(self, words,order):
         dict1={x:i for i,x in enumerate(order)}
@@ -1334,3 +1345,12 @@ class Solution(object):
         if not nums:return None
         ans = heapq.nlargest(k, nums)
         return ans[-1]
+class Solution:
+    def myPow(self, x, n):
+        if not n:
+            return 1
+        if n < 0:
+            return 1 / self.myPow(x, -n)
+        if n % 2:
+            return x * self.myPow(x, n-1)
+        return self.myPow(x*x, n/2)
