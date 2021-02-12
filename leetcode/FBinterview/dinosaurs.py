@@ -1041,9 +1041,6 @@ class Solution(object):
             carry //= 2
 
         return result[::-1]
-class Solution:
-    def isAlienSorted(self, words,order):
-        dict1={x:i for i,x in enumerate(order)}
 
 
 
@@ -1371,3 +1368,15 @@ class Solution(object):
             else:
                 temp[-1][1] = max(temp[-1][1], i[1])
         return temp
+
+
+class Solution(object):
+    def wordBreak(self, s, wordDict):
+        dp = [False] * (len(s) + 1)
+        dp[0] = True
+        x = set(wordDict)
+        for i in range(len(s)):
+            for j in range(i, len(s)):
+                if dp[i] and s[i: j + 1] in x:
+                    dp[j + 1] = True
+        return dp[-1]
