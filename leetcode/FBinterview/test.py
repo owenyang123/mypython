@@ -1,6 +1,3 @@
 import re
-
-email = "tony@tiremove_thisger.net"
-m = re.search("remove_this", email)
-print email[:m.start()] + email[m.end():]
-print m.start() , m.end()
+s = 'aaa@xxx.com bbb@yyy.com ccc@zzz.com'
+print re.sub('([a-z]*)@', r'\1-123@', s)
