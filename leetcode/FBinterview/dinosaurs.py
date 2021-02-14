@@ -1431,3 +1431,11 @@ class Solution(object):
             temp=min(temp,prices[i],prices[0])
             dp[i]=prices[i]-temp
         return max(dp) if max(dp)>0 else 0
+
+
+class Solution(object):
+    def countAndSay(self, n):
+        s = '1'
+        for _ in range(n - 1):
+            s = re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), s)
+        return s
