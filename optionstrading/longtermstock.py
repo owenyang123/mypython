@@ -8,7 +8,7 @@ print len(file_list)
 n=int(input('plese input the number of days(less than 30): '))
 if n<0:exit()
 file_list=file_list[0-n:]
-days=len(file_list)*0.6
+days=len(file_list)*0.65
 stockdays={}
 for i in file_list:
     with open(i) as fd:
@@ -28,7 +28,7 @@ for file in glob.glob("2*.csv"):
 file_list.sort()
 print len(file_list)
 file_list=file_list[0-n:]
-days=len(file_list)*0.6
+days=len(file_list)*0.65
 stockdays={}
 for i in file_list:
     with open(i) as fd:

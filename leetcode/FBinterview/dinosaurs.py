@@ -1,3 +1,4 @@
+#ip address
 class Solution(object):
     def validIPAddress(self, IP):
         def isIPv4(s):
@@ -97,21 +98,22 @@ class Solution(object):
             res[i].next=res[i+1]
         res[-1].next=None
         return res[0]
-    def addtwostring(self,str1,str2):
-        if not str1 and str2:return str2
-        if not str2 and str1:return str1
-        if len(str2)>len(str1):return self.addtwostring(str2,str1)
-        l1=list(str1)
-        l2=["0"]*(len(str1)-len(str2))+list(str2)
-        carry=0
-        sumstr=""
-        for i in range(len(l1)-1,-1,-1):
-            temp=int(l1[i])+int(l2[i])+carry
-            sumstr+=str(temp%10)
-            if temp>=10:carry=1
-            else:carry=0
-        if carry==1:return "1"+sumstr[::-1]
-        else:return sumstr[::-1]
+#add two string
+def addtwostring(self,str1,str2):
+    if not str1 and str2:return str2
+    if not str2 and str1:return str1
+    if len(str2)>len(str1):return self.addtwostring(str2,str1)
+    l1=list(str1)
+    l2=["0"]*(len(str1)-len(str2))+list(str2)
+    carry=0
+    sumstr=""
+    for i in range(len(l1)-1,-1,-1):
+        temp=int(l1[i])+int(l2[i])+carry
+        sumstr+=str(temp%10)
+        if temp>=10:carry=1
+        else:carry=0
+    if carry==1:return "1"+sumstr[::-1]
+    else:return sumstr[::-1]
 
 print(addtwostring("9999999","2"))
 
@@ -162,7 +164,7 @@ if __name__ == '__main__':
     for thread in instance:
         thread.join()
     print res
-#next
+#next smaller than current
 class Solution(object):
     def smallerNumbersThanCurrent(self, nums):
         dict1={}
@@ -215,7 +217,7 @@ with open('2020-07-13.csv', 'r') as file:
         if row:print row.replace("\n","").replace("\r","").split(',')
 '''
 
-#subarrat sum
+#subarrat sum equal =target
 def subarraySum(self, nums, k):
     sums = {0: 1}  # prefix sum array
     res = s = 0
@@ -225,7 +227,7 @@ def subarraySum(self, nums, k):
         sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
     return res
 
-
+#goat latin
 class Solution(object):
     def toGoatLatin(self, S):
         local_set=set(["a","e","i","o","u","A","E","I","O","U"])
@@ -1439,3 +1441,34 @@ class Solution(object):
         for _ in range(n - 1):
             s = re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), s)
         return s
+
+class Solution(object):
+    def nextPermutation(self, nums):
+        n = len(nums)
+        for i in range(n-1, 0, -1):
+            if nums[i] > nums[i-1]:
+                j = i
+                while j < n and nums[j] > nums[i-1]:
+                    idx = j
+                    j += 1
+                nums[idx], nums[i-1] = nums[i-1], nums[idx]
+                for k in range((n-i)//2):
+                    nums[i+k], nums[n-1-k] = nums[n-1-k], nums[i+k]
+                break
+        else:
+            nums.reverse()
+#K closet
+class Solution(object):
+    def findClosestElements(self, arr, k, x):
+        arr.sort(key=lambda y:abs(y-x))
+        return sorted(arr[:k])
+
+    def findClosestElements(self, A, k, x):
+        left, right = 0, len(A) - k
+        while left < right:
+            mid = (left + right) / 2
+            if x - A[mid] > A[mid + k] - x:
+                left = mid + 1
+            else:
+                right = mid
+        return A[left:left + k]
