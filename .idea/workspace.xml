@@ -59,7 +59,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.longtermstock">
+  <component name="RunManager" selected="Python.test">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -179,8 +179,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.longtermstock" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.longtermstock" />
         <item itemvalue="Python.dinosaurs" />
         <item itemvalue="Python.dailynsdq" />
         <item itemvalue="Python.dailysp500" />
@@ -231,7 +231,7 @@
       <workItem from="1610425128825" duration="3784000" />
       <workItem from="1610861154146" duration="91949000" />
       <workItem from="1612392956650" duration="30507000" />
-      <workItem from="1612848861061" duration="19188000" />
+      <workItem from="1612848861061" duration="29859000" />
     </task>
     <servers />
   </component>
@@ -275,10 +275,10 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state width="1317" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611818331263">
+    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613241859914">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611818331263" />
+    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613241859914" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

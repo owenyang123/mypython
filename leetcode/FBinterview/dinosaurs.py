@@ -215,7 +215,7 @@ with open('2020-07-13.csv', 'r') as file:
         if row:print row.replace("\n","").replace("\r","").split(',')
 '''
 
-
+#subarrat sum
 def subarraySum(self, nums, k):
     sums = {0: 1}  # prefix sum array
     res = s = 0
@@ -856,7 +856,7 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
+#cut to three parts
 import itertools
 class Solution(object):
     def canThreePartsEqualSum(self, arr):
@@ -1325,7 +1325,7 @@ class Solution(object):
             if f[i][1]<s[j][1]:i+=1
             else:j+=1
         return res
-
+#longegst ones
 class Solution(object):
     def longestOnes(self, a, k):
         st, res = 0, 0
@@ -1369,7 +1369,7 @@ class Solution(object):
                 temp[-1][1] = max(temp[-1][1], i[1])
         return temp
 
-
+#wordbreak
 class Solution(object):
     def wordBreak(self, s, wordDict):
         dp = [False] * (len(s) + 1)
@@ -1379,4 +1379,28 @@ class Solution(object):
             for j in range(i, len(s)):
                 if dp[i] and s[i: j + 1] in x:
                     dp[j + 1] = True
-        return dp[-1]
+        return dp[-1]class Solution:     #lmv
+def countAndSay(self, n):
+    s = '1'
+    for _ in range(n - 1):
+        s = re.sub(r'(.)\\1*', lambda m: str(len(m.group(0))) + m.group(1), s)
+    return s
+class Solution(object):
+    def kthSmallest(self, matrix, k):
+        x=reduce((lambda x, y: x + y), matrix)
+        x.sort()
+        if k<len(x):return x[k-1]
+        return x[-1]
+class Solution(object):
+    def checkSubarraySum(self, nums, k):
+        if k==0 and any([nums[i] ==nums[i-1]==0 for i in range(1,len(nums))])>=1:return True
+        if k==0:return False
+        dic = {0:-1}
+        summ = 0
+        for i, n in enumerate(nums):
+            summ = (summ + n) % k
+            if summ not in dic:
+                dic[summ] = i
+            else:
+                if i - dic[summ] >= 2:return True
+        return False

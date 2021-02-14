@@ -1,3 +1,6 @@
-set1=set([1,2,3])
-set2=set([6,7,8])
-if not set1&set2:print 1
+import re
+
+email = "tony@tiremove_thisger.net"
+m = re.search("remove_this", email)
+print email[:m.start()] + email[m.end():]
+print m.start() , m.end()
