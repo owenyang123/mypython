@@ -236,7 +236,7 @@ class Solution(object):
             if temp[0] in local_set:list1[i]=temp+"ma"+"a"*(i+1)
             else:list1[i]=temp[1:]+temp[0]+"ma"+"a"*(i+1)
         return " ".join(list1)
-
+#how many mays to decode
 class Solution(object):
     def numDecodings(self, s):
         if not s or s[0]=="0":
@@ -264,7 +264,7 @@ class Solution(object):
             second_call = self._rec_helper(data[2:])
 
         return first_call + second_call
-
+#reverse vowel
 class Solution(object):
     def reverseVowels(self, s):
         if len(s)<=1:return s
@@ -276,7 +276,7 @@ class Solution(object):
             else:str1+=list1.pop()
         return str1
 
-
+#all subset
 class Solution(object):
     def subsets(self, nums):
         if not nums: return [[]]
