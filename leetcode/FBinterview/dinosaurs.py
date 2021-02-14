@@ -473,6 +473,7 @@ class Solution:
             else:break
         return (b,e,int(str1[::-1]),len(str1))
 #next
+#subarr
 def maxSubArray(self, nums):
     min_sum, max_sum = 0, -sys.maxsize
     prefix_sum = 0
@@ -1055,7 +1056,14 @@ class Solution(object):
             nums1[i]=nums2[i-m]
         nums1.sort()
         return nums1
-
+class Solution:     #lmv
+    def countAndSay(self, n):
+        s = '1'
+        for _ in range(n - 1):
+            s = re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), s)
+            #          ---------   -------------------------------------------
+            #           regex           repl
+        return s
 class Solution(object):
     def countAndSay(self, n):
         if n==1:return "1"
@@ -1391,6 +1399,8 @@ class Solution(object):
         x.sort()
         if k<len(x):return x[k-1]
         return x[-1]
+#subarr
+#
 class Solution(object):
     def checkSubarraySum(self, nums, k):
         if k==0 and any([nums[i] ==nums[i-1]==0 for i in range(1,len(nums))])>=1:return True
@@ -1412,3 +1422,12 @@ class Solution:     #lmv
             profit = price - min_price
             max_profit = max(max_profit, profit)
         return max_profit
+class Solution(object):
+    def maxProfit(self, prices):
+        if len(prices)<=1 or not prices:return 0
+        dp=[prices[0]]+[0]*(len(prices)-1)
+        temp=sys.maxint
+        for i in range(len(prices)):
+            temp=min(temp,prices[i],prices[0])
+            dp[i]=prices[i]-temp
+        return max(dp) if max(dp)>0 else 0
