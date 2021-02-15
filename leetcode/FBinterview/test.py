@@ -1,8 +1,3 @@
-a=list()
-a.append(2)
-a.append(4)
-a.append(6)
+set1,set2=set([1,2,3]),set([21,31])
 
-b=[i for i in a]
-a[0]=5
-print b,a
+if set1|set2:print 1
