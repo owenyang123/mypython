@@ -1,3 +1,8 @@
-import re
+a=list()
+a.append(2)
+a.append(4)
+a.append(6)
 
-print  re.sub(r'(.)\1*', lambda m: str(len(m.group(0))) + m.group(1), "9999999999999999999999213131232")
+b=[i for i in a]
+a[0]=5
+print b,a
