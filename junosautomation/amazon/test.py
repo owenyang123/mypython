@@ -1,8 +1,12 @@
-count=0
-for i in range(1,2021):
-    if 2020%i==0:
-        count+=1
-        print i
-print count
+def whereisnow(str1, str2):
+    if not str2:return str1
+    if str2.startswith("/"):temp=str2
+    else:temp=str1+"/"+str2
+    stack=[]
+    for cmd in temp.split("/"):
+        if stack and cmd == "..":stack.pop()
+        elif cmd not in [".", "", ".."]:stack.append(cmd)
 
-2*2*5*101
+    return "/" + "/".join(stack)
+
+print whereisnow("/a/b","/../x")

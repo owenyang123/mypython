@@ -1492,7 +1492,7 @@ class Solution(object):
                 break
         else:
             nums.reverse()
-#K closet 
+#K closet
 class Solution(object):
     def findClosestElements(self, arr, k, x):
         arr.sort(key=lambda y:abs(y-x))
@@ -1546,3 +1546,15 @@ class Solution(object):
             dfs(i, emails)
             res.append([name] + sorted(emails))
         return res
+
+def whereisnow(str1, str2):
+    if str2.startswith("/"):temp=str2
+    else:temp=str1+"/"+str2
+    stack=[]
+    for elem in temp.split("/"):
+        if stack and elem == "..":stack.pop()
+        elif elem not in [".", "", ".."]:stack.append(elem)
+
+    return "/" + "/".join(stack)
+
+print whereisnow("/a/b","x")
