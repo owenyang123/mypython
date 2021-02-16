@@ -32,7 +32,7 @@ def generate_dict(filename):
                     else:switch_data[temp[0]]=[[temp[1],int(temp[2]),int(temp[3])]]
             except:pass
     return switch_data
-#findnext
+#find hiight talk
 def findhightalk(dict1):
     if not dict1:return []
     res=[]
@@ -58,7 +58,7 @@ fin.close()
 fout.close()
 # read the log2 first,only get bipedal's data,the data format is a list [STRIDE_LENGTH,LEG_LENGTH],name as the key of dict
 #formular ((STRIDE_LENGTH / LEG_LENGTH) - 1) * SQRT(LEG_LENGTH * g)
-
+#dino
 
 def generatedata(file1,file2，pattern):
     dino_dict = {}
@@ -83,7 +83,7 @@ def caulatespeed(dict1):
     res.sort(key=lambda x:x[1],reverse=True)
     return [i[0] for i in res]
 print caulatespeed(dino_dict)
-
+#add two number linlist
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         temp1,temp2=[],[]
@@ -116,9 +116,6 @@ def addtwostring(self,str1,str2):
     else:return sumstr[::-1]
 
 print(addtwostring("9999999","2"))
-
-
-
 
 #sort
 def bubble(arr):
@@ -164,7 +161,7 @@ if __name__ == '__main__':
     for thread in instance:
         thread.join()
     print res
-#next smaller than current
+#next smaller than current [2,1,4,5]->[1,0,2,3]
 class Solution(object):
     def smallerNumbersThanCurrent(self, nums):
         dict1={}
@@ -309,7 +306,7 @@ class Solution(object):
         for i in range(len(nums)):
             if temp + [nums[i]] not in self.l:self.l.append(temp + [nums[i]])
             self.helper(nums[i + 1:], temp + [nums[i]])
-
+#Palindrome two pointer
 class Solution(object):
     def validPalindrome(self, s):
         left, right = 0, len(s) - 1
@@ -320,7 +317,7 @@ class Solution(object):
             left, right = left + 1, right - 1
         return True
 
-
+#caculator
 class Solution(object):
     def calculate(self, s):
         if not s:return "0"
@@ -340,7 +337,7 @@ class Solution(object):
                 num = 0
         return sum(stack)
 
-
+#keep increasing or reducing
 class Solution:
     """
     @param A: An array of Integer
@@ -370,7 +367,7 @@ class Solution:
 with open("piclog") as x:
     words = re.findall(r'\w+', x.read().lower())
     print collections.Counter(words).most_common(10)
-#
+#valid ip address
 class Solution:
     def restoreIpAddresses(self, ipstr):
         if not ipstr or len(ipstr) <= 1:return []
@@ -395,7 +392,7 @@ class Solution:
         if str(int(s)) == s and 0 <= int(s) <= 255:return True
         return False
 
-
+#find max average
 class Solution(object):
     def findMaxAverage(self, nums, k):
         sum1 = sum(nums[0:k])
@@ -406,7 +403,7 @@ class Solution(object):
             max1 = max(max1, float(sum1) / k)
         return max1
 
-
+#two array intersection
 class Solution(object):
     def intersection(self, nums1, nums2):
             if not nums1 or not nums2:return []
@@ -429,7 +426,6 @@ class Solution(object):
         return l
 def intersection1(self, nums1, nums2):
     if not nums1 or not nums2:return []
-    res=[]
     i,j,l1,l2,res=0,0,len(nums1),len(nums2),[]
     while(i<l1 and j<l2):
         if nums1[i]==nums2[j]:
@@ -475,7 +471,7 @@ class Solution:
             else:break
         return (b,e,int(str1[::-1]),len(str1))
 #next
-#subarr
+#maxsubarr
 def maxSubArray(self, nums):
     min_sum, max_sum = 0, -sys.maxsize
     prefix_sum = 0
@@ -494,7 +490,7 @@ class Solution:
         nums.sort()
         if len(nums) < 3: return nums[-1]
         return nums[-3]
-
+# three sum
 class Solution:
     def threeSum(self, nums):
         l=[]
@@ -517,28 +513,24 @@ class Solution:
         return l
 
 #Next
-class Solution:
-    """
-    @param A: a array
-    @return: is it monotonous
-    """
+#Monotonic keep increasing or reducing
 
-    def isMonotonic(self, A):
-        if not A: return False
-        if len(A) == 1 or len(A) == 2: return True
-        x1, x2 = self.helper(A), self.helper(A[::-1])
-        return x1 or x2
+def isMonotonic(self, A):
+    if not A: return False
+    if len(A) == 1 or len(A) == 2: return True
+    x1, x2 = self.helper(A), self.helper(A[::-1])
+    return x1 or x2
 
-    def helper(self, A):
-        i, j = 0, 1
-        while (j < len(A)):
-            if A[j] >= A[i]:
-                j += 1
-                i += 1
-            else:
-                return False
-        return True
-
+def helper(self, A):
+    i, j = 0, 1
+    while (j < len(A)):
+        if A[j] >= A[i]:
+            j += 1
+            i += 1
+        else:
+            return False
+    return True
+#bad version
 class Solution:
     """
     @param n: An integer
@@ -552,7 +544,7 @@ class Solution:
             if SVNRepo.isBadVersion(m):r=m
             else:l=m
         return r
-#Next
+#number of island
 class Solution:
     """
     @param grid: a boolean 2D matrix
@@ -582,7 +574,7 @@ class Solution:
         if j < len(grid[0]) - 1 and grid[i][j + 1] == 1:
             self.removeIsland(grid, i, j + 1)
 
-#Next
+#target str in source
 class Solution:
     """
     @param source:
@@ -596,6 +588,7 @@ class Solution:
         for i in range(len(source)):
             if source[i]==target[0]:
                 if source[i:i+len1]==target:return i
+        return -1
 #Next two sum
 
 def twoSum(self, numbers, target):
@@ -605,8 +598,8 @@ def twoSum(self, numbers, target):
             dict1[numbers[i]]=i
         else:return [dict1[target-numbers[i]],i]
     return []
-#Next valic bracket
-
+#Next valid bracket
+#Parentheses
 def isValidParentheses(self, s):
     temp1 = []
     dict1 = {")": "(", "]": "[", "}": "{"}
@@ -616,7 +609,7 @@ def isValidParentheses(self, s):
         elif i in dict1:
             if not temp1 or dict1[i] != temp1.pop(): return False
     return temp1 == []
-
+#insert 5
 class Solution:
     """
     @param a: A number
@@ -635,21 +628,20 @@ class Solution:
                 if int(temp[i])>=5:return 0-int(temp[0:i]+"5"+temp[i:])
             return 0-int(temp+"5")
 
-
+#Longest Increasing Subsequence
 class Solution:
     def lengthOfLIS(self, nums):
         if not nums:
             return 0
         n = len(nums)
-        dp = [0] * n
+        dp = [1] * n
         for i in range(1, n):
             for j in range(i):
                 if nums[i] > nums[j]:
                     dp[i] = max(dp[i], 1 + dp[j])
-
-        return 1 + max(dp)
+        return max(dp)
 #next
-
+#max area of max
 class Solution(object):
     def maximalSquare(self, matrix):
         dp,temp = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))],0
@@ -677,7 +669,7 @@ class Solution(object):
             return "IPv6"
         return ""
 
-
+#key binary search
 def nomal_search(wait_list, key):
     left,right = 0,len(wait_list)
     res_index = -1
@@ -747,7 +739,7 @@ for i in range(7):
         l.append(k)
 print l
 
-
+#title to number
 class Solution(object):
     def titleToNumber(self, s):
         temp=0
@@ -756,7 +748,7 @@ class Solution(object):
             temp+=(ord(s1[i])-64)*(26**i)
         return temp
 
-
+# number  to title
 class Solution(object):
     def convertToTitle(self, num):
         capitals = [chr(x) for x in range(ord('A'), ord('Z') + 1)]
@@ -767,7 +759,7 @@ class Solution(object):
             print result
         return result[::-1]
 
-
+#rotate matrix
 class Solution:
     # @param A : list of list of integers
     # @return the same list modified
@@ -779,7 +771,7 @@ class Solution:
                 B[i][j] = A[rows - 1 - j][i]
         return B
 
-
+#three sum
 class Solution:
     """
     @param numbers: Give an array numbers of n integer
@@ -813,7 +805,7 @@ class Solution:
                 i += 1
         return
 
-
+#three sum closest
 class Solution:
     # @param A : list of integers
     # @param B : integer
@@ -898,6 +890,7 @@ def canThreePartsEqualSum(self, arr):
             cumsum = 0
             count += 1
     return count >= 3
+#robot move
 class Solution(object):
     def robotSim(self, commands, obstacles):
         direct={0:"North",2:"South",-2:"South",1:"West",-3:"West",-1:"East",3:"East"}
@@ -930,6 +923,7 @@ class Solution(object):
                         x,y=tempx,tempy
                 res=max(res, x**2+y**2)
         return res
+#find kth largest
 class Solution(object):
     def findKthLargest(self, nums, k):
         ans = heapq.nlargest(k, nums)
@@ -942,7 +936,7 @@ class Solution(object):
         if k > len(nums): return nums[-1]
         return nums[k - 1]
 
-
+# gcdOfStrings common factor string
 class Solution(object):
     def gcdOfStrings(self, str1, str2):
         if not str2 or not str1: return ""
@@ -952,7 +946,7 @@ class Solution(object):
             return self.gcdOfStrings(str1[len(str2):], str2)
         else:
             return ""
-
+#Occurrences After Bigram
 class Solution(object):
     def findOcurrences(self, text, first, second):
         list1 = text.split()
@@ -960,6 +954,7 @@ class Solution(object):
         for i in range(2,len(list1)):
             if list1[i-2]==first and list1[i-1]==second:res.append(list1[i])
         return res
+# distribute Candies
 class Solution(object):
     def distributeCandies(self, candies, num_people):
         l=[0]*num_people
@@ -973,7 +968,7 @@ class Solution(object):
                 candies=0
             count+=1
         return l
-
+#range sum
 class Solution(object):
     def rangeSumBST(self, root, L, R):
         if not root:return 0
@@ -986,7 +981,7 @@ class Solution(object):
         if root.left:self.helper(root.left)
         if root.right:self.helper(root.right)
 
-
+#arr intersection
 class Solution(object):
     def arraysIntersection(self, arr1, arr2, arr3):
         set1, set2, set3 = set(arr1), set(arr2), set(arr3)
@@ -1015,7 +1010,7 @@ class Solution(object):
             if arr3[k] < max_:
                 k += 1
         return res
-
+# product Except Self
 class Solution(object):
     def productExceptSelf(self, nums):
         if not nums:return None
@@ -1027,6 +1022,7 @@ class Solution(object):
             if i!=0:l.append(pro1/i)
             else:l.append(pro2)
         return l
+#add binary
 class Solution(object):
     def addBinary(self, a, b):
         #return str(bin(int(a,2)+int(b,2)))[2:]
@@ -1046,18 +1042,19 @@ class Solution(object):
         return result[::-1]
 
 
-
+#Alien sorted
 class Solution:
     def isAlienSorted(self, words,order) :
         dict1={x:i for i,x in enumerate(order)}
         return sorted(words, key=lambda x: [dict1[c] for c in x]) == words
-
+#merge since m
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
         for i in range(m,m+n):
             nums1[i]=nums2[i-m]
         nums1.sort()
         return nums1
+#count and say
 class Solution:     #lmv
     def countAndSay(self, n):
         s = '1'
@@ -1089,6 +1086,7 @@ class Solution(object):
         for i in l:
             res+=str(i[1])+i[0]
         return res
+
 class Solution(object):
     def reverse(self, x):
         if x<0:
@@ -1098,11 +1096,13 @@ class Solution(object):
         if k>=2**31:
             return 0
         return int(str1[::-1])
+#Palindrome
 class Solution(object):
     def isPalindrome(self, s):
         l=[i.lower() for i in s if i.isalnum() ]
         str1="".join(l)
         return str1==str1[::-1]
+# remove duplicates
 class Solution(object):
     def removeDuplicates(self, S):
         if not S: return s
@@ -1121,8 +1121,18 @@ class Solution(object):
             if S[i]==S[i-1]:
                 return self.removeDuplicates(S[0:i-1]+S[i+1:])
         return S
-
-
+class Solution(object):
+    def removeDuplicates(self, nums):
+        if len(nums)==1:
+            return 1
+        i=0
+        while (i<len(nums)-1):
+            if nums[i]==nums[i+1]:
+                nums.pop(i+1)
+            else:
+                i+=1
+        return len(nums)
+#Palindrome
 import collections
 
 class Solution(object):
@@ -1137,6 +1147,7 @@ class Solution(object):
                 if i-1<0 or j-1<0:continue
                 if matrix[i][j]!=matrix[i-1][j-1]:return False
         return True
+#Perimeter
 class Solution(object):
     def islandPerimeter(self, grid):
         numsq = 0
@@ -1155,9 +1166,11 @@ class Solution(object):
         if j - 1 >= 0 and grid[i][j - 1] == 1: count += 1
         if j + 1 <= len(grid[0]) - 1 and grid[i][j + 1] == 1: count += 1
         return count
+
 class Solution(object):
     def singleNumber(self, nums):
         return sum(list(set(nums)))*2-sum(nums)
+# move zero
 class Solution(object):
     def moveZeroes(self, nums):
         temp=[i for i in nums if i!=0]
@@ -1194,7 +1207,7 @@ class Solution(object):
         for i in range(len(arr) - x):
             if arr[i] == arr[i + x]: return arr[i]
         return None
-
+#remove ( or ) to make possiable
 class Solution:
     def minRemoveToMakeValid(self, s):
         index,stack=[],[]
@@ -1210,13 +1223,13 @@ class Solution:
         for i in range(len(s)):if arr[i]==1:ans+=s[i]
         return ans
 
-
+# close kth
 class Solution(object):
     def kClosest(self, points, K):
         points.sort(key=lambda x: x[0] * x[0] + x[1] * x[1])
         return points[:K]
 
-
+#symetric bin tree
 class Solution(object):
     def isSymmetric(self, root):
         if not root: return True
@@ -1251,7 +1264,7 @@ class Solution(object):
             self.rdfs(root.left)
         else:
             self.l2.append(-1)
-
+# rotate 180 degree
 class Solution(object):
     def isStrobogrammatic(self, num):
         dict1={1:1,2:None,3:None,4:None,5:None,6:9,7:None,8:8,9:6,0:0}
@@ -1260,11 +1273,23 @@ class Solution(object):
             if dict1[int(i)]==None:return False
             temp1+=str(dict1[int(i)])
         return temp1==num
+'''
+Input: A = [1,2,0,0], K = 34
+Output: [1,2,3,4]
+'''
+#add int to q
 class Solution(object):
     def addToArrayForm(self, A, K):
         temp="".join([str(i) for i in A])
         res=[int(i) for  i in str(int(temp)+K)]
         return res
+#
+Input:
+nums = [1, 7, 3, 6, 5, 6]
+Output: 3
+#
+
+# devide the list to two parts
 class Solution(object):
     def pivotIndex(self, nums):
         sum1=sum(nums)
@@ -1273,6 +1298,8 @@ class Solution(object):
             if sum2==(sum1-nums[i])/2 and (sum1-nums[i])%2==0:return i
             sum2+=nums[i]
         return -1
+#
+
 class Solution(object):
     def findKthPositive(self, arr, k):
         i = 1
@@ -1282,6 +1309,8 @@ class Solution(object):
                 k -= 1
             i += 1
         return i-1
+#meeting can attend
+
 class Solution(object):
     def canAttendMeetings(self, intervals):
         if not intervals or len(intervals)==1:return True
@@ -1291,6 +1320,7 @@ class Solution(object):
         return True
 
         res=[int(i) for  i in str(int(temp)+K)]
+#find missing range
 
 class Solution(object):
     def findMissingRanges(self, nums, lower, upper):
@@ -1306,6 +1336,7 @@ class Solution(object):
             if nums[i]-nums[i-1]==2:res.append(str(nums[i-1]+1))
             else:res.append(str(nums[i-1]+1)+"->"+str(nums[i]-1))
         return res
+#sub array with target sum
 class Solution(object):
     def subarraySum(self, nums, k):
             sums = {0: 1}  # prefix sum array
@@ -1324,6 +1355,7 @@ class Solution(object):
                 res += sums.get(s - k, 0)  # check if there is a prefix subarray we can take out to reach k
                 sums[s] = sums.get(s, 0) + 1  # add current sum to sum count
             return res
+
 class Solution(object):
 #merge meeting
     def intervalIntersection(self, f, s):
@@ -1348,6 +1380,7 @@ class Solution(object):
                 st += 1
             res = max(res, i-st+1)
         return res
+
 class Solution(object):
     def findKthLargest(self, nums, k):
         if not nums:return None
@@ -1363,7 +1396,7 @@ class Solution:
             return x * self.myPow(x, n-1)
         return self.myPow(x*x, n/2)
 
-
+# merge intervals
 class Solution(object):
     def merge(self, intervals):
         if len(intervals) <= 1 or not intervals: return intervals
@@ -1390,6 +1423,7 @@ class Solution(object):
                 if dp[i] and s[i: j + 1] in x:
                     dp[j + 1] = True
         return dp[-1]class Solution:     #lmv
+
 def countAndSay(self, n):
     s = '1'
     for _ in range(n - 1):
@@ -1401,7 +1435,7 @@ class Solution(object):
         x.sort()
         if k<len(x):return x[k-1]
         return x[-1]
-#subarr
+#subarr equal to k multiple
 #
 class Solution(object):
     def checkSubarraySum(self, nums, k):
@@ -1416,6 +1450,7 @@ class Solution(object):
             else:
                 if i - dic[summ] >= 2:return True
         return False
+#stock with high profit
 class Solution:     #lmv
     def maxProfit(self, prices):
         max_profit, min_price = 0, float('inf')
@@ -1457,7 +1492,7 @@ class Solution(object):
                 break
         else:
             nums.reverse()
-#K closet
+#K closet 
 class Solution(object):
     def findClosestElements(self, arr, k, x):
         arr.sort(key=lambda y:abs(y-x))

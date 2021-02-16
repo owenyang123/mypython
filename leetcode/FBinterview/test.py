@@ -1,3 +1,1 @@
-set1,set2=set([1,2,3]),set([21,31])
-
-if set1|set2:print 1
+print   [chr(x) for x in range(ord('A'), ord('Z') + 1)]
