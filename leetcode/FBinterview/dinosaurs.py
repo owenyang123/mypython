@@ -1546,7 +1546,7 @@ class Solution(object):
             dfs(i, emails)
             res.append([name] + sorted(emails))
         return res
-
+# simply path ,
 def whereisnow(str1, str2):
     if str2.startswith("/"):temp=str2
     else:temp=str1+"/"+str2
@@ -1556,5 +1556,20 @@ def whereisnow(str1, str2):
         elif elem not in [".", "", ".."]:stack.append(elem)
 
     return "/" + "/".join(stack)
-
-print whereisnow("/a/b","x")
+#multiply two string
+class Solution(object):
+    def helper(self,num1,num2):
+        if num1=="0" or num2=="0":return "0"
+        l1=list(num1)[::-1]
+        l2=int(num2)
+        temp=0
+        for i in range(len(l1)):
+            temp+=l2*int(l1[i])*(10**i)
+        return str(temp)
+    def multiply(self, num1, num2):
+        if num1=="0" or num2=="0":return "0"
+        l2=list(num2)[::-1]
+        temp=0
+        for i in range(len(l2)):
+            temp+=int(self.helper(num1,l2[i]))*(10**i)
+        return str(temp)
