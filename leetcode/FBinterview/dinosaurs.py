@@ -1573,3 +1573,14 @@ class Solution(object):
         for i in range(len(l2)):
             temp+=int(self.helper(num1,l2[i]))*(10**i)
         return str(temp)
+
+
+class Solution(object):
+    def countSubstrings(self, s):
+        if not s:return 0
+        if len(s)==1:return 1
+        count=0
+        for i in range(len(s)):
+            for j in range(i+1,len(s)+1):
+                if s[i:j]==s[i:j][::-1]:count+=1
+        return count

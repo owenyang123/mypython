@@ -86,9 +86,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Python27\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -105,9 +105,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="D:\Python27\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -146,6 +146,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/junosautomation/amazon" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -165,6 +168,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/leetcode/FBinterview" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -236,7 +242,8 @@
       <workItem from="1612392956650" duration="30507000" />
       <workItem from="1612848861061" duration="29859000" />
       <workItem from="1613270356716" duration="17267000" />
-      <workItem from="1613443696665" duration="22001000" />
+      <workItem from="1613443696665" duration="22061000" />
+      <workItem from="1613710845537" duration="4559000" />
     </task>
     <servers />
   </component>
@@ -248,10 +255,18 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1780" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611808956763" />
-    <state x="1826" y="119" key="FileChooserDialogImpl" timestamp="1613501439130">
+    <state x="1765" y="0" key="#dailynsdq" timestamp="1613711234228">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
-    <state x="1826" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613501439129" />
+    <state x="1765" y="0" key="#dailynsdq/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711234228" />
+    <state x="1765" y="0" key="#dailysp500" timestamp="1613711221173">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1765" y="0" key="#dailysp500/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711221173" />
+    <state x="1826" y="119" key="FileChooserDialogImpl" timestamp="1613710766222">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1826" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613710766222" />
     <state width="1317" height="223" key="GridCell.Tab.0.bottom" timestamp="1611213117031">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
@@ -284,6 +299,10 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state width="1317" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
+    <state x="1547" y="6" key="SettingsEditor" timestamp="1613711246188">
+      <screen x="1366" y="0" width="1360" height="728" />
+    </state>
+    <state x="1547" y="6" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711246188" />
     <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613241859914">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
