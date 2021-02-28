@@ -243,7 +243,7 @@
       <workItem from="1612848861061" duration="29859000" />
       <workItem from="1613270356716" duration="17267000" />
       <workItem from="1613443696665" duration="22061000" />
-      <workItem from="1613710845537" duration="7903000" />
+      <workItem from="1613710845537" duration="11164000" />
     </task>
     <servers />
   </component>
@@ -303,9 +303,14 @@
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="1547" y="6" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711246188" />
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1613241859914">
-      <screen x="1366" y="0" width="1360" height="728" />
+    <state x="379" y="0" width="607" height="728" key="find.popup" timestamp="1614455053233">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="379" y="0" width="607" height="728" key="find.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1614455053233" />
+    <state x="345" y="49" width="675" height="678" key="search.everywhere.popup" timestamp="1614454817549">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="345" y="49" width="675" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1614454817549" />
     <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613241859914" />
   </component>
   <component name="XDebuggerManager">
