@@ -52,3 +52,47 @@ class Solution(object):
             temp3=temp2
             temp2=temp1
         return temp1
+
+
+"""
+# Definition for Employee.
+class Employee(object):
+    def __init__(self, id, importance, subordinates):
+    	#################
+        :type id: int
+        :type importance: int
+        :type subordinates: List[int]
+        #################
+        self.id = id
+        self.importance = importance
+        self.subordinates = subordinates
+"""
+
+
+class Solution(object):
+    def getImportance(self, employees, id):
+        if not employees: return 0
+        for i in employees:
+            if i.id == id and i.subordinates == []:
+                return i.importance
+            elif i.id == id:
+                temp = i.importance
+                for j in i.subordinates:
+                    temp += self.getImportance(employees, j)
+                return temp
+        return 0
+
+class Solution(object):
+    def getImportance(self, employees, id):
+        """
+        :type employees: Employee
+        :type id: int
+        :rtype: int
+        """
+        # Time: O(n)
+        # Space: O(n)
+        emps = {employee.id: employee for employee in employees}
+        def dfs(id):
+            subordinates_importance = sum([dfs(sub_id) for sub_id in emps[id].subordinates])
+            return subordinates_importance + emps[id].importance
+        return dfs(id)
