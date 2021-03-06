@@ -1,12 +1,4 @@
-def whereisnow(str1, str2):
-    if not str2:return str1
-    if str2.startswith("/"):temp=str2
-    else:temp=str1+"/"+str2
-    stack=[]
-    for cmd in temp.split("/"):
-        if stack and cmd == "..":stack.pop()
-        elif cmd not in [".", "", ".."]:stack.append(cmd)
+l=[1,3,3,1]
 
-    return "/" + "/".join(stack)
-
-print whereisnow("/a/b","/../x")
+l1=[i for i in l ]+[0]
+l2=[0]+[i for i in l ]

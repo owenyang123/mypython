@@ -94,3 +94,52 @@ class Solution(object):
             A[e.id] = [e.importance, e.subordinates]
 
         return dfs(id)
+class Solution(object):
+    def sortedSquares(self, A):
+        return sorted(list(map(lambda x:x*x,A)))
+
+class Solution(object):
+    def moveZeroes(self, nums):
+        i = 0
+        def swap(arr,i,j):arr[i],arr[j]= arr[j],arr[i]
+        for j in range(len(nums)):
+            if nums[j] != 0:
+                swap(nums,i,j)
+                i += 1
+        return
+class Solution:
+# @param {string} s
+# @return {integer}
+    def romanToInt(self, s):
+        roman = {'M': 1000,'D': 500 ,'C': 100,'L': 50,'X': 10,'V': 5,'I': 1}
+        z = 0
+        for i in range(0, len(s) - 1):
+            if roman[s[i]] < roman[s[i+1]]:
+                z -= roman[s[i]]
+            else:
+                z += roman[s[i]]
+        return z + roman[s[-1]]
+
+
+class Solution(object):
+    def addDigits(self, num):
+        if num < 10: return num
+        if num < 0: return self.addDigits(0 - num)
+        l = [int(i) for i in str(num)]
+        return self.addDigits(sum(l))
+
+def generate(self, numRows):
+    res = [[1]]
+    for i in range(1, numRows):
+        res += [map(lambda x, y: x + y, res[-1] + [0], [0] + res[-1])]
+    return res[:numRows]
+
+class Solution(object):
+    def generate(self, numRows):
+        if numRows==1:return [[1]]
+        res=[[1]]
+        for i in range(1,numRows):
+            temp1=[j for j in res[i-1] ]+[0]
+            temp2=[0]+[j for j in res[i-1] ]
+            res.append([temp1[j]+temp2[j] for j in range(len(temp1))])
+        return res
