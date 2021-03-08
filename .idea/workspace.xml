@@ -59,7 +59,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test (2)">
+  <component name="RunManager" selected="Python.test2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,17 +101,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="dailysp500" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pingq1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="D:\Python27\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/leetcode" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/dailysp500.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/leetcode/pingq1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,20 +158,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/leetcode/FBinterview" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/leetcode/FBinterview/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/test2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -182,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test2" />
         <item itemvalue="Python.test (2)" />
+        <item itemvalue="Python.pingq1" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.dailynsdq" />
-        <item itemvalue="Python.dailysp500" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +234,7 @@
       <workItem from="1612848861061" duration="29859000" />
       <workItem from="1613270356716" duration="17267000" />
       <workItem from="1613443696665" duration="22061000" />
-      <workItem from="1613710845537" duration="25977000" />
+      <workItem from="1613710845537" duration="49606000" />
     </task>
     <servers />
   </component>
@@ -305,11 +302,11 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="0" width="607" height="728" key="find.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1614455053233" />
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1614922150264">
+    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1615091739501">
       <screen x="1366" y="0" width="1360" height="728" />
     </state>
     <state x="345" y="49" width="675" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1614454817549" />
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1614922150264" />
+    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1615091739501" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
