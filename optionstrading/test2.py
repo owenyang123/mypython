@@ -34,5 +34,10 @@ while 1:
                             prices) + "\'" ")"
                         cursor.execute(sql)
             con.commit()
+            with con.cursor() as cursor:
+                cursor.execute("delete from stock.realdata")
+                con.commit()
+                cursor.execute("INSERT INTO stock.realdata SELECT  distinct Stocksymbol, Date, Prices FROM stock.stockdata")
+                con.commit()
     except:pass
     time.sleep(86400)

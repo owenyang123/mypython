@@ -14,7 +14,7 @@ stocklist += list(capset)
 stocklist = list(set(stocklist))
 cur_date=bt.get_data(0)
 yes_date=bt.get_data(1)
-x = bt.get_stock_data("2021-03-06", "2021-03-07", *stocklist)
+x = bt.get_stock_data("2014-03-06", "2021-03-07", *stocklist)
 con = pymysql.connect(host='localhost',
                       user='owenyang',
                       password='222121wj',
@@ -32,6 +32,11 @@ with con:
                     prices) + "\'" ")"
                 cursor.execute(sql)
     con.commit()
+    with con.cursor() as cursor:
+        cursor.execute("delete from stock.realdata")
+        con.commit()
+        cursor.execute("INSERT INTO stock.realdata SELECT  distinct Stocksymbol, Date, Prices FROM stock.stockdata")
+        con.commit()
 
 '''
 frame = pd.read_sql("select * from stock.stockdata where Prices>=100",con)
