@@ -14,7 +14,7 @@ stocklist += list(capset)
 stocklist = list(set(stocklist))
 cur_date=bt.get_data(0)
 yes_date=bt.get_data(1)
-x = bt.get_stock_data("2014-03-06", "2021-03-07", *stocklist)
+x = bt.get_stock_data("2014-03-06", cur_date, *stocklist)
 con = pymysql.connect(host='localhost',
                       user='owenyang',
                       password='222121wj',

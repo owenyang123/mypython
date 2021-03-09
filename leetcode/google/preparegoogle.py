@@ -156,3 +156,41 @@ class Solution:
                     if 0 <= x < m and 0 <= y < n and image[x][y] == old:
                         q.append((x, y))
         return image
+import collections
+class Solution(object):
+    def intersect(self, nums1, nums2):
+            if not nums1 or not nums2:return []
+            c1,c2=collections.Counter(nums1),collections.Counter(nums2)
+            res=[]
+            for i in c1:
+                if i in c2:res+=[i]*min(c1[i],c2[i])
+            return res
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        nums1.sort()
+        nums2.sort()
+        pointer1, pointer2, out = 0, 0, list()
+        while pointer1 < len(nums1) and pointer2 < len(nums2):
+            if nums1[pointer1] == nums2[pointer2]:
+                out.append(nums1[pointer1])
+                pointer1 += 1
+                pointer2 += 1
+            elif nums1[pointer1] > nums2[pointer2]:
+                pointer2 += 1
+            else:
+                pointer1 += 1
+        return out
+
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        if not nums:return 0
+        i,temp,l=0,0,[]
+        for i in nums:
+            if i==1:
+                temp+=1
+            else:
+                l.append(temp)
+                temp=0
+        if nums[-1]==1:l.append(temp)
+        return max(l)
