@@ -194,3 +194,38 @@ class Solution(object):
                 temp=0
         if nums[-1]==1:l.append(temp)
         return max(l)
+
+class Solution:     #lmv
+    def maxProfit(self, prices):
+        max_profit, min_price = 0, float('inf')
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = price - min_price
+            max_profit = max(max_profit, profit)
+        return max_profit
+
+class Solution(object):
+    def isPowerOfThree(self, n):
+        if n<=0:return False
+        if n==1:return True
+        if n%3!=0:return False
+        return self.isPowerOfThree(n/3)
+
+
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        def s2l(str1):
+            dict1 = {}
+            res, count = [], 0
+            for i in str1:
+                if i in dict1:
+                    res.append(dict1[i])
+                else:
+                    dict1[i] = count
+                    res.append(count)
+                    count += 1
+            return res
+        return s2l(s) == s2l(t)
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        return len(set(zip(s, t))) == len(set(s)) == len(set(t))
