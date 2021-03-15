@@ -59,7 +59,7 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.dailynydq">
+  <component name="RunManager" selected="Python.test2">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -124,9 +124,6 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -185,10 +182,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.dailynydq" />
-        <item itemvalue="Python.dailysp500" />
         <item itemvalue="Python.test2" />
         <item itemvalue="Python.getalldatatodb" />
+        <item itemvalue="Python.dailynydq" />
+        <item itemvalue="Python.dailysp500" />
         <item itemvalue="Python.test (2)" />
       </list>
     </recent_temporary>
@@ -241,7 +238,7 @@
       <workItem from="1613270356716" duration="17267000" />
       <workItem from="1613443696665" duration="22061000" />
       <workItem from="1613710845537" duration="57879000" />
-      <workItem from="1615436130045" duration="975000" />
+      <workItem from="1615436130045" duration="11762000" />
     </task>
     <servers />
   </component>
