@@ -432,7 +432,7 @@ def intersection1(self, nums1, nums2):
             res.append(nums1[i])
             i+=1
             j+=1
-        elif nums[i]>nums[j]:j+=1
+        elif nums1[i]>nums2[j]:j+=1
         else:i+=1
     return res
 

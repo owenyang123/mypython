@@ -229,3 +229,39 @@ class Solution(object):
 class Solution(object):
     def isIsomorphic(self, s, t):
         return len(set(zip(s, t))) == len(set(s)) == len(set(t))
+
+
+class Solution(object):
+    def reorderSpaces(self, text):
+        if not text: return ""
+        temp = [i for i in text.split() if i != ""]
+        n = text.count(" ")
+        if n == 0: return text
+        if len(temp) == 1: return temp[0] + " " * n
+        x1 = n // (len(temp) - 1)
+        x2 = n % (len(temp) - 1)
+        return (" " * x1).join(temp) + " " * x2
+
+
+class Solution(object):
+    def isValid(self, s):
+        dict1 = {"(": ")", "[": "]", "{": "}"}
+        list1 = []
+        for i in s:
+            if i.isalnum(): continue
+            if i in dict1:
+                list1.append(dict1[i])
+            elif not list1 or i != list1[-1]:
+                return False
+            else:
+                list1.pop()
+        if list1 == []: return True
+        return False
+class Solution:     #lmv
+    def maxProfit(self, prices):
+        max_profit, min_price = 0, float('inf')
+        for price in prices:
+            min_price = min(min_price, price)
+            profit = price - min_price
+            max_profit = max(max_profit, profit)
+        return max_profit
