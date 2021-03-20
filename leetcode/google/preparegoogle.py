@@ -292,3 +292,24 @@ class Solution(object):
         k = int(str(x)[::-1])
         if k >= 2 ** 31: return 0
         return k
+import re
+pattern=re.compile(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
+x=pattern.findall("272.168.1.1.23")
+print(x)
+if re.match(r"^(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4}$", string_IPv6, re.I):
+  print "IPv6 vaild"
+else:
+  print "IPv6 invaild"
+
+class Solution(object):
+    def countSquares(self, matrix):
+        if not matrix: return 0
+        res = 0
+        res += sum(matrix[0])
+        for i in range(1, len(matrix)): res += matrix[i][0]
+        for i in range(1, len(matrix)):
+            for j in range(1, len(matrix[0])):
+                if matrix[i][j] != 0:
+                    matrix[i][j] = matrix[i][j] + min(matrix[i - 1][j], matrix[i][j - 1], matrix[i - 1][j - 1])
+                    res += matrix[i][j]
+        return res
