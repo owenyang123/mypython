@@ -265,3 +265,30 @@ class Solution:     #lmv
             profit = price - min_price
             max_profit = max(max_profit, profit)
         return max_profit
+
+class Solution:
+    def rotate(self, A):
+        temp=list(zip(*A))
+        return [list(i)[::-1] for i in temp]
+
+class Solution(object):
+    def mySqrt(self, x):
+        if x==1 or x==0:return x
+        r = x
+        while r*r > x:
+            r = (r + x/r) / 2
+        return r
+class Solution(object):
+    def validMountainArray(self, A):
+        i, j, n = 0, len(A) - 1, len(A)
+        while i + 1 < n and A[i] < A[i + 1]: i += 1
+        while j > 0 and A[j - 1] > A[j]: j -= 1
+        return 0 < i == j < len(A)- 1
+
+
+class Solution(object):
+    def reverse(self, x):
+        if x < 0: return 0 - self.reverse(-x)
+        k = int(str(x)[::-1])
+        if k >= 2 ** 31: return 0
+        return k
