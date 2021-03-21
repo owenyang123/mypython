@@ -68,7 +68,7 @@ class Employee(object):
         self.subordinates = subordinates
 """
 
-
+#emplyee importance
 class Solution(object):
     def getImportance(self, employees, id):
         if not employees: return 0
@@ -82,6 +82,18 @@ class Solution(object):
                 return temp
         return 0
 
+
+#max subarray
+class Solution(object):
+    def maxSubArray(self, nums):
+        if not nums:return None
+        if len(nums)==1:return nums[0]
+        res,cur,cur1=nums[0],nums[0],nums[0]
+        for i in range(1,len(nums)):
+            cur+=nums[i]
+            res=max(res,cur-cur1,cur)
+            cur1=min(cur1,cur)
+        return res
 
 class Solution(object):
     def getImportance(self, employees, id):
@@ -313,3 +325,25 @@ class Solution(object):
                     matrix[i][j] = matrix[i][j] + min(matrix[i - 1][j], matrix[i][j - 1], matrix[i - 1][j - 1])
                     res += matrix[i][j]
         return res
+
+#area island
+class Solution:
+    def maxAreaOfIsland(self, grid):
+        n = len(grid)
+        m = len(grid[0])
+        def dfs(x, y):
+            if (0 <= x and x < n) and (0 <= y and y < m) and grid[x][y]:
+                grid[x][y] = 0
+                return dfs(x + 1, y) + dfs(x - 1, y) + dfs(x, y + 1) + dfs(x, y - 1) + 1
+            return 0
+        max_area = 0
+        for i in range(n):
+            for j in range(m):
+                if grid[i][j]:
+                    max_area = max(max_area, dfs(i, j))
+        return max_area
+def maxAreaOfIsland(self, grid):
+    grid = {i + j*1j: val for i, row in enumerate(grid) for j, val in enumerate(row)}
+    def area(z):
+        return grid.pop(z, 0) and 1 + sum(area(z + 1j**k) for k in range(4))
+    return max(map(area, set(grid)))
