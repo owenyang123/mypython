@@ -347,3 +347,20 @@ def maxAreaOfIsland(self, grid):
     def area(z):
         return grid.pop(z, 0) and 1 + sum(area(z + 1j**k) for k in range(4))
     return max(map(area, set(grid)))
+
+#rotated matrix
+
+class Solution:
+    # @param A : list of list of integers
+    # @return the same list modified
+    def rotate(self, A):
+        rows, clos = len(A), len(A[0])
+        B = [[0 for x in range(rows)] for y in range(clos)]
+        for i in range(clos):
+            for j in range(rows):
+                B[i][j] = A[rows - 1 - j][i]
+        return B
+    def rotate(self, A):
+        temp=zip(*A)
+        return [list(i)[::-1] for i in temp]
+

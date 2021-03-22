@@ -27,11 +27,5 @@
 #
 #
 1
-import re
-pattern=re.compile(r"^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$")
-x=pattern.findall("272.168.1.1.23")
-print(x)
-if re.match(r"^(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4}$", string_IPv6, re.I):
-  print "IPv6 vaild"
-else:
-  print "IPv6 invaild"
+dict1={1:2,2:3}
+print(len(dict1))
