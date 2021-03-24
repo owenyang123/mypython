@@ -342,6 +342,30 @@ class Solution:
                 if grid[i][j]:
                     max_area = max(max_area, dfs(i, j))
         return max_area
+
+
+class Solution:
+    def maxAreaOfIsland(self, grid):
+        n = len(grid)
+        m = len(grid[0])
+        matrix = [[0] * (m + 2)]
+        for i in grid: matrix.append([0] + i + [0])
+        matrix.append([0] * (m + 2))
+
+        def dfs(x, y):
+            if matrix[x][y]:
+                matrix[x][y] = 0
+                return dfs(x + 1, y) + dfs(x - 1, y) + dfs(x, y + 1) + dfs(x, y - 1) + 1
+            return 0
+
+        max_area = 0
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if matrix[i][j]:
+                    max_area = max(max_area, dfs(i, j))
+
+        return max_area
+
 def maxAreaOfIsland(self, grid):
     grid = {i + j*1j: val for i, row in enumerate(grid) for j, val in enumerate(row)}
     def area(z):
@@ -364,3 +388,28 @@ class Solution:
         temp=zip(*A)
         return [list(i)[::-1] for i in temp]
 
+#internal grid water
+class Solution(object):
+    def closedIsland(self, grid):
+        n = len(grid)
+        m = len(grid[0])
+        def dfs(x, y):
+            if grid[x][y]==1:return
+            grid[x][y] = 1
+            if x<n-1:dfs(x + 1, y)
+            if x>0:dfs(x - 1, y)
+            if y<m-1:dfs(x, y + 1)
+            if y>0:dfs(x, y - 1)
+        for i in range(m):
+            if grid[0][i]==0:dfs(0,i)
+            if grid[n-1][i]==0:dfs(n-1,i)
+        for i in range(1,n-1):
+            if grid[i][0]==0:dfs(i,0)
+            if grid[i][-1]==0:dfs(i,m-1)
+        count =0
+        for i in range(1,n-1):
+            for j in range(1,m-1):
+                if not grid[i][j]:
+                    dfs(i, j)
+                    count+=1
+        return count

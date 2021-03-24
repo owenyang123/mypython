@@ -26,6 +26,9 @@
 # plt.show()
 #
 #
-1
-dict1={1:2,2:3}
-print(len(dict1))
+import collections
+s="asdqweqasq"
+x1=collections.Counter(s)
+del x1['a']
+print(x1)
+
