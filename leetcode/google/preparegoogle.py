@@ -413,3 +413,19 @@ class Solution(object):
                     dfs(i, j)
                     count+=1
         return count
+class Solution(object):
+    def sumOddLengthSubarrays(self, arr):
+        l=len(arr)
+        if l%2==0:n=l-1
+        else:n=l
+        sum1=0
+        for i in range(l):
+            for j in range(1,n+1,2):
+                if i+j<=l:
+                    sum1+=sum(arr[i:i+j])
+        return sum1
+    def sumOddLengthSubarrays(self, A):
+        res, n = 0, len(A)
+        for i, a in enumerate(A):
+            res += ((i + 1) * (n - i) + 1) / 2 * a
+        return res
