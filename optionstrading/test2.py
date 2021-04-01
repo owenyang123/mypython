@@ -62,6 +62,35 @@ class Solution(object):
             self.dfsroute(topology, end, temppath + [i],
                           max(num, abs(self.b[temppath[-1][0]][temppath[-1][1]] - self.b[i[0]][i[1]])), num1)
         return
+import re
+def availab_set(nums,sitornot):
+    temp=[i[0]*i[1] for i in zip(nums,sitornot)]
+    if not temp:return []
+    if sum(temp)==0:return []
+    left=0
+    for i in range(len(temp)):
+        if temp[i]==0:continue
+        left=i
+        break
+    right=left+1
+    res=[]
+    while(right<len(temp)):
+        if temp[left]==0:
+            left+=1
+            right+=1
+            continue
+        elif temp[right]==0:
+            res.append([temp[left], temp[right - 1]])
+            left=right+1
+            right=left+1
+        else:
+            right+=1
+    if temp[-1]!=0:res.append([temp[left], temp[-1]])
+    return [i for i in res if i[0]!=i[-1]]
 
-k=Solution()
-print(k.minimumEffortPath([[4,3,4,10,5,5,9,2],[10,8,2,10,9,7,5,6],[5,8,10,10,10,7,4,2],[5,1,3,1,1,3,1,9],[6,4,10,6,10,9,4,6]]))
+
+
+list1=range(1,11)
+list2=[1,1,0,1,1,1,1,1,1,1]
+
+print(availab_set(list1,list2))
