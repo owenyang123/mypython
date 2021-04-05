@@ -11,6 +11,7 @@ url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
 content = pd.read_html(url)
 stocklist = content[0]['Symbol'].tolist()+['pdd',"sqqq","tqqq","pltr","qqq","vldr","SOXL"]
 l=sp.caifuziyou(stocklist)
+
 filename_tod=bt.get_data(0)+".csv"
 filename_yes=bt.get_data(1)+".csv"
 set_tod=set([])
