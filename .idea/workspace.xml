@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4efe6452-5b77-4616-9a51-f99993e32285" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/mypython.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mypython.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/optionstrading/nysedump100.py" beforeDir="false" afterPath="$PROJECT_DIR$/optionstrading/nysedump100.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/steps.py" afterDir="false" />
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,17 +44,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/optionstrading/nysedump100.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JupyterTrust" id="a6b63906-ded8-4326-a4cb-a3bfb8c6ab2e" />
   <component name="ProjectId" id="1ZStM9Y0NFQzivrXy1Jeds7uiDc" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/optionstrading" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -61,7 +72,11 @@
       <recent name="D:\pythonproject\mypython\optionstrading" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.dailynsdq">
+=======
+  <component name="RunManager" selected="Python.nysedump100">
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -88,6 +103,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -103,7 +121,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="dailynydq" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="findfile" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -111,12 +133,16 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/dailynydq.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/findfile.py" />
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,6 +155,9 @@
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/optionstrading" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -144,7 +173,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="getalldatatodb" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="nysedump100" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
       <module name="mypython" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -154,7 +187,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+<<<<<<< HEAD
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/getalldatatodb.py" />
+=======
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/optionstrading/nysedump100.py" />
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -187,14 +224,22 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Python.dailynsdq" />
         <item itemvalue="Python.getalldatatodb" />
         <item itemvalue="Python.dailysp500" />
         <item itemvalue="Python.test2" />
+=======
+        <item itemvalue="Python.nysedump100" />
+        <item itemvalue="Python.findfile" />
+        <item itemvalue="Python.test2" />
+        <item itemvalue="Python.getalldatatodb" />
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
         <item itemvalue="Python.dailynydq" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -243,80 +288,18 @@
       <workItem from="1613270356716" duration="17267000" />
       <workItem from="1613443696665" duration="22061000" />
       <workItem from="1613710845537" duration="57879000" />
+<<<<<<< HEAD
       <workItem from="1615436130045" duration="58933000" />
       <workItem from="1617859306917" duration="1514000" />
+=======
+      <workItem from="1615436130045" duration="58158000" />
+      <workItem from="1617826639304" duration="1341000" />
+>>>>>>> d282d48363a2a729faeb9cef5ee9e7722636dd25
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="1500" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1615009351192">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1500" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1615009351192" />
-    <state x="1780" y="167" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611808956763">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1780" y="167" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611808956763" />
-    <state x="1765" y="0" key="#dailynsdq" timestamp="1613711234228">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1765" y="0" key="#dailynsdq/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711234228" />
-    <state x="1765" y="0" key="#dailysp500" timestamp="1613711221173">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1765" y="0" key="#dailysp500/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711221173" />
-    <state x="1826" y="119" key="FileChooserDialogImpl" timestamp="1613710766222">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1826" y="119" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613710766222" />
-    <state width="1317" height="223" key="GridCell.Tab.0.bottom" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.0.center" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.0.left" timestamp="1611213117030">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117030" />
-    <state width="1317" height="223" key="GridCell.Tab.0.right" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.1.bottom" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.1.center" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.1.left" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state width="1317" height="223" key="GridCell.Tab.1.right" timestamp="1611213117031">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state width="1317" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1611213117031" />
-    <state x="1547" y="6" key="SettingsEditor" timestamp="1613711246188">
-      <screen x="1366" y="0" width="1360" height="728" />
-    </state>
-    <state x="1547" y="6" key="SettingsEditor/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1613711246188" />
-    <state x="379" y="0" width="607" height="728" key="find.popup" timestamp="1614455053233">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="379" y="0" width="607" height="728" key="find.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1614455053233" />
-    <state x="345" y="49" width="675" height="678" key="search.everywhere.popup" timestamp="1616994344852">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="345" y="49" width="675" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@0.0.1366.728" timestamp="1616994344852" />
-    <state x="1709" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1360.728@1366.0.1360.728" timestamp="1615091739501" />
+    <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -329,20 +312,20 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/mypython$123.coverage" NAME="123 Coverage Results" MODIFIED="1588538496922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/optionstrading" />
-    <SUITE FILE_PATH="coverage/mypython$smtplib.coverage" NAME="smtplib Coverage Results" MODIFIED="1585542269865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Python27/Lib" />
-    <SUITE FILE_PATH="coverage/mypython$binarySearch.coverage" NAME="binarySearch Coverage Results" MODIFIED="1584847810581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
-    <SUITE FILE_PATH="coverage/mypython$yfinance.coverage" NAME="yfinance Coverage Results" MODIFIED="1586323641383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqlpython/stockdata" />
-    <SUITE FILE_PATH="coverage/mypython$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1587442842769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
-    <SUITE FILE_PATH="coverage/mypython$setup.coverage" NAME="setup Coverage Results" MODIFIED="1585346828008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python3.0/Scripts/tanulate" />
-    <SUITE FILE_PATH="coverage/mypython$prime.coverage" NAME="prime Coverage Results" MODIFIED="1596951235841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
-    <SUITE FILE_PATH="coverage/mypython$plt.coverage" NAME="plt Coverage Results" MODIFIED="1585458458070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mypython$test.coverage" NAME="test Coverage Results" MODIFIED="1586833287763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mypython$testconnection.coverage" NAME="testconnection Coverage Results" MODIFIED="1585549194770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqlpython" />
-    <SUITE FILE_PATH="coverage/mypython$parabola.coverage" NAME="parabola Coverage Results" MODIFIED="1585542112936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mypython$dailysp500.coverage" NAME="dailysp500 Coverage Results" MODIFIED="1611212370365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/optionstrading" />
-    <SUITE FILE_PATH="coverage/mypython$myemail.coverage" NAME="myemail Coverage Results" MODIFIED="1585544145927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/mypython$overrides.coverage" NAME="overrides Coverage Results" MODIFIED="1585369412164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python37/Lib/site-packages/numpy/core" />
     <SUITE FILE_PATH="coverage/mypython$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1585346971400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/sqlodbc" />
+    <SUITE FILE_PATH="coverage/mypython$parabola.coverage" NAME="parabola Coverage Results" MODIFIED="1585542112936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mypython$overrides.coverage" NAME="overrides Coverage Results" MODIFIED="1585369412164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python37/Lib/site-packages/numpy/core" />
+    <SUITE FILE_PATH="coverage/mypython$myemail.coverage" NAME="myemail Coverage Results" MODIFIED="1585544145927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mypython$smtplib.coverage" NAME="smtplib Coverage Results" MODIFIED="1585542269865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Python27/Lib" />
+    <SUITE FILE_PATH="coverage/mypython$prime.coverage" NAME="prime Coverage Results" MODIFIED="1596951235841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
+    <SUITE FILE_PATH="coverage/mypython$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1587442842769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
+    <SUITE FILE_PATH="coverage/mypython$yfinance.coverage" NAME="yfinance Coverage Results" MODIFIED="1586323641383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqlpython/stockdata" />
+    <SUITE FILE_PATH="coverage/mypython$binarySearch.coverage" NAME="binarySearch Coverage Results" MODIFIED="1584847810581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/leetcode" />
+    <SUITE FILE_PATH="coverage/mypython$dailysp500.coverage" NAME="dailysp500 Coverage Results" MODIFIED="1611212370365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/optionstrading" />
+    <SUITE FILE_PATH="coverage/mypython$testconnection.coverage" NAME="testconnection Coverage Results" MODIFIED="1585549194770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mysqlpython" />
+    <SUITE FILE_PATH="coverage/mypython$plt.coverage" NAME="plt Coverage Results" MODIFIED="1585458458070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/mypython$123.coverage" NAME="123 Coverage Results" MODIFIED="1588538496922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/optionstrading" />
+    <SUITE FILE_PATH="coverage/mypython$setup.coverage" NAME="setup Coverage Results" MODIFIED="1585346828008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/python3.0/Scripts/tanulate" />
   </component>
 </project>

@@ -13,7 +13,6 @@ stocklist=[]
 with open('nsdqlist') as f:
     for i in f.readlines():
         stocklist.append(i.replace("\n", ""))
-print stocklist
 if __name__ == "__main__":
     with open('/var/www/html/nsdq.html', 'w') as file:
         file.write('<html> \n')
