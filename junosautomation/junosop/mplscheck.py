@@ -1,11 +1,9 @@
 from jnpr.junos import Device
 from jnpr.junos.utils.start_shell import StartShell
 from datetime import datetime as t
-import subprocess
-import argparse
+# from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 import os
 import re
-
 
 try:
         os.mkdir("/var/tmp/script_outputs")
@@ -18,7 +16,7 @@ Path = "/var/tmp/script_outputs/{}/".format(Date)
 print(Path)
 # os.mkdir(Path)
 try:
-        os.mkdir(Path)
+       os.mkdir(Path)
 except:
         print('Directory already existed')
 
@@ -215,10 +213,12 @@ if __name__ == '__main__':
 
         if ERO_List!=[]:
                 for ERO in ERO_List:
-                        if len(ERO)>2:ERO_Trace(ERO)
+                        if len(ERO)>2 :
+                                ERO_Trace(ERO)
 
         else:print "Empty list"
         print "done"
         # with ProcessPoolExecutor(len(ERO_List)) as ex:
         # res = ex.map(ERO_Trace, ERO_List)
         # res = ex.map(fun, ERO_List)
+

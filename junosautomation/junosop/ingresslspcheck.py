@@ -6,6 +6,7 @@ import argparse
 import os
 import re
 
+
 def parse_args(fake_args=None):
     main_parser = argparse.ArgumentParser(prog='lspcheck.py')
     main_parser.add_argument("-l", "--lsp", type=str, dest="lsp_name", required=True, help="Comma separated names of LSPs")
