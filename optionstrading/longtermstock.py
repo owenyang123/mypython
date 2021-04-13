@@ -39,4 +39,4 @@ for i in file_list:
                     if not temp[0].isalpha() or temp[0]=="call" or temp[0]=="put":temp.pop(0)
                     stockdays[temp[0]]=stockdays.get(temp[0],0)+1
 listorder=sorted(stockdays.items(),key=lambda x:x[1],reverse=True)
-print [i for i in listorder if i[1]>days]
+print([i for i in listorder if i[1]>days])
