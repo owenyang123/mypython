@@ -466,3 +466,4 @@ class Solution(object):
                 res[cur]=i-cur
             stack.append(i)
         return res
+list.sort
