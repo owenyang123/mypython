@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 import remoteconnection as rc
 import os,sys
-import threading
 from multiprocessing import Pool
 import time
 
@@ -18,7 +17,7 @@ if __name__ == '__main__':
 # set task accounting on 
     cli_cmd="cli set task accounting on"
     instance,result_list=[],{}
-    pool=Pool(16)
+    pool=Pool(10)
     for i in boxname:
         dir_name=i.split(".")[0]+date
         result_list.update({i:pool.apply_async(rc.deploycmd_noshow,args = (i,cli_cmd,))})
@@ -30,19 +29,19 @@ if __name__ == '__main__':
 ###get cpu usage
     num=int(input("how many times will be collected at interval 10s :",))
     filename=input("please name the file you want to save :",)
-    cli_cmd="cli show task accounting \|no-more "
+    cli_cmd="cli show task accounting  detail \|no-more "
     for _ in range(num):
-        pool=Pool(16)
+        pool=Pool(10)
         for i in boxname:
             dir_name=i.split(".")[0]+date
             pool.apply_async(rc.getoutput,args = (i,cli_cmd,filename,))
         pool.close()
         pool.join()
-        time.sleep(10)
+        time.sleep(5)
 # set task accounting off 
     cli_cmd="cli set task accounting off"
     instance,result_list=[],[]
-    pool=Pool(16)
+    pool=Pool(10)
     for i in boxname:
         dir_name=i.split(".")[0]+date
         pool.apply_async(rc.deploycmd_noshow,args = (i,cli_cmd,))
