@@ -1,1 +1,1 @@
-import lspcheck as lc
+print("111\\n123123")

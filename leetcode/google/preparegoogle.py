@@ -455,3 +455,15 @@ class Solution(object):
                 if x1 >= 0 and y1 < 0: c[i][j] -= b[x1][y2]
                 if x1 >= 0 and y1 >= 0: c[i][j] = c[i][j] - b[x2][y1] - b[x1][y2] + b[x1][y1]
         return c
+# Daily Temperatures
+class Solution(object):
+    def dailyTemperatures(self, nums):
+        res = [0] * len(nums)
+        stack = []
+        for i in range(len(nums)):
+            while stack and nums[i]>nums[stack[-1]]:
+                cur=stack.pop()
+                res[cur]=i-cur
+            stack.append(i)
+        return res
+list.sort
