@@ -54,3 +54,36 @@ class Solution1:
 k=Solution1()
 print k.restoreIpAddresses("111111111")
 print("--- %s seconds ---" % (time.time() - start_time))
+
+
+class Solution(object):
+    def validIPAddress(self, IP):
+        def isIPv4(s):
+            if not s:return False
+            try:
+                if str(int(s)) == s and 0 <= int(s) <= 255:return True
+                return False
+            except:
+                return False
+        def isIPv6(s):
+            if not s:return False
+            try:
+                if len(s) <= 4 and int(s, 16) >= 0:return True
+                return False
+            except:
+                return False
+        if IP.count(".") == 3 and all(isIPv4(i) for i in IP.split(".")):
+            return "IPv4"
+        if IP.count(":") == 7 and all(isIPv6(i) for i in IP.split(":")):
+            return "IPv6"
+        return "Neither"
+
+
+import re
+
+pat = re.compile("\d{1,3}.\d{1,3}.\d{1,3}.\d{1,3}")
+test = pat.match(hostIP)
+if test:
+   print "Acceptable ip address"
+else:
+   print "Unacceptable ip address"

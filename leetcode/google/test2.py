@@ -12,10 +12,10 @@ def swapnumber(num):
             list1[0],list1[i]=list1[i],list1[0]
     return int("".join(list1))
 
-print swapnumber(1992)
+print(swapnumber(1992))
 
 def numberstps(x,y):
-    print x,y
+    print (x,y)
     if x==0 and y==0:return 0
     if x==1 and y==0:return 1
     if x>0 and y<0 and x+y==1:
@@ -42,4 +42,4 @@ def numberstps(x,y):
             if x>0:return numberstps(-y,y)-abs(y)+abs(x)
             return numberstps(y,y)+abs(y)-abs(x)
 
-print numberstps(100000,100000)
+print(numberstps(100000,100000))
