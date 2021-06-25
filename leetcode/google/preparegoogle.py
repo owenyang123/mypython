@@ -41,7 +41,16 @@ for i in l1:
         x[i[0]]={i[1]:[i[2]]}
 print x
 '''
+class Solution:
 
+    def sortedArrayToBST(self, num):
+        if not num:return None
+        temp = len(num) /2
+        root = TreeNode(num[temp])
+        root.left = self.sortedArrayToBST(num[:temp])
+        root.right = self.sortedArrayToBST(num[temp+1:])
+        return root
+    
 class Solution(object):
     def twoSum(self, nums, target):
         dict1={}
