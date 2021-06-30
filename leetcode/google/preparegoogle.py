@@ -11,6 +11,36 @@ class Solution(object):
                 res.append(S[i+1:j])
                 i = j+1
         return "".join(res)
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        if not s:return 0
+        if len(set(s))==1:return 1
+        max1=len(set(s))
+        i,j,temp=0,1,1
+        while (i<=len(s)-1):
+            if j>i+max1:
+                i+=1
+            elif len(s[i:j])==len(set(s[i:j])):
+                temp=max(temp,len(s[i:j]))
+                j+=1
+            else:
+                i+=1
+                j=i+1
+        return temp
+
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        dic, res, start, = {}, 0, 0
+        for i, ch in enumerate(s):
+            if ch in dic:
+                # update the res
+                res = max(res, i-start)
+                # here should be careful, like "abba"
+                start = max(start, dic[ch]+1)
+            dic[ch] = i
+        # return should consider the last
+        # non-repeated substring
+        return max(res, len(s)-start)
 
 class Solution(object):
     def rangeSumBST(self, root, L, R):
@@ -106,6 +136,18 @@ class Solution(object):
             A[e.id] = [e.importance, e.subordinates]
 
         return dfs(id)
+
+class Solution(object):
+    def getImportance(self, employees, id):
+        if not  employees:return 0
+        for i in employees:
+            if i.id==id and i.subordinates==[]:return i.importance
+            elif i.id==id:
+                temp=i.importance
+                for j in i.subordinates:
+                    temp+=self.getImportance(employees,j)
+                return temp
+        return 0
 class Solution(object):
     def sortedSquares(self, A):
         return sorted(list(map(lambda x:x*x,A)))
@@ -119,6 +161,19 @@ class Solution(object):
                 swap(nums,i,j)
                 i += 1
         return
+
+class Solution(object):
+    def moveZeroes(self, nums):
+        i,j= 0,0
+        def swap(arr,i,j):arr[i],arr[j]= arr[j],arr[i]
+        while (j<len(nums)):
+            if nums[j]==0:j+=1
+            else:
+                swap(nums,i,j)
+                j+=1
+                i+=1
+        return
+
 class Solution:
 # @param {string} s
 # @return {integer}
