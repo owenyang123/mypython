@@ -1,4 +1,18 @@
 '''
+#read big file
+
+from functools import partial
+
+def read_from_file(filename, block_size = 1024 * 8):
+    with open(filename, "r") as fp:
+        for chunk in iter(partial(fp.read, block_size), ""):
+            yield chunk
+
+def read_from_file(filename, block_size = 1024 * 8):
+    with open(filename, "r") as fp:
+        while chunk := fp.read(block_size):
+            yield chunk
+
 import collections
 import re,copy
 
@@ -69,8 +83,6 @@ class Solution:
         if not s:return ""
         if "[" not in s:return s
         temp=self.helper(s)
-        print s
-        print temp
         return self.expressionExpand(s[0:temp[0]-temp[3]]+(s[temp[0]+1:temp[1]])*temp[2]+s[temp[1]+1:])
     def helper(self,s):
         b,e=0,0
@@ -88,6 +100,7 @@ class Solution:
             else:break
         return (b,e,int(str1[::-1]),len(str1))
 
+<<<<<<< HEAD
 from jnpr.junos import Device
 import threading
 from lxml import etree
@@ -129,3 +142,5 @@ for  i in dict1:
 temp.sort(key=lambda a:a[0])
 for i in temp:
     print (i)
+=======
+>>>>>>> 512cb49dae98aca0d6726c1617974077117f6a35

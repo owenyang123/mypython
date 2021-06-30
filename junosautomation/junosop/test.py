@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 text1='''
 tcp4       0      0  128.0.0.4.26060                               128.0.0.6.52585                               ESTABLISHED
 tcp4       0     12  128.0.0.4.33300                               128.0.0.6.60648                               ESTABLISHED
@@ -96,6 +97,30 @@ tcp4       0      0  128.0.0.1.53718                               128.0.0.1.330
 tcp4       0      0  128.0.0.1.2606                                128.0.0.1.53716                               ESTABLISHED
 tcp4       0      0  128.0.0.1.53716                               128.0.0.1.2606                                ESTABLISHED
 '''
+=======
+<<<<<<< HEAD
+def logger(func):
+    def wrapper(*args, **kw):
+        print('我准备开始执行：{} 函数了:'.format(func.__name__))
+
+        # 真正执行的是这行。
+        func(*args, **kw)
+
+        print('主人，我执行完啦。')
+    return wrapper
+@logger
+def add(x, y):
+    print('{} + {} = {}'.format(x, y, x+y))
+
+add(5,199)
+=======
+#!/usr/bin/python3
+import remoteconnection as rc
+import os,sys
+import threading
+from multiprocessing import Pool
+import time
+>>>>>>> 512cb49dae98aca0d6726c1617974077117f6a35
 
 set1,set2=set(),set()
 for i in text1.split("\n"):
@@ -104,5 +129,9 @@ for i in text1.split("\n"):
 for i in text2.split("\n"):
     set2.add(i)
 
+<<<<<<< HEAD
 for i in set2:
     if i not in set1:print(i)
+=======
+>>>>>>> f686f6dc72419d93bbf44c819bc4f1cded731cf4
+>>>>>>> 512cb49dae98aca0d6726c1617974077117f6a35

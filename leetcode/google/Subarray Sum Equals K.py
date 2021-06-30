@@ -1,6 +1,4 @@
 class Solution:
-
-
     def subarraySumEqualsK(self, nums, k):
         presum = {0: 1}
         count = 0
