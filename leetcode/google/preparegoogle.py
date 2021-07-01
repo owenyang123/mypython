@@ -50,7 +50,7 @@ class Solution:
         root.left = self.sortedArrayToBST(num[:temp])
         root.right = self.sortedArrayToBST(num[temp+1:])
         return root
-    
+
 class Solution(object):
     def twoSum(self, nums, target):
         dict1={}

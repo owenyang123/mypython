@@ -1,3 +1,4 @@
-for i in range(1,101):
-    if i%5==0:print(i,end="\n")
-    else:print(i,end=",")
+import re
+with open("piclog") as x:
+    words = re.findall(r'\w+', x.read().lower())
+    print(words)
