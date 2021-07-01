@@ -1,3 +1,80 @@
+# clinet
+# import socket
+# import time
+# PORT=6688
+# HEADER=64
+# FORMAT='utf-8'
+#
+# DICMSG="done"
+# SERVER='10.85.209.89'
+# ADDR=(SERVER,PORT)
+#
+# client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+# client.connect(ADDR)
+#
+# msg = raw_input("What's the symbol of your stock: ")
+#
+# def send(msg):
+#     message=msg.encode(FORMAT)
+#     msg_length=len(message)
+#     send_length=str(msg_length).encode(FORMAT)
+#     send_length+=b' '*(HEADER-len(send_length))
+#     client.send(send_length)
+#     client.send(message)
+#     print client.recv(2048)
+#
+# send(msg)
+# time.sleep(5)
+# send(DICMSG)
+
+# sever
+# import socket,threading
+# import stockplay as sp
+#
+# PORT=6688
+# SERVER=socket.gethostbyname(socket.gethostname())
+#
+# server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+#
+# ADDR=('10.85.209.89',PORT)
+# print ADDR
+# server.bind(ADDR)
+#
+# HEADER=64
+# FORMAT='utf-8'
+#
+# DICMSG="done"
+#
+# def handle_clinet(conn,addr):
+#     print addr[0]+" is coming with port "+str(addr[1])
+#     connected=True
+#     while connected:
+#         msg_len=conn.recv(HEADER).decode(FORMAT)
+#
+#         if msg_len:
+#             msg_len=int(msg_len)
+#             msg=conn.recv(msg_len).decode(FORMAT)
+#             print(msg)
+#             if msg==DICMSG:connected=False
+#             else:
+#                 temp1=sp.caifuziyou([msg])[0]
+#                 temp= " ".join([str(i) for i in temp1])
+#                 print "sent "+temp
+#                 conn.send(temp.encode(FORMAT))
+#     conn.close()
+#
+#
+# def start():
+#     server.listen(5)
+#     while True:
+#         conn,addr=server.accept()
+#         thread=threading.Thread(target=handle_clinet,args=(conn,addr))
+#         thread.start()
+#
+# print "ready"
+#
+# start()
+
 '''
 #read big file
 
