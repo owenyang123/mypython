@@ -1,3 +1,80 @@
+# clinet
+# import socket
+# import time
+# PORT=6688
+# HEADER=64
+# FORMAT='utf-8'
+#
+# DICMSG="done"
+# SERVER='10.85.209.89'
+# ADDR=(SERVER,PORT)
+#
+# client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+# client.connect(ADDR)
+#
+# msg = raw_input("What's the symbol of your stock: ")
+#
+# def send(msg):
+#     message=msg.encode(FORMAT)
+#     msg_length=len(message)
+#     send_length=str(msg_length).encode(FORMAT)
+#     send_length+=b' '*(HEADER-len(send_length))
+#     client.send(send_length)
+#     client.send(message)
+#     print client.recv(2048)
+#
+# send(msg)
+# time.sleep(5)
+# send(DICMSG)
+
+# sever
+# import socket,threading
+# import stockplay as sp
+#
+# PORT=6688
+# SERVER=socket.gethostbyname(socket.gethostname())
+#
+# server=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+#
+# ADDR=('10.85.209.89',PORT)
+# print ADDR
+# server.bind(ADDR)
+#
+# HEADER=64
+# FORMAT='utf-8'
+#
+# DICMSG="done"
+#
+# def handle_clinet(conn,addr):
+#     print addr[0]+" is coming with port "+str(addr[1])
+#     connected=True
+#     while connected:
+#         msg_len=conn.recv(HEADER).decode(FORMAT)
+#
+#         if msg_len:
+#             msg_len=int(msg_len)
+#             msg=conn.recv(msg_len).decode(FORMAT)
+#             print(msg)
+#             if msg==DICMSG:connected=False
+#             else:
+#                 temp1=sp.caifuziyou([msg])[0]
+#                 temp= " ".join([str(i) for i in temp1])
+#                 print "sent "+temp
+#                 conn.send(temp.encode(FORMAT))
+#     conn.close()
+#
+#
+# def start():
+#     server.listen(5)
+#     while True:
+#         conn,addr=server.accept()
+#         thread=threading.Thread(target=handle_clinet,args=(conn,addr))
+#         thread.start()
+#
+# print "ready"
+#
+# start()
+
 '''
 #read big file
 
@@ -129,6 +206,36 @@ class Solution(object):
                 res.append(S[i+1:j])
                 i = j+1
         return "".join(res)
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        if not s:return 0
+        if len(set(s))==1:return 1
+        max1=len(set(s))
+        i,j,temp=0,1,1
+        while (i<=len(s)-1):
+            if j>i+max1:
+                i+=1
+            elif len(s[i:j])==len(set(s[i:j])):
+                temp=max(temp,len(s[i:j]))
+                j+=1
+            else:
+                i+=1
+                j=i+1
+        return temp
+
+class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        dic, res, start, = {}, 0, 0
+        for i, ch in enumerate(s):
+            if ch in dic:
+                # update the res
+                res = max(res, i-start)
+                # here should be careful, like "abba"
+                start = max(start, dic[ch]+1)
+            dic[ch] = i
+        # return should consider the last
+        # non-repeated substring
+        return max(res, len(s)-start)
 
 class Solution(object):
     def rangeSumBST(self, root, L, R):
@@ -275,6 +382,18 @@ class Solution(object):
             A[e.id] = [e.importance, e.subordinates]
 
         return dfs(id)
+
+class Solution(object):
+    def getImportance(self, employees, id):
+        if not  employees:return 0
+        for i in employees:
+            if i.id==id and i.subordinates==[]:return i.importance
+            elif i.id==id:
+                temp=i.importance
+                for j in i.subordinates:
+                    temp+=self.getImportance(employees,j)
+                return temp
+        return 0
 class Solution(object):
     def sortedSquares(self, A):
         return sorted(list(map(lambda x:x*x,A)))
@@ -288,6 +407,19 @@ class Solution(object):
                 swap(nums,i,j)
                 i += 1
         return
+
+class Solution(object):
+    def moveZeroes(self, nums):
+        i,j= 0,0
+        def swap(arr,i,j):arr[i],arr[j]= arr[j],arr[i]
+        while (j<len(nums)):
+            if nums[j]==0:j+=1
+            else:
+                swap(nums,i,j)
+                j+=1
+                i+=1
+        return
+
 class Solution:
 # @param {string} s
 # @return {integer}
