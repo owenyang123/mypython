@@ -238,6 +238,23 @@ class Solution(object):
         return max(res, len(s)-start)
 
 class Solution(object):
+    def lengthOfLongestSubstring(self, s):
+        if not s:return 0
+        dic, res, start, = {}, 0, 0
+        s1=s+s[0]
+        for i, ch in enumerate(s1):
+            if ch in dic:
+                # update the res
+                res = max(res, i-start)
+                # here should be careful, like "abba"
+                start = max(start, dic[ch]+1)
+            dic[ch] = i
+        # return should consider the last
+        # non-repeated substring
+        return res
+
+
+class Solution(object):
     def rangeSumBST(self, root, L, R):
         if not root:return 0
         self.l=[]
@@ -252,6 +269,17 @@ class Solution(object):
 class Solution(object):
     def sortedSquares(self, A):
         return sorted(list(map(lambda x:x*x,A)))
+
+
+from functools import reduce
+fruit = ["Apple", "Banana", "Pear", "Apricot", "Orange"]
+map_object = map(lambda s: s[0] == "A", fruit)
+[True, False, False, True, False]
+filter_object = filter(starts_with_A, fruit)
+['Apple', 'Apricot']
+list = [2, 4, 7, 3]
+print(reduce(lambda x, y: x + y, list))
+print("With an initial value: " + str(reduce(lambda x, y: x + y, list, 10)))
 
 class Solution(object):
     def singleNumber(self, nums):

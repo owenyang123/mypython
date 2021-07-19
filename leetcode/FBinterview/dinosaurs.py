@@ -1,3 +1,36 @@
+def getUniformIntegerCountInInterval(A: int, B: int) -> int:
+  a1,b1=9-int(str(A)[0]),int(str(B)[0])
+  if A<=int(str(A)[0]*len(str(A))):a1=a1+1
+  if B<int(str(B)[0]*len(str(B))):b1=b1-1
+  gap=(len(str(B))-len(str(A))-1)*9
+  return gap+a1+b1
+
+def getMinCodeEntryTime(N: int, M: int, C: List[int]) -> int:
+  def how(x,y):
+    a1,a2=min(x,y),max(x,y)
+    return min(a2-a1,a1-a2+N)
+  temp=[1]+C
+  count=0
+  for i in range(len(temp)-1):
+    count+=how(temp[i],temp[i+1])
+  return count
+
+def getSecondsRequired(N: int, F: int, P: List[int]) -> int:
+  if F==1:return N-P[0]
+  P.sort()
+  pos=[[i,1] for i in P]
+  for i in range(1,len(pos)):
+    if pos[i][0]-pos[i-1][0]==1:pos[i][1]+=pos[i-1][1]
+  i,count=0,0
+  flag=True
+  while (i<len(pos)-1):
+    if pos[i][0]+1==pos[i+1][0]:pos.pop(i)
+    else:i+=1
+  while(len(pos)>1):
+    count+=pos[1][0]-pos[1][1]-pos[0][0]
+    pos[1][1]+=pos[0][1]
+    pos.pop(0)
+  return N-pos[0][0]-1+pos[0][1]+count
 #ip address
 class Solution(object):
     def validIPAddress(self, IP):

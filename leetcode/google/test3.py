@@ -1,11 +1,13 @@
-<<<<<<< HEAD
-import re
-with open("piclog") as x:
-    words = re.findall(r'\w+', x.read().lower())
-    print(words)
-=======
+def nest(list1):
+    if not list1:return []
+    def dfs(list2,temp):
+        if not list2:return temp
+        for i in list2:
+            if type(i).__name__=='list':
+                temp=dfs(i,temp)
+            else:temp+=[i]
+        return temp
+    res=dfs(list1,[])
+    return res
+print(nest([1,2,3,[4,5,[99,100]]]))
 
-for i in range(1000):
-    print("set protocols mpls label-switched-path "+" "+str(i)+" to 192.168.0.224")
-    print("set protocols mpls label-switched-path " + " " + str(i) + " priority 5 5")
->>>>>>> 295c06d33d7a343786ddae8356e21fe094ae868a
